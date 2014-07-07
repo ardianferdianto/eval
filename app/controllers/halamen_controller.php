@@ -1,0 +1,175 @@
+<?php
+class HalamenController extends AppController {
+
+	var $name = 'Halamen';
+	var $helpers = array('Html', 'Form');
+	
+	function beforeFilter() {
+	    parent::beforeFilter();
+		//$this->Auth->allow('logout','__getlic','__ceklicense','login');
+		//$this->Auth->allow('logout','login');
+		//$this->Auth->allow('*');
+		//$this->set('menuTab', 'admin');
+		//$this->set('menuTabChild', 'matpel');
+	    
+		
+	}
+	
+	function index() {
+		$this->Category->recursive = 0;
+		$this->set('categories', $this->paginate());
+	}
+
+	function view($id = null) {
+		if (!$id) {
+			$this->Session->setFlash(__('Invalid Category.', true));
+			$this->redirect(array('action'=>'index'));
+		}
+		$this->set('pelajaran', $this->Category->read(null, $id));
+	}
+
+	function add() {
+		$this->Halaman->recursive = 1;
+		if (!empty($this->data)) {
+			
+			$nametoResponse  = $this->data['Halaman']['title'];
+
+			$this->Halaman->create();
+			if ($this->Halaman->save($this->data)) {
+				
+				
+				$idtoResponse  = $this->Halaman->getInsertID();
+
+				
+				$status = "true";
+				$flashMessage = "Berhasil Menambahkan Halaman baru";
+				
+				$this->redirect(array('action'=>'add_responses',$idtoResponse,$status,$flashMessage));
+			} else {
+				$idtoResponse='';
+				$status = "false";
+				$flashMessage = "Tidak Berhasil Menambahkan Halaman Ajar";
+				$this->redirect(array('action'=>'add_responses',$idtoResponse,$status,$flashMessage));
+
+			}
+		}
+
+
+	}
+
+
+	function add_responses($idtoResponse,$status,$flashMessage){
+		
+		if (!$idtoResponse && !$status) {
+			$this->Session->setFlash(__('Invalid Ebook.', true));
+			$this->redirect(array('action'=>'index'));
+		}
+		//$this->set('nametoResponse',$nametoResponse);
+
+		$this->set('page', $this->Halaman->read(null, $idtoResponse));
+		$this->set('status',$status);
+		$this->set('flashMessage',$flashMessage);
+		$this->set('idtoResponse',$idtoResponse);
+
+
+		$this->layout = 'default_blank';
+	}
+
+	function edit($id = null) {
+		if (!$id && empty($this->data)) {
+			$this->Session->setFlash(__('Invalid Category', true));
+			$this->redirect(array('action'=>'index'));
+		}
+		if (!empty($this->data)) {
+			if ($this->Category->save($this->data)) {
+				$this->Session->setFlash(__('Mata Category berhasil diupdate', 'flash_success'));
+				$this->redirect(array('action'=>'index'));
+			} else {
+				$this->Session->setFlash('Mata Categorytidak berhasil diupdate silahkan ulangi','flash_erorr');
+			}
+		}
+		if (empty($this->data)) {
+			$this->data = $this->Category->read(null, $id);
+		}
+	}
+
+	function delete($id = null) {
+		if (!$id) {
+			$this->Session->setFlash(__('Invalid id for Category', true));
+			$this->redirect(array('action'=>'index'));
+		}
+		if ($this->Category->del($id)) {
+			$this->Session->setFlash(__('Category deleted', true));
+			$this->redirect(array('action'=>'index'));
+		}
+	}
+
+
+	function uploadfiles(){
+		$this->autoRender = false;
+		$str_random  = $this->_str_random(8);
+		$file = $this->data['Halaman']['mediafiles']; // your file upload input field in the form should be named 'file'
+		$idfolder = $this->data['Halaman']['lessonId'];
+
+		if($file)
+		{
+			
+			$output_dir = WWW_ROOT.'files'.DS.'lessons'.DS.$idfolder.DS.'images'.DS.'pages'.DS;
+			
+		    //$output_dir = "uploads/";
+		    //ini_set("display_errors",1);
+		    if(isset($file))
+		    {
+		        //$RandomNum   = time();
+		        
+		        $ImageName      = str_replace(' ','-',strtolower($this->data['Halaman']['mediafiles']['name']));
+		        $ImageType      = $this->data['Halaman']['mediafiles']['type']; //"image/png", image/jpeg etc.
+		     
+		        $ImageExt 		= substr($ImageName, strrpos($ImageName, '.'));
+		        $ImageExt       = str_replace('.','',$ImageExt);
+		        
+	            $ImageName      = preg_replace("/\.[^.\s]{3,4}$/", "", $ImageName);
+	            $NewImageName   = $ImageName.'_'.$str_random.'.'.$ImageExt;
+
+	            if($ImageExt == 'jpg' || $ImageExt == 'png' || $ImageExt == 'jpeg' || $ImageExt == 'gif' || $ImageExt == 'tiff'){
+	            
+	            	$fileType = 'image';
+	            
+	            }elseif ($ImageExt == 'mp4' || $ImageExt == 'flv' || $ImageExt == 'Webm') {
+	            	
+	            	$fileType = 'video';
+	            
+	            }elseif ($ImageExt == 'swf') {
+	            	
+	            	$fileType = 'animation';
+	            }
+
+
+
+	         
+	            move_uploaded_file($this->data['Halaman']['mediafiles']["tmp_name"],$output_dir. $NewImageName);
+	        	
+	            $obj['status'] = TRUE;
+	            $obj['idfolder'] = $idfolder;
+	            $obj['file_name'] = $NewImageName;
+	            $obj['file_extension'] = $ImageExt;
+	            $obj['file_type'] = $fileType;
+	            $result = $obj;
+
+		            
+		        
+		    }
+		}
+
+
+
+		header('Content-type: text/json');
+    	header('Content-type: application/json');
+	    echo json_encode($result);
+	}
+
+
+
+
+}
+?>

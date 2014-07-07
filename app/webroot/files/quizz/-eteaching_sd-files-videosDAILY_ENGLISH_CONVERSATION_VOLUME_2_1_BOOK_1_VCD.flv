@@ -1,0 +1,568 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Videos</title>
+
+
+<link rel="shortcut icon" href="../favicon.ico">
+
+<link rel="stylesheet" type="text/css" href="/eteaching_sd/css/normalize.css" /><link rel="stylesheet" type="text/css" href="/eteaching_sd/css/demo.css" /><link rel="stylesheet" type="text/css" href="/eteaching_sd/css/bookblock.css" /><link rel="stylesheet" type="text/css" href="/eteaching_sd/css/component.css" /><link rel="stylesheet" type="text/css" href="/eteaching_sd/css/component_lesson.css" /><link rel="stylesheet" type="text/css" href="/eteaching_sd/css/style.css" /><link rel="stylesheet" type="text/css" href="/eteaching_sd/css/btn-component.css" /><link rel="stylesheet" type="text/css" href="/eteaching_sd/css/jquery.fancybox.css" /><link rel="stylesheet" type="text/css" href="/eteaching_sd/css/notif-style.css" />
+<link rel="stylesheet" type="text/css" href="/eteaching_sd/css/jquery.qtip.css" /><link rel="stylesheet" type="text/css" href="/eteaching_sd/css/dropzone.css" />
+<style type="text/css">
+.progressebookupload { 
+    
+    
+    border: 1px solid #ddd;
+    padding: 1px;
+    border-radius: 3px;
+    position: absolute;
+    display: inline-block;
+    overflow: hidden;
+    left: 50%;
+    top: 50%;
+    width: 400px;
+    height: 50px;
+    margin-top: 150px;
+    margin-left: -200px;
+}
+.bar { background-color: #B4F5B4; width:0%; height:50px; border-radius: 3px; }
+.percent { position:absolute; display:inline-block; top:10px; left:48%; }
+
+#CategoryAddForm{
+    display: none;
+}
+</style>
+
+
+<script type="text/javascript" src="/eteaching_sd/js/jquery-1.10.1.min.js"></script><script type="text/javascript" src="/eteaching_sd/js/jquery.easing.1.3.js"></script><script type="text/javascript" src="/eteaching_sd/js/jquery.form.min.js"></script>
+
+<script type="text/javascript" src="/eteaching_sd/js/jquery.transit.min.js"></script><script type="text/javascript" src="/eteaching_sd/js/jquery.fancybox.pack.js"></script>
+<script type="text/javascript" src="/eteaching_sd/js/cufon.js"></script><script type="text/javascript" src="/eteaching_sd/js/RNS_Camelia_275.font.js"></script><script type="text/javascript" src="/eteaching_sd/js/modernizr.custom.39460.js"></script><script type="text/javascript" src="/eteaching_sd/js/jquery.qtip.js"></script>
+<script type="text/javascript" src="/eteaching_sd/js/lesson_process.js"></script>
+<script type="text/javascript" src="/eteaching_sd/js/ckeditor/ckeditor.js"></script><script type="text/javascript" src="/eteaching_sd/js/dropzone.js"></script>
+
+<script type="text/javascript" src="/eteaching_sd/js/jwplayer.js"></script><script type="text/javascript">jwplayer.key="J0+IRhB3+LyO0fw2I+2qT2Df8HVdPabwmJVeDWFFoplmVxFF5uw6ZlnPNXo=";
+
+
+</script>
+
+
+
+
+<script type="text/javascript">
+	Cufon.replace('.logo', {hover: true}); 
+	Cufon.replace('h2.cufonreplace');
+
+</script>
+
+<script type="text/javascript" src="/eteaching_sd/js/core.js"></script><script type="text/javascript" src="/eteaching_sd/js/modernizr.custom.js"></script>
+</head>
+<body>
+<div class="tn-box tn-box-color-1">
+    <p>Your settings have been saved successfully!</p>
+    <div class="tn-progress"></div>
+</div>
+
+<div class="tn-box tn-box-color-2">
+    <p>Yummy! I just ate your settings! They were delicious!</</p>
+    <div class="tn-progress"></div>
+</div>
+
+<div class="loader loadingstateall" style="">
+    <img src="/eteaching_sd/images/rotite-30-29.png" width="928" height="29" style="position: absolute; display: block; overflow: hidden; left: 0px; top: 0px; margin: 0px; padding: 0px; max-width: none; max-height: none; border: none; line-height: 1; background-color: transparent; -webkit-backface-visibility: hidden; -webkit-user-select: none;">
+    
+</div>
+
+
+<div class="main">
+    <div class="header">
+        <img style="float:left;margin-top:-30px;" src="/eteaching_sd/images/logo_main.png"/>
+        <div class="logo">Welcome to E-Teaching Technology</div>
+        <div class="menu">
+            <ul>
+                <li><a href="#Home" id="btnHome"></a></li>
+                <!--<li> <a href="#Gallery" id="btnGallery">Video</a></li>
+                <li> <a href="#Services" id="btnServices">Ebook</a></li>
+                <li style="margin-right:0px;"><a href="#Contact" id="btnContact">Contact</a></li>-->
+            </ul>
+        </div>
+        <!-- .menu -->
+    </div>
+    <!-- .header -->
+</div>
+<!-- .main -->
+
+<!-- Begin #caruselWrapper -->
+<div id="caruselWrapper" style="float: left; width:100%; height:585px; overflow: hidden;position:relative;">
+	</div>
+<!-- End #caruselWrapper -->
+
+<div class="clear"></div>
+
+
+
+
+<div style="display:none">
+
+<div id="uploadebook">
+    
+    <div class="loader" style="display:none;">
+        <img src="/eteaching_sd/images/rotite-30-29.png" width="928" height="29" style="position: absolute; display: block; overflow: hidden; left: 0px; top: 0px; margin: 0px; padding: 0px; max-width: none; max-height: none; border: none; line-height: 1; background-color: transparent; -webkit-backface-visibility: hidden; -webkit-user-select: none;">
+        
+    </div>
+    <p class="statusload"> Memproses data, mohon menunggu <br/> <small>Membutuhkan waktu untuk mempersiapkan ebook. Lama proses tergantung dari besar file pdf</small></p>
+
+    <p class="statusload2 statusload"> Memproses data, mohon menunggu</p>
+
+    <!--<div class="progressebookupload">
+        <div class="bar" style="width: 100%;"></div>
+        <div class="percent">100%</div>
+    </div>-->
+
+    <div id="upload-ebook">
+            
+            <div class="labs form">
+
+                <form enctype="multipart/form-data" id="EbookAddForm" method="post" action="/eteaching_sd/ebooks/add"><fieldset style="display:none;"><input type="hidden" name="_method" value="POST" /></fieldset>                    <h2>Tambah Buku</h2>
+                    <fieldset>
+                    <div style="float:left;width:400px;"
+                        <p><label>Category Ebook</label><select name="data[Ebook][category_id]" id="EbookCategoryId">
+<option value=""></option>
+</select>&nbsp;&nbsp;<img src="/eteaching_sd/images/folder_new.gif"/><a id="addcat" class="addcat" href="#">Tambah Category</a></p>                    
+                    <p>
+                    <div class="input text"><label for="EbookTitle">Judul Buku</label><input name="data[Ebook][title]" type="text" class="text-input large-input" value="" id="EbookTitle" /></div>
+                    </p>
+                    <p>
+
+                    <div class="input text"><label for="EbookPengarang">Pengarang</label><input name="data[Ebook][pengarang]" type="text" class="text-input normal-input" value="" id="EbookPengarang" /></div>                    <p>
+
+                    <div class="input text"><label for="EbookPenerbit">Penerbit</label><input name="data[Ebook][penerbit]" type="text" class="text-input normal-input" value="" id="EbookPenerbit" /></div>
+                    </p>
+                    <p>
+                        <select name="data[Ebook][tahunBerdiri][year]" class="year-set" id="EbookTahunBerdiriYear">
+<option value="">Pilih Tahun</option>
+<option value="2015">2015</option>
+<option value="2014">2014</option>
+<option value="2013">2013</option>
+<option value="2012">2012</option>
+<option value="2011">2011</option>
+<option value="2010">2010</option>
+<option value="2009">2009</option>
+<option value="2008">2008</option>
+<option value="2007">2007</option>
+<option value="2006">2006</option>
+<option value="2005">2005</option>
+<option value="2004">2004</option>
+<option value="2003">2003</option>
+<option value="2002">2002</option>
+<option value="2001">2001</option>
+<option value="2000">2000</option>
+<option value="1999">1999</option>
+<option value="1998">1998</option>
+<option value="1997">1997</option>
+<option value="1996">1996</option>
+<option value="1995">1995</option>
+<option value="1994">1994</option>
+<option value="1993">1993</option>
+<option value="1992">1992</option>
+<option value="1991">1991</option>
+<option value="1990">1990</option>
+<option value="1989">1989</option>
+<option value="1988">1988</option>
+<option value="1987">1987</option>
+<option value="1986">1986</option>
+<option value="1985">1985</option>
+<option value="1984">1984</option>
+<option value="1983">1983</option>
+<option value="1982">1982</option>
+<option value="1981">1981</option>
+<option value="1980">1980</option>
+<option value="1979">1979</option>
+<option value="1978">1978</option>
+<option value="1977">1977</option>
+<option value="1976">1976</option>
+<option value="1975">1975</option>
+<option value="1974">1974</option>
+<option value="1973">1973</option>
+<option value="1972">1972</option>
+<option value="1971">1971</option>
+<option value="1970">1970</option>
+<option value="1969">1969</option>
+<option value="1968">1968</option>
+<option value="1967">1967</option>
+<option value="1966">1966</option>
+<option value="1965">1965</option>
+<option value="1964">1964</option>
+<option value="1963">1963</option>
+<option value="1962">1962</option>
+<option value="1961">1961</option>
+<option value="1960">1960</option>
+<option value="1959">1959</option>
+<option value="1958">1958</option>
+<option value="1957">1957</option>
+<option value="1956">1956</option>
+<option value="1955">1955</option>
+<option value="1954">1954</option>
+<option value="1953">1953</option>
+<option value="1952">1952</option>
+<option value="1951">1951</option>
+<option value="1950">1950</option>
+<option value="1949">1949</option>
+<option value="1948">1948</option>
+<option value="1947">1947</option>
+<option value="1946">1946</option>
+<option value="1945">1945</option>
+</select>                                            </p>
+                    <div class="input text"><label for="EbookDetails">Resensi</label><input name="data[Ebook][details]" type="text" value="" id="EbookDetails" /></div>                    <!--<p>-->
+                    
+                                        <p>
+
+                    <label>Pilih file ebook</label>
+                    <div class="input file"><input type="file" name="data[Ebook][ebookfiles]" value="" id="EbookEbookfiles" /></div></p>
+                    </fieldset>
+                    <div class="submit">
+                        <button class="btn btn-2 btn-2g" type="submit">Upload</button>
+                    </div>
+
+                    </form>
+                    <form enctype="multipart/form-data" id="CategoryAddForm" method="post" action="/eteaching_sd/categories/add"><fieldset style="display:none;"><input type="hidden" name="_method" value="POST" /></fieldset>
+                        <h2>Tambah Category</h2>
+                        <div class="input text"><label for="CategoryName">Nama Kategori</label><input name="data[Category][name]" type="text" class="text-input large-input categorynameinput" maxlength="100" value="" id="CategoryName" /></div>                        <br/>
+
+                        <input type="hidden" name="data[Category][type]" value="1" id="CategoryType" />                        <div class="submit">
+                            <button class="btn btn-2 btn-2g" type="submit">Tambah</button>
+                            <a class="btn btn-2 btn-2g addcatcancel">Batal</a>
+                            
+                        </div>
+
+                    </form>
+                    <script type="text/javascript">
+
+
+                    (function() {
+                        
+                    function showResponse(responseText, statusText, xhr, $form)  { 
+                        
+                        setTimeout(function() {
+                            $(".statusload").hide();
+                            $(".loader").hide();
+                            $.fancybox.close();
+                            $("#EbookAddForm").clearForm();
+                            $("#upload-ebook").show();
+                            $('#bookshelf').prepend(responseText);
+                            
+                        },4000);
+                    } 
+
+                    var options2 = {
+                        success:       showResponse  // post-submit callback
+                    };
+
+
+
+
+                    // bind form2 using ajaxSubmit
+                    $('#EbookAddForm').on('submit', function(e) {
+                        e.preventDefault(); // avoids calling preview.php
+                        // submit the form via ajax
+                        $("#upload-ebook").fadeOut();
+                        //$.fancybox.resize();
+                        $(".statusload").fadeIn();
+                        $(".loader").fadeIn();
+
+                        
+                        $(this).ajaxSubmit(options2);
+
+
+
+                        
+
+                        return false;
+                    });
+
+                    
+
+                    var options3 = {
+                        
+                        dataType: 'json',
+                        success: function(responsesText, statusText, xhr, $form){
+                            console.log(responsesText);
+                            if(responsesText.status == "true"){
+                                setTimeout(function() {
+                                    $(".statusload2").hide();
+                                    $(".loader").hide();
+                                    //$.fancybox.close();
+                                    $("#CategoryAddForm").clearForm();
+                                    $("#upload-ebook").show();
+
+                                    $('#EbookAddForm').fadeIn();
+                                    $('#CategoryAddForm').fadeOut();
+
+                                    alert(responsesText.flashMessage);
+
+                                    $('#EbookCategoryId').append('<option selected="selected" value="'+responsesText.idtodelete+'">'+responsesText.nametoResponse+'</option>');
+                                    //$('#bookshelf').prepend(responseText);
+                                    
+                                },2000);
+                            }
+                        }
+                    };
+
+                    $('#CategoryAddForm').on('submit', function(e) {
+                        e.preventDefault(); // avoids calling preview.php
+                        // submit the form via ajax
+                        $("#upload-ebook").fadeOut();
+                        //$.fancybox.resize();
+                        $(".statusload2").fadeIn();
+                        $(".loader").fadeIn();
+                        $(this).ajaxSubmit(options3);                        
+
+                        return false;
+                    });
+
+                    })();       
+                    </script>
+            </div>
+     </div><!--end labs upload div-->
+
+</div>
+</div>
+
+
+
+<div style="display:none">
+
+<div id="uploadvideo">
+    
+    <div class="loader" style="display:none;">
+        <img src="/eteaching_sd/images/rotite-30-29.png" width="928" height="29" style="position: absolute; display: block; overflow: hidden; left: 0px; top: 0px; margin: 0px; padding: 0px; max-width: none; max-height: none; border: none; line-height: 1; background-color: transparent; -webkit-backface-visibility: hidden; -webkit-user-select: none;">
+        
+    </div>
+    <p class="statusload"> Memproses data, mohon menunggu </p>
+    
+
+     <div id="upload-video">
+        
+        <div class="labs form">
+            <form class="CategoryAddForm" enctype="multipart/form-data" id="VideoAddForm" method="post" action="/eteaching_sd/videos/add"><fieldset style="display:none;"><input type="hidden" name="_method" value="POST" /></fieldset>            <h2>Tambah Video</h2>
+                <fieldset>
+                <div style="float:left;width:400px;"
+                    <p><label>Category Video</label><select name="data[Video][category_id]" id="VideoCategoryId">
+<option value=""></option>
+</select>&nbsp;&nbsp;<img src="/eteaching_sd/images/folder_new.gif"/><a id="addcat" class="addcat" href="#">Tambah Category</a></p>                
+                <p>
+                <div class="input text"><label for="VideoTitle">Judul Video</label><input name="data[Video][title]" type="text" class="text-input large-input" maxlength="100" value="" id="VideoTitle" /></div>
+                </p>
+                <p>
+
+                <div class="input text"><label for="VideoSutradara">Sutradara</label><input name="data[Video][sutradara]" type="text" class="text-input normal-input" maxlength="200" value="" id="VideoSutradara" /></div>                <p>
+
+                <div class="input text"><label for="VideoProduksi">Produksi</label><input name="data[Video][produksi]" type="text" class="text-input normal-input" maxlength="200" value="" id="VideoProduksi" /></div>
+                </p>
+                <p>
+                    <select name="data[Video][tahunBerdiri][year]" class="year-set" id="VideoTahunBerdiriYear">
+<option value="">Pilih Tahun</option>
+<option value="2011">2011</option>
+<option value="2010">2010</option>
+<option value="2009">2009</option>
+<option value="2008">2008</option>
+<option value="2007">2007</option>
+<option value="2006">2006</option>
+<option value="2005">2005</option>
+<option value="2004">2004</option>
+<option value="2003">2003</option>
+<option value="2002">2002</option>
+<option value="2001">2001</option>
+<option value="2000">2000</option>
+<option value="1999">1999</option>
+<option value="1998">1998</option>
+<option value="1997">1997</option>
+<option value="1996">1996</option>
+<option value="1995">1995</option>
+<option value="1994">1994</option>
+<option value="1993">1993</option>
+<option value="1992">1992</option>
+<option value="1991">1991</option>
+<option value="1990">1990</option>
+<option value="1989">1989</option>
+<option value="1988">1988</option>
+<option value="1987">1987</option>
+<option value="1986">1986</option>
+<option value="1985">1985</option>
+<option value="1984">1984</option>
+<option value="1983">1983</option>
+<option value="1982">1982</option>
+<option value="1981">1981</option>
+<option value="1980">1980</option>
+<option value="1979">1979</option>
+<option value="1978">1978</option>
+<option value="1977">1977</option>
+<option value="1976">1976</option>
+<option value="1975">1975</option>
+<option value="1974">1974</option>
+<option value="1973">1973</option>
+<option value="1972">1972</option>
+<option value="1971">1971</option>
+<option value="1970">1970</option>
+<option value="1969">1969</option>
+<option value="1968">1968</option>
+<option value="1967">1967</option>
+<option value="1966">1966</option>
+<option value="1965">1965</option>
+<option value="1964">1964</option>
+<option value="1963">1963</option>
+<option value="1962">1962</option>
+<option value="1961">1961</option>
+<option value="1960">1960</option>
+<option value="1959">1959</option>
+<option value="1958">1958</option>
+<option value="1957">1957</option>
+<option value="1956">1956</option>
+<option value="1955">1955</option>
+<option value="1954">1954</option>
+<option value="1953">1953</option>
+<option value="1952">1952</option>
+<option value="1951">1951</option>
+<option value="1950">1950</option>
+<option value="1949">1949</option>
+<option value="1948">1948</option>
+<option value="1947">1947</option>
+<option value="1946">1946</option>
+<option value="1945">1945</option>
+</select>                    
+                </p>
+                <div class="input textarea"><label for="VideoDetails">Resensi</label><textarea name="data[Video][details]" cols="30" rows="6" id="VideoDetails" ></textarea></div>                <p>
+                
+                <div class="input file"><label for="FileImage1">Cover files</label><input type="file" name="data[File][image1]" value="" id="FileImage1" /></div></p>                <p>
+                <label>Pilih file video</label>
+                <div class="input file"><input type="file" name="data[Video][file]" value="" id="VideoFile" /></div></p>
+
+
+                </fieldset>
+                <div class="submit">
+                    <button class="btn btn-2 btn-2g" type="submit">Upload</button>
+                </div>
+                </form>
+
+
+                <form id="CategoryAddForm2" class="CategoryAddForm2" enctype="multipart/form-data" method="post" action="/eteaching_sd/categories/add"><fieldset style="display:none;"><input type="hidden" name="_method" value="POST" /></fieldset>
+                        <h2>Tambah Category</h2>
+                        <div class="input text"><label for="CategoryName">Nama Kategori</label><input name="data[Category][name]" type="text" class="text-input large-input categorynameinput" maxlength="100" value="" id="CategoryName" /></div>                        <br/>
+
+                        <input type="hidden" name="data[Category][type]" value="2" id="CategoryType" />                        <div class="submit">
+                            <button class="btn btn-2 btn-2g" type="submit">Tambah</button>
+                            <a class="btn btn-2 btn-2g addcatcancel">Batal</a>
+                            
+                        </div>
+
+                    </form>
+
+                <script type="text/javascript">
+
+
+                    (function() {
+                        
+                    function showResponse(responseText, statusText, xhr, $form)  { 
+                        // for normal html responses, the first argument to the success callback 
+                        // is the XMLHttpRequest object's responseText property 
+                     
+                        // if the ajaxSubmit method was passed an Options Object with the dataType 
+                        // property set to 'xml' then the first argument to the success callback 
+                        // is the XMLHttpRequest object's responseXML property 
+                     
+                        // if the ajaxSubmit method was passed an Options Object with the dataType 
+                        // property set to 'json' then the first argument to the success callback 
+                        // is the json data object returned by the server 
+                        setTimeout(function() {
+                            $(".statusload").hide();
+                            $(".loader").hide();
+                            $.fancybox.close();
+                            $("#VideoAddForm").clearForm();
+                            $("#VideoAddForm").show();
+                            $('.arrCenter').prepend(responseText);
+                            
+                        },4000);
+                    } 
+
+                    var options2 = {
+                        //target:        '#output2',   // target element to update
+                        //beforeSubmit:  showRequest,  // pre-submit callback
+                        success:       showResponse  // post-submit callback
+                    };
+
+                    // bind form2 using ajaxSubmit
+                    $('#VideoAddForm').on('submit', function(e) {
+                        e.preventDefault(); // avoids calling preview.php
+                        // submit the form via ajax
+                        $("#VideoAddForm").fadeOut();
+                        //$.fancybox.resize();
+                        $(".statusload").fadeIn();
+                        $(".loader").fadeIn();
+                        $('.detailsvideo').hide();
+                        $('.closedetailvideo').hide();
+                        $(this).ajaxSubmit(options2);
+                        
+
+                        return false;
+                    });
+
+
+
+                    var options3 = {
+                        
+                        dataType: 'json',
+                        success: function(responsesText, statusText, xhr, $form){
+                            console.log(responsesText);
+                            if(responsesText.status == "true"){
+                                setTimeout(function() {
+                                    $(".statusload").hide();
+                                    $(".loader").hide();
+                                    //$.fancybox.close();
+                                    $("#CategoryAddForm2").clearForm();
+                                    $("#upload-video").show();
+
+                                    $('#VideoAddForm').fadeIn();
+                                    $('#CategoryAddForm2').fadeOut();
+
+                                    alert(responsesText.flashMessage);
+
+                                    $('#VideoCategoryId').append('<option selected="selected" value="'+responsesText.idtodelete+'">'+responsesText.nametoResponse+'</option>');
+                                    //$('#bookshelf').prepend(responseText);
+                                    
+                                },2000);
+                            }
+                        }
+                    };
+
+                    $('#CategoryAddForm2').on('submit', function(e) {
+                        e.preventDefault(); // avoids calling preview.php
+                        // submit the form via ajax
+                        $("#upload-video").fadeOut();
+                        //$.fancybox.resize();
+                        $(".statusload").fadeIn();
+                        $(".loader").fadeIn();
+                        $(this).ajaxSubmit(options3);                        
+
+                        return false;
+                    });
+
+                    })();       
+                    </script>
+            
+        </div>
+     </div><!--end labs upload div-->
+
+</div>
+</div>
+
+
+
+
+<!-- .main -->
+
+<script type="text/javascript" src="/eteaching_sd/js/bookblock.min.js"></script><script type="text/javascript" src="/eteaching_sd/js/classie.js"></script><script type="text/javascript" src="/eteaching_sd/js/bookshelf.js"></script>
+<script type="text/javascript" src="/eteaching_sd/js/lesson.js"></script>
+</body>
+</html>
