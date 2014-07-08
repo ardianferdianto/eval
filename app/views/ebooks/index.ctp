@@ -122,25 +122,25 @@ max-width:400px !important;
             <div class="contentRight">
                 <div class="intro">
                     
-                    <h1>Selamat datang di E-Teaching Technology.<br /><br />Dalam applikasi ini anda akan melihat kumpulan Video, BSE, Evaluasi, RPP & silabus, Presentasi yang terdapat di applikasi ini.</h1>
+                    <h1>Selamat datang di E-Teaching Technology.<br /><br />Dalam applikasi ini anda akan melihat kumpulan Video, BSE, Evaluasi, RPP & silabus, Presentasi yang terdapat di applikasi ini. <br/> Silahkan pilih modul modul dibawah ini untuk memulai</h1>
                 </div>
                 
                 <div class="Gallerymenu">
                     <!--<img src="images/nowopendayly1.png" width="128" height="18" alt="open" class="pic1" />-->
                     <a class="gotoVideopage pic2" href="javascript:void(0);" onclick="gotoPage((905 + 435), 'sectionGallery', 1);">
-                        <img src="images/visitgallery.png" width="147" alt="visit-gallery" />
+                        <img src="images/visitgallery.png" width="170" alt="visit-gallery" />
                     </a>
-                    <a class="gotoEbookpage pic3" href="javascript:void(0);" onclick="gotoPage((1810 + 870), 'sectionServices', 1);"><img  src="images/services.png" width="150" alt="services"  /></a>
-                    <a class="gotoSilabuspage pic4" href="javascript:void(0);" onclick="gotoPage((3215 + 870), 'sectionContact', 1);"><img  src="images/visitsilabus.png" width="150" alt="services" /></a>
+                    <a class="gotoEbookpage pic3" href="javascript:void(0);" onclick="gotoPage((1810 + 870), 'sectionServices', 1);"><img  src="images/services.png" width="170" alt="services"  /></a>
+                    <a class="gotoSilabuspage pic4" href="javascript:void(0);" onclick="gotoPage((3215 + 870), 'sectionContact', 1);"><img  src="images/visitsilabus.png" width="170" alt="services" /></a>
 
-                    <a class="gotoEvaluasipage pic5" href="javascript:void(0);" onclick="gotoPage((4580 + 870), 'sectionEvaluasi', 1);"><img  src="images/visiteval.png" width="150" alt="services"  /></a>
+                    <a class="gotoEvaluasipage pic5" href="javascript:void(0);" onclick="gotoPage((4580 + 870), 'sectionEvaluasi', 1);"><img  src="images/visiteval.png" width="170" alt="services"  /></a>
 
                     <!--<a class="gotoCdpage" href="javascript:void(0);" onclick="gotoPage((5945 + 870), 'sectionEvaluasi', 1);"><img  src="images/visitbelajar.png" width="150" alt="services" class="pic4" /></a>-->
 
 
                     <!--<a class="gotoPresentasipage" href="javascript:void(0);" onclick="gotoPage((7310 + 870), 'sectionEvaluasi', 1);"><img  src="images/visitpresent.png" width="150" alt="services" class="pic4" /></a>-->
 
-                    <a class="gotoPresentasipage pic6" href="javascript:void(0);" onclick="gotoPage((5945 + 870), 'sectionLesson', 1);"><img  src="images/visitpresent.png" width="150" alt="services"  /></a>
+                    <a class="gotoPresentasipage pic6" href="javascript:void(0);" onclick="gotoPage((5945 + 870), 'sectionLesson', 1);"><img  src="images/visitpresent.png" width="170" alt="services"  /></a>
 
                 </div>
 

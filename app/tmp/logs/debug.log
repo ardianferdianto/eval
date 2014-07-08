@@ -16296,3 +16296,69 @@
 2014-07-08 08:56:17 Debug: Here: /eteaching_sd/halamen/view/112, coming from: /
 2014-07-08 08:56:20 Debug: Here: /eteaching_sd/halamen/view/113, coming from: /
 2014-07-08 08:56:24 Debug: Here: /eteaching_sd/halamen/view/114, coming from: /
+2014-07-08 08:59:03 Debug: Here: /eteaching_sd/halamen/view/112, coming from: /
+2014-07-08 08:59:04 Debug: Here: /eteaching_sd/halamen/view/113, coming from: /
+2014-07-08 08:59:06 Debug: Here: /eteaching_sd/halamen/view/114, coming from: /
+2014-07-08 08:59:08 Debug: Here: /eteaching_sd/halamen/view/115, coming from: /
+2014-07-08 08:59:11 Debug: Here: /eteaching_sd/halamen/view/116, coming from: /
+2014-07-08 08:59:13 Debug: Here: /eteaching_sd/halamen/view/117, coming from: /
+2014-07-08 08:59:17 Debug: Here: /eteaching_sd/lessons/view/193, coming from: /
+2014-07-08 08:59:36 Debug: Here: /eteaching_sd/lessons/view/193, coming from: /
+2014-07-08 08:59:41 Debug: Here: /eteaching_sd/lessons/view/193, coming from: /
+2014-07-08 08:59:58 Debug: Here: /eteaching_sd/lessons/view/193, coming from: /
+2014-07-08 09:00:03 Debug: Here: /eteaching_sd/lessons/edit/193, coming from: /
+2014-07-08 09:01:43 Debug: Here: /eteaching_sd/lessons/edit/192, coming from: /
+2014-07-08 09:01:44 Debug: Here: /eteaching_sd/lessons/edit/192, coming from: /
+2014-07-08 09:01:44 Debug: Redirecting to: /eteaching_sd/lessons/edit_responses/192/true/Berhasil Mengupdate Bahan Ajar , sekarang silahkan susun bahan ajar anda, initiated in /Applications/MAMP/htdocs/eteaching_sd/cake/libs/object.php on line 118
+2014-07-08 09:01:45 Debug: Here: /eteaching_sd/lessons/edit_responses/192/true/Berhasil Mengupdate Bahan Ajar , sekarang silahkan susun bahan ajar anda, coming from: /
+2014-07-08 09:01:49 Debug: Here: /eteaching_sd/halamen/view/105, coming from: /
+2014-07-08 09:01:52 Debug: Here: /eteaching_sd/halamen/view/106, coming from: /
+2014-07-08 09:01:54 Debug: Here: /eteaching_sd/halamen/view/107, coming from: /
+2014-07-08 09:01:56 Debug: Here: /eteaching_sd/halamen/view/108, coming from: /
+2014-07-08 09:01:59 Debug: Here: /eteaching_sd/halamen/view/109, coming from: /
+2014-07-08 09:02:02 Debug: Here: /eteaching_sd/halamen/view/109, coming from: /
+2014-07-08 09:05:38 Debug: Here: /eteaching_sd/halamen/view/107, coming from: /
+2014-07-08 09:05:41 Debug: Here: /eteaching_sd/halamen/view/105, coming from: /
+2014-07-08 09:05:43 Debug: Here: /eteaching_sd/halamen/view/106, coming from: /
+2014-07-08 09:05:45 Debug: Here: /eteaching_sd/halamen/view/107, coming from: /
+2014-07-08 09:05:47 Debug: Here: /eteaching_sd/halamen/view/108, coming from: /
+2014-07-08 09:05:50 Debug: Here: /eteaching_sd/halamen/view/109, coming from: /
+2014-07-08 09:05:52 Debug: Here: /eteaching_sd/halamen/view/110, coming from: /
+2014-07-08 09:06:11 Debug: Here: /eteaching_sd/halamen/view/110, coming from: /
+2014-07-08 09:06:13 Debug: Here: /eteaching_sd/halamen/view/108, coming from: /
+2014-07-08 09:06:15 Debug: Here: /eteaching_sd/halamen/view/106, coming from: /
+2014-07-08 09:06:17 Debug: Here: /eteaching_sd/halamen/view/106, coming from: /
+2014-07-08 09:06:22 Debug: Here: /eteaching_sd/halamen/delete/106, coming from: /
+2014-07-08 09:06:32 Debug: Here: /eteaching_sd/halamen/add, coming from: /
+2014-07-08 09:06:32 Debug: Redirecting to: /eteaching_sd/halamen/add_responses/126/true/Berhasil Menambahkan Halaman baru, initiated in /Applications/MAMP/htdocs/eteaching_sd/cake/libs/object.php on line 116
+2014-07-08 09:06:32 Debug: Here: /eteaching_sd/halamen/add_responses/126/true/Berhasil Menambahkan Halaman baru, coming from: /
+2014-07-08 09:06:42 Debug: Here: /eteaching_sd/lessons/edit/193, coming from: /
+2014-07-08 09:06:43 Debug: Here: /eteaching_sd/lessons/edit/193, coming from: /
+2014-07-08 09:06:43 Debug: Redirecting to: /eteaching_sd/lessons/edit_responses/193/true/Berhasil Mengupdate Bahan Ajar , sekarang silahkan susun bahan ajar anda, initiated in /Applications/MAMP/htdocs/eteaching_sd/cake/libs/object.php on line 118
+2014-07-08 09:06:44 Debug: Here: /eteaching_sd/lessons/edit_responses/193/true/Berhasil Mengupdate Bahan Ajar , sekarang silahkan susun bahan ajar anda, coming from: /
+2014-07-08 09:06:53 Debug: Here: /eteaching_sd/lessons/edit/192, coming from: /
+2014-07-08 09:06:55 Debug: Here: /eteaching_sd/lessons/edit/192, coming from: /
+2014-07-08 09:06:55 Debug: Redirecting to: /eteaching_sd/lessons/edit_responses/192/true/Berhasil Mengupdate Bahan Ajar , sekarang silahkan susun bahan ajar anda, initiated in /Applications/MAMP/htdocs/eteaching_sd/cake/libs/object.php on line 118
+2014-07-08 09:06:55 Debug: Here: /eteaching_sd/lessons/edit_responses/192/true/Berhasil Mengupdate Bahan Ajar , sekarang silahkan susun bahan ajar anda, coming from: /
+2014-07-08 09:07:41 Debug: Here: /eteaching_sd/lessons/edit/192, coming from: /
+2014-07-08 09:07:46 Debug: Here: /eteaching_sd/lessons/edit/193, coming from: /
+2014-07-08 09:07:47 Debug: Here: /eteaching_sd/lessons/edit/193, coming from: /
+2014-07-08 09:07:47 Debug: Redirecting to: /eteaching_sd/lessons/edit_responses/193/true/Berhasil Mengupdate Bahan Ajar , sekarang silahkan susun bahan ajar anda, initiated in /Applications/MAMP/htdocs/eteaching_sd/cake/libs/object.php on line 118
+2014-07-08 09:07:47 Debug: Here: /eteaching_sd/lessons/edit_responses/193/true/Berhasil Mengupdate Bahan Ajar , sekarang silahkan susun bahan ajar anda, coming from: /
+2014-07-08 09:07:52 Debug: Here: /eteaching_sd/halamen/view/112, coming from: /
+2014-07-08 09:07:55 Debug: Here: /eteaching_sd/halamen/view/113, coming from: /
+2014-07-08 09:08:01 Debug: Here: /eteaching_sd/halamen/view/116, coming from: /
+2014-07-08 09:08:04 Debug: Here: /eteaching_sd/halamen/view/117, coming from: /
+2014-07-08 09:08:07 Debug: Here: /eteaching_sd/halamen/view/117, coming from: /
+2014-07-08 09:08:11 Debug: Here: /eteaching_sd/halamen/view_single/117, coming from: /
+2014-07-08 09:08:29 Debug: Here: /eteaching_sd/halamen/uploadfiles/, coming from: /
+2014-07-08 09:08:32 Debug: Here: /eteaching_sd/halamen/edit, coming from: /
+2014-07-08 09:08:32 Debug: Redirecting to: /eteaching_sd/halamen/edit_responses/117/true/Berhasil Mengupdate Halaman, initiated in /Applications/MAMP/htdocs/eteaching_sd/cake/libs/object.php on line 116
+2014-07-08 09:08:32 Debug: Here: /eteaching_sd/halamen/edit_responses/117/true/Berhasil Mengupdate Halaman, coming from: /
+2014-07-08 09:08:36 Debug: Here: /eteaching_sd/halamen/view/117, coming from: /
+2014-07-08 09:08:46 Debug: Here: /eteaching_sd/lessons/view/193, coming from: /
+2014-07-08 09:09:15 Debug: Here: /eteaching_sd/lessons/view/193, coming from: /
+2014-07-08 09:11:21 Debug: Here: /eteaching_sd/, coming from: /
+2014-07-08 09:11:52 Debug: Here: /eteaching_sd/, coming from: /
+2014-07-08 09:12:38 Debug: Here: /eteaching_sd/, coming from: /
+2014-07-08 09:14:04 Debug: Here: /eteaching_sd/lessons/add/, coming from: /
