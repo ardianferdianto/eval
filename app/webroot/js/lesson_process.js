@@ -61,7 +61,7 @@ function showResponse(responseText, statusText, xhr, $form)  {
                 no++;
                 var id = data[i].Halaman.id;
                 var name = data[i].Halaman.content;
-                $('#pages_lesson_area').append('<div class="page-count-lesson tooltips" data-halamanid="'+id+'" rel="asdasdasd" id="halamanid_'+id+'">'+no+'<div class="tooltipcontent"><div class="contenteditortooltip"><a href="#uploadlesson" class="btn icon-trash buttondelete_tooltip">&nbsp;&nbsp;Hapus halaman ini</a> <a href="#uploadlesson" class="btn icon-pencil buttonedit_tooltip">&nbsp;&nbsp;Edit halaman ini</a> <a href="#uploadlesson" class="btn buttonclose_tooltip">&nbsp;&nbsp;tutup jendela ini</a> <div class="contentlesson_tooltip">Loading...</div> </div></div></div>');
+                $('#pages_lesson_area').append('<div class="page-count-lesson tooltips" data-halamanid="'+id+'" rel="asdasdasd" id="halamanid_'+id+'">'+no+'<div class="tooltipcontent"><div class="contenteditortooltip"><a href="#uploadlesson" class="btn icon-cancel-circle buttondelete_tooltip">&nbsp;&nbsp;Hapus halaman ini</a> <a href="#uploadlesson" class="btn icon-pencil buttonedit_tooltip">&nbsp;&nbsp;Edit halaman ini</a> <a href="#uploadlesson" class="btn icon-cancel-outline buttonclose_tooltip">&nbsp;&nbsp;tutup jendela ini</a> <div class="contentlesson_tooltip">Loading...</div> </div></div></div>');
                 
             }
 
@@ -441,7 +441,7 @@ function showResponsePages(responseText, statusText, xhr, $form)  {
             $('#desc_title').text('Silahkan memanage halaman pembelajaran anda');
             $('.no_halaman').hide();
             if(window.formtype == 'add'){
-                $('#pages_lesson_area').append('<div class="page-count-lesson tooltips" data-halamanid="'+responseText.id+'" rel="asdasdasd" id="halamanid_'+responseText.id+'">'+window.countpage+'<div class="tooltipcontent"><div class="contenteditortooltip"><a href="#uploadlesson" class="btn icon-trash buttondelete_tooltip">&nbsp;&nbsp;Hapus halaman ini</a> <a href="#uploadlesson" class="btn icon-pencil buttonedit_tooltip">&nbsp;&nbsp;Edit halaman ini</a> <a href="#uploadlesson" class="btn buttonclose_tooltip">&nbsp;&nbsp;tutup jendela ini</a> <div class="contentlesson_tooltip">Loading...</div> </div></div></div>');
+                $('#pages_lesson_area').append('<div class="page-count-lesson tooltips" data-halamanid="'+responseText.id+'" rel="asdasdasd" id="halamanid_'+responseText.id+'">'+window.countpage+'<div class="tooltipcontent"><div class="contenteditortooltip"><a href="#uploadlesson" class="btn icon-cancel-circle buttondelete_tooltip">&nbsp;&nbsp;Hapus halaman ini</a> <a href="#uploadlesson" class="btn icon-pencil buttonedit_tooltip">&nbsp;&nbsp;Edit halaman ini</a> <a href="#uploadlesson" class="btn icon-cancel-outline buttonclose_tooltip">&nbsp;&nbsp;tutup jendela ini</a> <div class="contentlesson_tooltip">Loading...</div> </div></div></div>');
             }
 
             $("#HalamanAddForm").show();
@@ -878,7 +878,7 @@ $( document ).on( "click", ".buttondelete_tooltip", function() {
                         $.fancybox.hideLoading();
                         alert(data.flashMessage);
                         
-                    })
+                    });
                 },1000);
                 
             }else{
