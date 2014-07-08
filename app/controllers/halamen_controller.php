@@ -25,7 +25,31 @@ class HalamenController extends AppController {
 			$this->Session->setFlash(__('Invalid Category.', true));
 			$this->redirect(array('action'=>'index'));
 		}
-		$this->set('pelajaran', $this->Category->read(null, $id));
+		
+		$this->set('halaman', $this->Halaman->read(null, $id));
+		$this->layout = 'default_blank';
+	}
+
+	function view_single($id = null) {
+		if (!$id) {
+			$this->Session->setFlash(__('Invalid Category.', true));
+			$this->redirect(array('action'=>'index'));
+		}
+		$this->set('tipe','edit');
+		$halaman = $this->Halaman->read(null, $id);
+
+		$template = $halaman['Halaman']['template_type'];
+
+		if($template == 1){
+			$template = 'text';
+		}else{
+			$template = 'file';
+		}
+
+		$this->set('halaman',$halaman);
+		$this->set('template',$template);
+		
+		$this->layout = 'default_blank';
 	}
 
 	function add() {
@@ -75,35 +99,84 @@ class HalamenController extends AppController {
 		$this->layout = 'default_blank';
 	}
 
+
+
+
+
 	function edit($id = null) {
-		if (!$id && empty($this->data)) {
-			$this->Session->setFlash(__('Invalid Category', true));
-			$this->redirect(array('action'=>'index'));
-		}
+		$this->Halaman->recursive = 1;
 		if (!empty($this->data)) {
-			if ($this->Category->save($this->data)) {
-				$this->Session->setFlash(__('Mata Category berhasil diupdate', 'flash_success'));
-				$this->redirect(array('action'=>'index'));
+			
+			$nametoResponse  = $this->data['Halaman']['title'];
+			$idtoResponse  = $this->data['Halaman']['id'];
+			//$this->Halaman->create();
+			if ($this->Halaman->save($this->data)) {
+
+				$status = "true";
+				$flashMessage = "Berhasil Mengupdate Halaman";
+				
+				$this->redirect(array('action'=>'edit_responses',$idtoResponse,$status,$flashMessage));
 			} else {
-				$this->Session->setFlash('Mata Categorytidak berhasil diupdate silahkan ulangi','flash_erorr');
+				$idtoResponse='';
+				$status = "false";
+				$flashMessage = "Tidak Berhasil Mengupdate Halaman";
+				$this->redirect(array('action'=>'edit_responses',$idtoResponse,$status,$flashMessage));
+
 			}
 		}
-		if (empty($this->data)) {
-			$this->data = $this->Category->read(null, $id);
-		}
+
+
 	}
+
+
+	function edit_responses($idtoResponse,$status,$flashMessage){
+		
+		if (!$idtoResponse && !$status) {
+			$this->Session->setFlash(__('Invalid Ebook.', true));
+			$this->redirect(array('action'=>'index'));
+		}
+		//$this->set('nametoResponse',$nametoResponse);
+
+		$this->set('page', $this->Halaman->read(null, $idtoResponse));
+		$this->set('status',$status);
+		$this->set('flashMessage',$flashMessage);
+		$this->set('idtoResponse',$idtoResponse);
+
+
+		$this->layout = 'default_blank';
+	}
+
+	
 
 	function delete($id = null) {
+		$status = "false";
+		$flashMessage = "";
+		$idtodelete = "";
 		if (!$id) {
-			$this->Session->setFlash(__('Invalid id for Category', true));
-			$this->redirect(array('action'=>'index'));
+			$status = "false";
+			$flashMessage = "Tidak Berhasil Menghapus";
+			$idtodelete = "";
+			//$this->Session->setFlash('Tidak Berhasil Menghapus','flash_erorr');
+			//$this->redirect(array('action'=>'index'));
 		}
-		if ($this->Category->del($id)) {
-			$this->Session->setFlash(__('Category deleted', true));
-			$this->redirect(array('action'=>'index'));
+		if ($this->Halaman->del($id)) {
+
+			//$directory = WWW_ROOT.'files'.DS.'ebooks'.DS.$id;
+			//$this->_delete_recursive($directory);
+
+			$status = "true";
+			$flashMessage = "Berhasil Menghapus";
+			$idtodelete = $id;
+			//$this->Session->setFlash('Berhasil Menghapus','flash_success');
+			//$this->redirect(array('action'=>'index'));
+
 		}
+		$this->set(compact('status','flashMessage','idtodelete'));
+		$this->layout = 'default_blank';
+		
 	}
 
+	
 
 	function uploadfiles(){
 		$this->autoRender = false;

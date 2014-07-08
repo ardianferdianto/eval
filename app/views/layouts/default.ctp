@@ -23,6 +23,11 @@
 <?php echo $html->css('slick'); ?>
 <?php echo $html->css('jquery.bxslider'); ?>
 
+
+
+
+
+
 <style type="text/css">
 .progressebookupload { 
     
@@ -72,6 +77,8 @@
 <?php echo $javascript->link('jquery.bxslider.min.js'); ?>
 
 
+
+
 <?php echo $javascript->link('jwplayer.js'); ?>
 <script type="text/javascript">jwplayer.key="J0+IRhB3+LyO0fw2I+2qT2Df8HVdPabwmJVeDWFFoplmVxFF5uw6ZlnPNXo=";
 
@@ -115,7 +122,7 @@
         <div class="logo">Welcome to E-Teaching Technology</div>
         <div class="menu">
             <ul>
-                <li><a href="#Home" id="btnHome"></a></li>
+                <li><a href="#Home" id="btnHome" title="asdfsdf"></a></li>
                 <!--<li> <a href="#Gallery" id="btnGallery">Video</a></li>
                 <li> <a href="#Services" id="btnServices">Ebook</a></li>
                 <li style="margin-right:0px;"><a href="#Contact" id="btnContact">Contact</a></li>-->

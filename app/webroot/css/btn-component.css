@@ -636,7 +636,7 @@
 	color: #17954c;
 }
 
-.btn-4:hover {
+.btn-4:hover,.btn-4.btn-back:hover {
 	background: #d9442b;
 }
 
@@ -5369,4 +5369,24 @@
 }
 .icon-smashing:before {
 	content: "\ea92";
+}
+
+
+
+.btn-4.btn-back{
+	padding: 25px 45px;
+	border-radius: 40px;
+	background: #d9a02b;
+}
+
+
+.btn-4c.btn-back:before {
+	left: 30%;
+	opacity: 0;
+	top: 0;
+}
+
+.btn-4c.btn-back:hover:before {
+	left: 10%;
+	opacity: 1;
 }

@@ -5,7 +5,17 @@ window.idLesson = 0;
 window.countUpload = 0;
 window.selectedColor = '';
 window.selectedLesonID = 0;
+window.formtype = 'add';
 window.baseUrl = '<?php echo $this->Html->url('/', true); ?>';
+
+window.currentText = '';
+window.current_order = '';
+window.current_ID = '';
+window.current_template = '';
+window.current_file = '';
+window.current_file_type = '';
+window.current_file_extension = '';
+
 
 
 
@@ -40,7 +50,8 @@ function showResponse(responseText, statusText, xhr, $form)  {
         var data = responseText.halaman;
 
         if(data.length >0 ){
-
+            $('#pages_lesson_area').html('');
+            $('#pages_lesson_area').append('<p>- Klik pada halaman untuk mengedit, atau menghapus halaman <br/> - Tahan dan arahkan halaman untuk memanage order halaman </p>');
             var no = 0;
             $('p.no_halaman').hide();
             window.countpage = (data.length);
@@ -50,10 +61,13 @@ function showResponse(responseText, statusText, xhr, $form)  {
                 no++;
                 var id = data[i].Halaman.id;
                 var name = data[i].Halaman.content;
-                $('#pages_lesson_area').append('<div class="page-count-lesson" data-halamanid="'+id+'" rel="asdasdasd" id="halamanid_'+id+'">'+no+'</div>');
+                $('#pages_lesson_area').append('<div class="page-count-lesson tooltips" data-halamanid="'+id+'" rel="asdasdasd" id="halamanid_'+id+'">'+no+'<div class="tooltipcontent"><div class="contenteditortooltip"><a href="#uploadlesson" class="btn icon-trash buttondelete_tooltip">&nbsp;&nbsp;Hapus halaman ini</a> <a href="#uploadlesson" class="btn icon-pencil buttonedit_tooltip">&nbsp;&nbsp;Edit halaman ini</a> <a href="#uploadlesson" class="btn buttonclose_tooltip">&nbsp;&nbsp;tutup jendela ini</a> <div class="contentlesson_tooltip">Loading...</div> </div></div></div>');
                 
             }
+
         }
+
+
 
     }
 
@@ -119,10 +133,23 @@ $( document ).on( "click", "#add_leson_page", function() {
     });
 
     
-    
+    window.formtype = 'add';
+    window.currentText = '';
+    window.current_order = '';
+    window.current_ID = '';
+    window.current_template = '';
+    window.current_file = '';
+    window.current_file_type = '';
+    window.current_file_extension = '';
+
    return false;
   
 }); // ready
+
+
+
+
+
 
 $( document ).on( "click", "#step3_lesson ul li a", function() {
 
@@ -145,57 +172,144 @@ $( document ).on( "click", "#submit_step3", function() {
     
     $('#lessontypetosave').val(window.selectedTemplateType);
 
-    window.countpage++;
-    $('#lessonordertosave').val(window.countpage);
+    //if origin from add
+    if(window.formtype == 'add'){
+        window.countpage++;
+        $('#lessonordertosave').val(window.countpage);
+    }
     
     $('#step3_lesson').fadeOut('slow',function(){
 
+        //$('#template_container_'+window.selectedTemplate).show();
+        $('#template_container_'+window.selectedTemplate+' .inserttextarea').html('');
+
+        $('#template_container_file .uploadcontainer').html('');
+        $('.uploadcontainer').addClass('default');
+        $('.uploadcontainer').removeClass('uploadmediaonly');
+
+        $('.dz-details').removeClass('previewvideo');
+        $('.dz-details #containerPlayer').remove();
+
+
         $('#step4_lesson').fadeIn('slow',function(){
+            $('#halamanID').remove();
+            $('#HalamanAddForm').append('<input type="hidden" name="data[Halaman][id]" id="halamanID" value="">');
+            //modifydom form if edit
+            if(window.formtype == 'edit'){
+                $('#HalamanAddForm').attr('action','/eteaching_sd/halamen/edit');
+                $('#lessonordertosave').val(window.current_order);
+                $('#halamanID').val(window.current_ID);
+            }else{
+                $('#HalamanAddForm').attr('action','/eteaching_sd/halamen/add');
+                $('#halamanID').remove();
+            }
+                
             if(window.selectedTemplate == 'text'){
                 
-                $('#template_container_text .inserttextarea').append('<textarea name="data[Halaman][content]" id="lesson_textarea_content" ><h1>Ini Adalah Contoh Judul</h1><p>Silahkan ganti judul dan materi ini sesuai dengan yang anda inginkan.</p><p>Silahkan gunakan alat alat formating content diatas, untuk mendapatkan format tulisan yang lain seperti <span class="marker">marker </span>&nbsp; &nbsp;<strong>Tebal </strong><em>miring&nbsp;</em>dan sebagainya.</p><p>------------------------------------------------------------------------------------------------------------------------------------------------</p><p>------------------------------------------------------------------------------------------------------------------------------------------------</p><p>------------------------------------------------------------------------------------------------------------------------------------------------</p><h3><strong>Sub judul</strong></h3><p>------------------------------------------------------------------------------------------------------------------------------------------------</p><p>------------------------------------------------------------------------------------------------------------------------------------------------</p><p>------------------------------------------------------------------------------------------------------------------------------------------------</p></textarea>');
+                if(window.formtype == 'add'){
+                    $('#template_container_text .inserttextarea').append('<textarea name="data[Halaman][content]" id="lesson_textarea_content" ><h1>Ini Adalah Contoh Judul</h1><p>Silahkan ganti judul dan materi ini sesuai dengan yang anda inginkan.</p><p>Silahkan gunakan alat alat formating content diatas, untuk mendapatkan format tulisan yang lain seperti <span class="marker">marker </span>&nbsp; &nbsp;<strong>Tebal </strong><em>miring&nbsp;</em>dan sebagainya.</p><p>------------------------------------------------------------------------------------------------------------------------------------------------</p><p>------------------------------------------------------------------------------------------------------------------------------------------------</p><p>------------------------------------------------------------------------------------------------------------------------------------------------</p><h3><strong>Sub judul</strong></h3><p>------------------------------------------------------------------------------------------------------------------------------------------------</p><p>------------------------------------------------------------------------------------------------------------------------------------------------</p><p>------------------------------------------------------------------------------------------------------------------------------------------------</p></textarea>');
+                }else{
+                    $('#template_container_text .inserttextarea').append('<textarea name="data[Halaman][content]" id="lesson_textarea_content" >'+window.currentText+'</textarea>');
+                }
                 CKEDITOR.replace('lesson_textarea_content');
 
             }else if(window.selectedTemplate == 'file'){
                 
                 //append
-                $('#template_container_file .uploadcontainer').append(window.dropzoneElement);
+                
+                    $('#template_container_file .uploadcontainer').append(window.dropzoneElement);
 
-                var count = 0;
-                var myDropzone = new Dropzone("#uploadarea", { 
-                      paramName: "data[Halaman][mediafiles]", // The name that will be used to transfer the file
-                      url: "halamen/uploadfiles/",
-                      
-                      previewsContainer: ".posterpreview",
-                      maxFiles: 1,
-                      addRemoveLinks:true,
-                      acceptedFiles: 'image/*,.flv,.mp4,.swf',
-                      dictRemoveFile: 'Ganti File',
-                      dictInvalidFileType: 'Anda tidak diizinkan mengupload file tipe ini',
-                      
-
-                  
-                    init: function() {
-                        this.on("addedfile", function(file,data) { 
-                          count ++;
-                          $('#uploadarea').fadeOut();
+                    var count = 0;
+                    var myDropzone = new Dropzone("#uploadarea", { 
+                          paramName: "data[Halaman][mediafiles]", // The name that will be used to transfer the file
+                          url: "halamen/uploadfiles/",
                           
-                        });
+                          previewsContainer: ".posterpreview",
+                          maxFiles: 1,
+                          addRemoveLinks:true,
+                          acceptedFiles: 'image/*,.flv,.mp4,.swf',
+                          dictRemoveFile: 'Ganti File',
+                          dictInvalidFileType: 'Anda tidak diizinkan mengupload file tipe ini',
+                          
 
-                        this.on("sending", function(file, xhr, formData) {
-                            formData.append("data[Halaman][lessonId]", window.idLesson); // Will send the filesize along with the file as POST data.
-                        });
+                      
+                        init: function() {
+                            this.on("addedfile", function(file,data) { 
+                              count ++;
+                              $('#uploadarea').fadeOut();
+                              
+                            });
 
-                        this.on("success", function(file,data) { 
-                          console.log(data);
-                          $('#lesson_filename_tosave').val(data.file_name);
-                          $('#lesson_filetype_tosave').val(data.file_type);
-                          $('#lesson_fileextension_tosave').val(data.file_extension);
+                            this.on("sending", function(file, xhr, formData) {
+                                formData.append("data[Halaman][lessonId]", window.idLesson); // Will send the filesize along with the file as POST data.
+                            });
 
-                          if(data.file_type == 'video'){
-                            //alert('files/lessons/'+data.idfolder+'/images/pages/'+data.file_name);
-                            $('.dz-details').addClass('previewvideo');
-                            $('.dz-details').append('<div id="containerPlayer">Loading the player ...</div>');
+                            this.on("success", function(file,data) { 
+                              console.log(data);
+                              $('#lesson_filename_tosave').val(data.file_name);
+                              $('#lesson_filetype_tosave').val(data.file_type);
+                              $('#lesson_fileextension_tosave').val(data.file_extension);
+
+                              if(data.file_type == 'video'){
+                                //alert('files/lessons/'+data.idfolder+'/images/pages/'+data.file_name);
+                                $('.dz-details').addClass('previewvideo');
+                                $('.dz-details').append('<div id="containerPlayer">Loading the player ...</div>');
+                                jwplayer("containerPlayer").setup({
+                                    'id': 'playerID',
+                                    'width': '300',
+                                    'height': '200',
+                                    'aboutlink': 'http://basedidea.com',
+                                    'autostart':true,
+                                    'primary': 'flash',
+                                    
+                                    //'skin': 'skins/five.xml',
+
+                                    
+                                    'file': 'files/lessons/'+data.idfolder+'/images/pages/'+data.file_name,
+                                    events: {
+                                        onPause: function(event) {
+                                            setCookie(event.position);
+                                        }
+                                    }
+                                });
+                              }
+                            });
+
+                            this.on("error", function(file,data) {
+                                $('#uploadarea').fadeIn(); 
+                                $('#HalamanMediafiles').val('');
+                                $('#lesson_filename_tosave').val('');
+                                $('#lesson_filetype_tosave').val('');
+                                $('#lesson_fileextension_tosave').val('');
+                                
+                            });
+
+                            this.on("removedfile", function(file,data) { 
+                              count --;
+                              
+                              if(count == 0){
+                                $('#uploadarea').fadeIn();
+                                $('#HalamanMediafiles').val('');
+                                $('#lesson_filename_tosave').val('');
+                                $('#lesson_filetype_tosave').val('');
+                                $('#lesson_fileextension_tosave').val('');
+                                
+                              }
+                              
+                            });
+                        }
+                    });
+                    
+                    console.log(window.current_template);
+
+                    if( (window.formtype == 'edit') && (window.current_file != '') && (window.current_template == 'file')) {
+                        $('#uploadarea').hide();
+
+
+                        
+
+                        if(window.current_file_type == 'video'){
+                            $('.posterpreview').append('File sebelumnya:<br/><div class="dz-preview dz-processing dz-image-preview dz-success dz-edit">  <div class="dz-details previewvideo">   <div id="containerPlayer">Loading the player ...</div>  </div>  <a class="dz-remove" href="javascript:undefined;" data-dz-remove="">Ganti File</a></div>');
                             jwplayer("containerPlayer").setup({
                                 'id': 'playerID',
                                 'width': '300',
@@ -207,48 +321,54 @@ $( document ).on( "click", "#submit_step3", function() {
                                 //'skin': 'skins/five.xml',
 
                                 
-                                'file': 'files/lessons/'+data.idfolder+'/images/pages/'+data.file_name,
+                                'file': 'files/lessons/'+window.idLesson+'/images/pages/'+window.current_file,
                                 events: {
                                     onPause: function(event) {
                                         setCookie(event.position);
                                     }
                                 }
                             });
-                          }
-                        });
+                        }else{
 
-                        this.on("error", function(file,data) {
-                            $('#uploadarea').fadeIn(); 
-                            $('#HalamanMediafiles').val('');
-                            $('#lesson_filename_tosave').val('');
-                            $('#lesson_filetype_tosave').val('');
-                            $('#lesson_fileextension_tosave').val('');
-                            
-                        });
+                            $('.posterpreview').append('File sebelumnya:<br/><div class="dz-preview dz-processing dz-image-preview dz-success dz-edit">  <div class="dz-details">    <div class="dz-filename"><span data-dz-name="">'+window.current_file+'</span></div>    <div class="dz-size" data-dz-size=""></div>    <img data-dz-thumbnail="" alt="'+window.current_file+'" src="http://localhost/eteaching_sd/files/lessons/'+window.idLesson+'/images/pages/'+window.current_file+'">  </div>  <div class="dz-progress"><span class="dz-upload" data-dz-uploadprogress="" style="width: 100%;"></span></div>  <div class="dz-success-mark"><span>✔</span></div>  <div class="dz-error-mark"><span>✘</span></div>  <div class="dz-error-message"><span data-dz-errormessage=""></span></div><a class="dz-remove" href="javascript:undefined;" data-dz-remove="">Ganti File</a></div>');
+                        }
 
-                        this.on("removedfile", function(file,data) { 
-                          count --;
-                          
-                          if(count == 0){
+                        
+                       
+                        
+
+
+                        $('.dz-edit .dz-remove').on('click',function(){
+                            console.log('click');
                             $('#uploadarea').fadeIn();
-                            $('#HalamanMediafiles').val('');
-                            $('#lesson_filename_tosave').val('');
-                            $('#lesson_filetype_tosave').val('');
-                            $('#lesson_fileextension_tosave').val('');
-                            
-                          }
-                          
-                        });
+                            $('.dz-edit').fadeOut();
+                            $('.posterpreview').html('');
+                        })
+                    }else{
+
                     }
-                });                
+
+                    
+                    if(window.formtype == 'edit'){
+
+                        $('#lesson_filename_tosave').val(window.current_file);
+                        $('#lesson_filetype_tosave').val(window.current_file_type);
+                        $('#lesson_fileextension_tosave').val(window.current_file_extension);
+                    }
+                             
 
                 if(window.selectedTemplateType == 5){
                     $('.uploadcontainer').removeClass('default');
                     $('.uploadcontainer').addClass('uploadmediaonly');
                 }else{
+                    
+                    if(window.formtype == 'add'){
                     $('#template_container_file .inserttextarea').append('<textarea name="data[Halaman][content]" id="lesson_textarea_content_file" ><h1>Ini Adalah Contoh Judul</h1><p>Silahkan ganti judul dan materi ini sesuai dengan yang anda inginkan.</p><p>Silahkan gunakan alat alat formating content diatas, untuk mendapatkan format tulisan yang lain seperti <span class="marker">marker </span>&nbsp; &nbsp;<strong>Tebal </strong><em>miring&nbsp;</em>dan sebagainya.</p><p>------------------------------------------------------------------------------------------------------------------------------------------------</p><p>------------------------------------------------------------------------------------------------------------------------------------------------</p><p>------------------------------------------------------------------------------------------------------------------------------------------------</p><h3><strong>Sub judul</strong></h3><p>------------------------------------------------------------------------------------------------------------------------------------------------</p><p>------------------------------------------------------------------------------------------------------------------------------------------------</p><p>------------------------------------------------------------------------------------------------------------------------------------------------</p></textarea>');
-                    //$('#template_container_file .inserttextarea').append('<textarea name="data[Halaman][content]" id="lesson_textarea_content_file" ></textarea>');
+                    }else{
+                        $('#template_container_file .inserttextarea').append('<textarea name="data[Halaman][content]" id="lesson_textarea_content_file" >'+window.currentText+'</textarea>');
+                    }
                     CKEDITOR.replace('lesson_textarea_content_file');
+                    
                     $('.uploadcontainer').addClass('default');
                     $('.uploadcontainer').removeClass('uploadmediaonly');
                 }
@@ -320,7 +440,10 @@ function showResponsePages(responseText, statusText, xhr, $form)  {
             $('#step_title').text('HALAMAN BAHAN AJAR');
             $('#desc_title').text('Silahkan memanage halaman pembelajaran anda');
             $('.no_halaman').hide();
-            $('#pages_lesson_area').append('<div class="page-count-lesson">'+window.countpage+'</div>');
+            if(window.formtype == 'add'){
+                $('#pages_lesson_area').append('<div class="page-count-lesson tooltips" data-halamanid="'+responseText.id+'" rel="asdasdasd" id="halamanid_'+responseText.id+'">'+window.countpage+'<div class="tooltipcontent"><div class="contenteditortooltip"><a href="#uploadlesson" class="btn icon-trash buttondelete_tooltip">&nbsp;&nbsp;Hapus halaman ini</a> <a href="#uploadlesson" class="btn icon-pencil buttonedit_tooltip">&nbsp;&nbsp;Edit halaman ini</a> <a href="#uploadlesson" class="btn buttonclose_tooltip">&nbsp;&nbsp;tutup jendela ini</a> <div class="contentlesson_tooltip">Loading...</div> </div></div></div>');
+            }
+
             $("#HalamanAddForm").show();
         });
 
@@ -415,6 +538,8 @@ $( document ).ready(function() {
             height:'95%',
             autoSize : false,
             beforeShow : function(){
+
+                $('.fancybox-inner').addClass('bluebackground');
                 addCloseButton();
                 
                 $.ajax({
@@ -457,7 +582,8 @@ $( document ).ready(function() {
             height:'95%',
             autoSize : false,
             beforeShow : function(){
-                
+                $('.fancybox-inner').addClass('bluebackground');
+
                 addCloseButton();
                 
                 $.ajax({
@@ -633,4 +759,168 @@ $( document ).ready(function() {
         return false;
     });
 
+
+
 })();
+
+
+
+
+
+
+$( document ).on( "click", "#pages_lesson_area div.tooltips", function() {
+    //$('div.tooltips').removeClass('active');
+    var currentactive = $('#pages_lesson_area div.tooltips.active').length;
+    console.log(currentactive);
+    if(currentactive>0){
+        $('#pages_lesson_area div.tooltips').removeClass('active');    
+    }
+    $(this).addClass('active');
+    var idhalaman = $(this).data('halamanid');
+    var contentupload = $(this).find('.contentlesson_tooltip');
+    $.ajax({
+      type: "GET",
+      dataType: "html",
+      cache: false,
+      url: 'halamen/view/'+idhalaman, // preview.php
+      //data: $("#postp").serializeArray(), // all form fields
+      success: function (data) {
+        contentupload.html(data);
+      }
+    }); // ajax
+
+
+});
+
+
+$( document ).on( "click", ".buttonclose_tooltip", function() {
+    $('.contentlesson_tooltip').html('loading.....');
+    $('div.tooltips').removeClass('active');
+    return false;
+});
+
+$( document ).on( "click", ".buttonedit_tooltip", function() {
+
+    var halamanid = $(this).parents('.page-count-lesson').data('halamanid');
+
+    $('.contentlesson_tooltip').html('loading.....');
+    $('div.tooltips').removeClass('active');
+
+    $('#step2_lesson').fadeOut('slow',function(){
+
+        window.formtype = 'edit';
+        
+        $.ajax({
+          type: "GET",
+          dataType: "json",
+          cache: false,
+          url: 'halamen/view_single/'+halamanid, // preview.php
+          //data: $("#postp").serializeArray(), // all form fields
+          success: function (data) {
+            console.log(data);
+            console.log(data.template_type);
+            $('#step3_lesson a').removeClass('active');
+            $("#step3_lesson a[data-template='"+data.template_type+"']").addClass('active');
+            window.selectedTemplate = data.template;
+            window.selectedTemplateType = data.template_type;
+            
+            window.currentText = data.content;
+            window.current_order = data.order;
+            window.current_ID = data.id;
+            window.current_template = data.template;
+            window.current_file = data.file;
+            window.current_file_type = data.file_type;
+            window.current_file_extension = data.file_extension;
+
+            $('#step3_lesson').fadeIn('slow');
+            $('#step_title').text('TEMPLATE HALAMAN');
+            $('#desc_title').text('Silahkan pilih template halaman yang akan anda gunakan');
+            
+          }
+        }); // ajax
+    });
+
+    
+    
+   return false;
+  
+}); // ready
+
+
+
+$( document ).on( "click", ".buttondelete_tooltip", function() {
+
+    var halamanid = $(this).parents('.page-count-lesson').data('halamanid');
+    var parenttodelete = $(this).parents('.page-count-lesson');
+
+    if(confirm('Apakah anda yakin akan menghapus item ini ?')){
+        $.fancybox.showLoading();
+
+        var clickedItem = $(this);
+
+        $.ajax({
+          type: "POST",
+          dataType: "json",
+          cache: false,
+          url: 'halamen/delete/'+halamanid, // preview.php
+          //data: $("#postp").serializeArray(), // all form fields
+          success: function (data) {
+            console.log(data);
+            
+            // on success, post (preview) returned data in fancybox
+            if(data.status == "true"){
+                //clickedItem.parents('figure').removeClass('details-open');
+
+                setTimeout(function() {
+                    parenttodelete.fadeOut('slow',function(){
+                        parenttodelete.remove();
+                        //reindexcountbook();
+                        $.fancybox.hideLoading();
+                        alert(data.flashMessage);
+                        
+                    })
+                },1000);
+                
+            }else{
+
+            }
+          } // success
+        }); // ajax
+    }else{
+        //alert('Batal menghapus')
+    }
+
+    
+    
+    
+   return false;
+  
+}); // ready
+
+
+$( document ).on( "click", ".btn-back", function() {
+    var fromlesson= $(this).data('fromlesson');
+
+    $('#step'+fromlesson+'_lesson').fadeOut('slow',function(){
+        //$('#step3_lesson').fadeOut('slow');
+        $('#step2_lesson').fadeIn('slow');
+        $('#step_title').text('HALAMAN BAHAN AJAR');
+        $('#desc_title').text('Silahkan memanage halaman pembelajaran anda');
+        $('.no_halaman').hide();
+        
+
+        $("#HalamanAddForm").show();
+    });
+
+    return false;
+  
+}); // ready
+
+
+        
+
+
+
+
+
+

@@ -922,6 +922,7 @@ max-width:400px !important;
             </ul>
             <br/>
             <br/>
+            <button id="" class="btn btn-4 btn-4c btn-back icon-arrow-left" data-fromlesson="3">Kembali</button>
             <button id="submit_step3" class="btn btn-4 btn-4c icon-arrow-right">Lanjut</button>
 
 
@@ -967,6 +968,7 @@ max-width:400px !important;
                 </div>
                     <br/>
                     <br/>
+                <button id="" class="btn btn-4 btn-4c btn-back icon-arrow-left" data-fromlesson="4">Batal</button>
                 <button id="submit_step4" class="btn btn-4 btn-4c icon-arrow-right">Simpan</button>
             </div>
 
@@ -984,6 +986,7 @@ max-width:400px !important;
                 <div class="clear" style="float:none;clear:booth;"></div>
                 <br/>
                 <br/>
+                <button id="" class="btn btn-4 btn-4c btn-back icon-arrow-left" data-fromlesson="4">Batal</button>
                 <button id="submit_step4" class="btn btn-4 btn-4c icon-arrow-right">Simpan</button>
             </div>
 
@@ -2103,8 +2106,23 @@ $(document).ready(function(){
   });
 });
 
+$(function() {
 
     
+
+}); 
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 </script>
