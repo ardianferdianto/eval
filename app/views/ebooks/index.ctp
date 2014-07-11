@@ -808,7 +808,7 @@ max-width:400px !important;
     <br/>
     <p class="statusload"> Memproses data, mohon menunggu </p>
 
-     <div id="upload-lesson">
+     <div id="upload-lesson2">
         <div id="lessonsteptitle">
             <h1>Lesson Creator</h1>
             <h3 id="step_title">JUDUL BAHAN AJAR</h3>
@@ -888,8 +888,11 @@ max-width:400px !important;
         <div id="step2_lesson" style="text-align:left;display:none;">
             <p style="width:40%;"> Halaman yang sudah anda buat : </p>
             <div id="pages_lesson_area">
-                
+                <p>- Klik pada halaman untuk mengedit, atau menghapus halaman <br/> - Tahan dan arahkan halaman untuk memanage order halaman </p>
                 <p class="no_halaman">Belum ada halaman, silahkan tambahkan halaman</p>
+                <ul class="sortable">
+                </ul>
+                
             </div>
 
             <div id="lesson_action_area">
@@ -903,7 +906,9 @@ max-width:400px !important;
                 <button id="finish_lesson" class="btn btn-3 btn-3a icon-checkmark-circle">Finish</button>
             </div>
 
-
+            <?php echo $form->create('Halaman',array('action'=>'updateorder','enctype'=>'multipart/form-data'));?>
+                
+            <?php echo $form->end();?>
         </div>
 
 
@@ -1851,7 +1856,7 @@ function addCloseButton(){
 }
 
 $( document ).on( "click", ".previewlesson", function() {
-
+    saveorder();
     var urldata = $(this).data('urldata');
     $.fancybox({
         closeBtn    : false, // hide close button

@@ -128,6 +128,27 @@ class HalamenController extends AppController {
 
 	}
 
+	function updateorder(){
+		//if ($this->Halaman->save($this->data)) {
+		
+			/*foreach($this->data['Halaman'] as $index => $halaman) {
+			++;
+		        
+		        $halaman['Halaman']['id'] = $halamanid;
+		        $halaman['Halaman']['order'] = $halamanorder;
+
+
+		        
+
+		        $active = $this->Halaman->read(null, $halamanid);
+				
+				//$do_update = ;
+				$this->Halaman->saveAll($this->data);
+	      	}*/
+	    
+		$this->Halaman->saveAll($this->data);
+	}
+
 
 	function edit_responses($idtoResponse,$status,$flashMessage){
 		

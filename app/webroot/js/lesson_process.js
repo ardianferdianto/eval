@@ -1,3 +1,4 @@
+
 window.selectedTemplate = '';
 window.selectedTemplateType = 0;
 window.countpage = 0;
@@ -15,14 +16,17 @@ window.current_template = '';
 window.current_file = '';
 window.current_file_type = '';
 window.current_file_extension = '';
+window.lastorder = 0;
 
 
-
+console.log(window.appurl);
 
 var element_textareatext = $('#template_container_text .inserttextarea');
 var element_textareatextfile = $('#template_container_file .inserttextarea');
 
 window.dropzoneElement = '<div id="uploadarea" class="uploadarea"><span>Tarik dan taruh file ke area ini<br/> File yang disupport Video, Image, atau Animasi</span><br/><br/><img src="images/drop.png"/></div><div class="posterpreview  dropzone-previews"></div>';
+
+
 
 
 function showResponse(responseText, statusText, xhr, $form)  { 
@@ -31,6 +35,7 @@ function showResponse(responseText, statusText, xhr, $form)  {
     if(responseText.tipe == 'add'){
         var appendlessonelement = '<li class="imgSlideshow2" id="bookid_'+responseText.id+'"><div class="bk-book book-1 book-'+responseText.color+' bk-bookdefault viewlesson" data-urldata="'+responseText.id+'"><div class="bk-front"><div class="bk-cover"><h2><span>'+responseText.lessonAuthor+'</span><span>'+responseText.lessonName+'</span></h2></div><div class="bk-cover-back"></div></div><div class="bk-page"></div><div class="bk-back"><p>'+responseText.description+'</p></div><div class="bk-right"></div><div class="bk-left"></div><div class="bk-top"></div><div class="bk-bottom"></div></div><div class="bk-info"><button class="bk-bookback">Detail</button><button class="btn editlesson btn-icon-only icon-pencil2" data-lessonid="'+responseText.id+'"></button><button class="btn deletelesson btn-icon-only icon-trash" data-lessonid="'+responseText.id+'"></button></div></li>';
         $('#bk-list').append(appendlessonelement);
+        window.lastorder = 0;
 
     }else if(responseText.tipe == 'edit'){
 
@@ -48,22 +53,32 @@ function showResponse(responseText, statusText, xhr, $form)  {
         $('#bk-list li#bookid_'+responseText.id+' div.bk-book .bk-back').html('<p>'+responseText.description+'</p>');
 
         var data = responseText.halaman;
-
+        var datarow = 1;
         if(data.length >0 ){
-            $('#pages_lesson_area').html('');
-            $('#pages_lesson_area').append('<p>- Klik pada halaman untuk mengedit, atau menghapus halaman <br/> - Tahan dan arahkan halaman untuk memanage order halaman </p>');
+            //$('#pages_lesson_area').html('');
+            //$('#pages_lesson_area').append('<p>- Klik pada halaman untuk mengedit, atau menghapus halaman <br/> - Tahan dan arahkan halaman untuk memanage order halaman </p><ul>');
+            //$('#pages_lesson_area').append('<ul>');
             var no = 0;
+            
             $('p.no_halaman').hide();
             window.countpage = (data.length);
 
             for(var i in data)
             {
+
                 no++;
+
                 var id = data[i].Halaman.id;
                 var name = data[i].Halaman.content;
-                $('#pages_lesson_area').append('<div class="page-count-lesson tooltips" data-halamanid="'+id+'" rel="asdasdasd" id="halamanid_'+id+'">'+no+'<div class="tooltipcontent"><div class="contenteditortooltip"><a href="#uploadlesson" class="btn icon-cancel-circle buttondelete_tooltip">&nbsp;&nbsp;Hapus halaman ini</a> <a href="#uploadlesson" class="btn icon-pencil buttonedit_tooltip">&nbsp;&nbsp;Edit halaman ini</a> <a href="#uploadlesson" class="btn icon-cancel-outline buttonclose_tooltip">&nbsp;&nbsp;tutup jendela ini</a> <div class="contentlesson_tooltip">Loading...</div> </div></div></div>');
+                var order = data[i].Halaman.order;
+                var lastorderrecord = data[i].Halaman.order;
+                $('#pages_lesson_area ul').append('<li class="page-count-lesson tooltips" data-halamanid="'+id+'" data-halamanorder="'+order+'" rel="asdasdasd" id="halamanid_'+id+'">'+no+'<div class="tooltipcontent"><div class="contenteditortooltip"><a href="#uploadlesson" class="btn icon-cancel-circle buttondelete_tooltip">&nbsp;&nbsp;Hapus halaman ini</a> <a href="#uploadlesson" class="btn icon-pencil buttonedit_tooltip">&nbsp;&nbsp;Edit halaman ini</a> <a href="#uploadlesson" class="btn icon-cancel-outline buttonclose_tooltip">&nbsp;&nbsp;tutup jendela ini</a> <div class="contentlesson_tooltip">Loading...</div> </div></div></li>');
                 
             }
+
+            window.lastorder = lastorderrecord;
+            console.log('lastorder'+lastorder);
+            
 
         }
 
@@ -79,6 +94,44 @@ function showResponse(responseText, statusText, xhr, $form)  {
             $('#step_title').text('HALAMAN BAHAN AJAR');
             $('#desc_title').text('Silahkan memanage halaman pembelajaran anda');
         });
+
+
+         $('.sortable').sortable({
+            
+            opacity: 0.5,
+            containment: '#pages_lesson_area',
+            start: function(e, ui){
+                $(ui.placeholder).hide(300);
+            },
+            change: function (e,ui){
+              $(ui.placeholder).hide().show(300);
+
+            },
+            stop: function (event, ui) {
+
+                var data = $(this).sortable('serialize');
+                console.log(data);
+                var newarray = [];
+
+                $.each(data.split('&'), function (index, elem) {
+                    var vals = elem.split('halamanid[]=');
+                    //newarray += vals[1];
+                    newarray.push(vals[1]);
+                });
+                var i;
+                var HalamanUpdateorderForm = $('#HalamanUpdateorderForm');
+                HalamanUpdateorderForm.html('');
+                for (i = 0; i < newarray.length; ++i) {
+                    HalamanUpdateorderForm.append('<input type="hidden" value="'+newarray[i]+'" name="data['+i+'][Halaman][id]">');
+                    HalamanUpdateorderForm.append('<input type="hidden" value="'+(i+1)+'" name="data['+i+'][Halaman][order]">');
+                }
+                console.log(newarray);
+        }
+        });
+        $( ".sortable" ).disableSelection();
+        
+        
+        
 
         $('#title_bahanajar').html('<strong>'+responseText.lessonName+'</strong>');
         $('#pelajaran_bahanajar').text(responseText.lessonPelajaran);
@@ -174,8 +227,9 @@ $( document ).on( "click", "#submit_step3", function() {
 
     //if origin from add
     if(window.formtype == 'add'){
+        window.lastorder++;
         window.countpage++;
-        $('#lessonordertosave').val(window.countpage);
+        $('#lessonordertosave').val(window.lastorder);
     }
     
     $('#step3_lesson').fadeOut('slow',function(){
@@ -441,7 +495,7 @@ function showResponsePages(responseText, statusText, xhr, $form)  {
             $('#desc_title').text('Silahkan memanage halaman pembelajaran anda');
             $('.no_halaman').hide();
             if(window.formtype == 'add'){
-                $('#pages_lesson_area').append('<div class="page-count-lesson tooltips" data-halamanid="'+responseText.id+'" rel="asdasdasd" id="halamanid_'+responseText.id+'">'+window.countpage+'<div class="tooltipcontent"><div class="contenteditortooltip"><a href="#uploadlesson" class="btn icon-cancel-circle buttondelete_tooltip">&nbsp;&nbsp;Hapus halaman ini</a> <a href="#uploadlesson" class="btn icon-pencil buttonedit_tooltip">&nbsp;&nbsp;Edit halaman ini</a> <a href="#uploadlesson" class="btn icon-cancel-outline buttonclose_tooltip">&nbsp;&nbsp;tutup jendela ini</a> <div class="contentlesson_tooltip">Loading...</div> </div></div></div>');
+                $('#pages_lesson_area ul').append('<li class="page-count-lesson tooltips sdfhdf" data-halamanid="'+responseText.id+'" data-halamanorder="'+responseText.order+'" rel="asdasdasd" id="halamanid_'+responseText.id+'">'+window.countpage+'<div class="tooltipcontent"><div class="contenteditortooltip"><a href="#uploadlesson" class="btn icon-cancel-circle buttondelete_tooltip">&nbsp;&nbsp;Hapus halaman ini</a> <a href="#uploadlesson" class="btn icon-pencil buttonedit_tooltip">&nbsp;&nbsp;Edit halaman ini</a> <a href="#uploadlesson" class="btn icon-cancel-outline buttonclose_tooltip">&nbsp;&nbsp;tutup jendela ini</a> <div class="contentlesson_tooltip">Loading...</div> </div></div></li>');
             }
 
             $("#HalamanAddForm").show();
@@ -477,6 +531,23 @@ $( document ).on( "click", "#submit_step4", function() {
 }); // ready
 
 
+function showResponseFinish(responseText, statusText, xhr, $form)  { 
+        
+    setTimeout(function() {
+        
+        console.log('sdfsdf');
+        
+    },1000);
+} 
+var optionsFinish = {
+    dataType: 'json',
+    success:       showResponseFinish  // post-submit callback
+};
+
+function saveorder(){
+    $('#HalamanUpdateorderForm').ajaxSubmit(optionsPages);
+}
+
 
 $( document ).ready(function() {
     
@@ -493,6 +564,7 @@ $( document ).ready(function() {
     
         $.fancybox.close();
         resetuploadlesson();
+        saveorder();
 
     }); // ready
 
@@ -539,7 +611,7 @@ $( document ).ready(function() {
             autoSize : false,
             beforeShow : function(){
 
-                $('.fancybox-inner').addClass('bluebackground');
+                $('.fancybox-skin').addClass('bluebackground');
                 addCloseButton();
                 
                 $.ajax({
@@ -563,7 +635,7 @@ $( document ).ready(function() {
         return false;
     });
     
-
+    
     $( document ).on( "click", ".editlesson", function(e) {
         e.preventDefault(); // avoids calling preview.php
 
@@ -582,7 +654,11 @@ $( document ).ready(function() {
             height:'95%',
             autoSize : false,
             beforeShow : function(){
-                $('.fancybox-inner').addClass('bluebackground');
+                $('.fancybox-skin').addClass('bluebackground');
+
+                
+ 
+                
 
                 addCloseButton();
                 
@@ -628,12 +704,12 @@ $( document ).ready(function() {
     }
 
 
+    $( document ).on( "click", ".deletelesson", function(e) {
 
-
-    $('.deletelesson').on( "click", function(e) {
+    
         e.preventDefault(); // avoids calling preview.php
 
-        var dataurl = $(this).data('urldata');
+        var dataurl = $(this).data('lessonid');
 
         if(confirm('Apakah anda yakin akan menghapus item ini ? Semua data di lessson ini akan di hapus juga')){
             $.fancybox.showLoading();
@@ -644,7 +720,9 @@ $( document ).ready(function() {
               type: "POST",
               dataType: "json",
               cache: false,
-              url: dataurl, // preview.php
+
+              url: window.appurl+'lessons/delete/'+dataurl, // preview.php
+              
               //data: $("#postp").serializeArray(), // all form fields
               success: function (data) {                
                 // on success, post (preview) returned data in fancybox
@@ -687,10 +765,11 @@ $( document ).ready(function() {
             href:'#uploadlesson',
             openEffect  : 'elastic',
             closeEffect : 'elastic',
-            width:'90%',
+            width:'95%',
             height:'95%',
             autoSize : false,
             beforeShow: function(){
+                $('.fancybox-skin').addClass('bluebackground');
                 addCloseButton();
             },
             beforeClose: function() {
@@ -768,7 +847,11 @@ $( document ).ready(function() {
 
 
 
-$( document ).on( "click", "#pages_lesson_area div.tooltips", function() {
+$( document ).on( "click", "#pages_lesson_area li.tooltips", function() {
+
+    $('#pages_lesson_area li.tooltips').css('z-index','0');
+    $(this).css('z-index',1);
+
     //$('div.tooltips').removeClass('active');
     var currentactive = $('#pages_lesson_area div.tooltips.active').length;
     console.log(currentactive);
@@ -795,7 +878,7 @@ $( document ).on( "click", "#pages_lesson_area div.tooltips", function() {
 
 $( document ).on( "click", ".buttonclose_tooltip", function() {
     $('.contentlesson_tooltip').html('loading.....');
-    $('div.tooltips').removeClass('active');
+    $('li.tooltips').removeClass('active');
     return false;
 });
 
