@@ -17775,3 +17775,49 @@
 2014-07-13 02:33:30 Debug: Redirecting to: /etsd/lessons/edit_responses/195/true/Berhasil Mengupdate Bahan Ajar , sekarang silahkan susun bahan ajar anda, initiated in C:\xampp\htdocs\etsd\cake\libs\object.php on line 118
 2014-07-13 02:33:34 Debug: Here: /etsd/lessons/edit_responses/195/true/Berhasil Mengupdate Bahan Ajar , sekarang silahkan susun bahan ajar anda, coming from: /
 2014-07-13 02:33:53 Debug: Here: /etsd/halamen/updateorder, coming from: /
+2014-07-12 07:42:45 Debug: Here: /eteaching_sd/lessons/edit/198, coming from: /
+2014-07-12 07:43:24 Debug: Here: /eteaching_sd/lessons/edit/194, coming from: /
+2014-07-12 07:43:30 Debug: Here: /eteaching_sd/lessons/edit/198, coming from: /
+2014-07-12 07:43:38 Debug: Here: /eteaching_sd/, coming from: /
+2014-07-12 07:43:51 Debug: Here: /eteaching_sd/, coming from: /
+2014-07-12 07:44:39 Debug: Here: /eteaching_sd/, coming from: /
+2014-07-12 07:44:48 Debug: Here: /eteaching_sd/lessons/edit/194, coming from: /
+2014-07-12 07:44:56 Debug: Here: /eteaching_sd/lessons/edit/198, coming from: /
+2014-07-12 07:46:44 Debug: Here: /eteaching_sd/lessons/view/192, coming from: /
+2014-07-12 07:46:52 Debug: Here: /eteaching_sd/lessons/view/192, coming from: /
+2014-07-12 07:49:19 Debug: Here: /eteaching_sd/lessons/view/198, coming from: /
+2014-07-12 07:49:22 Debug: Here: /eteaching_sd/lessons/view/198, coming from: /
+2014-07-12 07:49:24 Debug: Here: /eteaching_sd/lessons/edit/198, coming from: /
+2014-07-12 07:49:26 Debug: Here: /eteaching_sd/lessons/edit/198, coming from: /
+2014-07-12 07:49:26 Debug: Redirecting to: /eteaching_sd/lessons/edit_responses/198/true/Berhasil Mengupdate Bahan Ajar , sekarang silahkan susun bahan ajar anda, initiated in /Applications/MAMP/htdocs/eteaching_sd/cake/libs/object.php on line 118
+2014-07-12 07:49:27 Debug: Here: /eteaching_sd/lessons/edit_responses/198/true/Berhasil Mengupdate Bahan Ajar , sekarang silahkan susun bahan ajar anda, coming from: /
+2014-07-12 07:49:33 Debug: Here: /eteaching_sd/halamen/updateorder, coming from: /
+2014-07-12 07:49:33 Debug: Here: /eteaching_sd/lessons/view/198, coming from: /
+2014-07-12 07:49:39 Debug: Here: /eteaching_sd/lessons/view/198, coming from: /
+2014-07-12 07:49:42 Debug: Here: /eteaching_sd/lessons/delete/198, coming from: /
+2014-07-12 07:49:46 Debug: Here: /eteaching_sd/lessons/view/195, coming from: /
+2014-07-12 07:49:54 Debug: Here: /eteaching_sd/lessons/view/195, coming from: /
+2014-07-12 07:50:23 Debug: Here: /eteaching_sd/lessons/view/194, coming from: /
+2014-07-12 07:50:26 Debug: Here: /eteaching_sd/lessons/view/194, coming from: /
+2014-07-12 07:50:29 Debug: Here: /eteaching_sd/lessons/view/192, coming from: /
+2014-07-12 07:54:02 Debug: Here: /eteaching_sd/lessons/view/192, coming from: /
+2014-07-12 07:54:04 Debug: Here: /eteaching_sd/lessons/view/195, coming from: /
+2014-07-12 07:54:10 Debug: Here: /eteaching_sd/lessons/view/195, coming from: /
+2014-07-12 07:54:12 Debug: Here: /eteaching_sd/lessons/edit/195, coming from: /
+2014-07-12 07:54:15 Debug: Here: /eteaching_sd/halamen/updateorder, coming from: /
+2014-07-12 07:54:15 Debug: Here: /eteaching_sd/lessons/view/198, coming from: /
+2014-07-12 07:54:19 Debug: Here: /eteaching_sd/lessons/view/198, coming from: /
+2014-07-12 07:54:30 Debug: Here: /eteaching_sd/halamen/add, coming from: /
+2014-07-12 07:54:30 Debug: Redirecting to: /eteaching_sd/halamen/add_responses/173/true/Berhasil Menambahkan Halaman baru, initiated in /Applications/MAMP/htdocs/eteaching_sd/cake/libs/object.php on line 116
+2014-07-12 07:54:30 Debug: Here: /eteaching_sd/halamen/add_responses/173/true/Berhasil Menambahkan Halaman baru, coming from: /
+2014-07-12 07:54:39 Debug: Here: /eteaching_sd/halamen/updateorder, coming from: /
+2014-07-12 07:55:09 Debug: Here: /eteaching_sd/lessons/edit/195, coming from: /
+2014-07-12 07:58:05 Debug: Here: /eteaching_sd/questions/proses/6/ppkn/3/1, coming from: /
+2014-07-12 07:58:11 Debug: Here: /eteaching_sd/quizzs, coming from: /
+2014-07-12 07:58:34 Debug: Here: /eteaching_sd/quizzs/view_single/15, coming from: /quizzs
+2014-07-12 07:58:37 Debug: Here: /eteaching_sd/quizzs/present_single/15, coming from: /quizzs/view_single/15
+2014-07-12 07:59:01 Debug: Here: /eteaching_sd/questions/proses/6/ppkn/1/1, coming from: /
+2014-07-12 07:59:05 Debug: Here: /eteaching_sd/quizzs, coming from: /
+2014-07-12 07:59:07 Debug: Here: /eteaching_sd/quizzs/view_single/15, coming from: /quizzs
+2014-07-12 07:59:12 Debug: Here: /eteaching_sd/quizzs/present_single/15, coming from: /quizzs/view_single/15
+2014-07-12 08:00:45 Debug: Here: /eteaching_sd/, coming from: /
