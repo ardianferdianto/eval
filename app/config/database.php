@@ -84,11 +84,7 @@ class DATABASE_CONFIG {
 		'host' => 'localhost',
 		'login' => 'root',
 		'password' => '',
-<<<<<<< HEAD
 		'database' => 'eteaching_sd',
-=======
-		'database' => 'etsd',
->>>>>>> 0dc85556de978def1032427d96f704c33171e839
 		'prefix' => '',
 	);
 
