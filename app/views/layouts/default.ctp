@@ -328,6 +328,8 @@ window.appurl = <?php echo $this->webroot;?>
 
                                     $('#EbookCategoryId').append('<option selected="selected" value="'+responsesText.idtodelete+'">'+responsesText.nametoResponse+'</option>');
                                     //$('#bookshelf').prepend(responseText);
+
+                                    $('#ebookpanel select').append('<option value="'+responsesText.idtodelete+'">'+responsesText.nametoResponse+'</option>');
                                     
                                 },2000);
                             }
@@ -561,7 +563,7 @@ window.appurl = <?php echo $this->webroot;?>
                             $.fancybox.close();
                             $("#VideoAddForm").clearForm();
                             $("#VideoAddForm").show();
-                            $('.arrCenter').prepend(responseText);
+                            $('.galleryCarusel .arrCenter').prepend(responseText);
                             
                         },4000);
                     } 
@@ -609,6 +611,10 @@ window.appurl = <?php echo $this->webroot;?>
                                     alert(responsesText.flashMessage);
 
                                     $('#VideoCategoryId').append('<option selected="selected" value="'+responsesText.idtodelete+'">'+responsesText.nametoResponse+'</option>');
+
+                                    $('#videopanel select').append('<option value="'+responsesText.idtodelete+'">'+responsesText.nametoResponse+'</option>');
+                                    
+
                                     //$('#bookshelf').prepend(responseText);
                                     
                                 },2000);

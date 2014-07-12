@@ -1925,3 +1925,25 @@ cursor: move;
 padding-left: 0;
 }
 
+.notification.png_bg{
+	
+	background-repeat: no-repeat;
+	
+	color: #fff;
+	padding: 10px 25px;
+	
+	margin-bottom: 10px;
+}
+
+.notification.success.png_bg{
+	background-image: url(../images/icons/tick_circle.png);
+	background-color: #30b423;
+	background-position: 4px 50%;
+}
+
+.notification.error.png_bg{
+	background-image: url(../images/icons/action_stop.gif);
+	background-color: #d46529;
+	background-position: 4px 50%;
+}
+
