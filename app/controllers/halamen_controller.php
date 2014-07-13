@@ -241,7 +241,12 @@ class HalamenController extends AppController {
 	    echo json_encode($result);
 	}
 
-
+	function generatexml($number = null){
+		
+		$this->set(compact('number'));
+		$this->layout = 'default_blank';
+		
+	}
 
 
 }

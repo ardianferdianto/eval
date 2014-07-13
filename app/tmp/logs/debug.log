@@ -16362,3 +16362,84 @@
 2014-07-08 09:11:52 Debug: Here: /eteaching_sd/, coming from: /
 2014-07-08 09:12:38 Debug: Here: /eteaching_sd/, coming from: /
 2014-07-08 09:14:04 Debug: Here: /eteaching_sd/lessons/add/, coming from: /
+2014-07-12 19:54:04 Debug: Here: /etsd/, coming from: /
+2014-07-12 19:55:27 Debug: Here: /etsd/, coming from: /
+2014-07-12 19:56:30 Debug: Here: /etsd/, coming from: /
+2014-07-12 20:10:10 Debug: Here: /etsd/, coming from: /
+2014-07-12 20:15:43 Debug: Here: /etsd/, coming from: /
+2014-07-12 20:19:44 Debug: Here: /etsd/, coming from: /
+2014-07-12 20:24:11 Debug: Here: /etsd/, coming from: /
+2014-07-12 20:37:07 Debug: Here: /etsd/, coming from: /
+2014-07-12 20:38:48 Debug: Here: /etsd/, coming from: /
+2014-07-12 20:40:08 Debug: Here: /etsd/lessons/add/, coming from: /
+2014-07-12 20:42:35 Debug: Here: /etsd/, coming from: /
+2014-07-12 20:42:53 Debug: Here: /etsd/lessons/add/, coming from: /
+2014-07-12 20:46:09 Debug: Here: /etsd/, coming from: /
+2014-07-12 20:46:25 Debug: Here: /etsd/lessons/add/, coming from: /
+2014-07-12 20:50:43 Debug: Here: /etsd/, coming from: /
+2014-07-12 20:51:02 Debug: Here: /etsd/lessons/add/, coming from: /
+2014-07-12 20:51:55 Debug: Here: /etsd/ebooks/delete/202, coming from: /
+2014-07-12 20:52:10 Debug: Here: /etsd/ebooks/delete/203, coming from: /
+2014-07-12 20:52:23 Debug: Here: /etsd/ebooks/delete/204, coming from: /
+2014-07-12 20:52:35 Debug: Here: /etsd/ebooks/delete/205, coming from: /
+2014-07-12 20:52:51 Debug: Here: /etsd/ebooks/delete/163, coming from: /
+2014-07-12 20:55:04 Debug: Here: /etsd/ebooks/add, coming from: /
+2014-07-12 20:55:34 Debug: Here: /etsd/, coming from: /
+2014-07-12 20:55:43 Debug: Here: /etsd/, coming from: /
+2014-07-12 20:57:36 Debug: Here: /etsd/, coming from: /
+2014-07-12 20:57:42 Debug: Here: /etsd/, coming from: /
+2014-07-12 20:58:58 Debug: Here: /etsd/, coming from: /
+2014-07-12 20:59:05 Debug: Here: /etsd/, coming from: /
+2014-07-12 20:59:31 Debug: Here: /etsd/ebooks/delete/207, coming from: /
+2014-07-12 21:00:37 Debug: Here: /etsd/ebooks/add, coming from: /
+2014-07-12 21:00:43 Debug: Redirecting to: /etsd/ebooks/add_responses/208/true, initiated in C:\xampp\htdocs\etsd\cake\libs\object.php on line 116
+2014-07-12 21:00:47 Debug: Here: /etsd/ebooks/add_responses/208/true, coming from: /
+2014-07-12 21:01:07 Debug: Here: /etsd/, coming from: /
+2014-07-12 21:02:56 Debug: Here: /etsd/ebooks/add, coming from: /
+2014-07-12 21:02:58 Debug: Redirecting to: /etsd/ebooks/add_responses/209/true, initiated in C:\xampp\htdocs\etsd\cake\libs\object.php on line 116
+2014-07-12 21:03:13 Debug: Here: /etsd/ebooks/add_responses/209/true, coming from: /
+2014-07-12 21:05:03 Debug: Here: /etsd/ebooks/delete/209, coming from: /
+2014-07-12 21:05:16 Debug: Here: /etsd/ebooks/delete/208, coming from: /
+2014-07-12 21:05:23 Debug: Here: /etsd/, coming from: /
+2014-07-12 21:06:21 Debug: Here: /etsd/ebooks/add, coming from: /
+2014-07-12 21:26:44 Debug: Here: /etsd/, coming from: /
+2014-07-12 21:26:53 Debug: Here: /etsd/, coming from: /
+2014-07-12 21:30:12 Debug: Here: /etsd/ebooks/delete/210, coming from: /
+2014-07-12 21:31:13 Debug: Here: /etsd/ebooks/add, coming from: /
+2014-07-12 21:53:14 Debug: Redirecting to: /etsd/ebooks/add_responses/211/true, initiated in C:\xampp\htdocs\etsd\cake\libs\object.php on line 116
+2014-07-12 21:53:18 Debug: Here: /etsd/ebooks/add_responses/211/true, coming from: /
+2014-07-12 22:01:22 Debug: Notice (8): Undefined variable: listCategory in [APP\views\layouts\default.ctp, line 179]
+2014-07-12 22:01:25 Debug: Notice (8): Undefined variable: listCategoryVideo in [APP\views\layouts\default.ctp, line 454]
+2014-07-12 22:01:37 Debug: Here: /etsd/halamen/generatexml, coming from: /
+2014-07-12 22:01:39 Debug: Notice (8): Undefined variable: listCategory in [APP\views\layouts\default.ctp, line 179]
+2014-07-12 22:01:42 Debug: Notice (8): Undefined variable: listCategoryVideo in [APP\views\layouts\default.ctp, line 454]
+2014-07-12 22:02:59 Debug: Here: /etsd/halamen/generatexml, coming from: /
+2014-07-12 22:04:01 Debug: Here: /etsd/halamen/generatexml, coming from: /
+2014-07-12 22:04:03 Debug: Notice (8): Undefined variable: no in [APP\views\halamen\generatexml.ctp, line 6]
+2014-07-12 22:04:05 Debug: Notice (8): Undefined variable: no in [APP\views\halamen\generatexml.ctp, line 7]
+2014-07-12 22:04:07 Debug: Notice (8): Undefined variable: no in [APP\views\halamen\generatexml.ctp, line 9]
+2014-07-12 22:04:30 Debug: Here: /etsd/halamen/generatexml1, coming from: /
+2014-07-12 22:04:32 Debug: Notice (8): Undefined variable: listCategory in [APP\views\layouts\default.ctp, line 179]
+2014-07-12 22:04:36 Debug: Notice (8): Undefined variable: listCategoryVideo in [APP\views\layouts\default.ctp, line 454]
+2014-07-12 22:04:37 Debug: Here: /etsd/halamen/generatexml/1, coming from: /
+2014-07-12 22:04:40 Debug: Notice (8): Undefined variable: no in [APP\views\halamen\generatexml.ctp, line 6]
+2014-07-12 22:04:44 Debug: Notice (8): Undefined variable: no in [APP\views\halamen\generatexml.ctp, line 7]
+2014-07-12 22:04:46 Debug: Notice (8): Undefined variable: no in [APP\views\halamen\generatexml.ctp, line 9]
+2014-07-12 22:05:46 Debug: Here: /etsd/halamen/generatexml/1, coming from: /
+2014-07-12 22:05:55 Debug: Here: /etsd/halamen/generatexml/2, coming from: /
+2014-07-12 22:06:20 Debug: Here: /etsd/halamen/generatexml/2, coming from: /
+2014-07-12 22:06:50 Debug: Here: /etsd/halamen/generatexml/2, coming from: /
+2014-07-12 22:07:09 Debug: Here: /etsd/halamen/generatexml/2, coming from: /
+2014-07-12 22:07:27 Debug: Here: /etsd/halamen/generatexml/2, coming from: /
+2014-07-12 22:07:58 Debug: Here: /etsd/halamen/generatexml/2, coming from: /
+2014-07-12 22:10:37 Debug: Here: /etsd/halamen/generatexml/2, coming from: /
+2014-07-12 22:11:18 Debug: Here: /etsd/halamen/generatexml/2, coming from: /
+2014-07-12 22:11:47 Debug: Here: /etsd/halamen/generatexml/2, coming from: /
+2014-07-12 22:12:14 Debug: Here: /etsd/halamen/generatexml/2, coming from: /
+2014-07-12 22:12:45 Debug: Here: /etsd/halamen/generatexml/2, coming from: /
+2014-07-12 22:13:04 Debug: Here: /etsd/halamen/generatexml/2, coming from: /
+2014-07-12 22:13:29 Debug: Here: /etsd/halamen/generatexml/2, coming from: /
+2014-07-12 22:13:46 Debug: Here: /etsd/halamen/generatexml/56, coming from: /
+2014-07-12 22:15:15 Debug: Here: /etsd/, coming from: /
+2014-07-12 22:17:58 Debug: Here: /etsd/, coming from: /
+2014-07-12 22:18:45 Debug: Here: /etsd/, coming from: /

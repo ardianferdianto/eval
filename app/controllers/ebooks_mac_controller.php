@@ -242,16 +242,8 @@ class EbooksController extends AppController {
 
 	function _createcoverpdf($pdf_file,$save_to){
 		
-
-		$location   = "convert";
-		$convert    = $location . " -density 200 -scale x800 " . $pdf_file . "[0] -flatten ".$save_to;
-        
-        exec($convert);
-
-        
-
 		 
-		/*$img = new imagick();
+		$img = new imagick();
 		 
 		//this must be called before reading the image, otherwise has no effect - "-density {$x_resolution}x{$y_resolution}"
 		//this is important to give good quality output, otherwise text might be unclear
@@ -275,93 +267,48 @@ class EbooksController extends AppController {
 		//save image file
 		$img->writeImages($save_to, false);
 
-		$img->destroy();*/
+		$img->destroy();
 
 		return true;
 	}
 
-	function __count_pages($file) {
-      //where $file is the full path to your PDF document.
-        if(file_exists($file)) {
-                        //open the file for reading
-            if($handle = @fopen($file, "rb")) {
-                $count = 0;
-                $i=0;
-                while (!feof($handle)) {
-                    if($i > 0) {
-                        $contents .= fread($handle,8152);
-                    }
-                    else {
-                          $contents = fread($handle, 1000);
-                        //In some pdf files, there is an N tag containing the number of
-                        //of pages. This doesn't seem to be a result of the PDF version.
-                        //Saves reading the whole file.
-                        if(preg_match("/\/N\s+([0-9]+)/", $contents, $found)) {
-                            return $found[1];
-                        }
-                    }
-                    $i++;
-                }
-                fclose($handle);
- 
-                //get all the trees with 'pages' and 'count'. the biggest number
-                //is the total number of pages, if we couldn't find the /N switch above.                
-                if(preg_match_all("/\/Type\s*\/Pages\s*.*\s*\/Count\s+([0-9]+)/", $contents, $capture, PREG_SET_ORDER)) {
-                    foreach($capture as $c) {
-                        if($c[1] > $count)
-                            $count = $c[1];
-                    }
-                    return $count;            
-                }
-            }
-        }
-        return 0;
-	}
-
-
 
 	function _convertallpdf($pdf_file,$save_to){
 
-		
-		//$convert2    = $location2 . " -density 200 -scale x800 " . $pdf_file . " ".$save_to;
-        
-        
-
-        $num_pages = $this->__count_pages($pdf_file);
-		
-
-		//$img = new imagick($pdf_file);
+		$img = new imagick($pdf_file);
 		 
 		//this must be called before reading the image, otherwise has no effect - "-density {$x_resolution}x{$y_resolution}"
 		//this is important to give good quality output, otherwise text might be unclear
-		//$img->setResolution(200,200);
-
-		//$exec_numpages = 
+		$img->setResolution(200,200);
 		 
-		//$num_pages = exec(convert identify -density 12 -format "%p" image.pdf);
+		
 		 
 		//reduce the dimensions - scaling will lead to black color in transparent regions
-		//$img->scaleImage(800,0);
+		$img->scaleImage(800,0);
 		 
 		//set new format
-		//$img->setImageFormat('jpg');
+		$img->setImageFormat('jpg');
 		 
-		//$img->setImageBackgroundColor('white');
+		$img->setImageBackgroundColor('white');
 		
 
-		//$num_pages = $img->getNumberImages();
-        $location = "convert";
+		$num_pages = $img->getNumberImages();
 
-        //$convert    = $location . " -density 200 -scale x800 " . $pdf_file . " ".$save_to.DS.'page.jpg';
-	    //exec($convert);
-        
+
 	    // Convert PDF pages to images
-	    for($i = 0;$i < $num_pages; $i++) {
-        	$convert    = "convert -density 200 -scale x800 " . $pdf_file . "[".$i."]  -flatten ".$save_to.DS.'page'.'-'.$i.'.jpg';
-	    	exec($convert);
+	    for($i = 0;$i < $num_pages; $i++) {         
+
+	        // Set iterator postion
+	        $img->setIteratorIndex($i);
+
+	        // Set image format
+	        $img->setImageFormat('jpg');
+
+	        // Write Images to temp 'upload' folder     
+	        $img->writeImage($save_to.DS.'page'.'-'.$i.'.jpg');
 	    }
 
-	    //$img->destroy();
+	    $img->destroy();
 
 	    return $num_pages;
 	}

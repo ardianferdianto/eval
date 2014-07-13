@@ -30,7 +30,7 @@ if (!defined('PHP5')) {
 if (!defined('E_DEPRECATED')) {
 	define('E_DEPRECATED', 8192);
 }
-error_reporting(E_ALL & ~E_DEPRECATED);
+error_reporting(E_ALL & ~E_STRICT & ~E_DEPRECATED);
 /**
  * Configuration, directory layout and standard libraries
  */
