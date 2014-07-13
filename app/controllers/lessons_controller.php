@@ -137,8 +137,8 @@ class LessonsController extends AppController {
 			$this->Session->setFlash(__('Invalid Lesson.', true));
 			$this->redirect(array('action'=>'index'));
 		}
-		$conditions = array('Halaman.lesson_id'=>$idtoResponse);
-		$halaman = $this->Lesson->Halaman->find('all',array('conditions'=>$conditions));
+		$conditions = array('conditions'=>array('Halaman.lesson_id'=>$idtoResponse),'order' => array('Halaman.order' => 'ASC'));
+		$halaman = $this->Lesson->Halaman->find('all',$conditions);
 
 		//$this->set('nametoResponse',$nametoResponse);
 		$tipe = 'edit';

@@ -22,6 +22,9 @@
 <?php echo $html->css('dropzone'); ?>
 <?php echo $html->css('slick'); ?>
 <?php echo $html->css('jquery.bxslider'); ?>
+<?php echo $html->css('jquery-ui.min'); ?>
+
+
 
 
 
@@ -53,7 +56,9 @@
 }
 </style>
 
-
+<script type="text/javascript">
+window.appurl = <?php echo $this->webroot;?>
+</script>
 <?php echo $javascript->link('jquery-1.10.1.min.js'); ?>
 <?php echo $javascript->link('jquery.swfobject.1-1-1.min.js'); ?>
 
@@ -75,6 +80,11 @@
 <?php echo $javascript->link('dropzone.js'); ?>
 <?php echo $javascript->link('slick.min.js'); ?>
 <?php echo $javascript->link('jquery.bxslider.min.js'); ?>
+<?php echo $javascript->link('jquery-ui.min.js'); ?>
+<?php echo $javascript->link('ui.sortable.ext.js'); ?>
+
+
+
 
 
 
