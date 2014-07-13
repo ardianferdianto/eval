@@ -132,6 +132,7 @@ window.appurl = <?php echo $this->webroot;?>
         <div class="logo">Welcome to E-Teaching Technology</div>
         <div class="menu">
             <ul>
+                <li><a href="#setting" id="btnsetting" title="asdfsdf"></a></li>
                 <li><a href="#refresh" id="btnrefresh" title="asdfsdf"></a></li>
                 <li><a href="#Home" id="btnHome" title="asdfsdf"></a></li>
 

@@ -810,6 +810,7 @@ max-width:400px !important;
 
      <div id="upload-lesson2">
         <div id="lessonsteptitle">
+            <img src="<?php echo $this->webroot;?>images/lessonslogo.png">
             <h1>Lesson Creator</h1>
             <h3 id="step_title">JUDUL BAHAN AJAR</h3>
             <p id="desc_title"> Selamat datang di Lesson Creator, silahkan masukan judul dan deskripsi singkat tentang bahan ajar anda terlebih dahulu</p>
