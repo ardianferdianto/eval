@@ -83,8 +83,8 @@ class DATABASE_CONFIG {
 		'persistent' => false,
 		'host' => 'localhost',
 		'login' => 'root',
-		'password' => '',
-		'database' => 'etsd',
+		'password' => 'root',
+		'database' => 'eteaching_sd',
 		'prefix' => '',
 	);
 
