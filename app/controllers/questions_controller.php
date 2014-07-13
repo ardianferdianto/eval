@@ -734,7 +734,8 @@ class QuestionsController extends AppController {
 		$quizzID = $this->data['Quizz']['id'];
 
 
-		$conditions = array('Question.kelas'=>$kelas,'Question.mapel'=>$mapel,'Question.level'=>$level,'Question.tipe'=>$tipe,'Question.target'=>2);
+		//$conditions = array('Question.kelas'=>$kelas,'Question.mapel'=>$mapel,'Question.level'=>$level,'Question.tipe'=>$tipe,'Question.target'=>2);
+		$conditions = array('Question.kelas'=>$kelas,'Question.mapel'=>$mapel,'Question.level'=>$level,'Question.tipe'=>$tipe);
 		$questions = $this->Question->find('all',array('conditions'=>$conditions,'order' => array('Question.created' => 'DESC')));
 		$banyakSoal = count($questions);
 

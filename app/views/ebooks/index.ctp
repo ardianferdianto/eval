@@ -1762,22 +1762,8 @@ $( document ).on( "click", "a.fancyvideo", function() {
             'autostart':true,
             //'skin': 'skins/five.xml',
             'image':'images/imagesscreenshot.png',
-            'file': '<?php echo $this->webroot;?>files/videos/mandiri_bumper.flv',
-            events: {
-            /*
-                onTime: function(event) {
-                    if (event.position > 280) { 
-                    alert('time!'); jwplayer().seek(0).play(true); }
-                },
-                */
-                onComplete: function() {
-                    jwplayer().load({
-                        file:videoplay,
-                        autostart:true
-                    });
-                    jwplayer().play();
-                }
-            }
+            'file': videoplay
+            
         });
     },
     beforeClose: function() {
