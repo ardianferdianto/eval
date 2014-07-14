@@ -132,9 +132,10 @@ window.appurl = <?php echo $this->webroot;?>
         <div class="logo">Welcome to E-Teaching Technology</div>
         <div class="menu">
             <ul>
-                <li><a href="#setting" id="btnsetting" title="asdfsdf"></a></li>
-                <li><a href="#refresh" id="btnrefresh" title="asdfsdf"></a></li>
-                <li><a href="#Home" id="btnHome" title="asdfsdf"></a></li>
+
+                <li><a href="<?php echo $this->webroot?>pelajarans/setting" id="btnsetting" title="Setting" class="buttonss hasTooltip fancyboxsetting" data-tooltip="Pengaturan" data-fancybox-type="iframe" data-fancybox-width="30%" data-fancybox-height="30%"></a></li>
+                <li><a class="hasTooltip" data-tooltip="Muat Ulang Aplikasi" href="#" id="btnrefresh" title="asdfsdf" onClick="window.location.reload()"></a></li>
+                <li><a class="hasTooltip" href="#Home" id="btnHome" title="asdfsdf" data-tooltip="Kembali ke halaman awal"></a></li>
 
                 <!--<li> <a href="#Gallery" id="btnGallery">Video</a></li>
                 <li> <a href="#Services" id="btnServices">Ebook</a></li>

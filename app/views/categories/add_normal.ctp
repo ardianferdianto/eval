@@ -47,10 +47,10 @@ tr td{
 
 
 	<div id="presentase-content2" class="clearfix">
-		<h2 style="padding-left: 60px;padding-top: 21px;">EDIT <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;KATEGORI</h2>
+		<h2 style="padding-left: 60px;padding-top: 21px;">TAMBAH <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;KATEGORI</h2>
 
 		<div style="margin-top:130px;" class="content-box-content">
-			<?php echo $form->create('Category');?>
+			<?php echo $form->create('Category',array('action'=>'add_normal'));?>
 				<fieldset>
 
 				<?php

@@ -25,7 +25,7 @@
 		animEndEventName = animEndEventNames[ Modernizr.prefixed( 'animation' ) ],
 		scrollWrap = document.getElementById( 'scroll-wrap' ),
 		docscroll = 0,
-		serverlocation = 'http://localhost',
+		serverlocation = "http://"+window.location.hostname,
 		books = document.querySelectorAll( '#bookshelf figure' );
 
 	function scrollY() {

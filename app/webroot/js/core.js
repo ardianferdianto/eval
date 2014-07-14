@@ -210,6 +210,27 @@ $(window).resize(function() {
 	initLayouts();
 });
 
+
+function addCloseButtonSetting(){
+    
+    var appendClose = '<a title="Close" class="fancybox-close" href="javascript:;"></a>';
+    $('.fancybox-skin').append(appendClose);
+
+    $( ".fancybox-close" ).on( "click",function(e) {
+        e.preventDefault(); // avoids calling preview.php
+        
+  			$("iframe").contents().find("body").html('<div style="display:block;width:100%;margin:0 auto;text-align:center;background-color:#3b4dac;height:100%;"><h3 style="font-family: Lato, Calibri, Arial, sans-serif;font-size:25px;color:#fff;padding-top:100px;">Memuat data ulang, harap menunggu ...</h3></div>');
+		
+        window.location.reload()
+        
+
+       // $('iframe').html('<p>Memuat data ulang, harap menunggu ...');
+        
+        
+    });
+    
+}
+
 $(document).ready(function(){
 
 
@@ -335,6 +356,25 @@ $(document).ready(function(){
 		height		: '95%',
 		autoSize	: false,
 		closeClick	: false,
+		
+	});
+
+	$(".fancyboxsetting").fancybox({
+		
+		fitToView	: false,
+		padding:0,
+		autoSize	: false,
+		width		: '70%',
+		height		: '80%',
+		closeBtn    : false, // hide close button
+            closeClick  : false, // prevents closing when clicking INSIDE fancybox
+            helpers :{
+                overlay:{closeClick:false}
+            },
+		beforeShow: function(){
+            
+            addCloseButtonSetting();
+        },
 		
 	});
 

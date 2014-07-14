@@ -16,8 +16,12 @@ class CategoriesController extends AppController {
 	}
 	
 	function index() {
-		$this->Category->recursive = 0;
-		$this->set('categories', $this->paginate());
+		$categories  = $this->Category->find('all');
+		$this->set('categories', $categories);
+		
+		$findcatebook = $this->Category->find('all',array('conditions'=>array('Category.type'=>1)));
+		$this->set('findcatebook', $findcatebook);
+		$this->layout = 'default_blank';
 	}
 
 	function view($id = null) {
@@ -51,6 +55,28 @@ class CategoriesController extends AppController {
 		}
 	}
 
+	function add_normal(){
+
+		if (!empty($this->data)) {
+			
+			$nametoResponse  = $this->data['Category']['name'];
+			$this->Category->create();
+			if ($this->Category->save($this->data)) {
+				
+				
+				$flashMessage = "Berhasil Menambahkan Kategori Baru";
+				
+				$this->redirect(array('action'=>'index'));
+			} else {
+				
+				$flashMessage = "Tidak Berhasil Menambahkan Kategori";
+				
+
+			}
+		}
+		$this->layout = 'default_blank';
+	}
+
 
 	function add_responses($idtoResponse,$status,$nametoResponse,$flashMessage){
 		
@@ -73,7 +99,7 @@ class CategoriesController extends AppController {
 		}
 		if (!empty($this->data)) {
 			if ($this->Category->save($this->data)) {
-				$this->Session->setFlash(__('Mata Category berhasil diupdate', 'flash_success'));
+				$this->Session->setFlash(__('Kategori berhasil diupdate', 'flash_success'));
 				$this->redirect(array('action'=>'index'));
 			} else {
 				$this->Session->setFlash('Mata Categorytidak berhasil diupdate silahkan ulangi','flash_erorr');
@@ -82,6 +108,7 @@ class CategoriesController extends AppController {
 		if (empty($this->data)) {
 			$this->data = $this->Category->read(null, $id);
 		}
+		$this->layout = 'default_blank';
 	}
 
 	function delete($id = null) {
@@ -90,7 +117,7 @@ class CategoriesController extends AppController {
 			$this->redirect(array('action'=>'index'));
 		}
 		if ($this->Category->del($id)) {
-			$this->Session->setFlash(__('Category deleted', true));
+			$this->Session->setFlash(__('Category berhasil dihapus', true));
 			$this->redirect(array('action'=>'index'));
 		}
 	}

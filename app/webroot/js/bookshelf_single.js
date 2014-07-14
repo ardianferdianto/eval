@@ -25,7 +25,7 @@
 		animEndEventName = animEndEventNames[ Modernizr.prefixed( 'animation' ) ],
 		scrollWrap = document.getElementById( 'scroll-wrap' ),
 		docscroll = 0,
-		serverlocation = 'http://localhost/etsd',
+		serverlocation = window.appurl,
 		books = document.querySelectorAll( '#bookshelf > div.slick-list > div.slick-track > div.lastbookshelf > figure.bookjustadded' );
 
 	function scrollY() {

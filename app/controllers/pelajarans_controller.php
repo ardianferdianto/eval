@@ -16,8 +16,9 @@ class PelajaransController extends AppController {
 	}
 	
 	function index() {
-		$this->Pelajaran->recursive = 0;
-		$this->set('pelajarans', $this->paginate());
+		$pelajarans  = $this->Pelajaran->find('all');
+		$this->set('pelajarans', $pelajarans);
+		$this->layout = 'default_blank';
 	}
 
 	function view($id = null) {
@@ -40,6 +41,7 @@ class PelajaransController extends AppController {
 
 			}
 		}
+		$this->layout = 'default_blank';
 	}
 
 	function edit($id = null) {
@@ -58,6 +60,7 @@ class PelajaransController extends AppController {
 		if (empty($this->data)) {
 			$this->data = $this->Pelajaran->read(null, $id);
 		}
+		$this->layout = 'default_blank';
 	}
 
 	function delete($id = null) {
@@ -66,9 +69,13 @@ class PelajaransController extends AppController {
 			$this->redirect(array('action'=>'index'));
 		}
 		if ($this->Pelajaran->del($id)) {
-			$this->Session->setFlash(__('Pelajaran deleted', true));
+			$this->Session->setFlash(__('Pelajaran berhasil dihapus', true));
 			$this->redirect(array('action'=>'index'));
 		}
+	}
+
+	function setting(){
+		$this->layout = 'default_blank';
 	}
 
 }
