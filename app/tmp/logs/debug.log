@@ -400,6 +400,7 @@
 2014-07-15 03:29:58 Debug: Here: /eteaching_sd/ebooks/add, coming from: /
 2014-07-15 03:30:21 Debug: Redirecting to: /eteaching_sd/ebooks/add_responses/291/true, initiated in /Applications/MAMP/htdocs/eteaching_sd/cake/libs/object.php on line 116
 2014-07-15 03:30:21 Debug: Here: /eteaching_sd/ebooks/add_responses/291/true, coming from: /
+<<<<<<< HEAD
 2014-07-15 03:52:32 Debug: Here: /eteaching_sd/ebooks/delete/290, coming from: /
 2014-07-16 22:29:52 Debug: Here: /eteaching_sd/, coming from: /
 2014-07-16 22:31:10 Debug: Here: /eteaching_sd/lessons/edit/194, coming from: /
@@ -605,3 +606,93 @@
 2014-07-17 01:47:42 Debug: Here: /eteaching_sd/, coming from: /
 2014-07-17 01:47:53 Debug: Here: /eteaching_sd/questions/proses/1/ppkn/2/1, coming from: /
 2014-07-17 01:49:28 Debug: Here: /eteaching_sd/, coming from: /
+=======
+2014-07-16 19:03:41 Debug: Here: /etsd/, coming from: /
+2014-07-16 19:03:53 Debug: Here: /etsd/pelajarans/setting, coming from: /
+2014-07-16 19:03:57 Debug: Here: /etsd/pelajarans/, coming from: /pelajarans/setting
+2014-07-16 19:04:04 Debug: Here: /etsd/pelajarans/setting, coming from: /pelajarans/
+2014-07-16 19:04:07 Debug: Here: /etsd/, coming from: /
+2014-07-16 19:04:25 Debug: Here: /etsd/ebooks/delete/202, coming from: /
+2014-07-16 19:07:39 Debug: Here: /etsd/, coming from: /
+2014-07-16 19:09:12 Debug: Here: /etsd/ebooks/add, coming from: /
+2014-07-16 19:10:41 Debug: Redirecting to: /etsd/ebooks/add_responses/221/true, initiated in C:\xampp\htdocs\etsd\cake\libs\object.php on line 116
+2014-07-16 19:10:43 Debug: Here: /etsd/ebooks/add_responses/221/true, coming from: /
+2014-07-16 19:55:24 Debug: Here: /etsd/lessons/edit/194, coming from: /
+2014-07-16 19:55:28 Debug: Here: /etsd/lessons/edit/194, coming from: /
+2014-07-16 19:55:28 Debug: Redirecting to: /etsd/lessons/edit_responses/194/true/Berhasil Mengupdate Bahan Ajar , sekarang silahkan susun bahan ajar anda, initiated in C:\xampp\htdocs\etsd\cake\libs\object.php on line 118
+2014-07-16 19:55:29 Debug: Here: /etsd/lessons/edit_responses/194/true/Berhasil Mengupdate Bahan Ajar , sekarang silahkan susun bahan ajar anda, coming from: /
+2014-07-16 19:56:34 Debug: Here: /etsd/, coming from: /
+2014-07-16 19:56:52 Debug: Here: /etsd/lessons/edit/194, coming from: /
+2014-07-16 19:56:54 Debug: Here: /etsd/lessons/edit/194, coming from: /
+2014-07-16 19:56:54 Debug: Redirecting to: /etsd/lessons/edit_responses/194/true/Berhasil Mengupdate Bahan Ajar , sekarang silahkan susun bahan ajar anda, initiated in C:\xampp\htdocs\etsd\cake\libs\object.php on line 118
+2014-07-16 19:56:56 Debug: Here: /etsd/lessons/edit_responses/194/true/Berhasil Mengupdate Bahan Ajar , sekarang silahkan susun bahan ajar anda, coming from: /
+2014-07-16 19:57:38 Debug: Here: /etsd/, coming from: /
+2014-07-16 19:57:48 Debug: Here: /etsd/lessons/add/, coming from: /
+2014-07-16 19:57:55 Debug: Here: /etsd/lessons/add, coming from: /
+2014-07-16 19:57:58 Debug: Redirecting to: /etsd/lessons/add_responses/196/true/Berhasil Menambahkan Bahan Ajar Baru, sekarang silahkan susun bahan ajar anda, initiated in C:\xampp\htdocs\etsd\cake\libs\object.php on line 116
+2014-07-16 19:58:00 Debug: Here: /etsd/lessons/add_responses/196/true/Berhasil Menambahkan Bahan Ajar Baru, sekarang silahkan susun bahan ajar anda, coming from: /
+2014-07-16 19:58:42 Debug: Here: /etsd/, coming from: /
+2014-07-16 19:58:49 Debug: Here: /etsd/lessons/view/194, coming from: /
+2014-07-16 19:58:59 Debug: Here: /etsd/lessons/view/194, coming from: /
+2014-07-16 19:59:02 Debug: Here: /etsd/lessons/view/196, coming from: /
+2014-07-16 19:59:06 Debug: Here: /etsd/lessons/view/196, coming from: /
+2014-07-16 19:59:09 Debug: Here: /etsd/lessons/edit/196, coming from: /
+2014-07-16 19:59:12 Debug: Here: /etsd/lessons/edit/196, coming from: /
+2014-07-16 19:59:12 Debug: Redirecting to: /etsd/lessons/edit_responses/196/true/Berhasil Mengupdate Bahan Ajar , sekarang silahkan susun bahan ajar anda, initiated in C:\xampp\htdocs\etsd\cake\libs\object.php on line 118
+2014-07-16 19:59:13 Debug: Here: /etsd/lessons/edit_responses/196/true/Berhasil Mengupdate Bahan Ajar , sekarang silahkan susun bahan ajar anda, coming from: /
+2014-07-17 15:56:40 Debug: Here: /etsd/, coming from: /
+2014-07-17 15:57:31 Debug: Here: /etsd/ebooks/delete/220, coming from: /
+2014-07-17 16:00:04 Debug: Here: /etsd/ebooks/delete/220, coming from: /
+2014-07-17 16:00:56 Debug: Here: /etsd/, coming from: /
+2014-07-17 16:01:35 Debug: Here: /etsd/ebooks/delete/221, coming from: /
+2014-07-17 16:02:47 Debug: Here: /etsd/, coming from: /
+2014-07-17 16:07:18 Debug: Here: /etsd/ebooks/add, coming from: /
+2014-07-17 16:16:01 Debug: Redirecting to: /etsd/ebooks/add_responses/222/true, initiated in C:\xampp\htdocs\etsd\cake\libs\object.php on line 116
+2014-07-17 16:16:03 Debug: Here: /etsd/ebooks/add_responses/222/true, coming from: /
+2014-07-17 16:17:37 Debug: Here: /etsd/ebooks/delete/222, coming from: /
+2014-07-17 16:46:21 Debug: Here: /etsd/, coming from: /
+2014-07-17 17:10:33 Debug: Here: /etsd/halamen/generatexml/30, coming from: /
+2014-07-17 17:12:19 Debug: Here: /etsd/halamen/generatexml/30, coming from: /
+2014-07-17 17:12:36 Debug: Here: /etsd/halamen/generatexml/56, coming from: /
+2014-07-17 17:12:44 Debug: Here: /etsd/halamen/generatexml/5556, coming from: /
+2014-07-17 17:12:48 Debug: Here: /etsd/halamen/generatexml/55, coming from: /
+2014-07-17 17:14:29 Debug: Here: /etsd/ebooks/view/258, coming from: /
+2014-07-17 17:14:31 Debug: Here: /etsd/ebooks/favicon.ico, coming from: /
+2014-07-17 17:14:48 Debug: Here: /etsd/, coming from: /
+2014-07-17 17:16:02 Debug: Here: /etsd/ebooks/files/185, coming from: /
+2014-07-17 17:16:41 Debug: Here: /etsd/ebooks/files/258, coming from: /
+2014-07-17 17:17:04 Debug: Here: /etsd/, coming from: /
+2014-07-17 17:24:47 Debug: Here: /etsd/, coming from: /
+2014-07-17 17:25:01 Debug: Here: /etsd/, coming from: /
+2014-07-17 17:25:42 Debug: Here: /etsd/, coming from: /
+2014-07-17 17:26:38 Debug: Here: /etsd/, coming from: /
+2014-07-17 17:27:34 Debug: Here: /etsd/, coming from: /
+2014-07-17 17:28:33 Debug: Here: /etsd/ebooks/delete/211, coming from: /
+2014-07-17 17:29:32 Debug: Here: /etsd/, coming from: /
+2014-07-17 17:43:56 Debug: Here: /etsd/, coming from: /
+2014-07-17 17:44:00 Debug: Here: /etsd/halamen/generatexml/56, coming from: /
+2014-07-17 17:44:13 Debug: Here: /etsd/halamen/generatexml/112, coming from: /
+2014-07-17 17:52:15 Debug: Here: /etsd/, coming from: /
+2014-07-17 17:53:38 Debug: Here: /etsd/ebooks/edit/258, coming from: /
+2014-07-17 17:56:35 Debug: Here: /etsd/, coming from: /
+2014-07-17 18:08:18 Debug: Here: /etsd/, coming from: /
+2014-07-17 18:09:48 Debug: Here: /etsd/ebooks/edit/258, coming from: /
+2014-07-17 18:09:56 Debug: Here: /etsd/ebooks/edit/258, coming from: /
+2014-07-17 18:09:56 Debug: Redirecting to: /etsd/ebooks/edit_responses/258/true/Berhasil Mengedit Data, initiated in C:\xampp\htdocs\etsd\cake\libs\object.php on line 118
+2014-07-17 18:09:57 Debug: Here: /etsd/ebooks/edit_responses/258/true/Berhasil Mengedit Data, coming from: /
+2014-07-17 18:10:10 Debug: Here: /etsd/, coming from: /
+2014-07-17 18:20:06 Debug: Here: /etsd/, coming from: /
+2014-07-17 18:26:29 Debug: Here: /etsd/, coming from: /
+2014-07-17 18:31:37 Debug: Here: /etsd/halamen/generatexml/160, coming from: /
+2014-07-17 18:37:32 Debug: Here: /etsd/, coming from: /
+2014-07-17 18:43:37 Debug: Here: /etsd/, coming from: /
+2014-07-17 18:44:17 Debug: Here: /etsd/, coming from: /
+2014-07-17 18:50:26 Debug: Here: /etsd/, coming from: /
+2014-07-17 18:54:45 Debug: Here: /etsd/, coming from: /
+2014-07-17 18:55:25 Debug: Here: /etsd/ebooks/edit/264, coming from: /
+2014-07-17 18:55:34 Debug: Here: /etsd/ebooks/edit/264, coming from: /
+2014-07-17 18:55:34 Debug: Redirecting to: /etsd/ebooks/edit_responses/264/true/Berhasil Mengedit Data, initiated in C:\xampp\htdocs\etsd\cake\libs\object.php on line 118
+2014-07-17 18:55:36 Debug: Here: /etsd/ebooks/edit_responses/264/true/Berhasil Mengedit Data, coming from: /
+2014-07-17 18:55:40 Debug: Here: /etsd/, coming from: /
+>>>>>>> 1ffeb2c9fd2b0c17cf6ee2d2bfa100811e0f27e7
+2014-07-17 01:55:26 Debug: Here: /eteaching_sd/, coming from: /

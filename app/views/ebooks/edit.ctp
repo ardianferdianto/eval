@@ -49,7 +49,7 @@
 		</p>
 		
 		<p>
-			<?php echo $form->year('tahunBerdiri', 1945, 2011, null, array('class'=>'year-set'), 'Pilih Tahun');	?>
+			<?php echo $form->year('tahunBerdiri', 1945, 2015, null, array('class'=>'year-set'), 'Pilih Tahun');	?>
 			
 		</p>
 		<?php
