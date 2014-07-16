@@ -365,6 +365,7 @@ class VideosController extends AppController {
 	}
 
 	function download($filename) {
+		$filename=$this->params['url']['linkurl']; 
 		$this->set('filename',$filename );
 	}
 

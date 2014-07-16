@@ -77,6 +77,14 @@ max-width:400px !important;
 }
 
 
+#flashMessage{
+    display: block;
+    width: 95%;
+    background-color: #1cbbd2;
+    padding: 10px;
+    text-align: center;
+}
+
 </style>
 <script type="text/javascript">
 
@@ -186,7 +194,7 @@ max-width:400px !important;
                                 <li class="buttonlist buttonlistvideolist" style="opacity: 1;">
                                     <a href="<?php echo $this->webroot;?>videos/delete/<?php echo $video['Video']['id']; ?>" class="btn btn-7 btn-7g btn-icon-only icon-trash deletevideo hasTooltip" data-fancybox-type="ajax" data-tooltip="Hapus Video"></a>
                                     <a href="<?php echo $this->webroot;?>videos/edit/<?php echo $video['Video']['id']; ?>" class="btn btn-7 btn-7g btn-icon-only icon-pencil2 editvideo hasTooltip" data-tooltip="Edit Video"></a>
-                                    <a href="<?php echo $this->webroot;?>videos/download/<?php echo $video['Video']['file']; ?>" class="btn btn-7 btn-7g btn-icon-only icon-download hasTooltip" data-tooltip="Download Video"></a>
+                                    <a href="<?php echo $this->webroot;?><?php echo 'files/videos/'.$video['Video']['file']; ?>" class="btn btn-7 btn-7g btn-icon-only icon-download hasTooltip" data-tooltip="Download Video"></a>
                                     <a class="fancyvideo btn btn-7 btn-7g btn-icon-only icon-play3 hasTooltip" href="<?php echo $this->webroot;?><?php echo 'files/videos/'.$video['Video']['file']; ?>" data-tooltip="Lihat Video"></a>  
                                 </li>
                             </section>
@@ -811,7 +819,7 @@ max-width:400px !important;
      <div id="upload-lesson2">
         <div id="lessonsteptitle">
             <img src="<?php echo $this->webroot;?>images/lessonslogo.png">
-            <h1>Lesson Creator</h1>
+            <h1 id="titlecreator">Lesson Creator</h1>
             <h3 id="step_title">JUDUL BAHAN AJAR</h3>
             <p id="desc_title"> Selamat datang di Lesson Creator, silahkan masukan judul dan deskripsi singkat tentang bahan ajar anda terlebih dahulu</p>
         </div>

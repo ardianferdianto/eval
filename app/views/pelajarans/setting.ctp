@@ -47,6 +47,13 @@ ul li a img{
 #setting-categories:hover{
 	background: transparent url('../images/categories-setting-ico.png') no-repeat bottom left;
 }
+#flashMessage{
+    display: block;
+    width: 95%;
+    background-color: #1cbbd2;
+    padding: 10px;
+    text-align: center;
+}
 </style>
 <div id="setting">
 <ul >

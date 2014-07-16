@@ -1454,7 +1454,7 @@ a.galleryLightbox1{
 	float: left;
 	background: #baeaf7;
 }
-#uploadlesson h1{
+#uploadlesson h1#titlecreator{
 	margin-top: 0;
 	position: absolute;
 	left: 85px;

@@ -135,17 +135,22 @@ $html.='
 
 </html>';
 
+
+
+ob_clean();
 App::import('Vendor','xtcpdf');
-$tcpdf = new XTCPDF('P', 'mm', 'F4', true, 'UTF-8', false);
-$textfont = 'freesans';
+//$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, false, 'ISO-8859-1', false);
+$tcpdf = new XTCPDF('P', 'mm', 'F4', false, 'ISO-8859-1', false);
+$textfont = 'helvetica';
 $tcpdf->AddPage();
 
 // Now you position and print your page content
 // example:
 $tcpdf->SetTextColor(0, 0, 0);
-$tcpdf->SetFont($textfont,”,9);
-$tcpdf->writeHTML($html, true, false, true, false, ”);
-$tcpdf->Output('tryout-'.$kodeKuis.'.pdf', 'I');
+$tcpdf->SetFont($textfont,'',9);
+$tcpdf->writeHTML($html, true, false, true, false, '');
+$tcpdf->Output('tryout-'.$kodeKuis.'.pdf', 'FD');
+
 
 ?>
 

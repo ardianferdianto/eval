@@ -39,7 +39,13 @@ tr td{
 	display: block;
 	margin-right: 40px;
 }
-
+#flashMessage{
+    display: block;
+    width: 95%;
+    background-color: #1cbbd2;
+    padding: 10px;
+    text-align: center;
+}
 </style>
 <div id="presentase-template-content" class="clearfix">
 	<img style="position:absolute;top:30px;left:20px;" src="<?php echo $this->webroot;?>images/subject-setting-ico2.png" alt="icon">

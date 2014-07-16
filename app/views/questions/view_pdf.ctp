@@ -134,11 +134,10 @@ $html.='
 </body>
 
 </html>';
-ob_clean(); // cleaning the buffer before Output()
 
 App::import('Vendor','xtcpdf');
 $tcpdf = new XTCPDF('P', 'mm', 'F4', true, 'UTF-8', false);
-$textfont = 'helvetica';
+$textfont = 'freesans';
 $tcpdf->AddPage();
 
 // Now you position and print your page content
@@ -146,6 +145,5 @@ $tcpdf->AddPage();
 $tcpdf->SetTextColor(0, 0, 0);
 $tcpdf->SetFont($textfont,”,9);
 $tcpdf->writeHTML($html, true, false, true, false, ”);
-$tcpdf->Output('soal-'.$mapel.'-'.$tipe.'-'.$level.'.pdf', 'FD');
-
+$tcpdf->Output('soal-'.$mapel.'-'.$tipe.'-'.$level.'.pdf', 'I');
 ?>

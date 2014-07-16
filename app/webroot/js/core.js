@@ -218,8 +218,9 @@ function addCloseButtonSetting(){
 
     $( ".fancybox-close" ).on( "click",function(e) {
         e.preventDefault(); // avoids calling preview.php
-        
+        	
   			$("iframe").contents().find("body").html('<div style="display:block;width:100%;margin:0 auto;text-align:center;background-color:#3b4dac;height:100%;"><h3 style="font-family: Lato, Calibri, Arial, sans-serif;font-size:25px;color:#fff;padding-top:100px;">Memuat data ulang, harap menunggu ...</h3></div>');
+
 		
         window.location.reload()
         

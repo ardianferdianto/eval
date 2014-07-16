@@ -1,9 +1,8 @@
 <?php
-// We'll be outputting a PDF
-//echo $this->webroot.'files/videos'.$filename;
-
-// It will be called downloaded.pdf
-header('Content-Disposition: attachment;filename="'.$this->webroot.'files/videos'.$filename.'"');
-
+$file_url = $filename;
+header('Content-Type: application/octet-stream');
+header("Content-Transfer-Encoding: Binary"); 
+header("Content-disposition: attachment; filename=\"" . basename($file_url) . "\""); 
+readfile($file_url); // do the double-download-dance (dirty but worky)
 
 ?>
