@@ -19,6 +19,8 @@ class QuestionsController extends AppController {
 
 	}
 
+
+
 	function proses($kelas=null,$mapel=null,$level=null,$tipe=null,$status =null){
 
 
@@ -93,6 +95,11 @@ class QuestionsController extends AppController {
 
 	function home(){
 
+	}
+
+	function homenew(){
+		$subject_list = $this->Question->Pelajaran->find('all');
+		$this->set('kumpulanmatapelajaran',$subject_list);
 	}
 
 	function current_add($questionId = null,$fromurl = null,$matpelId = null,$kelas = null) {

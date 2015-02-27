@@ -424,5 +424,19 @@ class QuizzsController extends AppController {
     	$this->layout = 'default_bookblock'; //this will use the pdf.ctp layout
     }
 
+    function viewnew($tipe,$kelas,$mapel){
+    	$conditions_lihatquizz = array('Quizz.type'=>$tipe,'Quizz.kelas'=>$kelas,'Quizz.pelajaran_id'=>$mapel);
+    	$quizz_detail = $this->Quizz->find('all',array('conditions'=>$conditions_lihatquizz));
+    	$this->set('quizz_detail',$quizz_detail);
+    }
+
+    function banksoal($kelas,$mapel){
+    	$conditions_lihatsoal = array('Question.kelas'=>$kelas,'Question.pelajaran_id'=>$mapel);
+    	$bank_soal = $this->Quizz->Question->find('all',array('conditions'=>$conditions_lihatsoal));
+    	$this->set('data_soal',$bank_soal);
+    	$this->layout='default_metro';
+    }
+
+
 }
 ?>

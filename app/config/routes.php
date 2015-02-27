@@ -36,7 +36,7 @@
  * ...and connect the rest of 'Pages' controller's urls.
  */
 	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
-	Router::connect('/', array('controller' => 'ebooks', 'action' => 'index'));
+	Router::connect('/', array('controller' => 'questions', 'action' => 'homenew'));
 
 	
 	
