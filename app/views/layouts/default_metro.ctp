@@ -5,15 +5,46 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title><?php echo $title_for_layout; ?></title>
 
-
+<style type="text/css">
+<!--
+.style1 {
+    font-size: 16px;
+    font-weight: bold;
+}
+.style3 {
+    color: #FFFFFF;
+    font-size: 0.7em;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.style5 {color: #FFFF00}
+.style7 {font-size: 18px}
+.style9 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #000000;
+    font-size: 0.4em;
+}
+.style10 {
+    font-size: 24px;
+    color: #000000;
+}
+h1 small{
+	font-size: 0.7em;
+	text-transform:uppercase;
+	letter-spacing: 20px;
+	display: block;
+	line-height: 20px;
+	color: #FFFF00;
+}
+-->
+</style>
 <link rel="shortcut icon" href="../favicon.ico">
 
-
-<?php echo $javascript->link('jquery-2.1.3.min.js'); ?>
-<?php echo $javascript->link('jquery.widget.min.js'); ?>
-<?php echo $javascript->link('metro.min.js'); ?>
-<?php echo $javascript->link('jquery.dataTables.js'); ?>
-<?php echo $html->css('metro-bootstrap.css'); ?>
+<?php echo $javascript->link('metro/jquery/jquery.min.js'); ?>
+<?php echo $javascript->link('metro/jquery/jquery.widget.min.js'); ?>
+<?php echo $javascript->link('metro/metro.min.js'); ?>
+<?php echo $javascript->link('metro/jquery/jquery.dataTables.js'); ?>
+<?php echo $javascript->link('metro/prettify/prettify.js');?>
+<?php echo $html->css('metrocss/metro-bootstrap.css'); ?>
 <?php echo $scripts_for_layout; ?>
 </head>
 
@@ -27,7 +58,7 @@
     <h2><a href="#" title=""> </a></h2>
     <div id="content">
         
-        <?php e($content_for_layout); ?>
+        <?php echo $content_for_layout; ?>
         
   </div>
 </div>

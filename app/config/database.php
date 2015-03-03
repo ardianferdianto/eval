@@ -83,7 +83,7 @@ class DATABASE_CONFIG {
 		'persistent' => false,
 		'host' => 'localhost',
 		'login' => 'root',
-		'password' => 'elearning123',
+		'password' => '',
 		'database' => 'evaluasi_sd',
 		'prefix' => '',
 	);
