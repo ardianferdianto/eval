@@ -128,3 +128,6 @@
 2015-03-03 11:33:54 Warning: Warning (2): mysql_select_db() expects parameter 2 to be resource, boolean given in [CORE/cake/libs/model/datasources/dbo/dbo_mysql.php, line 379]
 2015-03-03 11:33:54 Warning: Warning (2): mysql_get_server_info() expects parameter 1 to be resource, boolean given in [CORE/cake/libs/model/datasources/dbo/dbo_mysql.php, line 387]
 2015-03-03 11:33:54 Warning: Warning (2): mysql_query() expects parameter 2 to be resource, boolean given in [CORE/cake/libs/model/datasources/dbo/dbo_mysql.php, line 411]
+2015-03-04 19:10:49 Warning: Warning (2): Missing argument 2 for QuizzsController::banksoal(), called in /Applications/MAMP/htdocs/eval/cake/libs/object.php on line 118 and defined in [APP/controllers/quizzs_controller.php, line 435]
+2015-03-04 19:11:09 Warning: Warning (2): Missing argument 2 for QuizzsController::banksoal(), called in /Applications/MAMP/htdocs/eval/cake/libs/object.php on line 118 and defined in [APP/controllers/quizzs_controller.php, line 435]
+2015-03-04 19:13:41 Warning: Warning (2): Missing argument 2 for QuizzsController::banksoal(), called in /Applications/MAMP/htdocs/eval/cake/libs/object.php on line 118 and defined in [APP/controllers/quizzs_controller.php, line 435]
