@@ -1,4 +1,4 @@
-<div id="content">
+<div id="content_table">
 
 <?php if(empty($data_soal)):?>
     <center>Tidak ada quizz</center>

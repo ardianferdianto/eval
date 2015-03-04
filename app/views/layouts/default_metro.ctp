@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="demo-2">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title><?php echo $title_for_layout; ?></title>
@@ -44,7 +44,13 @@ h1 small{
 <?php echo $javascript->link('metro/metro.min.js'); ?>
 <?php echo $javascript->link('metro/jquery/jquery.dataTables.js'); ?>
 <?php echo $javascript->link('metro/prettify/prettify.js');?>
+<?php echo $javascript->link('shapehoverjs/snap.svg-min.js');?>
+
 <?php echo $html->css('metrocss/metro-bootstrap.css'); ?>
+<?php echo $html->css('metrocss/iconFont.css'); ?>
+<?php echo $html->css('shapehovercss/normalize.css'); ?>
+<?php echo $html->css('shapehovercss/component.css'); ?>
+
 <?php echo $scripts_for_layout; ?>
 </head>
 
@@ -54,16 +60,14 @@ h1 small{
     <h1 align="center"><span class="style3"><span class="style5">E</span>valuasi   <span class="style5">P</span>embelajaran   <span class="style5">I</span>nteraktif</span><span class="style9"><small>sekolah dasar</small></span></h1>
 </div>
 <div id="wrapper">
-    
-    <h2><a href="#" title=""> </a></h2>
     <div id="content">
         
         <?php echo $content_for_layout; ?>
         
   </div>
 </div>
-<div id="footer">
-    <img id="ribbon" src="<?php echo $this->webroot;?>images/ribbon.png">
-</div>
+<!--<div id="footer">
+    <img id="ribbon" src="<?php #echo $this->webroot;?>images/ribbon.png">
+</div>-->
 </body>
 </html>
