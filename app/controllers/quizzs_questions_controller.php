@@ -167,6 +167,7 @@ class QuizzsQuestionsController extends AppController {
 			$this->Session->setFlash('Pertanyaan berhasil dibuang dalam ke kuis','flash_success');
 			$this->redirect(array('controller'=>'quizzs','action'=>'view/'.$QuizzId));
 		}
+
 	}
 
 }

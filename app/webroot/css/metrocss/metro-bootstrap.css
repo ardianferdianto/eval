@@ -10693,10 +10693,10 @@ a {
 }
 .button_container{
   position:absolute;
-  width: 30%;
+  width: 20%;
   float: left;
   top:200px;
-  right:50px;
+  right:10px;
 }
 #content_table{
   margin: 0 20px 40px 20px;

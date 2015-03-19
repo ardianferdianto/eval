@@ -22,18 +22,14 @@
             <tbody>
                <?php
                 $i=1;foreach ($data_soal as $row):
-                #var_dump($row['Question'][0]['question']);exit;
-                #var_dump($row);echo "LAPIS 1 <br>";
-                
-
 
                ?>
-                 <tr>
+                <tr>
                     <td class="text-left"><?php echo $i++;?></td>
-                    <td class="text-left"><?php echo $row['Quizz']['title']; ?></td>
-                    <td class="text-left"><?php echo $row['Quizz']['QuizzQuestion']['Question']['question']; ?></td>
+                    <td class="text-left"><?php echo $row['Quizz']['title'] ?></td>
+                    <td class="text-left"><?php echo $row['Quizz']['Question']['id']; ?></td>
                     <td class="text-left"><?php echo $row['Question']['kelas'] ?></td>
-                    <td class="text-left"><?php echo $row['Question']['question'];?></td>
+                    <td class="text-left"><?php echo $row['Question']['question'] ?></td>
                     <td class="text-left"><?php echo $row['Question']['answer_a'] ?></td>
                     <td class="text-left"><?php echo $row['Question']['answer_b'] ?></td>
                     <td class="text-left"><?php echo $row['Question']['answer_c'] ?></td>
