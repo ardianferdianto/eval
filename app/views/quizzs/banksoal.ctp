@@ -20,6 +20,7 @@
             </thead>
 
             <tbody>
+<<<<<<< HEAD
                <?php
                 $i=1;foreach ($data_soal as $row):
                 #var_dump($row['Question'][0]['question']);exit;
@@ -32,6 +33,34 @@
                     <td class="text-left"><?php echo $i++;?></td>
                     <td class="text-left"><?php echo $row['Quizz']['title']; ?></td>
                     <td class="text-left"><?php echo $row['Quizz']['QuizzQuestion']['Question']['question']; ?></td>
+=======
+               <?php $i=1;
+                foreach ($data_soal as $row):
+                $tipesoal_string = $row['Question']['tipe'];
+                if($tipesoal_string == 1){
+                    $tipesoal_string = 'PG';
+                }elseif ($tipesoal_string == 2){
+                    $tipesoal_string = 'Essay';
+                }else{
+                    $tipesoal_string = 'Undefined';
+                }
+
+                $levelsoal_string = $row['Question']['level'];
+                if($levelsoal_string == 1){
+                    $levelsoal_string = 'Mudah';
+                }elseif ($levelsoal_string == 2){
+                    $levelsoal_string = 'Sedang';
+                }elseif ($levelsoal_string == 3){
+                    $levelsoal_string = 'Sulit';
+                }else{
+                    $levelsoal_string = 'Undefined';
+                }
+               ?>
+                <tr>
+                    <td class="text-left"><?php echo $i++;?></td>
+                    <td class="text-left"><?php echo $tipesoal_string ?></td>
+                    <td class="text-left"><?php echo $levelsoal_string ?></td>
+>>>>>>> d0770c1873efc0b02f41e8effbc66324ac72ca59
                     <td class="text-left"><?php echo $row['Question']['kelas'] ?></td>
                     <td class="text-left"><?php echo $row['Question']['question'];?></td>
                     <td class="text-left"><?php echo $row['Question']['answer_a'] ?></td>

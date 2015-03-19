@@ -128,6 +128,7 @@
 2015-03-03 11:33:54 Warning: Warning (2): mysql_select_db() expects parameter 2 to be resource, boolean given in [CORE/cake/libs/model/datasources/dbo/dbo_mysql.php, line 379]
 2015-03-03 11:33:54 Warning: Warning (2): mysql_get_server_info() expects parameter 1 to be resource, boolean given in [CORE/cake/libs/model/datasources/dbo/dbo_mysql.php, line 387]
 2015-03-03 11:33:54 Warning: Warning (2): mysql_query() expects parameter 2 to be resource, boolean given in [CORE/cake/libs/model/datasources/dbo/dbo_mysql.php, line 411]
+<<<<<<< HEAD
 2015-03-05 10:32:06 Warning: Warning (2): fopen(/var/www/html/evaluasi_sd/app/tmp/cache/persistent/cake_core_dir_map) [<a href='http://php.net/function.fopen'>function.fopen</a>]: failed to open stream: Permission denied in [CORE/cake/libs/file.php, line 156]
 2015-03-05 10:32:06 Warning: Warning (2): fopen(/var/www/html/evaluasi_sd/app/tmp/cache/persistent/cake_core_file_map) [<a href='http://php.net/function.fopen'>function.fopen</a>]: failed to open stream: Permission denied in [CORE/cake/libs/file.php, line 156]
 2015-03-05 10:39:14 Warning: Warning (2): fopen(/var/www/html/evaluasi_sd/app/tmp/cache/persistent/cake_core_dir_map) [<a href='http://php.net/function.fopen'>function.fopen</a>]: failed to open stream: Permission denied in [CORE/cake/libs/file.php, line 156]
@@ -163,3 +164,8 @@
 2015-03-05 13:34:13 Warning: Warning (2): fopen(/var/www/html/evaluasi_sd/app/tmp/cache/persistent/cake_core_file_map) [<a href='http://php.net/function.fopen'>function.fopen</a>]: failed to open stream: Permission denied in [CORE/cake/libs/file.php, line 156]
 2015-03-05 14:03:30 Warning: Warning (2): fopen(/var/www/html/evaluasi_sd/app/tmp/cache/persistent/cake_core_dir_map) [<a href='http://php.net/function.fopen'>function.fopen</a>]: failed to open stream: Permission denied in [CORE/cake/libs/file.php, line 156]
 2015-03-05 14:03:30 Warning: Warning (2): fopen(/var/www/html/evaluasi_sd/app/tmp/cache/persistent/cake_core_file_map) [<a href='http://php.net/function.fopen'>function.fopen</a>]: failed to open stream: Permission denied in [CORE/cake/libs/file.php, line 156]
+=======
+2015-03-04 19:10:49 Warning: Warning (2): Missing argument 2 for QuizzsController::banksoal(), called in /Applications/MAMP/htdocs/eval/cake/libs/object.php on line 118 and defined in [APP/controllers/quizzs_controller.php, line 435]
+2015-03-04 19:11:09 Warning: Warning (2): Missing argument 2 for QuizzsController::banksoal(), called in /Applications/MAMP/htdocs/eval/cake/libs/object.php on line 118 and defined in [APP/controllers/quizzs_controller.php, line 435]
+2015-03-04 19:13:41 Warning: Warning (2): Missing argument 2 for QuizzsController::banksoal(), called in /Applications/MAMP/htdocs/eval/cake/libs/object.php on line 118 and defined in [APP/controllers/quizzs_controller.php, line 435]
+>>>>>>> d0770c1873efc0b02f41e8effbc66324ac72ca59
