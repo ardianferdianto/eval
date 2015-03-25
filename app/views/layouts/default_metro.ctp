@@ -51,6 +51,7 @@ h1 small{
 <?php echo $html->css('metrocss/iconFont.css'); ?>
 <?php echo $html->css('shapehovercss/normalize.css'); ?>
 <?php echo $html->css('shapehovercss/component.css'); ?>
+<?php echo $html->css('apps.css'); ?>
 
 <?php echo $scripts_for_layout; ?>
 </head>

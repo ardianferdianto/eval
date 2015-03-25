@@ -10,7 +10,11 @@
 			    $str= Router::url(null, false);
 			    $strafter= trim($str,"/evaluasi_sd/questions/add_newsoal/");
 			?>
+<<<<<<< HEAD
 			<?php echo $form->create('Question',array('action'=>'add_multi','enctype'=>'multipart/form-data'));?>
+=======
+			<?php echo $form->create('Question',array('action'=>'add_new/'.$kelasID.'/'.$mapelID,'enctype'=>'multipart/form-data'));?>
+>>>>>>> d01d1d1ac3d6b6aa9390ba6105e771d5e2113196
 				
 				<script>
 					jQuery(document).ready(function(){ 

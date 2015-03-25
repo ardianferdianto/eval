@@ -1,4 +1,15 @@
-<div class="wizard" id="wizard">
+<div class="titletryoutcontainer containeredittryout1">
+	<div class="containeredittryout">
+		<div class="titlefirst">
+			<h1 class="tryouttitle">BUAT TRYOUT</h1>
+		</div>
+		<div class="titlesecond">
+			<h3 class="tryouttitle3">KELAS : 6</h3>
+			<h3 class="tryouttitle3">MATA PELAJARAN : IPA</h3>
+		</div>
+	</div>
+</div>
+<div class="wizard wizardtryout" id="wizard">
     <div class="steps bg-white">
         <div class="step">
         		<div class="grid">
@@ -17,7 +28,48 @@
         		<?php if(empty($data_soal)):?>
 				    <center>Tidak ada quizz</center>
 				<?php else:?>
-				    <h2 class="fg-white">Table Soal </h2>
+				    
+
+				    <div class="tryout_info_selected_soal" style="margin-top:10px;margin-bottom:20px;">
+						<div class="infoseparated">
+							<h2 class="fg-white titletablesoal">Table Soal </h2>
+						</div>
+						<div class="infoseparated" style="padding:0 20px;">
+							<span>FILTER SOAL</span><br/>
+							<strong>Kelas : </strong>
+							<div class="input-control select">
+							    <select>
+							        <option>Kelas 1</option>
+							        <option>Kelas 2</option>
+							        <option>Kelas 3</option>
+							    </select>
+							</div>
+						</div>
+						<div class="infoseparated" style="padding:0 20px;">
+							<strong>&nbsp;<br/>
+							<strong>Tipe : </strong>
+							<div class="input-control select">
+							    <select>
+							        <option>Semua</option>
+							        <option>Pilihan Ganda</option>
+							        <option>Essay</option>
+							    </select>
+							</div>
+						</div>
+						<div class="infoseparated" style="padding:0 20px;">
+							<strong>&nbsp;<br/>
+							<strong>Tingkat : </strong>
+							<div class="input-control select">
+							    <select>
+							        <option>Semua</option>
+							        <option>Mudah</option>
+							        <option>Sedang</option>
+							        <option>Sulit</option>
+							    </select>
+							</div>
+						</div>
+					</div>
+
 				       <table id="tblsoal_tryout" class="table dataTable" cellspacing="0" width="100%">
 				            <thead>
 				                <tr class="bg-lightBlue">
@@ -90,18 +142,26 @@
 					    	$('#tblsoal_tryout').DataTable();
 						} );
 				    </script>
-				<?php endif;?> 
-						<div class="grid">
-					     <div class="row">
-					         <div class="span9">
-					            level 1 column
-					             <div class="row">
-					                 <div class="span6" id="datashow" name="" > </div>
-					                 <div class="span3" >level 2 </div>
-					             </div>
-					         </div>
-					     </div>
-					   </div>
+				<?php endif;?>
+
+				<div class="tryout_info_selected_soal">
+					<div class="infoseparated">
+						<strong style="line-height: 31px;">SOAL TERPILIH</strong><br/>
+						Pilihan Ganda Mudah : 4<br/>
+						Pilihan Ganda Sedang : 4<br/>
+						Pilihan Ganda Sulit : 5<br/>
+					</div>
+					<div class="infoseparated">
+						<strong style="line-height: 31px;">&nbsp;</strong><br/>
+						Pilihan Esai Mudah : -<br/>
+						Pilihan Esai Sedang : -<br/>
+						Pilihan Esai Sulit : -<br/>
+					</div>
+					<div class="infoseparated"><strong>TOTAL SOAL TERPILIH : </strong>
+						<span class="totalsoalselected">20</span>
+					</div>
+					<div class="infoseparated"></div>
+				</div>
 
         </div>
         <div class="step">Page 3</div>
@@ -112,13 +172,13 @@
     $('#wizard').wizard({
         buttons: {
             cancel: {
-                show: true,
+                show: false,
                 title: "Cancel wizard",
                 cls: "warning",
                 group: "right"
             },
             help: {
-                show: true,
+                show: false,
                 title: "Help Me!",
                 cls: "button primary",
                 group: "right"
@@ -145,15 +205,15 @@
     });
 });
 
-					    $(document).ready(function() {
-					    	pelajaranid = $(this).data("soalid");
+$(document).ready(function() {
+	pelajaranid = $(this).data("soalid");
 
-							$('#boxid').click(function() {
-							  if ($(this).is(':checked')) {
-							    $(this).siblings('label').html('checked');
-							  } else {
-							    $(this).siblings('label').html(' not checked');
-							  }
-							});
-						} );
+	$('#boxid').click(function() {
+	  if ($(this).is(':checked')) {
+	    $(this).siblings('label').html('checked');
+	  } else {
+	    $(this).siblings('label').html(' not checked');
+	  }
+	});
+} );
 </script>
