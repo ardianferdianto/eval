@@ -1804,7 +1804,6 @@ a {
 }
 .metro button.large {
   padding: 11px 19px;
-  width: 100%;
   font-size: 17.5px;
 }
 
@@ -10676,7 +10675,7 @@ a {
 #content {
   width: 100%;
   margin: 0 auto;
-  margin-top: 100px;
+  margin-top: 30px;
 }
 #footer{
   background: transparent url('../../images/footer.png') repeat-x;
@@ -10693,10 +10692,10 @@ a {
 }
 .button_container{
   position:absolute;
-  width: 30%;
+  width: 20%;
   float: left;
   top:200px;
-  right:50px;
+  right:10px;
 }
 #content_table{
   margin: 0 20px 40px 20px;

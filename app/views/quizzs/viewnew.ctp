@@ -4,7 +4,17 @@
 		<center><h2>Tidak ada quizz</h2></center>
 	<?php endif;?>
 				<!-- Top Navigation -->
+
 				<section id="grid" class="grid clearfix">
+					<div class="titletryoutcontainer">
+						<div class="titlefirst">
+							<h1 class="tryouttitle">PILIH TRYOUT</h1>
+						</div>
+						<div class="titlesecond">
+							<h3 class="tryouttitle3">KELAS : 6</h3>
+							<h3 class="tryouttitle3">MATA PELAJARAN : IPA</h3>
+						</div>
+					</div>
 				<?php foreach ($quizz_detail as $quizz) :?>
 					<h3><?php #echo $quizz['Quizz']['kode']; echo $quizz['Quizz']['title'];?><?php #echo $quizz['Pelajaran']['nama']?></h3>
 					<a id="container_image" href="#" data-path-hover="m 0,0 0,47.7775 c 24.580441,3.12569 55.897012,-8.199417 90,-8.199417 34.10299,0 65.41956,11.325107 90,8.199417 L 180,0 z">
@@ -13,8 +23,8 @@
 							<svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="m 0,0 0,171.14385 c 24.580441,15.47138 55.897012,24.75772 90,24.75772 34.10299,0 65.41956,-9.28634 90,-24.75772 L 180,0 0,0 z"/></svg>
 							<figcaption>
 								<h2><?php echo $quizz['Quizz']['kode']; ?></h2>
-								<p>Soko radicchio bunya nuts gram dulse.</p>
-								<button>View</button>
+								<p><?php echo $quizz['Pelajaran']['nama'] ?></p>
+								<button class="createWindow">View</button>
 							</figcaption>
 						</figure>
 					</a>
@@ -22,27 +32,13 @@
 					<?php endforeach; ?>
 				</section>
 			</div><!-- /container -->
-	<div class="button_container" id="container_tombol" style="display:none;opacity:0;">
-			<button class="command-button large default fg-hover-cobalt">
-			    <i class=" icon-accessibility on-left"></i>
-			    Interaktif
-			    <small>Use this option for interactive question</small>
-			</button>
-			<button class="command-button large primary fg-hover-cobalt">
-			    <i class=" icon-glasses-2 on-left"></i>
-			    Preview
-			    <small>Use this option for preview</small>
-			</button>
-			<button class="command-button large info fg-hover-cobalt">
-			    <i class=" icon-floppy on-left"></i>
-			    Save
-			    <small>Use this option for save to PDF file</small>
-			</button>
-			<button class="command-button large success fg-hover-cobalt">
-			    <i class=" icon-printer on-left"></i>
-			    Print
-			    <small>Use this option for printing out the question</small>
-			</button>
+	<div class="button_container ">
+			<a href="<?php echo $this->webroot?>quizzs/add_new/1/0">
+				<button class="command-button default fg-hover-cobalt buttonnewtryout">
+			    <i class=" icon-file on-left"></i>New
+			    <small>Use this option for create new tryout</small>
+				</button>
+			</a>
 	</div>
 	</div>
 	<script type="text/javascript">
@@ -52,6 +48,41 @@
 		      	$('#container_tombol').animate({opacity: 1}, 500,function(){});
 		    });
 		  });
+
+
+        $(function(){
+            $(".createWindow").on('click', function(){
+                $.Dialog({
+                    flat: false,
+                    shadow: true,
+                    width: 500,
+                    title: 'PILIH OPSI',
+                    padding:0,
+                    content:
+                    '<button class="command-button large info fg-hover-cobalt buttonopsitryout">'+
+                    '<i class=" icon-pencil on-left"></i>'+
+                    'Edit Tryout<small>Use this option for edit tryout</small>'+
+					'</button>'+
+                    '<button class="command-button large default fg-hover-cobalt buttonopsitryout">'+
+                    '<i class=" icon-accessibility on-left"></i>'+
+                    'Interaktif<small>Use this option for interactive question</small>'+
+					'</button>'+
+                    '<button class="command-button large primary fg-hover-cobalt buttonopsitryout">'+
+                    '<i class=" icon-glasses-2 on-left"></i>'+
+                    'Preview<small>Use this option for preview</small>'+
+					'</button>'+
+                    '<button class="command-button large info fg-hover-cobalt buttonopsitryout">'+
+                    '<i class=" icon-floppy on-left"></i>'+
+                    'Save<small>Use this option for save to PDF file</small>'+
+					'</button>'+
+                    '<button class="command-button large success fg-hover-cobalt buttonopsitryout">'+
+                    '<i class=" icon-printer on-left"></i>'+
+                    'Print<small>Use this option for printing out the question</small>'+
+					'</button>',
+                });
+            });
+        });
+    
 	</script>
 		<script>
 			(function() {

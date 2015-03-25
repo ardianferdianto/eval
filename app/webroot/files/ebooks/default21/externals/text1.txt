@@ -1,1 +1,0 @@
-myText=This is a Short Text

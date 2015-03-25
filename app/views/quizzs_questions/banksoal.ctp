@@ -1,9 +1,5 @@
 <div id="content_table">
-<?php 
-    $str= Router::url(null, false);
-    $strafter= trim($str,"/evaluasi_sd/quizzs/banksoal");
-?>
-<a href="<?php echo $this->webroot?>questions/add_newsoal/<?php echo $strafter?>"><button class="button large info">Input New</button></a>
+
 <?php if(empty($data_soal)):?>
     <center>Tidak ada quizz</center>
 <?php else:?>
@@ -24,35 +20,16 @@
             </thead>
 
             <tbody>
+               <?php
+                $i=1;foreach ($data_soal as $row):
 
-               <?php $i=1;
-                foreach ($data_soal as $row):
-                $tipesoal_string = $row['Question']['tipe'];
-                if($tipesoal_string == 1){
-                    $tipesoal_string = 'PG';
-                }elseif ($tipesoal_string == 2){
-                    $tipesoal_string = 'Essay';
-                }else{
-                    $tipesoal_string = 'Undefined';
-                }
-
-                $levelsoal_string = $row['Question']['level'];
-                if($levelsoal_string == 1){
-                    $levelsoal_string = 'Mudah';
-                }elseif ($levelsoal_string == 2){
-                    $levelsoal_string = 'Sedang';
-                }elseif ($levelsoal_string == 3){
-                    $levelsoal_string = 'Sulit';
-                }else{
-                    $levelsoal_string = 'Undefined';
-                }
                ?>
                 <tr>
                     <td class="text-left"><?php echo $i++;?></td>
-                    <td class="text-left"><?php echo $tipesoal_string ?></td>
-                    <td class="text-left"><?php echo $levelsoal_string ?></td>
+                    <td class="text-left"><?php echo $row['Quizz']['title'] ?></td>
+                    <td class="text-left"><?php echo $row['Quizz']['Question']['id']; ?></td>
                     <td class="text-left"><?php echo $row['Question']['kelas'] ?></td>
-                    <td class="text-left"><?php echo $row['Question']['question'];?></td>
+                    <td class="text-left"><?php echo $row['Question']['question'] ?></td>
                     <td class="text-left"><?php echo $row['Question']['answer_a'] ?></td>
                     <td class="text-left"><?php echo $row['Question']['answer_b'] ?></td>
                     <td class="text-left"><?php echo $row['Question']['answer_c'] ?></td>
@@ -77,10 +54,7 @@
        </table>
     <script>
     $(document).ready(function() {
-        $('#dataTables-1').dataTable({
-            "info":false
-
-        });
+        $('#dataTables-1').dataTable();
     } );
 
     </script>

@@ -1,0 +1,219 @@
+<div class="titletryoutcontainer containeredittryout1">
+	<div class="containeredittryout">
+		<div class="titlefirst">
+			<h1 class="tryouttitle">BUAT TRYOUT</h1>
+		</div>
+		<div class="titlesecond">
+			<h3 class="tryouttitle3">KELAS : 6</h3>
+			<h3 class="tryouttitle3">MATA PELAJARAN : IPA</h3>
+		</div>
+	</div>
+</div>
+<div class="wizard wizardtryout" id="wizard">
+    <div class="steps bg-white">
+        <div class="step">
+        		<div class="grid">
+				    <div class="row">
+				        <div class="span6 offset2">
+				        	<legend>First Step</legend>
+				        	<label>Kode</label>
+				 			<div class="input-control text">
+								<?php echo $form->input('kode',array('label'=>false,'class'=>'text-input large-input'));?>
+							</div>
+				        </div>
+				    </div>
+				</div>
+        </div>
+        <div class="step">
+        		<?php if(empty($data_soal)):?>
+				    <center>Tidak ada quizz</center>
+				<?php else:?>
+				    
+
+				    <div class="tryout_info_selected_soal" style="margin-top:10px;margin-bottom:20px;">
+						<div class="infoseparated">
+							<h2 class="fg-white titletablesoal">Table Soal </h2>
+						</div>
+						<div class="infoseparated" style="padding:0 20px;">
+							<span>FILTER SOAL</span><br/>
+							<strong>Kelas : </strong>
+							<div class="input-control select">
+							    <select>
+							        <option>Kelas 1</option>
+							        <option>Kelas 2</option>
+							        <option>Kelas 3</option>
+							    </select>
+							</div>
+						</div>
+						<div class="infoseparated" style="padding:0 20px;">
+							<strong>&nbsp;<br/>
+							<strong>Tipe : </strong>
+							<div class="input-control select">
+							    <select>
+							        <option>Semua</option>
+							        <option>Pilihan Ganda</option>
+							        <option>Essay</option>
+							    </select>
+							</div>
+						</div>
+						<div class="infoseparated" style="padding:0 20px;">
+							<strong>&nbsp;<br/>
+							<strong>Tingkat : </strong>
+							<div class="input-control select">
+							    <select>
+							        <option>Semua</option>
+							        <option>Mudah</option>
+							        <option>Sedang</option>
+							        <option>Sulit</option>
+							    </select>
+							</div>
+						</div>
+					</div>
+
+				       <table id="tblsoal_tryout" class="table dataTable" cellspacing="0" width="100%">
+				            <thead>
+				                <tr class="bg-lightBlue">
+				                    <th class="text-left">No. </th>
+				                    <th class="text-left">Kode Soal</th>
+				                    <th class="text-left">Tipe Soal</th>
+				                    <th class="text-left">Level Soal</th>
+				                    <th class="text-left">Kelas</th>
+				                    <th class="text-left">Pertanyaan</th>
+				                    <th class="text-left">Kunci Jawaban</th>
+				                    <th class="text-left">Aksi</th>
+				                </tr>
+				            </thead>
+
+				            <tbody>
+				               <?php
+				                $i=1;foreach ($data_soal as $row):
+				                #var_dump($row['Question'][0]['question']);exit;
+				                #var_dump($row);echo "LAPIS 1 <br>";
+				                
+
+
+				               ?>
+				                 <tr>
+				                    <td class="text-left"><?php echo $i++;?></td>
+				                    <td class="text-left"><?php echo $row['Question']['id'] ?></td>
+				                    <td class="text-left">
+				                    	<?php 
+				                    		if ($row['Question']['tipe'] ==1) {
+				                    			echo "PG";
+				                    		} else {
+				                    			echo "Essay";
+				                    		}
+				                    	?>
+
+				                    </td>
+				                    <td class="text-left"><?php echo $row['Question']['level'] ?></td>
+				                    <td class="text-left"><?php echo $row['Question']['kelas'] ?></td>
+				                    <td class="text-left"><?php echo $row['Question']['question'];?></td>
+				                    <td class="text-left">
+				                    	<?php
+				                    		switch ($row['Question']['answer_true']) {
+				                    			case '1':
+				                    				echo 'A';
+				                    				break;
+				                    			case '2':
+				                    				echo 'B';
+				                    				break;
+				                    			case '3':
+				                    				echo 'C';
+				                    				break;
+				                    			case '4':
+				                    				echo 'D';
+				                    				break;
+				                    			
+				                    			default:
+				                    				echo 'Tidak Ada Kunci';
+				                    				break;
+				                    		}
+				                    	?>
+				                    </td>
+				                    <td class="text-left"><input id="boxid" type="checkbox" value="<?php echo $row['Question']['id']; ?>"  data-soalid="<?php echo $row['Question']['id']; ?>"></td>
+				                </tr>
+				            <?php endforeach;?>
+				            </tbody>
+				       </table>
+				    <script>
+					    $(document).ready(function() {
+					    	pelajaranid = $(this).data("soalid");
+					    	$('#tblsoal_tryout').DataTable();
+						} );
+				    </script>
+				<?php endif;?>
+
+				<div class="tryout_info_selected_soal">
+					<div class="infoseparated">
+						<strong style="line-height: 31px;">SOAL TERPILIH</strong><br/>
+						Pilihan Ganda Mudah : 4<br/>
+						Pilihan Ganda Sedang : 4<br/>
+						Pilihan Ganda Sulit : 5<br/>
+					</div>
+					<div class="infoseparated">
+						<strong style="line-height: 31px;">&nbsp;</strong><br/>
+						Pilihan Esai Mudah : -<br/>
+						Pilihan Esai Sedang : -<br/>
+						Pilihan Esai Sulit : -<br/>
+					</div>
+					<div class="infoseparated"><strong>TOTAL SOAL TERPILIH : </strong>
+						<span class="totalsoalselected">20</span>
+					</div>
+					<div class="infoseparated"></div>
+				</div>
+
+        </div>
+        <div class="step">Page 3</div>
+    </div>
+</div>
+<script type="text/javascript">
+	$(function(){
+    $('#wizard').wizard({
+        buttons: {
+            cancel: {
+                show: false,
+                title: "Cancel wizard",
+                cls: "warning",
+                group: "right"
+            },
+            help: {
+                show: false,
+                title: "Help Me!",
+                cls: "button primary",
+                group: "right"
+            },
+            prior: {
+                show: true,
+                title: "Previous page",
+                group: "left",
+                cls: "info"
+            },
+            next: {
+                show: true,
+                title: "Next page",
+                group: "left",
+                cls: "info"
+            },
+            finish: {
+                show: true,
+                title: "Finish step and Go!",
+                group: "left",
+                cls: "danger"
+            }
+        }
+    });
+});
+
+$(document).ready(function() {
+	pelajaranid = $(this).data("soalid");
+
+	$('#boxid').click(function() {
+	  if ($(this).is(':checked')) {
+	    $(this).siblings('label').html('checked');
+	  } else {
+	    $(this).siblings('label').html(' not checked');
+	  }
+	});
+} );
+</script>

@@ -934,6 +934,10 @@ class QuestionsController extends AppController {
     	$this->layout = 'pdf'; //this will use the pdf.ctp layout
 		$this->render();
     }
-
+    function add_newsoal($kelas,$mapelid){
+    	$this->set('kelasID',$kelas);
+    	$this->set('mapelID',$mapelid);
+    	$this->layout='default_metro';
+    }
 }
 ?>
