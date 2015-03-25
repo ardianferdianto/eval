@@ -340,6 +340,114 @@ class QuestionsController extends AppController {
 		$this->set(compact('listMataPelajaran'));
 	}
 
+	function add_multi($kelas,$mapel){
+		if (!empty($this->data)) {
+			$type_soal = $this->data['Question']['tipe'];
+			if ($type_soal == 1){
+				//record data based on what selected
+				$this->data['Question']['question'] = $this->data['Question']['question1'];
+				$this->data['Question']['level'] = $this->data['Question']['level1'];
+				//$this->data['Question']['pelajaran_id'] = $this->data['Question']['pelajaran_id1'];
+				//$this->data['Question']['point_nilai'] = $this->data['Question']['point1'];
+				$this->data['Question']['answer_true']=$this->data['Question']['answer_true1'];
+				$this->data['Question']['kelas'] = $kelas;
+				$this->data['Question']['answer_a']=$this->data['Question']['0']['details'];
+				$this->data['Question']['answer_b']=$this->data['Question']['1']['details'];
+				$this->data['Question']['answer_c']=$this->data['Question']['2']['details'];
+				$this->data['Question']['answer_d']=$this->data['Question']['3']['details'];
+				
+				//set question which true
+/*				if($this->data['Question']['true_a']!=null){
+					$this->data['Question']['answer_true'] = 1;
+				}elseif ($this->data['Question']['true_b']!=null) {
+					$this->data['Question']['answer_true'] = 2;
+				}elseif ($this->data['Question']['true_c']!=null) {
+					$this->data['Question']['answer_true'] = 3;
+				}elseif ($this->data['Question']['true_d']!=null) {
+					$this->data['Question']['answer_true'] = 4;
+				}*/
+
+				$fileOK = $this->uploadFiles('files/quizz', $this->data['File1']);
+
+
+				if(array_key_exists('urls', $fileOK)) {
+				    // save the url in the form data
+				    $this->data['Question']['images'] = $fileOK['urls'][0];
+				}
+
+				$fileOK2 = $this->uploadFiles('files/quizz', $this->data['File3']);
+
+				if(array_key_exists('urls', $fileOK2)) {
+				    // save the url in the form data
+				    $this->data['Question']['video'] = $fileOK2['urls'][0];
+				}
+				else{
+					$this->flash(__('Gagal Mengupload File yang anda kirim, Silahkan Ulangi.', true), array('action'=>'index'));
+				}
+			}else if($type_soal == 2){
+				$this->data['Question']['question'] = $this->data['Question']['question2'];
+				$this->data['Question']['level'] = $this->data['Question']['level2'];
+				//$this->data['Question']['pelajaran_id'] = $this->data['Question']['pelajaran_id2'];
+				//$this->data['Question']['point_nilai'] = $this->data['Question']['point2'];
+				$this->data['Question']['kelas'] = $this->data['Question']['kelas2'];
+				$fileOK = $this->uploadFiles('files/quizz', $this->data['File2']);
+
+				$kelas = $this->data['Question']['kelas2'];
+				$mapel = $this->data['Question']['mapel'];
+				$level = $this->data['Question']['level2'];
+				$tipe =  $this->data['Question']['tipe'];
+
+				if(array_key_exists('urls', $fileOK)) {
+				    // save the url in the form data
+				    $this->data['Question']['images'] = $fileOK['urls'][0];
+				}
+				$fileOK2 = $this->uploadFiles('files/quizz', $this->data['File4']);
+
+				if(array_key_exists('urls', $fileOK2)) {
+				    // save the url in the form data
+				    $this->data['Question']['video'] = $fileOK2['urls'][0];
+				}
+				else{
+					$this->flash(__('Gagal Mengupload File yang anda kirim, Silahkan Ulangi.', true), array('action'=>'index'));
+				}
+			}
+
+
+			$this->Question->create();
+			//$this->Question->saveAll($this->data);
+			var_dump($this->data['Question']['answer_true']);exit();
+			if ($this->Question->saveAll($this->data)) {
+
+				$lastID  = $this->Question->getInsertID();
+				//save questionsid
+				$status = 'Pertanyaan berhasil ditambahkan';
+
+				
+
+				$this->redirect(array('controller'=>'quizzs','action'=>'banksoal',$kelas,$mapel));
+				//$this->redirect(array('controller'=>'questions','action'=>'proses/'.$kelas.'/'.$mapel.'/'.$level.'/'.$tipe));
+
+
+				//$this->redirect(array('action'=>'index'));
+
+
+			} else {
+
+				$lastID  = '';
+				//save questionsid
+				$status = 'Pertanyaan gagal disimpan, silahkan ulangi!';
+				$this->redirect(array('action'=>'banksoal',$lastID,$status));
+			}
+		}
+		//$quizzs = $this->Question->Quizz->find('list');
+		//$this->set(compact('quizzs'));
+		//$listMataPelajaran = $this->Question->Pelajaran->find('list',array('fields'=>'Pelajaran.nama'));
+		//$this->set(compact('kelas','mapel','level','tipe'));
+		//$fieldsKelas = 'PasRombel.KETERANGAN,PasRombel.ID_RUANG_KELAS';
+
+		//$this->set(compact('listMataPelajaran'));
+	}
+
 	function add_single($kelas=null,$mapel=null,$level=null,$tipe=null) {
 		$this->set('menuTab', 'bankSoal');
 		if (!empty($this->data)) {
@@ -935,7 +1043,12 @@ class QuestionsController extends AppController {
 		$this->render();
     }
     function add_newsoal($kelas,$mapelid){
+    	$this->set('kelasID',$kelas);
+    	$this->set('mapelID',$mapelid);
     	$this->layout='default_metro';
+    }
+    function add_new($kelas,$mapelid){
+
     }
 }
 ?>
