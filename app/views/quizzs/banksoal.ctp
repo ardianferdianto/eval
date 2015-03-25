@@ -1,5 +1,9 @@
 <div id="content_table">
-
+<?php 
+    $str= Router::url(null, false);
+    $strafter= trim($str,"/evaluasi_sd/quizzs/banksoal");
+?>
+<a href="<?php echo $this->webroot?>questions/add_newsoal/<?php echo $strafter?>"><button class="button large info">Input New</button></a>
 <?php if(empty($data_soal)):?>
     <center>Tidak ada quizz</center>
 <?php else:?>
@@ -20,20 +24,7 @@
             </thead>
 
             <tbody>
-<<<<<<< HEAD
-               <?php
-                $i=1;foreach ($data_soal as $row):
-                #var_dump($row['Question'][0]['question']);exit;
-                #var_dump($row);echo "LAPIS 1 <br>";
-                
 
-
-               ?>
-                 <tr>
-                    <td class="text-left"><?php echo $i++;?></td>
-                    <td class="text-left"><?php echo $row['Quizz']['title']; ?></td>
-                    <td class="text-left"><?php echo $row['Quizz']['QuizzQuestion']['Question']['question']; ?></td>
-=======
                <?php $i=1;
                 foreach ($data_soal as $row):
                 $tipesoal_string = $row['Question']['tipe'];
@@ -60,7 +51,6 @@
                     <td class="text-left"><?php echo $i++;?></td>
                     <td class="text-left"><?php echo $tipesoal_string ?></td>
                     <td class="text-left"><?php echo $levelsoal_string ?></td>
->>>>>>> d0770c1873efc0b02f41e8effbc66324ac72ca59
                     <td class="text-left"><?php echo $row['Question']['kelas'] ?></td>
                     <td class="text-left"><?php echo $row['Question']['question'];?></td>
                     <td class="text-left"><?php echo $row['Question']['answer_a'] ?></td>
@@ -87,7 +77,10 @@
        </table>
     <script>
     $(document).ready(function() {
-        $('#dataTables-1').dataTable();
+        $('#dataTables-1').dataTable({
+            "info":false
+
+        });
     } );
 
     </script>
