@@ -154,7 +154,7 @@
 				                    		}
 				                    	?>
 				                    </td>
-				                    <td class="text-left"><input id="boxid" type="checkbox" value="<?php echo $row['Question']['id']; ?>"  data-soalid="<?php echo $row['Question']['id']; ?>"></td>
+				                    <td class="text-left"><input id="boxid" type="checkbox" value="<?php echo $row['Question']['id']; ?>"  data-soalid="<?php echo $row['Question']['id']; ?>" class="checksoalbox"></td>
 				                </tr>
 				            <?php endforeach;?>
 				            </tbody>
@@ -163,6 +163,8 @@
 				    $(document).ready(function() {
 
 					    var table = $('#tblsoal_tryout').DataTable();
+
+					    var arraysoal = [];
 
 					    $("#placeforkelasfilter").each( function ( i ) {
 
@@ -228,6 +230,48 @@
 
 						    } 
 						});
+						
+						$("#tblsoal_tryout tr td input.checksoalbox[type=checkbox]").click(function(){
+
+							var soalid_selected = $(this).data('soalid');
+							
+					    	if($(this).attr('checked') == 'checked'){
+
+					    		var itemtoRemove = soalid_selected;
+							    arraysoal.splice($.inArray(itemtoRemove ,arraysoal),1);
+
+						    	$(this).attr('checked',false);
+							}else{
+								$(this).attr('checked',true);
+								arraysoal.push(soalid_selected);
+							}
+							console.log(arraysoal);
+					  	});
+
+						$('#tblsoal_tryout').on( 'draw.dt', function () {
+						    record_checked();
+						} );
+
+						function record_checked(){
+							$("#tblsoal_tryout tr td input.checksoalbox[type=checkbox]").click(function(){
+
+								var soalid_selected = $(this).data('soalid');
+								
+						    	if($(this).attr('checked') == 'checked'){
+
+						    		var itemtoRemove = soalid_selected;
+								    arraysoal.splice($.inArray(itemtoRemove ,arraysoal),1);
+
+							    	$(this).attr('checked',false);
+								}else{
+									$(this).attr('checked',true);
+									arraysoal.push(soalid_selected);
+								}
+								console.log(arraysoal);
+						  	});
+						}
+						
+
 
 					} );
 
