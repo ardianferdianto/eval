@@ -10,11 +10,7 @@
 			    $str= Router::url(null, false);
 			    $strafter= trim($str,"/evaluasi_sd/questions/add_newsoal/");
 			?>
-<<<<<<< HEAD
 			<?php echo $form->create('Question',array('action'=>'add_multi','enctype'=>'multipart/form-data'));?>
-=======
-			<?php echo $form->create('Question',array('action'=>'add_new/'.$kelasID.'/'.$mapelID,'enctype'=>'multipart/form-data'));?>
->>>>>>> d01d1d1ac3d6b6aa9390ba6105e771d5e2113196
 				
 				<script>
 					jQuery(document).ready(function(){ 
@@ -43,9 +39,11 @@
 				<?php
 				$jenisSoal=array('1'=>'Pilihan Ganda','2'=>'Uraian');
 				$attributes=array('legend'=>false,'label'=>false,'class'=>'jenis-asset');
+				$attributes_ans=array('legend'=>false,'label'=>false);
 				echo $form->radio('tipe',$jenisSoal,$attributes);
-				echo $form->hidden('Question.kelas',array('value'=>$kelasID));
-				echo $form->hidden('Question.pelajaran_id',array('value'=>$mapelID));
+				echo $form->hidden('kelas',array('value'=>$kelasID));
+				echo $form->hidden('pelajaran_id',array('value'=>$mapelID));
+				//var_dump($kelasID);var_dump($mapelID);
 				//echo $form->hidden('Question.quizzId',array('value'=>$questionId));
 				//echo $form->hidden('Question.type',array('value'=>$type));
 				
@@ -86,19 +84,23 @@
 						echo '<p>';
 						echo $form->input('Question.0.details', array('label'=>'Jawaban A','type'=>'textarea'));
 
-						echo $form->radio('answer_true1',array('1'=>'Pilih jika kunci jawaban A'),$attributes);
+						/*echo $form->radio('answer_true',array('1'=>'Pilih jika kunci jawaban A'),$attributes_ans);*/
 						echo '</p>';
 						echo '<p>';
 						echo $form->input('Question.1.details', array('label'=>'Jawaban B','type'=>'textarea'));
-						echo $form->radio('answer_true1',array('2'=>'Pilih jika kunci jawaban B'),$attributes);
+						/*echo $form->radio('answer_true',array('2'=>'Pilih jika kunci jawaban B'),$attributes_ans);*/
 						echo '</p>';
 						echo '<p>';
 						echo $form->input('Question.2.details', array('label'=>'Jawaban C','type'=>'textarea'));
-						echo $form->radio('answer_true1',array('3'=>'Pilih jika kunci jawaban C'),$attributes);
+						/*echo $form->radio('answer_true',array('3'=>'Pilih jika kunci jawaban C'),$attributes_ans);*/
 						echo '</p>';
 						echo '<p>';
 						echo $form->input('Question.3.details', array('label'=>'Jawaban D','type'=>'textarea'));
-						echo $form->radio('answer_true1',array('4'=>'Pilih jika kunci jawaban D'),$attributes);
+						/*echo $form->radio('answer_true',array('4'=>'Pilih jika kunci jawaban D'),$attributes_ans);*/
+						echo '</p>';
+						echo '<p>';	
+						$ans = array(1=>'Jawaban A',2=>'Jawaban B',3=>'Jawaban C',4=>'Jawaban D');
+						echo $form->input('answer_true', array('label'=>false,'class'=>'text-input small-input','options' => $ans, 'empty' => '(Pilih Kunci Jawaban)'));
 						echo '</p>';
 					?>
 
@@ -118,9 +120,6 @@
 						$levels = array(1=>'Mudah',2=>'Normal',3=>'Sulit');
 						echo $form->input('level2', array('label'=>false,'class'=>'text-input small-input','options' => $levels, 'empty' => '(Pilih Tingkat Kesulitan)'));
 
-						echo '</p>';
-						echo'<label>Bobot skor</label>';
-						echo $form->input('Question.point2',array('label'=>false));
 						echo '</p>';
 						echo '<p>';
 						echo'<label>Pertanyaan</label>';

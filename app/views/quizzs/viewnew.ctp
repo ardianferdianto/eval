@@ -33,7 +33,7 @@
 				</section>
 			</div><!-- /container -->
 	<div class="button_container ">
-			<a href="<?php echo $this->webroot?>quizzs/add_new/1/0">
+			<a href="<?php echo $this->webroot?>quizzs/add_new/1/1/0">
 				<button class="command-button default fg-hover-cobalt buttonnewtryout">
 			    <i class=" icon-file on-left"></i>New
 			    <small>Use this option for create new tryout</small>
