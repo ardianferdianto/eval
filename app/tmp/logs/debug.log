@@ -3752,3 +3752,96 @@ om: /quizzs/banksoal/1/ppkn
 2015-03-27 12:41:07 Debug: Here: /evaluasi_sd/quizzs/banksoal/1/1, coming from: /
 2015-03-27 12:45:30 Debug: Here: /evaluasi_sd/quizzs/banksoal/1/1, coming from: /
 2015-03-27 13:04:30 Debug: Here: /evaluasi_sd/quizzs/banksoal/1/1, coming from: /
+2015-03-27 13:37:05 Debug: Here: /evaluasi_sd/quizzs/banksoal/1/1, coming from: /
+2015-03-27 13:37:24 Debug: Here: /evaluasi_sd/quizzs/banksoal/1/1, coming from: /
+2015-03-27 13:37:26 Debug: Here: /evaluasi_sd/quizzs/banksoal/1/1, coming from: /
+2015-03-27 13:37:29 Debug: Here: /evaluasi_sd/quizzs/banksoal/1/1, coming from: /
+2015-03-27 13:38:06 Debug: Here: /evaluasi_sd/quizzs/banksoal/1/1, coming from: /
+2015-03-27 13:38:08 Debug: Here: /evaluasi_sd/quizzs/banksoal/1/1, coming from: /
+2015-03-27 13:38:27 Debug: Here: /evaluasi_sd/quizzs/banksoal/1/1, coming from: /
+2015-03-27 13:39:07 Debug: Here: /evaluasi_sd/quizzs/banksoal/1/1, coming from: /
+2015-03-27 13:40:59 Debug: Here: /evaluasi_sd/quizzs/banksoal/1/1, coming from: /
+2015-03-27 13:40:59 Debug: Here: /evaluasi_sd/quizzs/banksoal/1/1, coming from: /
+2015-03-27 13:43:53 Debug: Here: /evaluasi_sd/quizzs/banksoal/1/1, coming from: /
+2015-03-27 13:47:26 Debug: Here: /evaluasi_sd/quizzs/banksoal/1/1, coming from: /
+2015-03-27 13:48:26 Debug: Here: /evaluasi_sd/questions/edit/250, coming from: /quizzs/banksoal/1/1
+2015-03-27 13:48:26 Notice: Notice (8): Undefined variable: QuizzId in [APP/views/questions/edit.ctp, line 106]
+2015-03-27 13:49:08 Debug: Here: /evaluasi_sd/quizzs/banksoal/1/1, coming from: /
+2015-03-27 13:49:16 Debug: Here: /evaluasi_sd/questions/delete/1/1/252, coming from: /quizzs/banksoal/1/1
+2015-03-27 13:49:16 Notice: Notice (8): Undefined variable: status in [APP/views/questions/delete.ctp, line 6]
+2015-03-27 13:49:16 Notice: Notice (8): Undefined variable: flashMessage in [APP/views/questions/delete.ctp, line 6]
+2015-03-27 13:49:16 Notice: Notice (8): Undefined variable: idtodelete in [APP/views/questions/delete.ctp, line 6]
+2015-03-27 13:49:39 Debug: Here: /evaluasi_sd/questions/banksoal/1/1, coming from: /
+2015-03-27 13:49:50 Debug: Here: /evaluasi_sd/quizzs/banksoal/1/1, coming from: /
+2015-03-27 13:49:50 Debug: Here: /evaluasi_sd/quizzs/banksoal/1/1, coming from: /
+2015-03-27 13:50:06 Debug: Here: /evaluasi_sd/quizzs/banksoal/1/1, coming from: /
+2015-03-27 13:59:20 Debug: Here: /evaluasi_sd/quizzs/banksoal/1/1, coming from: /
+2015-03-27 13:59:31 Debug: Here: /evaluasi_sd/questions/delete/1/1/253, coming from: /quizzs/banksoal/1/1
+2015-03-27 13:59:31 Debug: Here: /evaluasi_sd/questions/delete/1/favicon.ico, coming from: /
+2015-03-27 13:59:45 Debug: Here: /evaluasi_sd/quizzs/banksoal/1/0, coming from: /
+2015-03-27 13:59:45 Debug: Here: /evaluasi_sd/quizzs/banksoal/1/1, coming from: /
+2015-03-27 14:08:26 Debug: Here: /evaluasi_sd/quizzs/banksoal/1/1, coming from: /
+2015-03-27 14:11:56 Debug: Here: /evaluasi_sd/quizzs/banksoal/1/1, coming from: /
+2015-03-27 14:12:14 Debug: Here: /evaluasi_sd/questions/delete/1/1/251, coming from: /quizzs/banksoal/1/1
+2015-03-27 14:12:14 Debug: Here: /evaluasi_sd/questions/delete/1/favicon.ico, coming from: /
+2015-03-27 14:13:05 Debug: Here: /evaluasi_sd/questions/delete/1/1/251, coming from: /quizzs/banksoal/1/1
+2015-03-27 14:13:05 Debug: Here: /evaluasi_sd/questions/delete/1/favicon.ico, coming from: /
+2015-03-27 14:13:08 Debug: Here: /evaluasi_sd/quizzs/banksoal/1/1, coming from: /
+2015-03-27 14:13:12 Debug: Here: /evaluasi_sd/questions/delete/1/1/254, coming from: /quizzs/banksoal/1/1
+2015-03-27 14:13:12 Debug: Here: /evaluasi_sd/questions/delete/1/favicon.ico, coming from: /
+2015-03-27 14:13:20 Debug: Here: /evaluasi_sd/quizzs/banksoal/1/0, coming from: /
+2015-03-27 14:13:21 Debug: Here: /evaluasi_sd/quizzs/banksoal/1/1, coming from: /
+2015-03-27 14:13:36 Debug: Here: /evaluasi_sd/questions/delete/1/1/252, coming from: /quizzs/banksoal/1/1
+2015-03-27 14:13:36 Debug: Here: /evaluasi_sd/questions/delete/1/favicon.ico, coming from: /
+2015-03-27 14:13:39 Debug: Here: /evaluasi_sd/questions/delete/1/1/252, coming from: /
+2015-03-27 14:13:39 Debug: Here: /evaluasi_sd/questions/delete/1/favicon.ico, coming from: /
+2015-03-27 14:13:52 Debug: Here: /evaluasi_sd/quizzs/banksoal/1/0, coming from: /
+2015-03-27 14:13:52 Debug: Here: /evaluasi_sd/quizzs/banksoal/1/1, coming from: /
+2015-03-27 14:14:02 Debug: Here: /evaluasi_sd/questions/delete/1/1/254, coming from: /quizzs/banksoal/1/1
+2015-03-27 14:14:02 Debug: Here: /evaluasi_sd/questions/delete/1/favicon.ico, coming from: /
+2015-03-27 14:14:08 Debug: Here: /evaluasi_sd/quizzs/banksoal/1/1, coming from: /
+2015-03-27 14:14:21 Debug: Here: /evaluasi_sd/quizzs/banksoal/1/1, coming from: /
+2015-03-27 14:14:57 Debug: Here: /evaluasi_sd/quizzs/banksoal/1/1, coming from: /
+2015-03-27 14:15:00 Debug: Here: /evaluasi_sd/questions/delete/1/1/250, coming from: /quizzs/banksoal/1/1
+2015-03-27 14:15:08 Debug: Here: /evaluasi_sd/questions/delete/1/1/250, coming from: /quizzs/banksoal/1/1
+2015-03-27 14:15:08 Debug: Here: /evaluasi_sd/questions/delete/1/favicon.ico, coming from: /
+2015-03-27 14:16:05 Debug: Here: /evaluasi_sd/questions/delete/1/1/250, coming from: /quizzs/banksoal/1/1
+2015-03-27 14:16:05 Notice: Notice (8): Undefined variable: status in [APP/views/questions/delete.ctp, line 6]
+2015-03-27 14:16:05 Notice: Notice (8): Undefined variable: flashMessage in [APP/views/questions/delete.ctp, line 6]
+2015-03-27 14:16:05 Notice: Notice (8): Undefined variable: idtodelete in [APP/views/questions/delete.ctp, line 6]
+2015-03-27 14:21:31 Debug: Here: /evaluasi_sd/quizzs/banksoal/1/1, coming from: /
+2015-03-27 14:22:03 Debug: Here: /evaluasi_sd/questions/delete/253, coming from: /quizzs/banksoal/1/1
+2015-03-27 14:22:04 Debug: Redirecting to: /evaluasi_sd/quizzs/banksoal, initiated in /var/www/html/evaluasi_sd/cake/libs/object.php on line 118
+2015-03-27 14:22:04 Debug: Here: /evaluasi_sd/quizzs/banksoal, coming from: /quizzs/banksoal/1/1
+2015-03-27 14:22:04 Notice: Notice (8): Undefined variable: kelas in [APP/controllers/quizzs_controller.php, line 436]
+2015-03-27 14:22:04 Notice: Notice (8): Undefined variable: mapel in [APP/controllers/quizzs_controller.php, line 436]
+2015-03-27 14:22:04 Notice: Notice (8): Undefined variable: kelas in [APP/controllers/quizzs_controller.php, line 439]
+2015-03-27 14:22:04 Notice: Notice (8): Undefined variable: mapel in [APP/controllers/quizzs_controller.php, line 440]
+2015-03-27 14:23:08 Debug: Here: /evaluasi_sd/quizzs/banksoal, coming from: /quizzs/banksoal/1/1
+2015-03-27 14:23:08 Notice: Notice (8): Undefined variable: kelas in [APP/controllers/quizzs_controller.php, line 436]
+2015-03-27 14:23:08 Notice: Notice (8): Undefined variable: mapel in [APP/controllers/quizzs_controller.php, line 436]
+2015-03-27 14:23:08 Notice: Notice (8): Undefined variable: kelas in [APP/controllers/quizzs_controller.php, line 439]
+2015-03-27 14:23:08 Notice: Notice (8): Undefined variable: mapel in [APP/controllers/quizzs_controller.php, line 440]
+2015-03-27 14:23:11 Debug: Here: /evaluasi_sd/quizzs/banksoal/1/1, coming from: /
+2015-03-27 14:23:11 Debug: Here: /evaluasi_sd/quizzs/banksoal/1/1, coming from: /
+2015-03-27 14:24:02 Debug: Here: /evaluasi_sd/quizzs/banksoal/1/1, coming from: /
+2015-03-27 14:24:10 Debug: Here: /evaluasi_sd/questions/delete/1/1/254, coming from: /quizzs/banksoal/1/1
+2015-03-27 14:24:10 Debug: Here: /evaluasi_sd/questions/delete/1/favicon.ico, coming from: /
+2015-03-27 14:26:26 Debug: Here: /evaluasi_sd/quizzs/banksoal/1/1, coming from: /
+2015-03-27 14:26:36 Debug: Here: /evaluasi_sd/questions/delete/1/1/254, coming from: /quizzs/banksoal/1/1
+2015-03-27 14:26:36 Debug: Here: /evaluasi_sd/questions/delete/1/favicon.ico, coming from: /
+2015-03-27 14:26:54 Debug: Here: /evaluasi_sd/quizzs/banksoal/1/1, coming from: /
+2015-03-27 14:26:58 Debug: Here: /evaluasi_sd/questions/delete/1/1/254, coming from: /quizzs/banksoal/1/1
+2015-03-27 14:27:11 Debug: Here: /evaluasi_sd/quizzs/banksoal/1/1, coming from: /
+2015-03-27 14:27:15 Debug: Here: /evaluasi_sd/questions/delete/1/1/254, coming from: /quizzs/banksoal/1/1
+2015-03-27 14:27:23 Debug: Here: /evaluasi_sd/quizzs/banksoal/1/1, coming from: /
+2015-03-27 14:27:26 Debug: Here: /evaluasi_sd/questions/delete/1/1/254, coming from: /quizzs/banksoal/1/1
+2015-03-27 14:28:33 Debug: Here: /evaluasi_sd/quizzs/banksoal/1/1, coming from: /
+2015-03-27 14:28:35 Debug: Here: /evaluasi_sd/questions/delete/254, coming from: /quizzs/banksoal/1/1
+2015-03-27 14:28:35 Debug: Redirecting to: /evaluasi_sd/quizzs/banksoal, initiated in /var/www/html/evaluasi_sd/cake/libs/object.php on line 118
+2015-03-27 14:28:35 Debug: Here: /evaluasi_sd/quizzs/banksoal, coming from: /quizzs/banksoal/1/1
+2015-03-27 14:28:43 Debug: Here: /evaluasi_sd/quizzs/banksoal/1/1, coming from: /
+2015-03-27 14:29:30 Debug: Here: /evaluasi_sd/quizzs/banksoal/1/1, coming from: /
+2015-03-27 14:29:33 Debug: Here: /evaluasi_sd/questions/delete/1/1/252, coming from: /quizzs/banksoal/1/1
+2015-03-27 14:29:33 Debug: Redirecting to: /evaluasi_sd/quizzs/banksoal/1/1, initiated in /var/www/html/evaluasi_sd/cake/libs/object.php on line 122
+2015-03-27 14:29:33 Debug: Here: /evaluasi_sd/quizzs/banksoal/1/1, coming from: /quizzs/banksoal/1/1

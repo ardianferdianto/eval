@@ -436,6 +436,8 @@ class QuizzsController extends AppController {
     	$conditions_lihatsoal = array('Question.kelas'=>$kelas,'Question.pelajaran_id'=>$mapel);
     	$bank_soal = $this->Quizz->Question->find('all',array('conditions'=>$conditions_lihatsoal));
     	$this->set('data_soal',$bank_soal);
+    	$this->set('kelasID',$kelas);
+    	$this->set('mapelID',$mapel);
     	$this->layout='default_metro';
     }
     function interaktif_kuis(){

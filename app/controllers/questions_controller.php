@@ -761,7 +761,7 @@ class QuestionsController extends AppController {
 	}*/
 
 
-	function delete($id = null, $kelas_id=null, $mapel_id=null) {
+	function delete( $kelas_id=null, $mapel_id=null, $id = null) {
 		$status = "false";
 		$flashMessage = "";
 		$idtodelete = "";
@@ -773,6 +773,7 @@ class QuestionsController extends AppController {
 			$this->Session->setFlash('Pertanyaan gagal dihapus','flash_success');
 			
 			$this->redirect(array('controller'=>'quizzs','action'=>'banksoal/'.$kelas_id.'/'.$mapel_id));
+		}else{
 		if ($this->Question->del($id)) {
 
 			///$directory = WWW_ROOT.'files'.DS.'ebooks'.DS.$id;
@@ -787,6 +788,7 @@ class QuestionsController extends AppController {
 			$this->redirect(array('controller'=>'quizzs','action'=>'banksoal/'.$kelas_id.'/'.$mapel_id));
 
 		}
+	}
 /*		$this->set(compact('status','flashMessage','idtodelete'));
 		$this->layout = 'default_metro';*/
 		

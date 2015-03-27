@@ -85,10 +85,11 @@
                     </td>
                     <td class="text-left">
                         <?php 
-                            echo $html->link('Edit', array('controller'=>'questions','action'=>'edit',$row['Question']['id'])); 
-                            echo $this->Html->link('Delete',
-                                        array('controller' => 'questions', 'action' => 'delete',$row['Question']['id']),
-                                        array('onclick'=>'return confirm("Are you sure?");'))
+                            echo $html->link('Edit', array('controller'=>'questions','action'=>'edit',$row['Question']['id']));echo " "; 
+                            echo $html->link('Delete',array('controller'=>'questions','action'=>'delete',$kelasID,$mapelID,$row['Question']['id']));
+/*                            echo $html->link('Delete',
+                                        array('controller' => 'questions', 'action' => 'delete',$kelasID,$mapelID,$row['Question']['id']),
+                                        array('onclick'=>'return confirm("Are you sure?")'));*/
                         ?>
                     </td>
                 </tr>
