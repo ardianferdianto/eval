@@ -16,7 +16,7 @@
 		</div> <!-- End .content-box-header -->
 		
 		<div class="content-box-content">
-			<?php echo $form->create('Question',array('action'=>'add/'.$questionId,'enctype'=>'multipart/form-data'));?>
+			<?php echo $form->create('Question',array('action'=>'add_multi/'.$kelasID.'/'.$mapelID,'enctype'=>'multipart/form-data'));?>
 				
 				<script>
 					jQuery(document).ready(function(){ 

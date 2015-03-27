@@ -169,3 +169,11 @@
 2015-03-04 19:11:09 Warning: Warning (2): Missing argument 2 for QuizzsController::banksoal(), called in /Applications/MAMP/htdocs/eval/cake/libs/object.php on line 118 and defined in [APP/controllers/quizzs_controller.php, line 435]
 2015-03-04 19:13:41 Warning: Warning (2): Missing argument 2 for QuizzsController::banksoal(), called in /Applications/MAMP/htdocs/eval/cake/libs/object.php on line 118 and defined in [APP/controllers/quizzs_controller.php, line 435]
 >>>>>>> d0770c1873efc0b02f41e8effbc66324ac72ca59
+2015-03-26 14:40:02 Warning: Warning (512): <span style = "color:Red;text-align:left"><b>SQL Error:</b> 1048: Column 'answer_true' cannot be null</span> in [CORE/cake/libs/model/datasources/dbo_source.php, line 525]
+2015-03-26 14:40:02 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /var/www/html/evaluasi_sd/cake/basics.php:307) in [CORE/cake/libs/controller/controller.php, line 644]
+2015-03-26 16:28:12 Warning: Warning (512): <span style = "color:Red;text-align:left"><b>SQL Error:</b> 1048: Column 'answer_true' cannot be null</span> in [CORE/cake/libs/model/datasources/dbo_source.php, line 525]
+2015-03-26 16:28:12 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /var/www/html/evaluasi_sd/cake/basics.php:307) in [CORE/cake/libs/controller/controller.php, line 644]
+2015-03-27 14:22:04 Warning: Warning (2): Missing argument 1 for QuizzsController::banksoal(), called in /var/www/html/evaluasi_sd/cake/libs/object.php on line 116 and defined in [APP/controllers/quizzs_controller.php, line 435]
+2015-03-27 14:22:04 Warning: Warning (2): Missing argument 2 for QuizzsController::banksoal(), called in /var/www/html/evaluasi_sd/cake/libs/object.php on line 116 and defined in [APP/controllers/quizzs_controller.php, line 435]
+2015-03-27 14:23:08 Warning: Warning (2): Missing argument 1 for QuizzsController::banksoal(), called in /var/www/html/evaluasi_sd/cake/libs/object.php on line 116 and defined in [APP/controllers/quizzs_controller.php, line 435]
+2015-03-27 14:23:08 Warning: Warning (2): Missing argument 2 for QuizzsController::banksoal(), called in /var/www/html/evaluasi_sd/cake/libs/object.php on line 116 and defined in [APP/controllers/quizzs_controller.php, line 435]

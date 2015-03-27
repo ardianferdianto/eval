@@ -436,15 +436,27 @@ class QuizzsController extends AppController {
     	$conditions_lihatsoal = array('Question.kelas'=>$kelas,'Question.pelajaran_id'=>$mapel);
     	$bank_soal = $this->Quizz->Question->find('all',array('conditions'=>$conditions_lihatsoal));
     	$this->set('data_soal',$bank_soal);
+    	$this->set('kelasID',$kelas);
+    	$this->set('mapelID',$mapel);
     	$this->layout='default_metro';
     }
     function interaktif_kuis(){
     	$this->layout='default_metro';
     }
-    function add_new($kelas,$mapel){
+    function add_new($tipesoal,$kelas,$mapel){
+    	$this->Quizz->recursive = 1;
     	$conditions_lihatsoal = array('Question.kelas'=>$kelas,'Question.pelajaran_id'=>$mapel);
     	$bank_soal = $this->Quizz->Question->find('all',array('conditions'=>$conditions_lihatsoal));
+    	$pelajaran = $this->Quizz->Pelajaran->read(null, $mapel);
+    	//fetch data pelajaran
+    	/*$conditionz = array('Pelajaran.id'=>$mapel);
+    	$pelajaranlist = $this->Quizz->Pelajaran->find('all',array('conditions'=>$conditionz));*/
+    	$this->set('tipesoalID',$tipesoal);
+    	$this->set('kelasID',$kelas);
+    	$this->set('mapelID',$mapel);
+    	$this->set('list_mapel',$pelajaranlist);
     	$this->set('data_soal',$bank_soal);
+    	$this->set('pelajaranID',$pelajaran);
     	$this->layout='default_metro';
     }
 

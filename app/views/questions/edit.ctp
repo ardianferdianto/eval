@@ -18,11 +18,6 @@
 				<fieldset>
 			 		
 				<?php
-					echo $form->hidden('Question.quizz_id',array('value'=>$QuizzId));
-					echo '</p>';
-					echo'<label>Bobot skor</label>';
-					echo $form->input('Question.point_nilai',array('label'=>false));
-					echo '</p>';
 					echo '<p>';
 					echo'<label>Pertanyaan</label>';
 					echo $form->input('Question.question',array('label'=>false));
@@ -53,31 +48,44 @@
 					echo '<p>';
 					echo'<label>File Video Sebelumnya</label>';
 					if($question['Question']['video'] != null || !empty ($question['Question']['video'])){
-					echo '<br/>';
-					echo $video->loader(true); 
-					echo $video->player($this->webroot.$question['Question']['video'], 'video', false, 320, 300); 
-					echo '<div id="video"></div>'	;
-					echo '<p>Jika tampilan video bermasalah keluar tekan pause dan play lagi pada player</p>';?>
-					<?php 
-					echo '</p>';
-					echo '<p>';
-					echo'<label>Rubah Video</label>';
-					echo $form->input('File2.image', array('label'=>false, 'type'=>'file'));
-					echo '</p>';
+						echo '<br/>';
+						echo $video->loader(true); 
+						echo $video->player($this->webroot.$question['Question']['video'], 'video', false, 320, 300); 
+						echo '<div id="video"></div>'	;
+						echo '<p>Jika tampilan video bermasalah keluar tekan pause dan play lagi pada player</p>';?>
+						<?php 
+						echo '</p>';
+						echo '<p>';
+						echo'<label>Rubah Video</label>';
+						echo $form->input('File2.image', array('label'=>false, 'type'=>'file'));
+						echo '</p>';
 					}else{
-					
-					echo 'Tidak ada video';
-					
-					echo '<p>';
-					echo'<label>Tambah Video</label>';
-					echo $form->input('File2.image', array('label'=>false, 'type'=>'file'));
-					echo '</p>';
 						
+						echo 'Tidak ada video';
+						
+						echo '<p>';
+						echo'<label>Tambah Video</label>';
+						echo $form->input('File2.image', array('label'=>false, 'type'=>'file'));
+						echo '</p>';
+							
 					}
 					
 					if ($question['Question']['tipe'] == 2){
 						echo '<p>';
 						echo $form->input('Question.answer2',array('label'=>'Jawaban Uraian'));
+						echo '</p>';
+					}else{
+						echo '<p>';
+						echo $form->input('Question.answer_a',array('label'=>'Jawaban A'));
+						echo '</p>';
+						echo '<p>';
+						echo $form->input('Question.answer_b',array('label'=>'Jawaban B'));
+						echo '</p>';
+						echo '<p>';
+						echo $form->input('Question.answer_c',array('label'=>'Jawaban C'));
+						echo '</p>';
+						echo '<p>';
+						echo $form->input('Question.answer_d',array('label'=>'Jawaban D'));
 						echo '</p>';
 					}
 					

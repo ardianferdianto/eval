@@ -1,11 +1,34 @@
 <div class="titletryoutcontainer containeredittryout1">
 	<div class="containeredittryout">
 		<div class="titlefirst">
-			<h1 class="tryouttitle">BUAT TRYOUT</h1>
+			<h1 class="tryouttitle">BUAT 
+			<?php
+				switch ($tipesoalID) {
+				 	case '1':
+				 		echo 'TRYOUT';
+				 		break;
+				 	case '2':
+				 		echo 'KUIS';
+				 		break;
+				 	case '3':
+				 		echo 'UJIAN';
+				 		break;
+				 	
+				 	default:
+				 		echo 'UNDIFINED';
+				 		break;
+				 } 
+			?>
+			</h1>
 		</div>
 		<div class="titlesecond">
-			<h3 class="tryouttitle3">KELAS : 6</h3>
-			<h3 class="tryouttitle3">MATA PELAJARAN : IPA</h3>
+			<h3 class="tryouttitle3">KELAS : <?php echo $kelasID; ?></h3>
+			<h3 class="tryouttitle3">MATA PELAJARAN : 
+							<?php
+				echo $pelajaranID['Pelajaran']['nama'];
+			?>
+			</h3>
+
 		</div>
 	</div>
 </div>
@@ -37,7 +60,7 @@
 						<div class="infoseparated" style="padding:0 20px;">
 							<span>FILTER SOAL</span><br/>
 							<strong>Kelas : </strong>
-							<div class="input-control select">
+							<div id="placeforkelasfilter" class="input-control select">
 							    <select>
 							        <option>Kelas 1</option>
 							        <option>Kelas 2</option>
@@ -48,7 +71,7 @@
 						<div class="infoseparated" style="padding:0 20px;">
 							<strong>&nbsp;<br/>
 							<strong>Tipe : </strong>
-							<div class="input-control select">
+							<div id="placefortipefilter" class="input-control select">
 							    <select>
 							        <option>Semua</option>
 							        <option>Pilihan Ganda</option>
@@ -59,7 +82,7 @@
 						<div class="infoseparated" style="padding:0 20px;">
 							<strong>&nbsp;<br/>
 							<strong>Tingkat : </strong>
-							<div class="input-control select">
+							<div id="placeforlevelfilter" class="input-control select">
 							    <select>
 							        <option>Semua</option>
 							        <option>Mudah</option>
@@ -137,10 +160,77 @@
 				            </tbody>
 				       </table>
 				    <script>
-					    $(document).ready(function() {
-					    	pelajaranid = $(this).data("soalid");
-					    	$('#tblsoal_tryout').DataTable();
-						} );
+				    $(document).ready(function() {
+
+					    var table = $('#tblsoal_tryout').DataTable();
+
+					    $("#placeforkelasfilter").each( function ( i ) {
+
+						    if(i == 0){ //Create just one SelectBox
+					            var select = $('<select class='+i+'><option value="">Semua</option></select>')
+					                .appendTo( $(this).empty() )
+					                .on( 'change', function () {
+
+					                    var val = $(this).val();
+
+					                    table.column( 4 ) //Only the first column
+					                        .search( val ? '^'+$(this).val()+'$' : val, true, false )
+					                        .draw();
+					                } );
+
+					            table.column( 4 ).data().unique().sort().each( function ( d, j ) {
+					                select.append( '<option value="'+d+'">'+d+'</option>' );
+					            } );
+
+						    } 
+						});
+
+
+						$("#placefortipefilter").each( function ( i ) {
+
+						    if(i == 0){ //Create just one SelectBox
+					            var select = $('<select class='+i+'><option value=""></option></select>')
+					                .appendTo( $(this).empty() )
+					                .on( 'change', function () {
+
+					                    var val = $(this).val();
+
+					                    table.column( 2 ) //Only the first column
+					                        .search( val ? '^'+$(this).val()+'$' : val, true, false )
+					                        .draw();
+					                } );
+
+					            table.column( 2 ).data().unique().sort().each( function ( d, j ) {
+					                select.append( '<option value="'+d+'">'+d+'</option>' );
+					            } );
+
+						    } 
+						});
+
+
+						$("#placeforlevelfilter").each( function ( i ) {
+
+						    if(i == 0){ //Create just one SelectBox
+					            var select = $('<select class='+i+'><option value=""></option></select>')
+					                .appendTo( $(this).empty() )
+					                .on( 'change', function () {
+
+					                    var val = $(this).val();
+
+					                    table.column( 3 ) //Only the first column
+					                        .search( val ? '^'+$(this).val()+'$' : val, true, false )
+					                        .draw();
+					                } );
+
+					            table.column( 3 ).data().unique().sort().each( function ( d, j ) {
+					                select.append( '<option value="'+d+'">'+d+'</option>' );
+					            } );
+
+						    } 
+						});
+
+					} );
+
 				    </script>
 				<?php endif;?>
 

@@ -62,8 +62,8 @@ h1 small{
     <h1 align="center"><span class="style3"><span class="style5">E</span>valuasi   <span class="style5">P</span>embelajaran   <span class="style5">I</span>nteraktif</span><span class="style9"><small>sekolah dasar</small></span></h1>
 </div>
 <div id="wrapper">
-    <div id="content">
-        
+    <div id="content">  
+        <?php $session->flash(); ?>
         <?php echo $content_for_layout; ?>
         
   </div>
