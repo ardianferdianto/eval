@@ -1,5 +1,11 @@
 
-
+html,body{
+	background: url(../images/back-1.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 .wizardtryout{
 	width: 80%;
 	margin: 0 auto;
@@ -98,4 +104,160 @@ box-shadow: 0px 3px 5px -2px rgba(0,0,0,0.50);
 	font-size: 2em;
 	text-transform: uppercase;
 	margin-bottom: 20px;
+}
+.rowblockwhite{
+	background: #fff;
+	display: block;
+	padding: 10px;
+}
+.rowblockwhite h5{
+	font-size: 1em;
+	font-weight: normal;
+}
+.metro .kolompertanyaan,.metro .kolomjawaban{
+	height: 500px;
+	overflow-y: scroll;
+	padding-left: 15px;
+	font-size: 1.3em;
+	font-family: "Times New Roman", Georgia, Serif;
+
+}
+.metro .timesnewroman{
+	font-family: "Times New Roman", Georgia, Serif; !important
+}
+.kolomtengah{
+	margin-bottom: 20px;
+}
+.grid{
+	max-width: 1100px;
+}
+.kolomtengah h6{
+	background: #e6e6e6;
+	padding: 10px;
+}
+.mapsoalnumber{
+	background: #6a6a6a;
+	height: 20px;
+	position: relative;
+	
+}
+.grid .mapsoalnumber a{
+	display: block;
+	color: #fff;
+	margin: 0 auto;
+	text-align: center;
+	float: none;
+	width: 100%;
+}
+.grid .mapsoalnumber a:hover,.grid .mapsoalnumber a.soalactive{
+	background: #cd4242;
+}
+.metro .grid .rowmapsoal{
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+.mapingsoal,.countdownbox{
+	/*padding: 0 10px 10px;*/
+	padding: 0 0 10px;
+}
+.mapingsoal h6,.countdownbox h6{
+	padding: 10px ;
+	text-align: center;
+}
+#nextsoal{
+	width: 0;
+height: 0;
+border-style: solid;
+border-width: 30px 0 30px 50px;
+border-color: transparent transparent transparent #007bff;
+}
+#prevsoal{
+	width: 0;
+height: 0;
+border-style: solid;
+border-width: 30px 50px 30px 0;
+border-color: transparent #007bff transparent transparent;
+}
+#prevsoal:hover{
+	border-color: transparent #cd4242 transparent transparent;	
+}
+
+#nextsoal:hover{
+	border-color: transparent transparent transparent #cd4242;
+}
+.grid .kolomtengah a:nth-child(odd){
+	margin:0 auto;
+}
+.navigatebutton{
+	padding-left: 20px;
+}
+.contentcountdown{
+	padding: 10px 20px 20px;
+	text-align: center;
+}
+.rowmapsoalset{
+	padding: 10px;
+}
+.metro .grid .kolomtengahset{
+	margin-top: 0;
+}
+.contentcountdown h3{
+	font-size: 2.2em;
+}
+.answercontainer{
+	margin-top: 20px;
+}
+
+.metro .input-control.radio.default-style input[type="radio"]:checked ~ .check:after{
+	margin: 4px;
+}
+.containersoal{
+	margin-top: 20px;
+}
+.containersoal p{
+	font-size: 1em;
+	line-height: 19pt;
+	font-family: "Times New Roman", Georgia, Serif; !important
+}
+
+p.jawabanparagraph{
+	font-size: 0.9em;
+	line-height: 19pt;
+	font-family: "Times New Roman", Georgia, Serif; !important;
+	display: block;
+	margin-left: 30px;
+	margin-top: -22px;
+	
+}
+.jenis-asset{
+	margin-right: 10px;
+	margin-left: 20px;
+}
+.desc{
+	border-top: 1px solid #cbcbcb;
+	padding-top: 10px;
+	margin-top: 20px;
+	padding-left: 40px;
+	padding-right: 40px;
+}
+.desc h4{
+	text-align: center;
+	border-bottom: 1px solid #cbcbcb;
+	width:50%;
+	margin: 0 auto;	
+	padding-bottom: 15px;
+	padding-top: 10px;
+	margin-bottom: 10px;
+}
+.questions form .subheader-secondary{
+	padding-bottom: 7px;
+	padding-top: 35px;
+	line-height: 2.4rem;
+	text-align: center;
+}
+.rowsoalinput{
+
+}
+.aligncenter{
+	text-align: center;
 }

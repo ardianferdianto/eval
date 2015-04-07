@@ -65,7 +65,6 @@ h1 small{
     <div id="content">  
         <?php $session->flash(); ?>
         <?php echo $content_for_layout; ?>
-        
   </div>
 </div>
 <!--<div id="footer">
