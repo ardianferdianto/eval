@@ -614,6 +614,8 @@ class QuestionsController extends AppController {
 			$this->redirect(array('action'=>'index'));
 		}
 		if (!empty($this->data)) {
+			
+
 			$fileOK = $this->uploadFiles('files/quizz', $this->data['File']);
 
 			if(array_key_exists('urls', $fileOK)) {
@@ -621,12 +623,23 @@ class QuestionsController extends AppController {
 			    $this->data['Question']['images'] = $fileOK['urls'][0];
 			}
 			else{
-				$this->flash(__('Gagal Mengupload File yang anda kirim, Silahkan Ulangi.', true), array('action'=>'add',$id,$QuizzId));
+				$this->Session->setFlash('Pertanyaan gagal ditambahkan ke dalam Banksoal','flash_error');
 			}
+
+			$fileOK2 = $this->uploadFiles('files/quizz', $this->data['File2']);
+
+			if(array_key_exists('urls', $fileOK2)) {
+			    // save the url in the form data
+			    $this->data['Question']['video'] = $fileOK2['urls'][0];
+			}
+			else{
+				$this->Session->setFlash('Pertanyaan gagal ditambahkan ke dalam Banksoal','flash_error');
+			}
+
+			
 			if ($this->Question->save($this->data)) {
 				$this->Session->setFlash('Pertanyaan berhasil diupdate','flash_success');
-				$idQuiz = $this->data['Question']['quizz_id'];
-				$this->redirect(array('controller'=>'quizzs','action'=>'view',$idQuiz));
+				$this->redirect(array('controller'=>'quizzs','action'=>'banksoal',$this->data['Question']['kelas'],$this->data['Question']['mapel']));
 			} else {
 				$this->Session->setFlash('Pertanyaan gagal diupdate, silahkan ulangi!','flash_erorr');
 			}
@@ -635,7 +648,7 @@ class QuestionsController extends AppController {
 			$this->data = $this->Question->read(null, $id);
 		}
 		$this->set('question', $this->Question->read(null, $id));
-
+		$this->layout = 'default_metro';
 
 	}
 

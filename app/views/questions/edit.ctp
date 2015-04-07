@@ -20,6 +20,8 @@
 				<?php
 					echo '<p>';
 					echo'<label>Pertanyaan</label>';
+					echo $form->hidden('kelas',array('value'=>$question['Question']['kelas']));
+					echo $form->hidden('mapel',array('value'=>$question['Question']['pelajaran_id']));
 					echo $form->input('Question.question',array('label'=>false));
 					echo '</p>';
 					echo '<p>';
@@ -103,6 +105,6 @@
 </div>
 <div class="actions">
 	<ul>
-		<li><?php echo $html->link(__('Kembali', true), array('controller'=>'quizzs','action' => 'view',$QuizzId));?></li>
+		<li><?php echo $html->link(__('Kembali', true), array('controller'=>'quizzs','action' => 'banksoal',$question['Question']['kelas'],$question['Question']['pelajaran_id']));?></li>
 	</ul>
 </div>
