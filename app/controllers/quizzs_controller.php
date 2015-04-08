@@ -454,10 +454,14 @@ class QuizzsController extends AppController {
 			
 			if ($this->Quizz->saveAll($this->data)) {
 				
-				
+				$quizz_id  = $this->Quizz->getInsertID();
 
-				
-            	
+				foreach($this->data['QuizzsQuestion'] as $datax) {
+					$datax['quizz_id'] = $quizz_id;
+
+                	$this->Quizz->QuizzsQuestion->saveAll($datax);
+            	}
+            	//$this->redirect(array('action'=>'index'));
 		      	
 		      
 		      

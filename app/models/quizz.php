@@ -20,6 +20,12 @@ class Quizz extends AppModel {
 			'finderQuery' => '',
 			'counterQuery' => ''
 		),
+
+		'QuizzsQuestion' => array(
+			'className' => 'QuizzsQuestion',
+			'foreignKey' => ''
+		)
+
 	);
 	
 	var $hasAndBelongsToMany = array(

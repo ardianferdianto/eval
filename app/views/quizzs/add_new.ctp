@@ -540,9 +540,9 @@ $(document).ready(function() {
     	$('#form_penambahan_tryout #QuizzKode').val(kde);
     	$('#form_penambahan_tryout #QuizzKode').val(kde);
     	for (var i = 0; i < json2.length; i++) {
-    		$('#form_penambahan_tryout').append('<input type="hidden" name="data[QuizzQuestion]['+i+'][question_id]" value="'+json2[i][0]+'" >');
-    		$('#form_penambahan_tryout').append('<input type="hidden" name="data[QuizzQuestion]['+i+'][question_id]" value="2" >');
-    		$('#form_penambahan_tryout').append('<input type="hidden" name="data[QuizzQuestion]['+i+'][order]" value="'+json2[i][0]+'" >');
+    		$('#form_penambahan_tryout').append('<input type="hidden" name="data[QuizzsQuestion]['+i+'][question_id]" value="'+json2[i][0]+'" >');
+    		
+    		$('#form_penambahan_tryout').append('<input type="hidden" name="data[QuizzsQuestion]['+i+'][order]" value="'+json2[i][0]+'" >');
     	};
     	
     }
