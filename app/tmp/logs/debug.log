@@ -5396,3 +5396,48 @@ om: /quizzs/banksoal/1/ppkn
 2015-04-08 17:18:18 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
 2015-04-08 17:18:20 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
 2015-04-08 17:18:34 Debug: Here: /eval/quizzs/add_new, coming from: /quizzs/add_new/1/1/0
+2015-04-08 17:26:37 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 17:26:39 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 17:27:34 Debug: Here: /eval/quizzs/add_new, coming from: /quizzs/add_new/1/1/0
+2015-04-08 17:28:20 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 17:28:22 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 17:28:38 Debug: Here: /eval/quizzs/add_new, coming from: /quizzs/add_new/1/1/0
+2015-04-08 17:28:38 Notice: Notice (8): Undefined property: Quizz::$QuizzQuestion in [APP/controllers/quizzs_controller.php, line 462]
+2015-04-08 17:29:15 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 17:29:18 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 17:29:33 Debug: Here: /eval/quizzs/add_new, coming from: /quizzs/add_new/1/1/0
+2015-04-08 17:29:33 Notice: Notice (8): Undefined property: Quizz::$QuizzQuestion in [APP/controllers/quizzs_controller.php, line 462]
+2015-04-08 17:30:43 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 17:30:43 Notice: Notice (8): Undefined variable: pelajaranlist in [APP/controllers/quizzs_controller.php, line 483]
+2015-04-08 17:30:50 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 17:30:51 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 17:31:06 Debug: Here: /eval/quizzs/add_new, coming from: /quizzs/add_new/1/1/0
+2015-04-08 17:31:06 Notice: Notice (8): Undefined property: Quizz::$QuizzQuestion in [APP/controllers/quizzs_controller.php, line 462]
+2015-04-08 17:33:29 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 17:33:29 Notice: Notice (8): Undefined variable: pelajaranlist in [APP/controllers/quizzs_controller.php, line 494]
+2015-04-08 17:33:31 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 17:33:33 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 17:33:48 Debug: Here: /eval/quizzs/add_new, coming from: /quizzs/add_new/1/1/0
+2015-04-08 17:38:04 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 17:38:04 Notice: Notice (8): Undefined variable: pelajaranlist in [APP/controllers/quizzs_controller.php, line 494]
+2015-04-08 17:38:07 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 17:38:09 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 17:38:22 Debug: Here: /eval/quizzs/add_new, coming from: /quizzs/add_new/1/1/0
+2015-04-08 17:38:22 Notice: Notice (8): Undefined variable: kelas in [APP/controllers/quizzs_controller.php, line 483]
+2015-04-08 17:38:22 Notice: Notice (8): Undefined variable: mapel in [APP/controllers/quizzs_controller.php, line 483]
+2015-04-08 17:38:22 Notice: Notice (8): Undefined variable: mapel in [APP/controllers/quizzs_controller.php, line 485]
+2015-04-08 17:38:22 Notice: Notice (8): Undefined variable: tipesoal in [APP/controllers/quizzs_controller.php, line 491]
+2015-04-08 17:38:22 Notice: Notice (8): Undefined variable: kelas in [APP/controllers/quizzs_controller.php, line 492]
+2015-04-08 17:38:22 Notice: Notice (8): Undefined variable: mapel in [APP/controllers/quizzs_controller.php, line 493]
+2015-04-08 17:38:22 Notice: Notice (8): Undefined variable: pelajaranlist in [APP/controllers/quizzs_controller.php, line 494]
+2015-04-08 17:40:01 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 17:40:04 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 17:40:16 Debug: Here: /eval/quizzs/add_new, coming from: /quizzs/add_new/1/1/0
+2015-04-08 17:43:34 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 17:43:37 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 17:43:52 Debug: Here: /eval/quizzs/add_new, coming from: /quizzs/add_new/1/1/0
+2015-04-08 17:44:38 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 17:44:39 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 17:45:54 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 17:45:56 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 17:46:09 Debug: Here: /eval/quizzs/add_new, coming from: /quizzs/add_new/1/1/0
