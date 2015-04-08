@@ -376,7 +376,7 @@
 
 							var range=json2.length;
 							for (var i = 0; i < json2.length; i++) {
-									json2[i][5]='<input type="text" class="orders" id="ord'+(i+1)+'" value="'+(i+1)+'">';
+									json2[i][5]='<input type="text" class="orders" id="'+(json2[i][0])+'" value="'+(i+1)+'">';
 
 							};
 
@@ -493,7 +493,13 @@ $(function(){
 
     });
     $('button.btn-finish.danger').click(function() {
-    	console.log(json2);
+    	var tmp=[];
+    	for (var i = 0; i < json2.length; i++) {
+    		tmp[i]=[];
+    		tmp[i][0]=json2[i][0];
+    		tmp[i][1]=json2[i][5];
+    	};
+    	console.log(tmp);
     });
 });
 
