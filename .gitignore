@@ -34,12 +34,9 @@
 ehthumbs.db
 Thumbs.db
 
+# cakephp temp
+#################
 
-#cakephp temp
 /app/tmp/*
 /app/Config/core.php
 /app/Config/database.php
-
-#ignore files webroot
-
-

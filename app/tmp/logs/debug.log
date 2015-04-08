@@ -5262,3 +5262,8 @@ om: /quizzs/banksoal/1/ppkn
 =======
 >>>>>>> ac8b982884cf58979916072d2fb31b1c96453458
 >>>>>>> e39c4942c857e2f4a3c77770aba445e32cc99682
+2015-04-08 14:40:04 Debug: Here: /eval/, coming from: /
+2015-04-08 14:40:15 Debug: Here: /eval/quizzs/viewnew/1/1/1, coming from: /
+2015-04-08 14:40:19 Debug: Here: /eval/quizzs/viewnew/1/favicon.ico, coming from: /
+2015-04-08 14:40:20 Debug: Here: /eval/quizzs/add_new/1/1/1, coming from: /quizzs/viewnew/1/1/1
+2015-04-08 14:40:21 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
