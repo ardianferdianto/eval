@@ -508,7 +508,6 @@ $(function(){
 
     });
     $('button.btn-finish.danger').click(function() {
-<<<<<<< HEAD
     	var tmp=[];
     	for (var i = 0; i < json2.length; i++) {
     		tmp[i]=[];
@@ -516,10 +515,6 @@ $(function(){
     		tmp[i][1]=json2[i][5];
     	};
     	console.log(tmp);
-=======
-    	
-    	
->>>>>>> 9747670044af20a4ca7e3259254670528ed8b1c0
     });
     
     

@@ -454,13 +454,6 @@ class QuizzsController extends AppController {
 			
 			if ($this->Quizz->saveAll($this->data)) {
 				
-				
-
-				
-            	
-		      	
-		      
-		      
 		    }
 		}
 
