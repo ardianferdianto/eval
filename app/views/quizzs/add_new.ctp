@@ -178,11 +178,16 @@
 				            </tbody>
 				       </table>
 			    <script>
+			    $.fn.dataTable.ext.order['dom-text-numeric'] = function  ( settings, col )
+				{
+				    return this.api().column( col, {order:'index'} ).nodes().map( function ( td, i ) {
+				        return $('input', td).val() * 1;
+				    } );
+				}
 			    $(document).ready(function() {
 				    var arraysoal = [];
 				    var dataSet =[["-","-","-","-","-","-"]];
-				    var json2=[];
-				    var json=[];
+				    window.json2=[];
 					var MudahPG=0;var SedangPG=0;var SulitPG=0;
 					var MudahES=0;var SedangES=0;var SulitES=0;
 					var total=0;
@@ -190,16 +195,17 @@
 				    var table2=$('#example').dataTable( {
 					        "data": dataSet,
 					        "paging":   false,
-        					"ordering": false,
         					"searching": false,
         					"info":     false,
 					        "columns": [
-					            { "title": "Kode Soal", "class": "text-left" },
-					            { "title": "Tipe Soal", "class": "text-left" },
-					            { "title": "Level", "class": "text-left" },
-					            { "title": "Kelas", "class": "text-left" },
-					            { "title": "Soal", "class": "text-left" }
-					        ]
+					            { "title": "Kode Soal", "class": "text-left","orderable": false },
+					            { "title": "Tipe Soal", "class": "text-left","orderable": false },
+					            { "title": "Level", "class": "text-left","orderable": false },
+					            { "title": "Kelas", "class": "text-left","orderable": false },
+					            { "title": "Soal", "class": "text-left","orderable": false },
+					            { "title": "Order Soal", "class": "text-left","orderDataType": "dom-text-numeric" }
+					        ],
+					        "aaSorting": [[ 5, "asc" ]]
 					    } ); 
 
 
@@ -283,7 +289,9 @@
 								            return $(this).text().trim()
 								        }).get()
 								    }).get();*/
-									json=[soalid_selected,levelid_selected,tipe,kelas,questions];
+									/*var urutan=json2.length+1;
+									var indexes='<input type="text" name="urutan' + urutan + '" value="'+urutan+'">';*/
+									var json=[soalid_selected,levelid_selected,tipe,kelas,questions];
 									json2.push(json);
 
 
@@ -320,8 +328,13 @@
 								            return $(this).text().trim()
 								        }).get()
 								    }).get();*/
-									json=[soalid_selected,levelid_selected,tipe,kelas,questions];
-								    json2.splice($.inArray(json,json2),1);
+								for(var i = 0; i < json2.length; i++) {
+								    if(json2[i][0] == itemtoRemove) {
+								        json2.splice(i, 1);
+								        break;
+								    }
+								}
+							    //json2.splice($.inArray(jsonremove,json2),1);
 
 
 
@@ -358,8 +371,17 @@
 							$("#es_mudah").text(MudahES);$("#es_sedang").text(SedangES);$("#es_sulit").text(SulitES);
 							total=MudahPG+MudahES+SedangPG+SedangES+SulitPG+SulitES;
 							$("#totalsoal").text(total);
-							console.log(json2);
-							console.log(json);
+							console.log(JSON.stringify(json2,0,"\t"));
+							console.log(JSON.stringify(json,0,"\t"));
+
+							var range=json2.length;
+							for (var i = 0; i < json2.length; i++) {
+									json2[i][5]='<input type="text" class="orders" id="ord'+(i+1)+'" value="'+(i+1)+'">';
+
+							};
+
+
+
 							var tabs=$('#example').dataTable();
 							tabs.fnClearTable();
 							tabs.fnAddData(json2);
@@ -368,7 +390,29 @@
 					  	});
 
 					}
+					function shuffle(arr) {
+					    var shuffled = arr.slice(0), i = arr.length, temp, index;
+					    while (i--) {
+					        index = Math.floor(i * Math.random());
+					        temp = shuffled[index];
+					        shuffled[index] = shuffled[i];
+					        shuffled[i] = temp;
+					    }
+					    return shuffled;
+					}
 
+					$("#randomize").on('click',function(){
+						// Create the array
+						var i = json2.length, arr = [];
+						while (i--){ 
+							arr[i] = i+1;
+						}
+						// Shuffle it
+						arr = shuffle(arr);
+						for (var j = 0; j < arr.length; j++) {
+							$('#ord'+(j+1)+'').val(arr[j]);
+						};
+					});
 					 $("#txt_kode_soal").keyup(function(){
 					    var kde=this.value;
 					    $('#txt_prev').val(kde);
@@ -405,13 +449,13 @@
         		<input type="text" class="text-input large-input" id="txt_prev" disabled/></p>
         	</div>
         	<table class="table dataTable" cellspacing="0" width="100%" id="example"></table>
-
+        	<button class="primary" id="randomize">Randomize urutan soal</button>
         	</div>
         </div>
     </div>
 </div>
 <script>
-	$(function(){
+$(function(){
     $('#wizard').wizard({
         buttons: {
             cancel: {
@@ -439,12 +483,17 @@
                 cls: "info"
             },
             finish: {
-                show: true,
+                show: false,
                 title: "Finish step and Go!",
                 group: "left",
                 cls: "danger"
             }
+
         }
+
+    });
+    $('button.btn-finish.danger').click(function() {
+    	console.log(json2);
     });
 });
 
@@ -458,5 +507,11 @@ $(document).ready(function() {
 	    $(this).siblings('label').html(' not checked');
 	  }
 	});
+
+
 } );
+
+
+
+
 </script>

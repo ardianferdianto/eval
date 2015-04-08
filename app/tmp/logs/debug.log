@@ -4837,7 +4837,45 @@ om: /quizzs/banksoal/1/ppkn
 >>>>>>> 4b8f7d93b36102438630f580e3203a1707b01e55
 =======
 2015-04-07 14:25:54 Debug: Here: /evaluasi_sd/, coming from: /
+<<<<<<< HEAD
+2015-04-07 14:40:54 Debug: Here: /evaluasi_sd/, coming from: /
+2015-04-07 14:41:01 Debug: Here: /evaluasi_sd/quizzs/viewnew/1/1/1, coming from: /
+2015-04-07 14:41:02 Debug: Here: /evaluasi_sd/quizzs/viewnew/1/favicon.ico, coming from: /
+2015-04-07 14:41:05 Debug: Here: /evaluasi_sd/quizzs/viewnew/1/favicon.ico, coming from: /
+2015-04-07 14:41:06 Debug: Here: /evaluasi_sd/quizzs/viewnew/1/favicon.ico, coming from: /
+2015-04-07 14:41:07 Debug: Here: /evaluasi_sd/quizzs/viewnew/1/favicon.ico, coming from: /
+2015-04-07 14:41:08 Debug: Here: /evaluasi_sd/quizzs/viewnew/1/favicon.ico, coming from: /
+2015-04-07 14:41:09 Debug: Here: /evaluasi_sd/quizzs/add_new/1/1/1, coming from: /quizzs/viewnew/1/1/1
+2015-04-07 14:41:10 Debug: Here: /evaluasi_sd/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-07 14:42:14 Debug: Here: /evaluasi_sd/quizzs/viewnew/1/favicon.ico, coming from: /
+2015-04-07 14:42:15 Debug: Here: /evaluasi_sd/quizzs/viewnew/1/favicon.ico, coming from: /
+2015-04-07 14:42:24 Debug: Here: /evaluasi_sd/quizzs/viewnew/2/1/1, coming from: /
+2015-04-07 14:42:25 Debug: Here: /evaluasi_sd/quizzs/viewnew/2/favicon.ico, coming from: /
+2015-04-07 14:42:35 Debug: Here: /evaluasi_sd/quizzs/viewnew/3/1/1, coming from: /
+2015-04-07 14:42:35 Debug: Here: /evaluasi_sd/quizzs/viewnew/3/favicon.ico, coming from: /
+2015-04-07 14:42:44 Debug: Here: /evaluasi_sd/quizzs/banksoal/1/1, coming from: /
+2015-04-07 14:42:44 Debug: Here: /evaluasi_sd/quizzs/banksoal/favicon.ico, coming from: /
+2015-04-07 14:42:47 Debug: Here: /evaluasi_sd/questions/edit/260, coming from: /quizzs/banksoal/1/1
+2015-04-07 14:42:48 Debug: Here: /evaluasi_sd/questions/favicon.ico, coming from: /
+2015-04-07 14:42:55 Debug: Here: /evaluasi_sd/quizzs/banksoal/favicon.ico, coming from: /
+2015-04-07 14:42:57 Debug: Here: /evaluasi_sd/questions/edit/261, coming from: /quizzs/banksoal/1/1
+2015-04-07 14:43:10 Debug: Here: /evaluasi_sd/questions/edit/261, coming from: /questions/edit/261
+2015-04-07 14:43:10 Debug: Redirecting to: /evaluasi_sd/quizzs/banksoal/1/1, initiated in /var/www/html/evaluasi_sd/cake/libs/object.php on line 118
+2015-04-07 14:43:10 Debug: Here: /evaluasi_sd/quizzs/banksoal/1/1, coming from: /questions/edit/261
+2015-04-07 14:43:10 Debug: Here: /evaluasi_sd/quizzs/banksoal/favicon.ico, coming from: /
+2015-04-07 14:43:34 Debug: Here: /evaluasi_sd/questions/edit/261, coming from: /quizzs/banksoal/1/1
+2015-04-07 14:43:39 Debug: Here: /evaluasi_sd/quizzs/banksoal/favicon.ico, coming from: /
+2015-04-07 14:59:56 Debug: Here: /evaluasi_sd/, coming from: /
+2015-04-07 15:00:03 Debug: Here: /evaluasi_sd/quizzs/banksoal/1/1, coming from: /
+2015-04-07 15:00:04 Debug: Here: /evaluasi_sd/quizzs/banksoal/favicon.ico, coming from: /
+2015-04-07 15:00:08 Debug: Here: /evaluasi_sd/questions/edit/259, coming from: /quizzs/banksoal/1/1
+2015-04-07 15:00:09 Debug: Here: /evaluasi_sd/questions/favicon.ico, coming from: /
+2015-04-07 15:00:25 Debug: Here: /evaluasi_sd/quizzs/banksoal/favicon.ico, coming from: /
+=======
 >>>>>>> f9d603317621804ae9bd92b7cae61b8e8d2d18c5
+<<<<<<< HEAD
+>>>>>>> 35582068b270828df0efb6da022735495a924d3d
+=======
 2015-04-07 14:42:49 Debug: Here: /eval/, coming from: /
 2015-04-07 14:43:32 Debug: Here: /eval/quizzs/viewnew/1/1/1, coming from: /
 2015-04-07 14:43:35 Debug: Here: /eval/quizzs/viewnew/1/favicon.ico, coming from: /
@@ -5219,4 +5257,8 @@ om: /quizzs/banksoal/1/ppkn
 2015-04-07 19:27:28 Debug: Here: /eval/questions/add_newsoal/favicon.ico, coming from: /
 2015-04-07 19:27:48 Debug: Here: /eval/questions/add_newsoal/6/1, coming from: /
 2015-04-07 19:27:49 Debug: Here: /eval/questions/add_newsoal/favicon.ico, coming from: /
+<<<<<<< HEAD
 2015-04-08 14:35:48 Debug: Here: /eval/, coming from: /
+=======
+>>>>>>> ac8b982884cf58979916072d2fb31b1c96453458
+>>>>>>> e39c4942c857e2f4a3c77770aba445e32cc99682

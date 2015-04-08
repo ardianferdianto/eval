@@ -428,7 +428,9 @@ class QuizzsController extends AppController {
     	$conditions_lihatquizz = array('Quizz.kelas'=>$kelas,'Quizz.pelajaran_id'=>$mapel);
     	$quizz_detail = $this->Quizz->find('all',array('conditions'=>$conditions_lihatquizz));
     	$this->set('quizz_detail',$quizz_detail);
-    	
+    	$this->set('tipeID',$tipe);
+    	$this->set('kelasID',$kelas);
+    	$this->set('mapelID',$mapel);
     	$this->layout='default_metro';
     }
 
