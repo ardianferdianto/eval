@@ -450,6 +450,30 @@ class QuizzsController extends AppController {
     	$conditions_lihatsoal = array('Question.kelas'=>$kelas,'Question.pelajaran_id'=>$mapel);
     	$bank_soal = $this->Quizz->Question->find('all',array('conditions'=>$conditions_lihatsoal));
     	$pelajaran = $this->Quizz->Pelajaran->read(null, $mapel);
+    	//save all data
+
+    	if (!empty($this->data)) {
+
+    		$this->Quizz->create();
+			
+			if ($this->Quizz->save($this->data)) {
+				
+				$quizz_id  = $this->Quizz->getInsertID();
+				
+		      	foreach($this->data['QuizzQuestion'] as $index => $itemtryout) {
+			        $itemtryout = array('QuizzQuestion' => $itemtryout);
+			        $itemtryout['QuizzQuestion']['quizz_id'] = $quizz_id;
+
+			        // clear any previous Book data
+			        $this->Quizz->QuizzQuestion->create();
+
+			        
+			        $this->Quizz->QuizzQuestion->save(); 
+		      	}
+		      
+		      
+		    }
+		}
     	//fetch data pelajaran
     	/*$conditionz = array('Pelajaran.id'=>$mapel);
     	$pelajaranlist = $this->Quizz->Pelajaran->find('all',array('conditions'=>$conditionz));*/

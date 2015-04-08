@@ -188,6 +188,7 @@
 				    var arraysoal = [];
 				    var dataSet =[["-","-","-","-","-","-"]];
 				    window.json2=[];
+				    window.kde='';
 					var MudahPG=0;var SedangPG=0;var SulitPG=0;
 					var MudahES=0;var SedangES=0;var SulitES=0;
 					var total=0;
@@ -381,7 +382,6 @@
 							};
 
 
-
 							var tabs=$('#example').dataTable();
 							tabs.fnClearTable();
 							tabs.fnAddData(json2);
@@ -414,7 +414,7 @@
 						};
 					});
 					 $("#txt_kode_soal").keyup(function(){
-					    var kde=this.value;
+					    kde=this.value;
 					    $('#txt_prev').val(kde);
 					  });
 					
@@ -445,13 +445,25 @@
         </div>
         <div class="step" id="step3">
         	<p><label>Kode</label>
-        		<div class="input-control text">
+        	<div class="input-control text">
         		<input type="text" class="text-input large-input" id="txt_prev" disabled/></p>
         	</div>
         	<table class="table dataTable" cellspacing="0" width="100%" id="example"></table>
         	<button class="primary" id="randomize">Randomize urutan soal</button>
         	</div>
+        	<?php echo $form->create('Quizz',array('id'=>'form_penambahan_tryout','action'=>'add_new','type'=>'file'));
+
+        	echo $form->input('Quizz.kode',array('type'=>'hidden','value'=>''));
+        	echo $form->input('Quizz.user_id',array('type'=>'hidden','value'=>'1'));
+        	echo $form->input('Quizz.title',array('type'=>'hidden','value'=>'Try Out'));
+
+	        ?>
+
+
+	        <?php echo $form->end();?>
         </div>
+        
+
     </div>
 </div>
 <script>
@@ -489,12 +501,18 @@ $(function(){
                 cls: "danger"
             }
 
+        },
+        onPage: function(){
+        	
         }
 
     });
     $('button.btn-finish.danger').click(function() {
-    	console.log(json2);
+    	
+    	
     });
+    
+    
 });
 
 $(document).ready(function() {
@@ -512,6 +530,39 @@ $(document).ready(function() {
 } );
 
 
+var options_submitformtryout = {
+  //beforeSubmit:  showRequest,  // pre-submit callback 
+  success:       showResponse_submitformtryout  // post-submit callback
+};
+
+$(document).ready(function() { 
+	function insert_fieldformsetsoal(){
+    	$('#form_penambahan_tryout #QuizzKode').val(kde);
+    	$('#form_penambahan_tryout #QuizzKode').val(kde);
+    	for (var i = 0; i < json2.length; i++) {
+    		$('#form_penambahan_tryout').append('<input type="hidden" name="data[QuizzQuestion]['+i+'][question_id]" value="'+json2[i][0]+'" >');
+    		$('#form_penambahan_tryout').append('<input type="hidden" name="data[QuizzQuestion]['+i+'][order]" value="'+json2[i][0]+'" >');
+    	};
+    	
+    }
+
+    $( 'button.btn-finish.danger').on('click', function(){
+
+
+    	insert_fieldformsetsoal();
+    	setTimeout(function(){
+    		$('#form_penambahan_tryout').ajaxSubmit(options_submitformtryout);	
+    	}, 10000);
+  		
+
+    });
+}); 
+
+function showResponse_submitformtryout(responseText, statusText, xhr, $form)  { 
+  setTimeout(function() {
+    alert('success');
+  }, 2000);
+}
 
 
 </script>
