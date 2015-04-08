@@ -5257,4 +5257,142 @@ om: /quizzs/banksoal/1/ppkn
 2015-04-07 19:27:28 Debug: Here: /eval/questions/add_newsoal/favicon.ico, coming from: /
 2015-04-07 19:27:48 Debug: Here: /eval/questions/add_newsoal/6/1, coming from: /
 2015-04-07 19:27:49 Debug: Here: /eval/questions/add_newsoal/favicon.ico, coming from: /
+<<<<<<< HEAD
+2015-04-08 14:35:48 Debug: Here: /eval/, coming from: /
+=======
 >>>>>>> ac8b982884cf58979916072d2fb31b1c96453458
+>>>>>>> e39c4942c857e2f4a3c77770aba445e32cc99682
+2015-04-08 14:40:04 Debug: Here: /eval/, coming from: /
+2015-04-08 14:40:15 Debug: Here: /eval/quizzs/viewnew/1/1/1, coming from: /
+2015-04-08 14:40:19 Debug: Here: /eval/quizzs/viewnew/1/favicon.ico, coming from: /
+2015-04-08 14:40:20 Debug: Here: /eval/quizzs/add_new/1/1/1, coming from: /quizzs/viewnew/1/1/1
+2015-04-08 14:40:21 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 14:46:25 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 14:46:26 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 14:54:44 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 14:54:46 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 15:15:47 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 15:16:10 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 15:23:54 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 15:24:05 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 15:30:38 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 15:30:40 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 15:30:46 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 15:30:47 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 15:31:00 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 15:31:02 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 15:31:19 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 15:31:20 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 15:33:35 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 15:33:38 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 15:34:01 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 15:34:02 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 15:34:47 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 15:34:49 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 15:36:14 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 15:36:16 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 15:39:20 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 15:39:22 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 15:40:21 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 15:40:23 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 15:40:56 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 15:40:58 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 15:50:38 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 15:50:40 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 15:51:36 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 15:51:37 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 15:53:04 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 15:53:07 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 15:53:56 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 15:53:59 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 15:54:40 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 15:54:43 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 15:59:48 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 15:59:50 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 16:20:54 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 16:20:57 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 16:22:06 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 16:22:08 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 16:22:23 Debug: Here: /eval/quizzs/add_new, coming from: /quizzs/add_new/1/1/0
+2015-04-08 16:24:58 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 16:25:00 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 16:25:34 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 16:25:36 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 16:25:44 Debug: Here: /eval/quizzs/add_new, coming from: /quizzs/add_new/1/1/0
+2015-04-08 16:26:16 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 16:26:16 Notice: Notice (8): Undefined variable: pelajaranlist in [APP/controllers/quizzs_controller.php, line 483]
+2015-04-08 16:26:45 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 16:26:46 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 16:27:04 Debug: Here: /eval/quizzs/add_new, coming from: /quizzs/add_new/1/1/0
+2015-04-08 16:27:04 Notice: Notice (8): Undefined variable: kelas in [APP/controllers/quizzs_controller.php, line 450]
+2015-04-08 16:27:04 Notice: Notice (8): Undefined variable: mapel in [APP/controllers/quizzs_controller.php, line 450]
+2015-04-08 16:27:04 Notice: Notice (8): Undefined variable: mapel in [APP/controllers/quizzs_controller.php, line 452]
+2015-04-08 16:27:04 Notice: Notice (8): Undefined property: Quizz::$QuizzQuestion in [APP/controllers/quizzs_controller.php, line 467]
+2015-04-08 16:28:48 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 16:28:49 Notice: Notice (8): Undefined variable: pelajaranlist in [APP/controllers/quizzs_controller.php, line 483]
+2015-04-08 16:28:57 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 16:28:59 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 16:29:21 Debug: Here: /eval/quizzs/add_new, coming from: /quizzs/add_new/1/1/0
+2015-04-08 16:29:21 Notice: Notice (8): Undefined variable: kelas in [APP/controllers/quizzs_controller.php, line 450]
+2015-04-08 16:29:21 Notice: Notice (8): Undefined variable: mapel in [APP/controllers/quizzs_controller.php, line 450]
+2015-04-08 16:29:21 Notice: Notice (8): Undefined variable: mapel in [APP/controllers/quizzs_controller.php, line 452]
+2015-04-08 16:29:22 Notice: Notice (8): Undefined property: Quizz::$QuizzQuestion in [APP/controllers/quizzs_controller.php, line 467]
+2015-04-08 16:33:26 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 16:33:28 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 16:33:46 Debug: Here: /eval/quizzs/add_new, coming from: /quizzs/add_new/1/1/0
+2015-04-08 16:35:28 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 16:35:30 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 16:36:13 Debug: Here: /eval/quizzs/add_new, coming from: /quizzs/add_new/1/1/0
+2015-04-08 16:36:13 Notice: Notice (8): Undefined variable: kelas in [APP/controllers/quizzs_controller.php, line 450]
+2015-04-08 16:36:13 Notice: Notice (8): Undefined variable: mapel in [APP/controllers/quizzs_controller.php, line 450]
+2015-04-08 16:36:13 Notice: Notice (8): Undefined variable: mapel in [APP/controllers/quizzs_controller.php, line 452]
+2015-04-08 16:36:13 Notice: Notice (8): Undefined property: Quizz::$QuizzQuestion in [APP/controllers/quizzs_controller.php, line 468]
+2015-04-08 16:39:29 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 16:39:31 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 16:39:52 Debug: Here: /eval/quizzs/add_new, coming from: /quizzs/add_new/1/1/0
+2015-04-08 16:40:23 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 16:40:25 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 16:40:55 Debug: Here: /eval/quizzs/add_new, coming from: /quizzs/add_new/1/1/0
+2015-04-08 16:42:01 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 16:42:03 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 16:42:23 Debug: Here: /eval/quizzs/add_new, coming from: /quizzs/add_new/1/1/0
+2015-04-08 16:47:11 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 16:47:13 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 16:47:34 Debug: Here: /eval/quizzs/add_new, coming from: /quizzs/add_new/1/1/0
+2015-04-08 16:47:50 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 16:47:52 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 16:48:12 Debug: Here: /eval/quizzs/add_new, coming from: /quizzs/add_new/1/1/0
+2015-04-08 16:48:56 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 16:49:00 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 16:49:16 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 16:49:17 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 16:49:41 Debug: Here: /eval/quizzs/add_new, coming from: /quizzs/add_new/1/1/0
+2015-04-08 16:50:29 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 16:50:33 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 16:53:10 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 16:53:12 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 16:53:36 Debug: Here: /eval/quizzs/add_new, coming from: /quizzs/add_new/1/1/0
+2015-04-08 16:55:14 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 16:55:16 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 16:55:39 Debug: Here: /eval/quizzs/add_new, coming from: /quizzs/add_new/1/1/0
+2015-04-08 16:55:44 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 16:55:46 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 16:56:05 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 16:56:07 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 16:56:20 Debug: Here: /eval/quizzs/add_new, coming from: /quizzs/add_new/1/1/0
+2015-04-08 17:09:52 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 17:09:55 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 17:10:21 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 17:10:23 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 17:13:00 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 17:13:02 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 17:13:15 Debug: Here: /eval/quizzs/add_new, coming from: /quizzs/add_new/1/1/0
+2015-04-08 17:16:18 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 17:16:21 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 17:16:33 Debug: Here: /eval/quizzs/add_new, coming from: /quizzs/add_new/1/1/0
+2015-04-08 17:17:56 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 17:17:59 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 17:18:10 Debug: Here: /eval/quizzs/add_new, coming from: /quizzs/add_new/1/1/0
+2015-04-08 17:18:18 Debug: Here: /eval/quizzs/add_new/1/1/0, coming from: /
+2015-04-08 17:18:20 Debug: Here: /eval/quizzs/add_new/1/favicon.ico, coming from: /
+2015-04-08 17:18:34 Debug: Here: /eval/quizzs/add_new, coming from: /quizzs/add_new/1/1/0

@@ -446,10 +446,30 @@ class QuizzsController extends AppController {
     	$this->layout='default_metro';
     }
     function add_new($tipesoal,$kelas,$mapel){
-    	$this->Quizz->recursive = 1;
+    	$this->Quizz->recursive = 2;
+
+    	if (!empty($this->data)) {
+
+    		$this->Quizz->create();
+			
+			if ($this->Quizz->saveAll($this->data)) {
+				
+				
+
+				
+            	
+		      	
+		      
+		      
+		    }
+		}
+
+    	
     	$conditions_lihatsoal = array('Question.kelas'=>$kelas,'Question.pelajaran_id'=>$mapel);
     	$bank_soal = $this->Quizz->Question->find('all',array('conditions'=>$conditions_lihatsoal));
     	$pelajaran = $this->Quizz->Pelajaran->read(null, $mapel);
+    	//save all data
+    	
     	//fetch data pelajaran
     	/*$conditionz = array('Pelajaran.id'=>$mapel);
     	$pelajaranlist = $this->Quizz->Pelajaran->find('all',array('conditions'=>$conditionz));*/

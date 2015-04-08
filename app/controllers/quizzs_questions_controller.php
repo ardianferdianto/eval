@@ -118,6 +118,27 @@ class QuizzsQuestionsController extends AppController {
 
 	}
 
+	function add_new(){
+
+		if (!empty($this->data)) {
+
+    		$this->QuizzsQuestion->Quizz->create();
+			
+			if ($this->QuizzsQuestion->Quizz->save($this->data)) {
+				
+				$quizz_id  = $this->QuizzsQuestion->Quizz->getInsertID();
+
+				foreach($this->data['QuizzQuestion'] as $datax) {
+					$data['quizz_id'] = $quizz_id;
+                	$this->QuizzQuestion->saveAll($datax);
+            	}
+		      	
+		      
+		      
+		    }
+		}
+	}
+
 	function edit($id = null) {
 		if (!$id && empty($this->data)) {
 			$this->Session->setFlash(__('Invalid QuizzsQuestion', true));
