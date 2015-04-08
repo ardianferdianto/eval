@@ -1,0 +1,751 @@
+﻿<PageflipDataSet>
+<Settings
+	
+	CopyrightMessage="99C1F4F548398C7320B4340428387FE9B7DB79FE90F2D216176A510E9212E429A55087950E0FAC8530C9740DBBC7739735BA5CBE9ED2D3261DCA5EDEA0E5611C4351CACB683FEC8DB8C279FE9542D546275A6FDEA4254F4834603E812D04F0F9F0ADE9C0BBC7AE99838C78A472C56148343D34E12D04FF0BFA4DC7C0BCE8B609A58C787178256148334F3F910B04F02CFA4DE9C0BCB5BC69A58C778374E54F4834603E812D04F0F9F0ADE9C0BBC7B939838C78A472C56148343D34E12D04FF0BFE8DC7C0BCE8B609A58C787178256148334F33D10B04F02CFA4DE9C0BCB5BC69A58C778378254F4834603E812D04F0F9F0ADE9C0BBC7BD79838C78A472C56148343D34E12D04FF0BE2DD0BCB6BFABD7A5F8947B67606714504F923E1500FAF3EF1BE93CD8BFABA4AB589483D67261B43E37235F2D701CF3EFE8EF9CD8C71AB6A608727B679361B45037232C23D01C0B5EFAEB5CB6BFABD7A5F8947B67606714504F923E20A0FAF3EF1BE93CD8BFABA4AB589483D67265F43E37235F2D701CF3EFE8EF9CD8C71AB6AA48727B679361B45037232C23D01C0B5EFAEF9CB6BFABD7A5F8947B67606714504F923E24E0FAF3EF1BE93CD8BFABA4AB589483D67259447232DFAFE3EA9727635BA6ECEAEC5611C54515394BA2D6C7BA0C534F4384A81E72D404C029D1AEB2BF8AD663F8929D430C0B0FB909B397E30C59256E37022B30714C0E6F2AEA2962DB2AC5A7F9D58C47802FB57F33C36E11A1D5F3CF19D1AD08DC3740B90AE597E87E59257F3E7D8CB1D64505495B92F8F3EED8EC6CB6BFAA94AC68B676172C58348337221C1500FAF3ECAD30/7407"
+	
+	CopyrightMessageDisplay = "false"
+	ContextMenu="true"
+	
+	PageWidth="300"
+	PageHeight="400"
+	AutoSize="true"
+	
+	ViewAngle="0"
+	
+	StartPage="1"
+	
+	AlwaysOpened="false"
+	ZeroPage="false"
+	ZeroPageAlwaysVisible="false"
+	
+	CenterSinglePage="true"
+	
+	RightToLeft="false"
+	VerticalMode="false"
+	
+	OffsetX="0"
+	OffsetY="0"
+	
+	HardCover="true"
+	HardPage="false"
+	EmbossedPages="true"
+	EmbossAlpha="100"
+	ShadowsEnabled="true"
+	ShadowsAlpha="100"
+	
+	LargeCover="true"
+	LargeCoverVerticalOversize="24"
+	LargeCoverHorizontalOversize="12"
+	
+	DropShadow="true"
+	DropShadowSize="20"
+	DropShadowOffset="10"
+	DropShadowAlpha="30"
+	
+	PageLoaderBackColor="0xffffff"
+	
+	PageScale="true"
+	MinScale="50"
+	MaxScale="150"
+	
+	MinStageWidth="700"
+	MinStageHeight="620"
+	BaseStageWidth="820"
+	BaseStageHeight="640"
+	
+	TransparentBackground="false"
+	BackgroundColor="0xcccccc"
+	BackgroundImageFile=""
+
+	ZoomOnPageClick="true"
+	DragZoom="true"
+	
+	FPSControlEnabled="true"
+	MaxFPS="60"
+	ShowFPS="false"
+	
+	FontLibraryFile="pageFlipFonts.swf"
+	xDefaultFont=""
+	
+	ControlBar="true"
+	KeyboardShortcutsEnabled="true"
+	ControlBarScale="100"
+	ControlBarFullScreenScale="150"
+	
+	xControlBarBackgroundColor="0x000000"
+	xControlBarBackgroundAlpha="100"
+	
+	CustomControlBarIcons="false"
+	xCustomControlBarFile="pageFlipControls.swf"
+	
+	CustomControlBarLayout="false"
+	
+	EnableButtonColoring="true"
+	ButtonColor="0xffffff"
+	ButtonAlpha="100"
+	ButtonOverColor="0xF0B400"
+	ButtonOverAlpha="100"
+	ButtonPressColor="0x666666"
+	ButtonPressAlpha="50"
+	ButtonDisabledColor="0x666666"
+	ButtonDisabledAlpha="15"
+	
+	ButtonToolTip="true"
+	
+	ControlBarLoaderEnabled="true"
+	ButtonFirstLastEnabled="true"			  	
+	ButtonLeftRightEnabled="true"			  	
+	ButtonZoomEnabled="true"			  	
+	ButtonPrintEnabled="true"			  	
+	ButtonAutoFlipEnabled="true"			  	
+	ButtonPDFLinkEnabled="true"
+	PDFlink=""
+	ButtonLanguageEnabled="true"
+	ButtonThumbnailEnabled="true"			  	
+	ButtonMuteEnabled="true"			  	
+	ButtonInfoEnabled="true"			  	
+	ButtonIndexEnabled="true"			  	
+	ButtonFullScreenEnabled="true"			  	
+	ButtonCloseEnabled="true"
+	PageDisplayEnabled="true"
+	PageNameDisplay="false"
+	ControlBarPagerWidth="150"
+	
+	ButtonCustom0Enabled="true"
+	ButtonCustom1Enabled="true"
+	ButtonCustom2Enabled="false"
+	ButtonCustom3Enabled="false"
+	ButtonCustom4Enabled="false"
+	ButtonCustom5Enabled="false"
+	ButtonCustom6Enabled="false"
+	ButtonCustom7Enabled="false"
+		
+	ContentPreviewEnabled="true"
+	ThumbnailsEnabled="false"
+	ThumbnailModeStart="false"
+	ThumbnailWidth="90"
+	ThumbnailHeight="120"
+	ThumbnailDropShadow="true"
+	ThumbnailDropShadowSize="8"
+	ThumbnailDropShadowOffset="2"
+	ThumbnailDropShadowAlpha="30"
+	
+	StartAutoFlip="false"
+	AutoFlipDefaultInterval="2000"
+	AutoFlipLooping="true"
+		  
+	TransparencyEnabled="true"
+	TransparencyActivePage="false"
+	TransparencyAutoLevel="true"
+	TransparencyMaxLevel="16"
+	
+	DragArea="70"
+	AutoFlipArea="70"
+	MousePursuitSpeed="8"
+	ZoomFollowSpeed="10"
+	FlippingDuration="800"
+	
+	PageCache="5"
+	UnloadPages="false"
+	
+	MouseControl="true"
+	DefaultTransition="1"
+	DefaultTransitionDuration="250"
+	FlippingSpreadActivity="true"
+		
+	LayoutOrder="PREVIEW-CONTENT-CONTROLBAR"
+	ControlBarHeight="50"
+	ControlBarOffset="10"
+	ContentPreviewHeight="90"
+	ContentPreviewWidth="130"
+	
+	PopupBackgroundColor="0xFFFFFF"
+	PopupBackgroundOpacity="80"
+	PopupBorderThickness="0"
+	PopupBorderColor="0x000000"
+	PopupRounded="true"
+	PopupRoundedRadius="8"		
+	PopupMargin="8"
+	PopupTitleFont="DINBlk_PFL Normal"			
+	xPopupTextFont=""
+	PopupTitleColor="0x333333"
+	PopupTextColor="0x333333"
+	PopupSpace="8"
+	PopupMouseFollowSpeed="5"
+	
+	InfoWindowWidth="250"
+	FloatingWindowColumnWidth="200"
+	FloatingWindowMargin="10"
+	FloatingWindowHorizontalSpace="16"
+	FloatingWindowVerticalSpace="16"
+	FloatingWindowSeparator="true"
+	FloatingWindowSeparatorColor="0x555555"
+	FloatingWindowSeparatorAlpha="100"
+	FloatingWindowSeparatorHeight="1"
+	FloatingWindowSeparatorOffset="8"
+	FloatingWindowBackgroundColor="0x000000"
+	FloatingWindowBackgroundAlpha="80"
+	FloatingWindowBorderThickness="0"
+	FloatingWindowBorderColor="0xFFFFFF"
+	FloatingWindowBorderAlpha="100"
+	FloatingWindowCornerRadius="16"		
+	FloatingWindowColor="0xFFFFFF"
+	FloatingWindowSize="10"
+	FloatingWindowAlign="CENTER"
+	
+	TOCTitleFont="DINBlk_PFL Normal"			
+	TOCTitleColor="0xFFFFFF"
+	TOCTitleSize="20"
+	TOCTitleAlign="CENTER"			
+	TOCLinkColor="0xFFFFFF"
+	TOCLinkSize="12"
+	TOCLinkAlign="CENTER"			
+	TOCLinkPageNumberColor="0xFFFFFF"
+	TOCLinkPageNumberSize="20"
+	TOCLinkPageNumberAlign="CENTER"
+	TOCPageNumberFirst="false"
+	TOCPageNumberWidth="32"		
+	TOCDescriptionColor="0xFFFFFF"
+	TOCDescriptionSize="12"
+	TOCDescriptionAlign="CENTER"
+	
+	SoundEnabled="true"
+	StartMute="false"
+	
+	
+	
+	>
+
+	<Sounds	EffectVolume="50" >
+		<PullOpen		SoundFile="sounds/pullflip2start.mp3" />
+		<PullOpen		SoundFile="sounds/pullflip3start.mp3" />
+		<PullClose		SoundFile="sounds/pullflip0end.mp3" />
+		<PullClose		SoundFile="sounds/pullflip1end.mp3" />
+		<PullClose		SoundFile="sounds/pullflip2end.mp3" />
+		<PullClose		SoundFile="sounds/pullflip3end.mp3" />
+		<PushOpen		SoundFile="sounds/pushflip0start.mp3" />
+		<PushOpen		SoundFile="sounds/pushflip1start.mp3" />
+		<PushOpen		SoundFile="sounds/pushflip2start.mp3" />
+		<PushClose		SoundFile="sounds/pushflip0end.mp3" />
+		<PushClose		SoundFile="sounds/pushflip1end.mp3" />
+		<PushClose		SoundFile="sounds/pushflip2end.mp3" />
+	</Sounds>
+</Settings>
+
+<PageOrder>
+<PageData PageFile="pages/cover.jpg" ZoomFiles="pages/cover.jpg[200%]pages/cover.jpg[300%]pages/cover.jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/cover.jpg" />
+<PageData PageFile="pages/page(002).jpg" ZoomFiles="pages/page(002).jpg[200%]pages/page(002).jpg[300%]pages/page(002).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(002).jpg" />
+<PageData PageFile="pages/page(003).jpg" ZoomFiles="pages/page(003).jpg[200%]pages/page(003).jpg[300%]pages/page(003).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(003).jpg" />
+<PageData PageFile="pages/page(004).jpg" ZoomFiles="pages/page(004).jpg[200%]pages/page(004).jpg[300%]pages/page(004).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(004).jpg" />
+<PageData PageFile="pages/page(005).jpg" ZoomFiles="pages/page(005).jpg[200%]pages/page(005).jpg[300%]pages/page(005).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(005).jpg" />
+<PageData PageFile="pages/page(006).jpg" ZoomFiles="pages/page(006).jpg[200%]pages/page(006).jpg[300%]pages/page(006).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(006).jpg" />
+<PageData PageFile="pages/page(007).jpg" ZoomFiles="pages/page(007).jpg[200%]pages/page(007).jpg[300%]pages/page(007).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(007).jpg" />
+<PageData PageFile="pages/page(008).jpg" ZoomFiles="pages/page(008).jpg[200%]pages/page(008).jpg[300%]pages/page(008).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(008).jpg" />
+<PageData PageFile="pages/page(009).jpg" ZoomFiles="pages/page(009).jpg[200%]pages/page(009).jpg[300%]pages/page(009).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(009).jpg" />
+<PageData PageFile="pages/page(010).jpg" ZoomFiles="pages/page(010).jpg[200%]pages/page(010).jpg[300%]pages/page(010).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(010).jpg" />
+<PageData PageFile="pages/page(011).jpg" ZoomFiles="pages/page(011).jpg[200%]pages/page(011).jpg[300%]pages/page(011).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(011).jpg" />
+<PageData PageFile="pages/page(012).jpg" ZoomFiles="pages/page(012).jpg[200%]pages/page(012).jpg[300%]pages/page(012).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(012).jpg" />
+<PageData PageFile="pages/page(013).jpg" ZoomFiles="pages/page(013).jpg[200%]pages/page(013).jpg[300%]pages/page(013).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(013).jpg" />
+<PageData PageFile="pages/page(014).jpg" ZoomFiles="pages/page(014).jpg[200%]pages/page(014).jpg[300%]pages/page(014).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(014).jpg" />
+<PageData PageFile="pages/page(015).jpg" ZoomFiles="pages/page(015).jpg[200%]pages/page(015).jpg[300%]pages/page(015).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(015).jpg" />
+<PageData PageFile="pages/page(016).jpg" ZoomFiles="pages/page(016).jpg[200%]pages/page(016).jpg[300%]pages/page(016).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(016).jpg" />
+<PageData PageFile="pages/page(017).jpg" ZoomFiles="pages/page(017).jpg[200%]pages/page(017).jpg[300%]pages/page(017).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(017).jpg" />
+<PageData PageFile="pages/page(018).jpg" ZoomFiles="pages/page(018).jpg[200%]pages/page(018).jpg[300%]pages/page(018).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(018).jpg" />
+<PageData PageFile="pages/page(019).jpg" ZoomFiles="pages/page(019).jpg[200%]pages/page(019).jpg[300%]pages/page(019).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(019).jpg" />
+<PageData PageFile="pages/page(020).jpg" ZoomFiles="pages/page(020).jpg[200%]pages/page(020).jpg[300%]pages/page(020).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(020).jpg" />
+<PageData PageFile="pages/page(021).jpg" ZoomFiles="pages/page(021).jpg[200%]pages/page(021).jpg[300%]pages/page(021).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(021).jpg" />
+<PageData PageFile="pages/page(022).jpg" ZoomFiles="pages/page(022).jpg[200%]pages/page(022).jpg[300%]pages/page(022).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(022).jpg" />
+<PageData PageFile="pages/page(023).jpg" ZoomFiles="pages/page(023).jpg[200%]pages/page(023).jpg[300%]pages/page(023).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(023).jpg" />
+<PageData PageFile="pages/page(024).jpg" ZoomFiles="pages/page(024).jpg[200%]pages/page(024).jpg[300%]pages/page(024).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(024).jpg" />
+<PageData PageFile="pages/page(025).jpg" ZoomFiles="pages/page(025).jpg[200%]pages/page(025).jpg[300%]pages/page(025).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(025).jpg" />
+<PageData PageFile="pages/page(026).jpg" ZoomFiles="pages/page(026).jpg[200%]pages/page(026).jpg[300%]pages/page(026).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(026).jpg" />
+<PageData PageFile="pages/page(027).jpg" ZoomFiles="pages/page(027).jpg[200%]pages/page(027).jpg[300%]pages/page(027).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(027).jpg" />
+<PageData PageFile="pages/page(028).jpg" ZoomFiles="pages/page(028).jpg[200%]pages/page(028).jpg[300%]pages/page(028).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(028).jpg" />
+<PageData PageFile="pages/page(029).jpg" ZoomFiles="pages/page(029).jpg[200%]pages/page(029).jpg[300%]pages/page(029).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(029).jpg" />
+<PageData PageFile="pages/page(030).jpg" ZoomFiles="pages/page(030).jpg[200%]pages/page(030).jpg[300%]pages/page(030).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(030).jpg" />
+<PageData PageFile="pages/page(031).jpg" ZoomFiles="pages/page(031).jpg[200%]pages/page(031).jpg[300%]pages/page(031).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(031).jpg" />
+<PageData PageFile="pages/page(032).jpg" ZoomFiles="pages/page(032).jpg[200%]pages/page(032).jpg[300%]pages/page(032).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(032).jpg" />
+<PageData PageFile="pages/page(033).jpg" ZoomFiles="pages/page(033).jpg[200%]pages/page(033).jpg[300%]pages/page(033).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(033).jpg" />
+<PageData PageFile="pages/page(034).jpg" ZoomFiles="pages/page(034).jpg[200%]pages/page(034).jpg[300%]pages/page(034).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(034).jpg" />
+<PageData PageFile="pages/page(035).jpg" ZoomFiles="pages/page(035).jpg[200%]pages/page(035).jpg[300%]pages/page(035).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(035).jpg" />
+<PageData PageFile="pages/page(036).jpg" ZoomFiles="pages/page(036).jpg[200%]pages/page(036).jpg[300%]pages/page(036).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(036).jpg" />
+<PageData PageFile="pages/page(037).jpg" ZoomFiles="pages/page(037).jpg[200%]pages/page(037).jpg[300%]pages/page(037).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(037).jpg" />
+<PageData PageFile="pages/page(038).jpg" ZoomFiles="pages/page(038).jpg[200%]pages/page(038).jpg[300%]pages/page(038).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(038).jpg" />
+<PageData PageFile="pages/page(039).jpg" ZoomFiles="pages/page(039).jpg[200%]pages/page(039).jpg[300%]pages/page(039).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(039).jpg" />
+<PageData PageFile="pages/page(040).jpg" ZoomFiles="pages/page(040).jpg[200%]pages/page(040).jpg[300%]pages/page(040).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(040).jpg" />
+<PageData PageFile="pages/page(041).jpg" ZoomFiles="pages/page(041).jpg[200%]pages/page(041).jpg[300%]pages/page(041).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(041).jpg" />
+<PageData PageFile="pages/page(042).jpg" ZoomFiles="pages/page(042).jpg[200%]pages/page(042).jpg[300%]pages/page(042).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(042).jpg" />
+<PageData PageFile="pages/page(043).jpg" ZoomFiles="pages/page(043).jpg[200%]pages/page(043).jpg[300%]pages/page(043).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(043).jpg" />
+<PageData PageFile="pages/page(044).jpg" ZoomFiles="pages/page(044).jpg[200%]pages/page(044).jpg[300%]pages/page(044).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(044).jpg" />
+<PageData PageFile="pages/page(045).jpg" ZoomFiles="pages/page(045).jpg[200%]pages/page(045).jpg[300%]pages/page(045).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(045).jpg" />
+<PageData PageFile="pages/page(046).jpg" ZoomFiles="pages/page(046).jpg[200%]pages/page(046).jpg[300%]pages/page(046).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(046).jpg" />
+<PageData PageFile="pages/page(047).jpg" ZoomFiles="pages/page(047).jpg[200%]pages/page(047).jpg[300%]pages/page(047).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(047).jpg" />
+<PageData PageFile="pages/page(048).jpg" ZoomFiles="pages/page(048).jpg[200%]pages/page(048).jpg[300%]pages/page(048).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(048).jpg" />
+<PageData PageFile="pages/page(049).jpg" ZoomFiles="pages/page(049).jpg[200%]pages/page(049).jpg[300%]pages/page(049).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(049).jpg" />
+<PageData PageFile="pages/page(050).jpg" ZoomFiles="pages/page(050).jpg[200%]pages/page(050).jpg[300%]pages/page(050).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(050).jpg" />
+<PageData PageFile="pages/page(051).jpg" ZoomFiles="pages/page(051).jpg[200%]pages/page(051).jpg[300%]pages/page(051).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(051).jpg" />
+<PageData PageFile="pages/page(052).jpg" ZoomFiles="pages/page(052).jpg[200%]pages/page(052).jpg[300%]pages/page(052).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(052).jpg" />
+<PageData PageFile="pages/page(053).jpg" ZoomFiles="pages/page(053).jpg[200%]pages/page(053).jpg[300%]pages/page(053).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(053).jpg" />
+<PageData PageFile="pages/page(054).jpg" ZoomFiles="pages/page(054).jpg[200%]pages/page(054).jpg[300%]pages/page(054).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(054).jpg" />
+<PageData PageFile="pages/page(055).jpg" ZoomFiles="pages/page(055).jpg[200%]pages/page(055).jpg[300%]pages/page(055).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(055).jpg" />
+<PageData PageFile="pages/page(056).jpg" ZoomFiles="pages/page(056).jpg[200%]pages/page(056).jpg[300%]pages/page(056).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(056).jpg" />
+<PageData PageFile="pages/page(057).jpg" ZoomFiles="pages/page(057).jpg[200%]pages/page(057).jpg[300%]pages/page(057).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(057).jpg" />
+<PageData PageFile="pages/page(058).jpg" ZoomFiles="pages/page(058).jpg[200%]pages/page(058).jpg[300%]pages/page(058).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(058).jpg" />
+<PageData PageFile="pages/page(059).jpg" ZoomFiles="pages/page(059).jpg[200%]pages/page(059).jpg[300%]pages/page(059).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(059).jpg" />
+<PageData PageFile="pages/page(060).jpg" ZoomFiles="pages/page(060).jpg[200%]pages/page(060).jpg[300%]pages/page(060).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(060).jpg" />
+<PageData PageFile="pages/page(061).jpg" ZoomFiles="pages/page(061).jpg[200%]pages/page(061).jpg[300%]pages/page(061).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(061).jpg" />
+<PageData PageFile="pages/page(062).jpg" ZoomFiles="pages/page(062).jpg[200%]pages/page(062).jpg[300%]pages/page(062).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(062).jpg" />
+<PageData PageFile="pages/page(063).jpg" ZoomFiles="pages/page(063).jpg[200%]pages/page(063).jpg[300%]pages/page(063).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(063).jpg" />
+<PageData PageFile="pages/page(064).jpg" ZoomFiles="pages/page(064).jpg[200%]pages/page(064).jpg[300%]pages/page(064).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(064).jpg" />
+<PageData PageFile="pages/page(065).jpg" ZoomFiles="pages/page(065).jpg[200%]pages/page(065).jpg[300%]pages/page(065).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(065).jpg" />
+<PageData PageFile="pages/page(066).jpg" ZoomFiles="pages/page(066).jpg[200%]pages/page(066).jpg[300%]pages/page(066).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(066).jpg" />
+<PageData PageFile="pages/page(067).jpg" ZoomFiles="pages/page(067).jpg[200%]pages/page(067).jpg[300%]pages/page(067).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(067).jpg" />
+<PageData PageFile="pages/page(068).jpg" ZoomFiles="pages/page(068).jpg[200%]pages/page(068).jpg[300%]pages/page(068).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(068).jpg" />
+<PageData PageFile="pages/page(069).jpg" ZoomFiles="pages/page(069).jpg[200%]pages/page(069).jpg[300%]pages/page(069).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(069).jpg" />
+<PageData PageFile="pages/page(070).jpg" ZoomFiles="pages/page(070).jpg[200%]pages/page(070).jpg[300%]pages/page(070).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(070).jpg" />
+<PageData PageFile="pages/page(071).jpg" ZoomFiles="pages/page(071).jpg[200%]pages/page(071).jpg[300%]pages/page(071).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(071).jpg" />
+<PageData PageFile="pages/page(072).jpg" ZoomFiles="pages/page(072).jpg[200%]pages/page(072).jpg[300%]pages/page(072).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(072).jpg" />
+<PageData PageFile="pages/page(073).jpg" ZoomFiles="pages/page(073).jpg[200%]pages/page(073).jpg[300%]pages/page(073).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(073).jpg" />
+<PageData PageFile="pages/page(074).jpg" ZoomFiles="pages/page(074).jpg[200%]pages/page(074).jpg[300%]pages/page(074).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(074).jpg" />
+<PageData PageFile="pages/page(075).jpg" ZoomFiles="pages/page(075).jpg[200%]pages/page(075).jpg[300%]pages/page(075).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(075).jpg" />
+<PageData PageFile="pages/page(076).jpg" ZoomFiles="pages/page(076).jpg[200%]pages/page(076).jpg[300%]pages/page(076).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(076).jpg" />
+<PageData PageFile="pages/page(077).jpg" ZoomFiles="pages/page(077).jpg[200%]pages/page(077).jpg[300%]pages/page(077).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(077).jpg" />
+<PageData PageFile="pages/page(078).jpg" ZoomFiles="pages/page(078).jpg[200%]pages/page(078).jpg[300%]pages/page(078).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(078).jpg" />
+<PageData PageFile="pages/page(079).jpg" ZoomFiles="pages/page(079).jpg[200%]pages/page(079).jpg[300%]pages/page(079).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(079).jpg" />
+<PageData PageFile="pages/page(080).jpg" ZoomFiles="pages/page(080).jpg[200%]pages/page(080).jpg[300%]pages/page(080).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(080).jpg" />
+<PageData PageFile="pages/page(081).jpg" ZoomFiles="pages/page(081).jpg[200%]pages/page(081).jpg[300%]pages/page(081).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(081).jpg" />
+<PageData PageFile="pages/page(082).jpg" ZoomFiles="pages/page(082).jpg[200%]pages/page(082).jpg[300%]pages/page(082).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(082).jpg" />
+<PageData PageFile="pages/page(083).jpg" ZoomFiles="pages/page(083).jpg[200%]pages/page(083).jpg[300%]pages/page(083).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(083).jpg" />
+<PageData PageFile="pages/page(084).jpg" ZoomFiles="pages/page(084).jpg[200%]pages/page(084).jpg[300%]pages/page(084).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(084).jpg" />
+<PageData PageFile="pages/page(085).jpg" ZoomFiles="pages/page(085).jpg[200%]pages/page(085).jpg[300%]pages/page(085).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(085).jpg" />
+<PageData PageFile="pages/page(086).jpg" ZoomFiles="pages/page(086).jpg[200%]pages/page(086).jpg[300%]pages/page(086).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(086).jpg" />
+<PageData PageFile="pages/page(087).jpg" ZoomFiles="pages/page(087).jpg[200%]pages/page(087).jpg[300%]pages/page(087).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(087).jpg" />
+<PageData PageFile="pages/page(088).jpg" ZoomFiles="pages/page(088).jpg[200%]pages/page(088).jpg[300%]pages/page(088).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(088).jpg" />
+<PageData PageFile="pages/page(089).jpg" ZoomFiles="pages/page(089).jpg[200%]pages/page(089).jpg[300%]pages/page(089).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(089).jpg" />
+<PageData PageFile="pages/page(090).jpg" ZoomFiles="pages/page(090).jpg[200%]pages/page(090).jpg[300%]pages/page(090).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(090).jpg" />
+<PageData PageFile="pages/page(091).jpg" ZoomFiles="pages/page(091).jpg[200%]pages/page(091).jpg[300%]pages/page(091).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(091).jpg" />
+<PageData PageFile="pages/page(092).jpg" ZoomFiles="pages/page(092).jpg[200%]pages/page(092).jpg[300%]pages/page(092).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(092).jpg" />
+<PageData PageFile="pages/page(093).jpg" ZoomFiles="pages/page(093).jpg[200%]pages/page(093).jpg[300%]pages/page(093).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(093).jpg" />
+<PageData PageFile="pages/page(094).jpg" ZoomFiles="pages/page(094).jpg[200%]pages/page(094).jpg[300%]pages/page(094).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(094).jpg" />
+<PageData PageFile="pages/page(095).jpg" ZoomFiles="pages/page(095).jpg[200%]pages/page(095).jpg[300%]pages/page(095).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(095).jpg" />
+<PageData PageFile="pages/page(096).jpg" ZoomFiles="pages/page(096).jpg[200%]pages/page(096).jpg[300%]pages/page(096).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(096).jpg" />
+<PageData PageFile="pages/page(097).jpg" ZoomFiles="pages/page(097).jpg[200%]pages/page(097).jpg[300%]pages/page(097).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(097).jpg" />
+<PageData PageFile="pages/page(098).jpg" ZoomFiles="pages/page(098).jpg[200%]pages/page(098).jpg[300%]pages/page(098).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(098).jpg" />
+<PageData PageFile="pages/page(099).jpg" ZoomFiles="pages/page(099).jpg[200%]pages/page(099).jpg[300%]pages/page(099).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(099).jpg" />
+<PageData PageFile="pages/page(100).jpg" ZoomFiles="pages/page(100).jpg[200%]pages/page(100).jpg[300%]pages/page(100).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(100).jpg" />
+<PageData PageFile="pages/page(101).jpg" ZoomFiles="pages/page(101).jpg[200%]pages/page(101).jpg[300%]pages/page(101).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(101).jpg" />
+<PageData PageFile="pages/page(102).jpg" ZoomFiles="pages/page(102).jpg[200%]pages/page(102).jpg[300%]pages/page(102).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(102).jpg" />
+<PageData PageFile="pages/page(103).jpg" ZoomFiles="pages/page(103).jpg[200%]pages/page(103).jpg[300%]pages/page(103).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(103).jpg" />
+<PageData PageFile="pages/page(104).jpg" ZoomFiles="pages/page(104).jpg[200%]pages/page(104).jpg[300%]pages/page(104).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(104).jpg" />
+<PageData PageFile="pages/page(105).jpg" ZoomFiles="pages/page(105).jpg[200%]pages/page(105).jpg[300%]pages/page(105).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(105).jpg" />
+<PageData PageFile="pages/page(106).jpg" ZoomFiles="pages/page(106).jpg[200%]pages/page(106).jpg[300%]pages/page(106).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(106).jpg" />
+<PageData PageFile="pages/page(107).jpg" ZoomFiles="pages/page(107).jpg[200%]pages/page(107).jpg[300%]pages/page(107).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(107).jpg" />
+<PageData PageFile="pages/page(108).jpg" ZoomFiles="pages/page(108).jpg[200%]pages/page(108).jpg[300%]pages/page(108).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(108).jpg" />
+<PageData PageFile="pages/page(109).jpg" ZoomFiles="pages/page(109).jpg[200%]pages/page(109).jpg[300%]pages/page(109).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(109).jpg" />
+<PageData PageFile="pages/page(110).jpg" ZoomFiles="pages/page(110).jpg[200%]pages/page(110).jpg[300%]pages/page(110).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(110).jpg" />
+<PageData PageFile="pages/page(111).jpg" ZoomFiles="pages/page(111).jpg[200%]pages/page(111).jpg[300%]pages/page(111).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(111).jpg" />
+<PageData PageFile="pages/page(112).jpg" ZoomFiles="pages/page(112).jpg[200%]pages/page(112).jpg[300%]pages/page(112).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(112).jpg" />
+<PageData PageFile="pages/page(113).jpg" ZoomFiles="pages/page(113).jpg[200%]pages/page(113).jpg[300%]pages/page(113).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(113).jpg" />
+<PageData PageFile="pages/page(114).jpg" ZoomFiles="pages/page(114).jpg[200%]pages/page(114).jpg[300%]pages/page(114).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(114).jpg" />
+<PageData PageFile="pages/page(115).jpg" ZoomFiles="pages/page(115).jpg[200%]pages/page(115).jpg[300%]pages/page(115).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(115).jpg" />
+<PageData PageFile="pages/page(116).jpg" ZoomFiles="pages/page(116).jpg[200%]pages/page(116).jpg[300%]pages/page(116).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(116).jpg" />
+<PageData PageFile="pages/page(117).jpg" ZoomFiles="pages/page(117).jpg[200%]pages/page(117).jpg[300%]pages/page(117).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(117).jpg" />
+<PageData PageFile="pages/page(118).jpg" ZoomFiles="pages/page(118).jpg[200%]pages/page(118).jpg[300%]pages/page(118).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(118).jpg" />
+<PageData PageFile="pages/page(119).jpg" ZoomFiles="pages/page(119).jpg[200%]pages/page(119).jpg[300%]pages/page(119).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(119).jpg" />
+<PageData PageFile="pages/page(120).jpg" ZoomFiles="pages/page(120).jpg[200%]pages/page(120).jpg[300%]pages/page(120).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(120).jpg" />
+<PageData PageFile="pages/page(121).jpg" ZoomFiles="pages/page(121).jpg[200%]pages/page(121).jpg[300%]pages/page(121).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(121).jpg" />
+<PageData PageFile="pages/page(122).jpg" ZoomFiles="pages/page(122).jpg[200%]pages/page(122).jpg[300%]pages/page(122).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(122).jpg" />
+<PageData PageFile="pages/page(123).jpg" ZoomFiles="pages/page(123).jpg[200%]pages/page(123).jpg[300%]pages/page(123).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(123).jpg" />
+<PageData PageFile="pages/page(124).jpg" ZoomFiles="pages/page(124).jpg[200%]pages/page(124).jpg[300%]pages/page(124).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(124).jpg" />
+<PageData PageFile="pages/page(125).jpg" ZoomFiles="pages/page(125).jpg[200%]pages/page(125).jpg[300%]pages/page(125).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(125).jpg" />
+<PageData PageFile="pages/page(126).jpg" ZoomFiles="pages/page(126).jpg[200%]pages/page(126).jpg[300%]pages/page(126).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(126).jpg" />
+<PageData PageFile="pages/page(127).jpg" ZoomFiles="pages/page(127).jpg[200%]pages/page(127).jpg[300%]pages/page(127).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(127).jpg" />
+<PageData PageFile="pages/page(128).jpg" ZoomFiles="pages/page(128).jpg[200%]pages/page(128).jpg[300%]pages/page(128).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(128).jpg" />
+<PageData PageFile="pages/page(129).jpg" ZoomFiles="pages/page(129).jpg[200%]pages/page(129).jpg[300%]pages/page(129).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(129).jpg" />
+<PageData PageFile="pages/page(130).jpg" ZoomFiles="pages/page(130).jpg[200%]pages/page(130).jpg[300%]pages/page(130).jpg[500%]" MainBGImage="backgrounds/office.jpg" PrintFile="pages/page(130).jpg" />
+</PageOrder>
+<TableOfContents>
+	
+</TableOfContents>
+<Info>
+	<Title Name="BUKU ELEKTRONIK" Align="center" Separator="false" />
+	<Description Text="" Align="center" Separator="false" />
+	<Description Text="" Align="center" />
+	<Description Text="" Color="0x777777" Align="center" />
+</Info>
+<Language>
+	<Lang Name="English"
+		Loading="LOADING"
+		PagerPage="Page #"
+		PagerThumbnailPopup="Page #"
+		PagerThumbnails="Thumbnails"
+		PagerThumbnailPages="Thumbs #"
+		PagerZoomPage="Zoom Page #"
+		
+		PrintLeftTooltip="Print left side page"
+		PrintRightTooltip="Print right side page"
+		ZoomLeftTooltip="Zoom on left side page"
+		ZoomRightTooltip="Zoom on right side page"
+		ZoomInTooltip="Zoom In"
+		ZoomOutTooltip="Zoom Out"
+		FirstPageTooltip="First page"
+		PreviousPageTooltip="Previous page"
+		NextPageTooltip="Next page"
+		LastPageTooltip="Last page"
+		
+		AutoFlipTooltip="Autoflip On/Off (A)"
+		MuteTooltip="Mute (M)"
+		InfoTooltip="About (Shift-I)"
+		IndexTooltip="Table Of Contents (I)"
+		LanguageTooltip="Magyar"
+		ThumbnailTooltip="Thumbnail View (T)"
+		FullscreenTooltip="Fullscreen On/Off (Shift-F)"
+		CloseTooltip="Quit PageFlip (Shift-Q)"
+		PDFDownloadTooltip="Download PDF version"
+		
+		SearchTooltip="Find"
+		HelpTooltip="Help"
+		BookmarksTooltip="Bookmarks"
+		
+		Custom0Tooltip="Custom Button 0"
+		Custom1Tooltip="Custom Button 1"
+		Custom2Tooltip="Custom Button 2"
+		Custom3Tooltip="Custom Button 3"
+		Custom4Tooltip="Custom Button 4"
+		Custom5Tooltip="Custom Button 5"
+		Custom6Tooltip="Custom Button 6"
+		Custom7Tooltip="Custom Button 7"
+	/>
+	
+</Language>
+</PageflipDataSet></PageOrder>
+<TableOfContents>
+	
+</TableOfContents>
+<Info>
+	<Title Name="BUKU ELEKTRONIK" Align="center" Separator="false" />
+	<Description Text="" Align="center" Separator="false" />
+	<Description Text="" Align="center" />
+	<Description Text="" Color="0x777777" Align="center" />
+</Info>
+<Language>
+	<Lang Name="English"
+		Loading="LOADING"
+		PagerPage="Page #"
+		PagerThumbnailPopup="Page #"
+		PagerThumbnails="Thumbnails"
+		PagerThumbnailPages="Thumbs #"
+		PagerZoomPage="Zoom Page #"
+		
+		PrintLeftTooltip="Print left side page"
+		PrintRightTooltip="Print right side page"
+		ZoomLeftTooltip="Zoom on left side page"
+		ZoomRightTooltip="Zoom on right side page"
+		ZoomInTooltip="Zoom In"
+		ZoomOutTooltip="Zoom Out"
+		FirstPageTooltip="First page"
+		PreviousPageTooltip="Previous page"
+		NextPageTooltip="Next page"
+		LastPageTooltip="Last page"
+		
+		AutoFlipTooltip="Autoflip On/Off (A)"
+		MuteTooltip="Mute (M)"
+		InfoTooltip="About (Shift-I)"
+		IndexTooltip="Table Of Contents (I)"
+		LanguageTooltip="Magyar"
+		ThumbnailTooltip="Thumbnail View (T)"
+		FullscreenTooltip="Fullscreen On/Off (Shift-F)"
+		CloseTooltip="Quit PageFlip (Shift-Q)"
+		PDFDownloadTooltip="Download PDF version"
+		
+		SearchTooltip="Find"
+		HelpTooltip="Help"
+		BookmarksTooltip="Bookmarks"
+		
+		Custom0Tooltip="Custom Button 0"
+		Custom1Tooltip="Custom Button 1"
+		Custom2Tooltip="Custom Button 2"
+		Custom3Tooltip="Custom Button 3"
+		Custom4Tooltip="Custom Button 4"
+		Custom5Tooltip="Custom Button 5"
+		Custom6Tooltip="Custom Button 6"
+		Custom7Tooltip="Custom Button 7"
+	/>
+	
+</Language>
+</PageflipDataSet></PageOrder>
+<TableOfContents>
+	
+</TableOfContents>
+<Info>
+	<Title Name="BUKU ELEKTRONIK" Align="center" Separator="false" />
+	<Description Text="" Align="center" Separator="false" />
+	<Description Text="" Align="center" />
+	<Description Text="" Color="0x777777" Align="center" />
+</Info>
+<Language>
+	<Lang Name="English"
+		Loading="LOADING"
+		PagerPage="Page #"
+		PagerThumbnailPopup="Page #"
+		PagerThumbnails="Thumbnails"
+		PagerThumbnailPages="Thumbs #"
+		PagerZoomPage="Zoom Page #"
+		
+		PrintLeftTooltip="Print left side page"
+		PrintRightTooltip="Print right side page"
+		ZoomLeftTooltip="Zoom on left side page"
+		ZoomRightTooltip="Zoom on right side page"
+		ZoomInTooltip="Zoom In"
+		ZoomOutTooltip="Zoom Out"
+		FirstPageTooltip="First page"
+		PreviousPageTooltip="Previous page"
+		NextPageTooltip="Next page"
+		LastPageTooltip="Last page"
+		
+		AutoFlipTooltip="Autoflip On/Off (A)"
+		MuteTooltip="Mute (M)"
+		InfoTooltip="About (Shift-I)"
+		IndexTooltip="Table Of Contents (I)"
+		LanguageTooltip="Magyar"
+		ThumbnailTooltip="Thumbnail View (T)"
+		FullscreenTooltip="Fullscreen On/Off (Shift-F)"
+		CloseTooltip="Quit PageFlip (Shift-Q)"
+		PDFDownloadTooltip="Download PDF version"
+		
+		SearchTooltip="Find"
+		HelpTooltip="Help"
+		BookmarksTooltip="Bookmarks"
+		
+		Custom0Tooltip="Custom Button 0"
+		Custom1Tooltip="Custom Button 1"
+		Custom2Tooltip="Custom Button 2"
+		Custom3Tooltip="Custom Button 3"
+		Custom4Tooltip="Custom Button 4"
+		Custom5Tooltip="Custom Button 5"
+		Custom6Tooltip="Custom Button 6"
+		Custom7Tooltip="Custom Button 7"
+	/>
+	
+</Language>
+</PageflipDataSet></PageOrder>
+<TableOfContents>
+	
+</TableOfContents>
+<Info>
+	<Title Name="BUKU ELEKTRONIK" Align="center" Separator="false" />
+	<Description Text="" Align="center" Separator="false" />
+	<Description Text="" Align="center" />
+	<Description Text="" Color="0x777777" Align="center" />
+</Info>
+<Language>
+	<Lang Name="English"
+		Loading="LOADING"
+		PagerPage="Page #"
+		PagerThumbnailPopup="Page #"
+		PagerThumbnails="Thumbnails"
+		PagerThumbnailPages="Thumbs #"
+		PagerZoomPage="Zoom Page #"
+		
+		PrintLeftTooltip="Print left side page"
+		PrintRightTooltip="Print right side page"
+		ZoomLeftTooltip="Zoom on left side page"
+		ZoomRightTooltip="Zoom on right side page"
+		ZoomInTooltip="Zoom In"
+		ZoomOutTooltip="Zoom Out"
+		FirstPageTooltip="First page"
+		PreviousPageTooltip="Previous page"
+		NextPageTooltip="Next page"
+		LastPageTooltip="Last page"
+		
+		AutoFlipTooltip="Autoflip On/Off (A)"
+		MuteTooltip="Mute (M)"
+		InfoTooltip="About (Shift-I)"
+		IndexTooltip="Table Of Contents (I)"
+		LanguageTooltip="Magyar"
+		ThumbnailTooltip="Thumbnail View (T)"
+		FullscreenTooltip="Fullscreen On/Off (Shift-F)"
+		CloseTooltip="Quit PageFlip (Shift-Q)"
+		PDFDownloadTooltip="Download PDF version"
+		
+		SearchTooltip="Find"
+		HelpTooltip="Help"
+		BookmarksTooltip="Bookmarks"
+		
+		Custom0Tooltip="Custom Button 0"
+		Custom1Tooltip="Custom Button 1"
+		Custom2Tooltip="Custom Button 2"
+		Custom3Tooltip="Custom Button 3"
+		Custom4Tooltip="Custom Button 4"
+		Custom5Tooltip="Custom Button 5"
+		Custom6Tooltip="Custom Button 6"
+		Custom7Tooltip="Custom Button 7"
+	/>
+	
+</Language>
+</PageflipDataSet></PageOrder>
+<TableOfContents>
+	
+</TableOfContents>
+<Info>
+	<Title Name="BUKU ELEKTRONIK" Align="center" Separator="false" />
+	<Description Text="" Align="center" Separator="false" />
+	<Description Text="" Align="center" />
+	<Description Text="" Color="0x777777" Align="center" />
+</Info>
+<Language>
+	<Lang Name="English"
+		Loading="LOADING"
+		PagerPage="Page #"
+		PagerThumbnailPopup="Page #"
+		PagerThumbnails="Thumbnails"
+		PagerThumbnailPages="Thumbs #"
+		PagerZoomPage="Zoom Page #"
+		
+		PrintLeftTooltip="Print left side page"
+		PrintRightTooltip="Print right side page"
+		ZoomLeftTooltip="Zoom on left side page"
+		ZoomRightTooltip="Zoom on right side page"
+		ZoomInTooltip="Zoom In"
+		ZoomOutTooltip="Zoom Out"
+		FirstPageTooltip="First page"
+		PreviousPageTooltip="Previous page"
+		NextPageTooltip="Next page"
+		LastPageTooltip="Last page"
+		
+		AutoFlipTooltip="Autoflip On/Off (A)"
+		MuteTooltip="Mute (M)"
+		InfoTooltip="About (Shift-I)"
+		IndexTooltip="Table Of Contents (I)"
+		LanguageTooltip="Magyar"
+		ThumbnailTooltip="Thumbnail View (T)"
+		FullscreenTooltip="Fullscreen On/Off (Shift-F)"
+		CloseTooltip="Quit PageFlip (Shift-Q)"
+		PDFDownloadTooltip="Download PDF version"
+		
+		SearchTooltip="Find"
+		HelpTooltip="Help"
+		BookmarksTooltip="Bookmarks"
+		
+		Custom0Tooltip="Custom Button 0"
+		Custom1Tooltip="Custom Button 1"
+		Custom2Tooltip="Custom Button 2"
+		Custom3Tooltip="Custom Button 3"
+		Custom4Tooltip="Custom Button 4"
+		Custom5Tooltip="Custom Button 5"
+		Custom6Tooltip="Custom Button 6"
+		Custom7Tooltip="Custom Button 7"
+	/>
+	
+</Language>
+</PageflipDataSet></PageOrder>
+<TableOfContents>
+	
+</TableOfContents>
+<Info>
+	<Title Name="BUKU ELEKTRONIK" Align="center" Separator="false" />
+	<Description Text="" Align="center" Separator="false" />
+	<Description Text="" Align="center" />
+	<Description Text="" Color="0x777777" Align="center" />
+</Info>
+<Language>
+	<Lang Name="English"
+		Loading="LOADING"
+		PagerPage="Page #"
+		PagerThumbnailPopup="Page #"
+		PagerThumbnails="Thumbnails"
+		PagerThumbnailPages="Thumbs #"
+		PagerZoomPage="Zoom Page #"
+		
+		PrintLeftTooltip="Print left side page"
+		PrintRightTooltip="Print right side page"
+		ZoomLeftTooltip="Zoom on left side page"
+		ZoomRightTooltip="Zoom on right side page"
+		ZoomInTooltip="Zoom In"
+		ZoomOutTooltip="Zoom Out"
+		FirstPageTooltip="First page"
+		PreviousPageTooltip="Previous page"
+		NextPageTooltip="Next page"
+		LastPageTooltip="Last page"
+		
+		AutoFlipTooltip="Autoflip On/Off (A)"
+		MuteTooltip="Mute (M)"
+		InfoTooltip="About (Shift-I)"
+		IndexTooltip="Table Of Contents (I)"
+		LanguageTooltip="Magyar"
+		ThumbnailTooltip="Thumbnail View (T)"
+		FullscreenTooltip="Fullscreen On/Off (Shift-F)"
+		CloseTooltip="Quit PageFlip (Shift-Q)"
+		PDFDownloadTooltip="Download PDF version"
+		
+		SearchTooltip="Find"
+		HelpTooltip="Help"
+		BookmarksTooltip="Bookmarks"
+		
+		Custom0Tooltip="Custom Button 0"
+		Custom1Tooltip="Custom Button 1"
+		Custom2Tooltip="Custom Button 2"
+		Custom3Tooltip="Custom Button 3"
+		Custom4Tooltip="Custom Button 4"
+		Custom5Tooltip="Custom Button 5"
+		Custom6Tooltip="Custom Button 6"
+		Custom7Tooltip="Custom Button 7"
+	/>
+	
+</Language>
+</PageflipDataSet></PageOrder>
+<TableOfContents>
+	
+</TableOfContents>
+<Info>
+	<Title Name="BUKU ELEKTRONIK" Align="center" Separator="false" />
+	<Description Text="" Align="center" Separator="false" />
+	<Description Text="" Align="center" />
+	<Description Text="" Color="0x777777" Align="center" />
+</Info>
+<Language>
+	<Lang Name="English"
+		Loading="LOADING"
+		PagerPage="Page #"
+		PagerThumbnailPopup="Page #"
+		PagerThumbnails="Thumbnails"
+		PagerThumbnailPages="Thumbs #"
+		PagerZoomPage="Zoom Page #"
+		
+		PrintLeftTooltip="Print left side page"
+		PrintRightTooltip="Print right side page"
+		ZoomLeftTooltip="Zoom on left side page"
+		ZoomRightTooltip="Zoom on right side page"
+		ZoomInTooltip="Zoom In"
+		ZoomOutTooltip="Zoom Out"
+		FirstPageTooltip="First page"
+		PreviousPageTooltip="Previous page"
+		NextPageTooltip="Next page"
+		LastPageTooltip="Last page"
+		
+		AutoFlipTooltip="Autoflip On/Off (A)"
+		MuteTooltip="Mute (M)"
+		InfoTooltip="About (Shift-I)"
+		IndexTooltip="Table Of Contents (I)"
+		LanguageTooltip="Magyar"
+		ThumbnailTooltip="Thumbnail View (T)"
+		FullscreenTooltip="Fullscreen On/Off (Shift-F)"
+		CloseTooltip="Quit PageFlip (Shift-Q)"
+		PDFDownloadTooltip="Download PDF version"
+		
+		SearchTooltip="Find"
+		HelpTooltip="Help"
+		BookmarksTooltip="Bookmarks"
+		
+		Custom0Tooltip="Custom Button 0"
+		Custom1Tooltip="Custom Button 1"
+		Custom2Tooltip="Custom Button 2"
+		Custom3Tooltip="Custom Button 3"
+		Custom4Tooltip="Custom Button 4"
+		Custom5Tooltip="Custom Button 5"
+		Custom6Tooltip="Custom Button 6"
+		Custom7Tooltip="Custom Button 7"
+	/>
+	
+</Language>
+</PageflipDataSet>

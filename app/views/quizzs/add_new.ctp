@@ -185,11 +185,9 @@
 				    } );
 				}
 			    $(document).ready(function() {
-			    	
-			    	alert(input_order);
 				    var arraysoal = [];
 				    var dataSet =[["-","-","-","-","-","-"]];
-				    var json2=[];
+				    window.json2=[];
 					var MudahPG=0;var SedangPG=0;var SulitPG=0;
 					var MudahES=0;var SedangES=0;var SulitES=0;
 					var total=0;
@@ -409,11 +407,10 @@
 						while (i--){ 
 							arr[i] = i+1;
 						}
-
 						// Shuffle it
 						arr = shuffle(arr);
 						for (var j = 0; j < arr.length; j++) {
-							arr[j]
+							$('#ord'+(j+1)+'').val(arr[j]);
 						};
 					});
 					 $("#txt_kode_soal").keyup(function(){
@@ -458,7 +455,7 @@
     </div>
 </div>
 <script>
-	$(function(){
+$(function(){
     $('#wizard').wizard({
         buttons: {
             cancel: {
@@ -486,12 +483,17 @@
                 cls: "info"
             },
             finish: {
-                show: true,
+                show: false,
                 title: "Finish step and Go!",
                 group: "left",
                 cls: "danger"
             }
+
         }
+
+    });
+    $('button.btn-finish.danger').click(function() {
+    	console.log(json2);
     });
 });
 
@@ -505,5 +507,11 @@ $(document).ready(function() {
 	    $(this).siblings('label').html(' not checked');
 	  }
 	});
+
+
 } );
+
+
+
+
 </script>
