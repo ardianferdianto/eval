@@ -43,7 +43,12 @@ class Question extends AppModel {
 			'exclusive' => '',
 			'finderQuery' => '',
 			'counterQuery' => ''
+		),
+		'QuizzsQuestion' => array(
+			'className' => 'QuizzsQuestion',
+			'foreignKey' => 'question_id'
 		)
+
 		
 	);
 

@@ -12,7 +12,7 @@
 						</div>
 						<div class="titlesecond">
 							<h3 class="tryouttitle3">KELAS : 6</h3>
-							<h3 class="tryouttitle3">MATA PELAJARAN : IPA</h3>
+							<h3 class="tryouttitle3">MATA PELAJARAN : <?php echo $pelajaranID['Pelajaran']['nama'];?></h3>
 						</div>
 					</div>
 				<?php foreach ($quizz_detail as $quizz) :?>
@@ -22,9 +22,9 @@
 							<img src="<?php echo $this->webroot?>img/2.png" />
 							<svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="m 0,0 0,171.14385 c 24.580441,15.47138 55.897012,24.75772 90,24.75772 34.10299,0 65.41956,-9.28634 90,-24.75772 L 180,0 0,0 z"/></svg>
 							<figcaption>
-								<h2><?php echo $quizz['Quizz']['kode']; ?></h2>
+								<h2 ><?php echo $quizz['Quizz']['kode']; ?></h2>
 								<p><?php echo $quizz['Pelajaran']['nama'] ?></p>
-								<button class="createWindow">View</button>
+								<button data-kuisid="<?php echo $quizz['Quizz']['id']?>" class="createWindow">View</button>
 							</figcaption>
 						</figure>
 					</a>
@@ -49,9 +49,11 @@
 		    });
 		  });
 
-
+				var idkuis=0;
         $(function(){
             $(".createWindow").on('click', function(){
+            	var idkuis=$(this).data('kuisid');
+            	console.log(idkuis);
                 $.Dialog({
                     flat: false,
                     shadow: true,
@@ -59,10 +61,12 @@
                     title: 'PILIH OPSI',
                     padding:0,
                     content:
-                    '<button class="command-button large info fg-hover-cobalt buttonopsitryout">'+
-                    '<i class=" icon-pencil on-left"></i>'+
-                    'Edit Tryout<small>Use this option for edit tryout</small>'+
-					'</button>'+
+                    '<a href="<?php echo $this->webroot?>quizzs/edit_new/'+idkuis+'">'+
+	                    '<button class="command-button large info fg-hover-cobalt buttonopsitryout">'+
+	                    '<i class=" icon-pencil on-left"></i>'+
+	                    'Edit Tryout<small>Use this option for edit tryout</small>'+
+						'</button>'+
+					'</a>'+
                     '<button class="command-button large default fg-hover-cobalt buttonopsitryout">'+
                     '<i class=" icon-accessibility on-left"></i>'+
                     'Interaktif<small>Use this option for interactive question</small>'+

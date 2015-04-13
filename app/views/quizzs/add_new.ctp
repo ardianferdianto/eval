@@ -24,9 +24,7 @@
 		<div class="titlesecond">
 			<h3 class="tryouttitle3">KELAS : <?php echo $kelasID; ?></h3>
 			<h3 class="tryouttitle3">MATA PELAJARAN : 
-							<?php
-				echo $pelajaranID['Pelajaran']['nama'];
-			?>
+							<?php echo $pelajaranID['Pelajaran']['nama'];?>
 			</h3>
 
 		</div>
@@ -378,7 +376,6 @@
 							var range=json2.length;
 							for (var i = 0; i < json2.length; i++) {
 									json2[i][5]='<input type="text" class="orders" id="'+(json2[i][0])+'" value="'+(i+1)+'">';
-
 							};
 
 
@@ -410,7 +407,7 @@
 						// Shuffle it
 						arr = shuffle(arr);
 						for (var j = 0; j < arr.length; j++) {
-							$('#ord'+(j+1)+'').val(arr[j]);
+							$('#'+(json2[j][0])+'').val(arr[j]);
 						};
 					});
 					 $("#txt_kode_soal").keyup(function(){
@@ -450,17 +447,36 @@
         	</div>
         	<table class="table dataTable" cellspacing="0" width="100%" id="example"></table>
         	<button class="primary" id="randomize">Randomize urutan soal</button>
-        	</div>
+        	
         	<?php echo $form->create('Quizz',array('id'=>'form_penambahan_tryout','action'=>'add_new','type'=>'file'));
-
+        	switch ($tipesoalID) {
+        		case '1':
+        			$jenissoal='Try Out';
+        			break;
+        		case '2':
+        			$jenissoal='Kuis';
+        			break;
+        		case '3':
+        			$jenissoal='Ujian';
+        			break;	
+        		
+        		default:
+        			$jenissoal='Undefined';
+        			break;
+        	}
+			echo $form->input('Quizz.time',array('label'=>'waktu/menit','class'=>'text-input'));
         	echo $form->input('Quizz.kode',array('type'=>'hidden','value'=>''));
         	echo $form->input('Quizz.user_id',array('type'=>'hidden','value'=>'1'));
-        	echo $form->input('Quizz.title',array('type'=>'hidden','value'=>'Try Out'));
+        	echo $form->input('Quizz.type',array('type'=>'hidden','value'=>$tipesoalID));
+        	echo $form->input('Quizz.pelajaran_id',array('type'=>'hidden','value'=>$mapelID));
+        	echo $form->input('Quizz.kelas',array('type'=>'hidden','value'=>$kelasID));
+        	echo $form->input('Quizz.title',array('type'=>'hidden','value'=>$jenissoal));
 
 	        ?>
 
 
 	        <?php echo $form->end();?>
+        </div>
         </div>
         
 
@@ -541,32 +557,33 @@ var options_submitformtryout = {
 };
 
 $(document).ready(function() { 
+	var order=[];
 	function insert_fieldformsetsoal(){
     	$('#form_penambahan_tryout #QuizzKode').val(kde);
-    	$('#form_penambahan_tryout #QuizzKode').val(kde);
     	for (var i = 0; i < json2.length; i++) {
+    		
+    		order[i]=$('#'+json2[i][0]).val();
     		$('#form_penambahan_tryout').append('<input type="hidden" name="data[QuizzsQuestion]['+i+'][question_id]" value="'+json2[i][0]+'" >');
     		
-    		$('#form_penambahan_tryout').append('<input type="hidden" name="data[QuizzsQuestion]['+i+'][order]" value="'+json2[i][0]+'" >');
+    		$('#form_penambahan_tryout').append('<input type="hidden" name="data[QuizzsQuestion]['+i+'][order]" value="'+order[i]+'" >');
+    		console.log(json2);
     	};
     	
     }
 
     $( 'button.btn-finish.danger').on('click', function(){
-
-
+    	 
     	insert_fieldformsetsoal();
     	//setTimeout(function(){
     		$('#form_penambahan_tryout').ajaxSubmit(options_submitformtryout);	
     	//}, 5000);
-  		
-
     });
 }); 
 
 function showResponse_submitformtryout(responseText, statusText, xhr, $form)  { 
   setTimeout(function() {
     alert('success');
+	window.location.href = "<?php echo $this->webroot?>quizz/viewnew/<?php echo $tipesoalID?>/<?php echo $kelasID?>/<?php echo $mapelID?>";
   }, 2000);
 }
 
