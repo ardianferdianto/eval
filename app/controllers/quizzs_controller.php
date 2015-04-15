@@ -427,10 +427,12 @@ class QuizzsController extends AppController {
     function viewnew($tipe,$kelas,$mapel){
     	$conditions_lihatquizz = array('Quizz.kelas'=>$kelas,'Quizz.pelajaran_id'=>$mapel);
     	$quizz_detail = $this->Quizz->find('all',array('conditions'=>$conditions_lihatquizz));
+    	$pelajaran = $this->Quizz->Pelajaran->read(null, $mapel);
     	$this->set('quizz_detail',$quizz_detail);
     	$this->set('tipeID',$tipe);
     	$this->set('kelasID',$kelas);
     	$this->set('mapelID',$mapel);
+    	$this->set('pelajaranID',$pelajaran);
     	$this->layout='default_metro';
     }
 
@@ -446,7 +448,7 @@ class QuizzsController extends AppController {
     	$this->layout='default_metro';
     }
     function add_new($tipesoal,$kelas,$mapel){
-    	$this->Quizz->recursive = 2;
+    	//$this->Quizz->recursive = 2;
 
     	if (!empty($this->data)) {
 
@@ -459,12 +461,11 @@ class QuizzsController extends AppController {
 				foreach($this->data['QuizzsQuestion'] as $datax) {
 					$datax['quizz_id'] = $quizz_id;
 
-                	$this->Quizz->QuizzsQuestion->saveAll($datax);
+                	$this->Quizz->QuizzsQuestion->save($datax);
             	}
             	//$this->redirect(array('action'=>'index'));
 		    }
 		}
-
     	
     	$conditions_lihatsoal = array('Question.kelas'=>$kelas,'Question.pelajaran_id'=>$mapel);
     	$bank_soal = $this->Quizz->Question->find('all',array('conditions'=>$conditions_lihatsoal));
@@ -481,6 +482,74 @@ class QuizzsController extends AppController {
     	$this->set('data_soal',$bank_soal);
     	$this->set('pelajaranID',$pelajaran);
     	$this->layout='default_metro';
+    }
+    function edit_new($idquizz){
+    	$this->Quizz->recursive = 1;
+    	$kuisidtable=$idquizz;
+
+		if (!$idquizz && empty($this->data)) {
+			$this->Session->setFlash(__('Invalid Quizz', true));
+			//caranya blik ke root
+			$this->redirect(array('controller'=>'Questions','action'=>'index'));
+		}
+		//how to update
+    	if (!empty($this->data)) {
+		    $this->Quizz->save($this->data);
+		}
+		//if(empty(($this->data))){
+
+			$conditions_selectedsoal = array('QuizzsQuestion.quizz_id'=>$idquizz);
+			$selected_soal = $this->Quizz->QuizzsQuestion->find('all',
+				array(
+					'conditions'=>$conditions_selectedsoal,
+					
+				)
+			);
+			$conditions_banksoal = array('Question.quizz_id <'=>$idquizz);
+			$listquiz=$this->Quizz->read(null, $idquizz);
+			$bank_soal= $this->Quizz->Question->find('all',$conditions_banksoal);
+	    	$this->set('soalid',$selected_soal);
+	    	$this->set('kode_quizz',$idquizz);
+			$this->set('data_soal',$bank_soal);
+			$this->set('quizz',$listquiz);	
+		//}
+    	$this->layout='default_metro';
+    }
+    function datatable($idquizz=null){
+    	$conditions_banksoal = array('Question.quizz_id <='=>$idquizz);
+		$bank_soal= $this->Quizz->Question->find('all',$conditions_banksoal);
+		$listquiz=$this->Quizz->read(null, $idquizz);
+
+		$this->set('quizz',$listquiz);	
+		$this->set('data_soal',$bank_soal);	
+    	$this->layout='default_blank';
+    }
+    function edit_table_soal($idquizz){
+		$conditions_selectedsoal = array('QuizzsQuestion.quizz_id'=>$idquizz);
+		$selected_soal = $this->Quizz->QuizzsQuestion->find('all',
+			array(
+				'conditions'=>$conditions_selectedsoal,
+				
+			)
+		);
+		$this->set('id_kuis',$idquizz);
+		$this->set('soal_kuis',$selected_soal);	
+    	$this->layout='default_metro';
+    }
+    function tambah_single_soal(){
+    	$this->Quizz->QuizzsQuestion->create();
+    	$this->Quizz->QuizzsQuestion->save($this->data);
+    }
+    function hapus_single_soal($quizzid=null,$id=null){
+    	//$this->Quizz->QuizzsQuestion->del($id);
+		if (!$id) {
+			$this->Session->setFlash('Invalid id for Task');
+			$this->redirect(array('action'=>'index'), null, true);
+		}
+		if ($this->Quizz->QuizzsQuestion->del($id)) {
+			$this->Session->setFlash('Task #'.$id.' deleted');
+			$this->redirect(array('controller'=>'quizzs','action'=>'edit_table_soal/'.$quizzid));
+		}
     }
 
 }

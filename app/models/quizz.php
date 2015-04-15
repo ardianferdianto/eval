@@ -23,7 +23,7 @@ class Quizz extends AppModel {
 
 		'QuizzsQuestion' => array(
 			'className' => 'QuizzsQuestion',
-			'foreignKey' => ''
+			'foreignKey' => 'quizz_id'
 		)
 
 	);

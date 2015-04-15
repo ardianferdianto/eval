@@ -165,7 +165,7 @@ class QuizzsQuestionsController extends AppController {
 			$this->Session->setFlash(__('Invalid id for QuizzsQuestion', true));
 			$this->redirect(array('action'=>'index'));
 		}
-		if ($this->QuizzsQuestion->del($id)) {
+		if ($this->QuizzsQuestion->delete($id)) {
 			$this->Session->setFlash(__('QuizzsQuestion deleted', true));
 			$this->redirect(array('action'=>'index'));
 		}
