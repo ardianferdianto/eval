@@ -9,6 +9,7 @@ header('Content-Disposition: attachment; ');
 ?>
 
 <?php
+$tipekuis=$quizz['Quizz']['title'];
 $banyakSoal = count($quizz['Question']);
 $kodeKuis = $quizz['Quizz']['kode'];
 $tanggalDibuat = $quizz['Quizz']['created'];
@@ -100,23 +101,29 @@ foreach ($quizz['Question'] as $n){
 
 	$html .= '<tr>';
 
+	if($n['images'] != null){
+		$img='<tr><td><img style="margin:0 auto;text-align:center;" align="center" src="'.$images.'" width="100" /></td></tr> ';
+	}else{
+		$img='<td></td> ';
+	}
+
 	if($n['tipe'] == 1){
-		$html .= '<td>'.$no.'.&nbsp;&nbsp;&nbsp;&nbsp;'.$question.'<br/><br/>
+		$html .= '<td>'.$no.'.&nbsp;&nbsp;&nbsp;&nbsp;'.$question.'<br/><br/>'.$img.'
 		a. &nbsp;'.$jawabanA.'<br/><br/>
 		b. &nbsp;'.$jawabanB.'<br/><br/>
 		c. &nbsp;'.$jawabanC.'<br/><br/>
 		d. &nbsp;'.$jawabanD.'<br/><br/></td>';
 
 	}else{
-		$html .= '<td>'.$no.'.&nbsp;&nbsp;&nbsp;&nbsp;'.$question.'<br/><br/> 
+		$html .= '<td>'.$no.'.&nbsp;&nbsp;&nbsp;&nbsp;'.$question.'<br/><br/>'.$img.' 
 		___________________________________________________<br/><br/></td>';	
 	}
 
-	if($n['images'] != null){
+/*	if($n['images'] != null){
 		$html.='<td><img style="margin:0 auto;text-align:center;" align="center" src="'.$images.'" width="100" /></td> ';
 	}else{
 		$html.='<td></td> ';
-	}
+	}*/
 
 	$html .= '</tr>';
 	
@@ -149,7 +156,7 @@ $tcpdf->AddPage();
 $tcpdf->SetTextColor(0, 0, 0);
 $tcpdf->SetFont($textfont,'',9);
 $tcpdf->writeHTML($html, true, false, true, false, '');
-$tcpdf->Output('tryout-'.$kodeKuis.'.pdf', 'FD');
+$tcpdf->Output($tipekuis.'-'.$kodeKuis.'.pdf', 'FD');
 
 
 ?>

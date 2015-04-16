@@ -41,6 +41,7 @@ h1 small{
 <?php echo $javascript->link('metro/jquery/jquery.min.js'); ?>
 <?php echo $javascript->link('metro/jquery/jquery.widget.min.js'); ?>
 <?php echo $javascript->link('metro/metro.min.js'); ?>
+<?php echo $javascript->link('metro/jquery/jquery.countdown.js'); ?>
 <?php echo $javascript->link('metro/jquery/jquery.dataTables.js'); ?>
 <?php echo $javascript->link('metro/prettify/prettify.js');?>
 <?php echo $javascript->link('shapehoverjs/snap.svg-min.js');?>

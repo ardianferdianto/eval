@@ -402,7 +402,15 @@ class QuizzsController extends AppController {
 			$this->Session->setFlash(__('Invalid Quizz.', true));
 			$this->redirect(array('action'=>'index'));
 		}
-		
+	/*	$conditions_selectedsoal = array('QuizzsQuestion.quizz_id'=>$idquizz);
+		$selected_soal = $this->Quizz->QuizzsQuestion->find('all',
+				array(
+					'conditions'=>$conditions_selectedsoal,
+					'order' => array('QuizzsQuestion.order' => 'asc')
+					
+				)
+		);*/
+
 		$this->Quizz->recursive = 2;
 		$quizz = $this->Quizz->read(null, $id);
 		$this->set('quizz',$quizz);
@@ -444,8 +452,20 @@ class QuizzsController extends AppController {
     	$this->set('mapelID',$mapel);
     	$this->layout='default_metro';
     }
-    function interaktif_kuis(){
+    function interaktif_kuis($idquizz){
+    	//Configure::write ( 'debug', 1 );
+  		//$this->autoRender = false;
+		$conditions_selectedsoal = array('QuizzsQuestion.quizz_id'=>$idquizz);
+		$selected_soal = $this->Quizz->QuizzsQuestion->find('all',
+			array(
+				'conditions'=>$conditions_selectedsoal,
+				'order' => array('QuizzsQuestion.order' => 'asc')
+				
+			)
+		);
+		$this->set('soal',$selected_soal);
     	$this->layout='default_metro';
+    	//print_r();
     }
     function add_new($tipesoal,$kelas,$mapel){
     	//$this->Quizz->recursive = 2;
@@ -502,6 +522,7 @@ class QuizzsController extends AppController {
 			$selected_soal = $this->Quizz->QuizzsQuestion->find('all',
 				array(
 					'conditions'=>$conditions_selectedsoal,
+					'order' => array('QuizzsQuestion.order' => 'asc')
 					
 				)
 			);

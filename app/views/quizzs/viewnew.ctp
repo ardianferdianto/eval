@@ -75,10 +75,12 @@
                     '<i class=" icon-glasses-2 on-left"></i>'+
                     'Preview<small>Use this option for preview</small>'+
 					'</button>'+
+					'<a href="<?php echo $this->webroot?>quizzs/view_pdf/'+idkuis+'">'+
                     '<button class="command-button large info fg-hover-cobalt buttonopsitryout">'+
                     '<i class=" icon-floppy on-left"></i>'+
                     'Save<small>Use this option for save to PDF file</small>'+
 					'</button>'+
+					'</a>'+
                     '<button class="command-button large success fg-hover-cobalt buttonopsitryout">'+
                     '<i class=" icon-printer on-left"></i>'+
                     'Print<small>Use this option for printing out the question</small>'+
