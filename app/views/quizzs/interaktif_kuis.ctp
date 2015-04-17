@@ -28,11 +28,11 @@
     		<div class="kolomtengah">
     			<div class="row navigatebutton">
     				<div class="span6">
-    					<a id="prevsoal" class="navigatesoal" href="#"></a>
+    					<a id="prevsoal" class="navigatesoal" style="display:none;" href="#"></a>
     					
     				</div>
     				<div class="span6">
-    					<a id="nextsoal" class="navigatesoal" href="#"></a>
+    					<a id="nextsoal" class="navigatesoal" style="display:none;" href="#"></a>
     				</div>
     			</div>
     			
@@ -87,7 +87,7 @@ $(document).ready(function() {
     for (var i = 0; i < data.length; i++) {
     	if(data[i].Question.tipe==1){
     		count+=1;	
-    		$('#mapping ').append('<div id="page" class="rowblockblack mapsoalnumber span2"><a data-page="'+(count-1)+'" class="soal_nonaktif" href="#">'+count+'</a></div>');
+    		$('#mapping ').append('<div id="page" class="rowblockblack mapsoalnumber span2"><a data-page="'+(count-1)+'" class="soal_nonaktif" id="'+(count-1)+'" href="#">'+count+'</a></div>');
             $('#form_ans').append('<input id="jawaban_'+(count-1)+'" type="hidden" value=""/>');
             if (count==1) {
                 id_soal[i]=display_soal(data, i);
@@ -100,22 +100,22 @@ $(document).ready(function() {
     };
 
 
-
+    var curr=id_soal.length;
 
     $("#page a.soal_nonaktif").click(function(){
         hal=$(this).data('page');
         id_soal[hal]=display_soal(data, hal);
-        console.log(id_soal);
-        console.log(hal);
     });
-/*    $("#prevsoal").click(function(){
-        hal=$("#page a.soal_nonaktif").data('page');
-        id_soal[hal-1]=display_soal(data, hal-1);
+    $("#nextsoal").click(function(){ 
+        id_soal[curr]=display_soal(data, curr);
+        curr=curr+1;
+        console.log(curr);
     });
-    $("#nextsoal").click(function(){
-        hal=$("#page a.soal_nonaktif").data('page');
-        id_soal[hal+1]=display_soal(data, hal+1);
-    });*/
+    $("#prevsoal").click(function(){
+        id_soal[curr-1]=display_soal(data, curr-1);
+        curr=curr-1;
+        console.log(curr);
+    });
 
     $("#jawab").click(function(){
         var nilai=0;
@@ -169,7 +169,27 @@ function showdialog(nilai){
 }
 function display_soal(data, page){
     var soalterjawab=0;
-    $("#page").switchClass( "soal_nonaktif", "soalactive");
+    $("#nextsoal").show();
+    $("#prevsoal").show();
+
+    if (page==0) {
+        $("#prevsoal").hide();
+    }else if(page==count-1){
+        $("#nextsoal").hide();
+    };
+
+
+    //indicator soal aktif
+    for (var i = 0; i < count; i++) {
+        if(i==page){
+            $("#"+(i)).addClass("soalactive");
+        }
+        else{
+            $("#"+(i)).removeClass("soalactive");
+        }
+    };
+    
+    //displaying items
     $(".answercontainer").empty().append('<p><div class="input-control radio default-style margin10 timesnewroman" data-role="input-control"><label><input type="radio" name="'+page+'" data-opsi="1" value="1"><span class="check"></span><p id="opsiA" class="jawabanparagraph"></p></label></div></p>'
         +'<p><div class="input-control radio default-style margin10 timesnewroman" data-role="input-control"><label><input type="radio" name="'+page+'" data-opsi="1" value="2"><span class="check"></span><p id="opsiB" class="jawabanparagraph"></p></label></div></p>'
         +'<p><div class="input-control radio default-style margin10 timesnewroman" data-role="input-control"><label><input type="radio" name="'+page+'" data-opsi="1" value="3"><span class="check"></span><p id="opsiC" class="jawabanparagraph"></p></label></div></p>'
@@ -210,7 +230,7 @@ function display_soal(data, page){
                 continue;
             };
         };
-
+        $("#"+(page)).addClass("soal_terjawab");
 
         if (soalterjawab===count) {
             $("#jawab").show();
@@ -224,10 +244,11 @@ function display_soal(data, page){
 
     return data[page].Question.id;
 }
-    $("#timersoal").countdown({
-            blink: false, 
-            onstop: function(){
-                alert("Time out");
-        }
-    });
+
+$("#timersoal").countdown({
+        blink: false, 
+        onstop: function(){
+            alert("Time out");
+    }
+});
 </script>
