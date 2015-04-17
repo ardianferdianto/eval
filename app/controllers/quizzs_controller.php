@@ -433,7 +433,7 @@ class QuizzsController extends AppController {
     }
 
     function viewnew($tipe,$kelas,$mapel){
-    	$conditions_lihatquizz = array('Quizz.kelas'=>$kelas,'Quizz.pelajaran_id'=>$mapel);
+    	$conditions_lihatquizz = array('Quizz.type'=>$tipe,'Quizz.kelas'=>$kelas,'Quizz.pelajaran_id'=>$mapel);
     	$quizz_detail = $this->Quizz->find('all',array('conditions'=>$conditions_lihatquizz));
     	$pelajaran = $this->Quizz->Pelajaran->read(null, $mapel);
     	$this->set('quizz_detail',$quizz_detail);
@@ -453,8 +453,6 @@ class QuizzsController extends AppController {
     	$this->layout='default_metro';
     }
     function interaktif_kuis($idquizz){
-    	//Configure::write ( 'debug', 1 );
-  		//$this->autoRender = false;
 		$conditions_selectedsoal = array('QuizzsQuestion.quizz_id'=>$idquizz);
 		$selected_soal = $this->Quizz->QuizzsQuestion->find('all',
 			array(
@@ -471,7 +469,6 @@ class QuizzsController extends AppController {
     	//$this->Quizz->recursive = 2;
 
     	if (!empty($this->data)) {
-
     		$this->Quizz->create();
 			
 			if ($this->Quizz->saveAll($this->data)) {

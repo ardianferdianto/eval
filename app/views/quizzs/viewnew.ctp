@@ -67,10 +67,12 @@
 	                    'Edit Tryout<small>Use this option for edit tryout</small>'+
 						'</button>'+
 					'</a>'+
+					'<a href="<?php echo $this->webroot?>quizzs/interaktif_kuis/'+idkuis+'">'+
                     '<button class="command-button large default fg-hover-cobalt buttonopsitryout">'+
                     '<i class=" icon-accessibility on-left"></i>'+
                     'Interaktif<small>Use this option for interactive question</small>'+
 					'</button>'+
+					'</a>'+
                     '<button class="command-button large primary fg-hover-cobalt buttonopsitryout">'+
                     '<i class=" icon-glasses-2 on-left"></i>'+
                     'Preview<small>Use this option for preview</small>'+
