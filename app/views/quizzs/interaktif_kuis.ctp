@@ -169,6 +169,7 @@ function showdialog(nilai){
 }
 function display_soal(data, page){
     var soalterjawab=0;
+    $("#page").switchClass( "soal_nonaktif", "soalactive");
     $(".answercontainer").empty().append('<p><div class="input-control radio default-style margin10 timesnewroman" data-role="input-control"><label><input type="radio" name="'+page+'" data-opsi="1" value="1"><span class="check"></span><p id="opsiA" class="jawabanparagraph"></p></label></div></p>'
         +'<p><div class="input-control radio default-style margin10 timesnewroman" data-role="input-control"><label><input type="radio" name="'+page+'" data-opsi="1" value="2"><span class="check"></span><p id="opsiB" class="jawabanparagraph"></p></label></div></p>'
         +'<p><div class="input-control radio default-style margin10 timesnewroman" data-role="input-control"><label><input type="radio" name="'+page+'" data-opsi="1" value="3"><span class="check"></span><p id="opsiC" class="jawabanparagraph"></p></label></div></p>'

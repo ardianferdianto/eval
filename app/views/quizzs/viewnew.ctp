@@ -73,10 +73,12 @@
                     'Interaktif<small>Use this option for interactive question</small>'+
 					'</button>'+
 					'</a>'+
+					'<a href="<?php echo $this->webroot?>quizzs/show_pdf/'+idkuis+'">'+
                     '<button class="command-button large primary fg-hover-cobalt buttonopsitryout">'+
                     '<i class=" icon-glasses-2 on-left"></i>'+
                     'Preview<small>Use this option for preview</small>'+
 					'</button>'+
+					'</a>'+
 					'<a href="<?php echo $this->webroot?>quizzs/view_pdf/'+idkuis+'">'+
                     '<button class="command-button large info fg-hover-cobalt buttonopsitryout">'+
                     '<i class=" icon-floppy on-left"></i>'+

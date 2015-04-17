@@ -569,6 +569,31 @@ class QuizzsController extends AppController {
 			$this->redirect(array('controller'=>'quizzs','action'=>'edit_table_soal/'.$quizzid));
 		}
     }
+	function show_pdf($id = null)
+    { 
+    	//Configure::write('debug',0); // Otherwise we cannot use this method while developing
+
+    	if (!$id) {
+			$this->Session->setFlash(__('Invalid Quizz.', true));
+			$this->redirect(array('action'=>'index'));
+		}
+	/*	$conditions_selectedsoal = array('QuizzsQuestion.quizz_id'=>$idquizz);
+		$selected_soal = $this->Quizz->QuizzsQuestion->find('all',
+				array(
+					'conditions'=>$conditions_selectedsoal,
+					'order' => array('QuizzsQuestion.order' => 'asc')
+					
+				)
+		);*/
+
+		$this->Quizz->recursive = 2;
+		$quizz = $this->Quizz->read(null, $id);
+		$this->set('quizz',$quizz);
+
+
+        $this->layout = 'pdf'; //this will use the pdf.ctp layout
+		$this->render();
+    }
 
 }
 ?>
