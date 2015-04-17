@@ -67,18 +67,24 @@
 	                    'Edit Tryout<small>Use this option for edit tryout</small>'+
 						'</button>'+
 					'</a>'+
+					'<a href="<?php echo $this->webroot?>quizzs/interaktif_kuis/'+idkuis+'">'+
                     '<button class="command-button large default fg-hover-cobalt buttonopsitryout">'+
                     '<i class=" icon-accessibility on-left"></i>'+
                     'Interaktif<small>Use this option for interactive question</small>'+
 					'</button>'+
+					'</a>'+
+					'<a href="<?php echo $this->webroot?>quizzs/show_pdf/'+idkuis+'">'+
                     '<button class="command-button large primary fg-hover-cobalt buttonopsitryout">'+
                     '<i class=" icon-glasses-2 on-left"></i>'+
                     'Preview<small>Use this option for preview</small>'+
 					'</button>'+
+					'</a>'+
+					'<a href="<?php echo $this->webroot?>quizzs/view_pdf/'+idkuis+'">'+
                     '<button class="command-button large info fg-hover-cobalt buttonopsitryout">'+
                     '<i class=" icon-floppy on-left"></i>'+
                     'Save<small>Use this option for save to PDF file</small>'+
 					'</button>'+
+					'</a>'+
                     '<button class="command-button large success fg-hover-cobalt buttonopsitryout">'+
                     '<i class=" icon-printer on-left"></i>'+
                     'Print<small>Use this option for printing out the question</small>'+

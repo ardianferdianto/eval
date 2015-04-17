@@ -402,7 +402,15 @@ class QuizzsController extends AppController {
 			$this->Session->setFlash(__('Invalid Quizz.', true));
 			$this->redirect(array('action'=>'index'));
 		}
-		
+	/*	$conditions_selectedsoal = array('QuizzsQuestion.quizz_id'=>$idquizz);
+		$selected_soal = $this->Quizz->QuizzsQuestion->find('all',
+				array(
+					'conditions'=>$conditions_selectedsoal,
+					'order' => array('QuizzsQuestion.order' => 'asc')
+					
+				)
+		);*/
+
 		$this->Quizz->recursive = 2;
 		$quizz = $this->Quizz->read(null, $id);
 		$this->set('quizz',$quizz);
@@ -425,7 +433,7 @@ class QuizzsController extends AppController {
     }
 
     function viewnew($tipe,$kelas,$mapel){
-    	$conditions_lihatquizz = array('Quizz.kelas'=>$kelas,'Quizz.pelajaran_id'=>$mapel);
+    	$conditions_lihatquizz = array('Quizz.type'=>$tipe,'Quizz.kelas'=>$kelas,'Quizz.pelajaran_id'=>$mapel);
     	$quizz_detail = $this->Quizz->find('all',array('conditions'=>$conditions_lihatquizz));
     	$pelajaran = $this->Quizz->Pelajaran->read(null, $mapel);
     	$this->set('quizz_detail',$quizz_detail);
@@ -444,14 +452,23 @@ class QuizzsController extends AppController {
     	$this->set('mapelID',$mapel);
     	$this->layout='default_metro';
     }
-    function interaktif_kuis(){
+    function interaktif_kuis($idquizz){
+		$conditions_selectedsoal = array('QuizzsQuestion.quizz_id'=>$idquizz);
+		$selected_soal = $this->Quizz->QuizzsQuestion->find('all',
+			array(
+				'conditions'=>$conditions_selectedsoal,
+				'order' => array('QuizzsQuestion.order' => 'asc')
+				
+			)
+		);
+		$this->set('soal',$selected_soal);
     	$this->layout='default_metro';
+    	//print_r();
     }
     function add_new($tipesoal,$kelas,$mapel){
     	//$this->Quizz->recursive = 2;
 
     	if (!empty($this->data)) {
-
     		$this->Quizz->create();
 			
 			if ($this->Quizz->saveAll($this->data)) {
@@ -502,6 +519,7 @@ class QuizzsController extends AppController {
 			$selected_soal = $this->Quizz->QuizzsQuestion->find('all',
 				array(
 					'conditions'=>$conditions_selectedsoal,
+					'order' => array('QuizzsQuestion.order' => 'asc')
 					
 				)
 			);
@@ -550,6 +568,31 @@ class QuizzsController extends AppController {
 			$this->Session->setFlash('Task #'.$id.' deleted');
 			$this->redirect(array('controller'=>'quizzs','action'=>'edit_table_soal/'.$quizzid));
 		}
+    }
+	function show_pdf($id = null)
+    { 
+    	//Configure::write('debug',0); // Otherwise we cannot use this method while developing
+
+    	if (!$id) {
+			$this->Session->setFlash(__('Invalid Quizz.', true));
+			$this->redirect(array('action'=>'index'));
+		}
+	/*	$conditions_selectedsoal = array('QuizzsQuestion.quizz_id'=>$idquizz);
+		$selected_soal = $this->Quizz->QuizzsQuestion->find('all',
+				array(
+					'conditions'=>$conditions_selectedsoal,
+					'order' => array('QuizzsQuestion.order' => 'asc')
+					
+				)
+		);*/
+
+		$this->Quizz->recursive = 2;
+		$quizz = $this->Quizz->read(null, $id);
+		$this->set('quizz',$quizz);
+
+
+        $this->layout = 'pdf'; //this will use the pdf.ctp layout
+		$this->render();
     }
 
 }

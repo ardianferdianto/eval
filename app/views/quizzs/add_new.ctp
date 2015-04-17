@@ -583,7 +583,7 @@ $(document).ready(function() {
 function showResponse_submitformtryout(responseText, statusText, xhr, $form)  { 
   setTimeout(function() {
     alert('success');
-	window.location.href = "<?php echo $this->webroot?>quizz/viewnew/<?php echo $tipesoalID?>/<?php echo $kelasID?>/<?php echo $mapelID?>";
+	window.location.href = "<?php echo $this->webroot?>quizzs/viewnew/<?php echo $tipesoalID?>/<?php echo $kelasID?>/<?php echo $mapelID?>";
   }, 2000);
 }
 

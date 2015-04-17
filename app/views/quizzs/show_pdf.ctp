@@ -156,7 +156,7 @@ $tcpdf->AddPage();
 $tcpdf->SetTextColor(0, 0, 0);
 $tcpdf->SetFont($textfont,'',9);
 $tcpdf->writeHTML($html, true, false, true, false, '');
-$tcpdf->Output($tipekuis.'-'.$kodeKuis.'.pdf', 'FD');
+$tcpdf->Output($tipekuis.'-'.$kodeKuis.'.pdf', 'I');
 
 
 ?>

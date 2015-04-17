@@ -1,12 +1,12 @@
 <div class="grid fluid">
 <div class="row">
-
     <div class="rowblockwhite kolompertanyaan span5">
     	<h6 class="subheader-secondary"> PERTANYAAN :</h6>
     	<div class="containersoal timesnewroman">
-    		<p>
+    		<p id="soal">
     			2. Why do farmers prefer considering the only available nutrients to the total quantities of nutrient found in the soil? Because …
     		</p>
+
     	</div>
     </div>
 
@@ -15,139 +15,12 @@
 			<div class="rowblockwhite kolomtengah mapingsoal">
     			<h6 class="item-title-secondary"> MAP SOAL</h6>
     			<div class="rowmapsoalset">
-	    			<div class="row rowmapsoal">
-	    				<div class="rowblockblack mapsoalnumber span2">
+	    			<div class="row rowmapsoal" id="mapping">
+<!-- 	    				<div class="rowblockblack mapsoalnumber span2">
 	    					<a class="soalactive" href="#">
 	    					1
 	    					</a>
-	    				</div>
-	    				<div class="rowblockblack mapsoalnumber span2">
-	    					<a href="#">
-	    					2
-	    					</a>
-	    				</div>
-	    				<div class="rowblockblack mapsoalnumber span2">
-	    					<a href="#">
-	    					3
-	    					</a>
-	    				</div>
-	    				<div class="rowblockblack mapsoalnumber span2">
-	    					<a href="#">
-	    					4
-	    					</a>
-	    				</div>
-	    				<div class="rowblockblack mapsoalnumber span2">
-	    					<a href="#">
-	    					5
-	    					</a>
-	    				</div>
-	    				<div class="rowblockblack mapsoalnumber span2">
-	    					<a href="#">
-	    					6
-	    					</a>
-	    				</div>
-	    			</div>
-
-
-	    			<div class="row rowmapsoal">
-	    				<div class="rowblockblack mapsoalnumber span2">
-	    					<a href="#">
-	    					7
-	    					</a>
-	    				</div>
-	    				<div class="rowblockblack mapsoalnumber span2">
-	    					<a href="#">
-	    					8
-	    					</a>
-	    				</div>
-	    				<div class="rowblockblack mapsoalnumber span2">
-	    					<a href="#">
-	    					9
-	    					</a>
-	    				</div>
-	    				<div class="rowblockblack mapsoalnumber span2">
-	    					<a href="#">
-	    					10
-	    					</a>
-	    				</div>
-	    				<div class="rowblockblack mapsoalnumber span2">
-	    					<a href="#">
-	    					11
-	    					</a>
-	    				</div>
-	    				<div class="rowblockblack mapsoalnumber span2">
-	    					<a href="#">
-	    					12
-	    					</a>
-	    				</div>
-	    			</div>
-
-
-	    			<div class="row rowmapsoal">
-	    				<div class="rowblockblack mapsoalnumber span2">
-	    					<a href="#">
-	    					1
-	    					</a>
-	    				</div>
-	    				<div class="rowblockblack mapsoalnumber span2">
-	    					<a href="#">
-	    					2
-	    					</a>
-	    				</div>
-	    				<div class="rowblockblack mapsoalnumber span2">
-	    					<a href="#">
-	    					3
-	    					</a>
-	    				</div>
-	    				<div class="rowblockblack mapsoalnumber span2">
-	    					<a href="#">
-	    					4
-	    					</a>
-	    				</div>
-	    				<div class="rowblockblack mapsoalnumber span2">
-	    					<a href="#">
-	    					5
-	    					</a>
-	    				</div>
-	    				<div class="rowblockblack mapsoalnumber span2">
-	    					<a href="#">
-	    					6
-	    					</a>
-	    				</div>
-	    			</div>
-
-
-	    			<div class="row rowmapsoal">
-	    				<div class="rowblockblack mapsoalnumber span2">
-	    					<a href="#">
-	    					7
-	    					</a>
-	    				</div>
-	    				<div class="rowblockblack mapsoalnumber span2">
-	    					<a href="#">
-	    					8
-	    					</a>
-	    				</div>
-	    				<div class="rowblockblack mapsoalnumber span2">
-	    					<a href="#">
-	    					9
-	    					</a>
-	    				</div>
-	    				<div class="rowblockblack mapsoalnumber span2">
-	    					<a href="#">
-	    					10
-	    					</a>
-	    				</div>
-	    				<div class="rowblockblack mapsoalnumber span2">
-	    					<a href="#">
-	    					11
-	    					</a>
-	    				</div>
-	    				<div class="rowblockblack mapsoalnumber span2">
-	    					<a href="#">
-	    					12
-	    					</a>
-	    				</div>
+	    				</div> -->
 	    			</div>
     			</div>
     		</div>
@@ -169,11 +42,19 @@
 
     		<div class="rowblockwhite kolomtengah countdownbox">
     			<h6 class="item-title-secondary"> WAKTU </h6>
-    			<div class="contentcountdown">
-    				<h3>60</h3> Menit
+                <?php
+                    $minutes_to_add = 100;
+                    $date = date('Y-m-d H:i:s');
+                    $time = new DateTime($date);
+                    $time->add(new DateInterval('PT' . $minutes_to_add . 'M'));
+
+                    $stamp = $time->format('Y-m-d H:i');
+                ?>
+    			<div class="countdown" id="timersoal" data-role="countdown"  data-stoptimer="<?php echo $stamp ?>" style="font-size: 15px">
+    				<!-- <h3>60</h3> Menit
     				<br/>
     				<br/>
-    				<h3>20</h3> Detik
+    				<h3>20</h3> Detik -->
     				
     			</div>
     			
@@ -184,50 +65,169 @@
 
     <div class="rowblockwhite kolomjawaban span5">
     	<h6 class="subheader-secondary"> JAWABAN :</h6>
-    	<div class="answercontainer">
-	    	<div class="input-control radio default-style margin10 timesnewroman" data-role="input-control">
-                <label>
-                	<input type="radio" name="r1" >
-                    <span class="check"></span>
-                    <p class="jawabanparagraph">A. they do to know how to obtain all the nutrients</p>
-                </label>
-            </div>
-            <br/>
-            <div class="input-control radio default-style margin10 timesnewroman" data-role="input-control">
-                <label>
-                	<input type="radio" name="r1" >
-                    <span class="check"></span>
-                    <p class="jawabanparagraph">B. chemical analyses indicate that the soil constrains all the nutrients needed</p>
-                </label>
-            </div>
-
-
-            <div class="input-control radio default-style margin10 timesnewroman" data-role="input-control">
-                <label>
-                	<input type="radio" name="r1" >
-                    <span class="check"></span>
-                    <p class="jawabanparagraph">C. the nutrient are in the soil</p>
-                </label>
-            </div>
-
-
-            <div class="input-control radio default-style margin10 timesnewroman" data-role="input-control">
-                <label>
-                	<input type="radio" name="r1" >
-                    <span class="check"></span>
-                    <p class="jawabanparagraph">D.most of the nutrients are bound in compounds</p>
-                </label>
-            </div>
-
-            <div class="input-control radio default-style margin10 timesnewroman" data-role="input-control">
-                <label>
-                	<input type="radio" name="r1" >
-                    <span class="check"></span>
-                    <p class="jawabanparagraph">E. some of the nutrients are found in the atmosphere</p>
-                </label>
-            </div>
+    	<div id="contain" class="answercontainer">
+            
 		</div>
-
+        <div></br></br><p id="jawab" class="text-right" style="display:none;"><button class="primary large">SUBMIT</button></p></div>
     </div>
 </div>
 </div>
+<div id="form_ans">
+<?php //var_dump($soal) ?></div>
+<script>
+
+window.jawaban=[];
+$(document).ready(function() { 
+   	var data = $.parseJSON('<?php echo json_encode($soal) ?>');
+   	window.count=0;
+   	var page=0;
+    var hal=0;
+    var id_soal=[];
+    //create maping
+    for (var i = 0; i < data.length; i++) {
+    	if(data[i].Question.tipe==1){
+    		count+=1;	
+    		$('#mapping ').append('<div id="page" class="rowblockblack mapsoalnumber span2"><a data-page="'+(count-1)+'" class="soal_nonaktif" href="#">'+count+'</a></div>');
+            $('#form_ans').append('<input id="jawaban_'+(count-1)+'" type="hidden" value=""/>');
+            if (count==1) {
+                id_soal[i]=display_soal(data, i);
+            } else{
+                continue;
+            };
+    	}else{
+    		continue;
+    	}
+    };
+
+
+
+
+    $("#page a.soal_nonaktif").click(function(){
+        hal=$(this).data('page');
+        id_soal[hal]=display_soal(data, hal);
+        console.log(id_soal);
+        console.log(hal);
+    });
+/*    $("#prevsoal").click(function(){
+        hal=$("#page a.soal_nonaktif").data('page');
+        id_soal[hal-1]=display_soal(data, hal-1);
+    });
+    $("#nextsoal").click(function(){
+        hal=$("#page a.soal_nonaktif").data('page');
+        id_soal[hal+1]=display_soal(data, hal+1);
+    });*/
+
+    $("#jawab").click(function(){
+        var nilai=0;
+        var hitung=0;
+        for (var i = 0; i < data.length; i++) {
+           for (var j = 0; j < data.length; j++) {
+               if (id_soal[i]===data[j].Question.id) {
+                    if($("#jawaban_"+(i)).val()==data[j].Question.answer_true){
+                        nilai+=10;
+                    }else{
+                        continue;
+                    }
+               }else{
+                continue
+               }
+           };
+           
+        };
+        hitung=(nilai/(id_soal.length*1.0))*10.0;
+        showdialog(hitung);
+        //console.log(hitung);
+    });
+});
+
+function showdialog(nilai){
+    $.Dialog({
+        shadow: true,
+        overlay: false,
+        icon: '',
+        title: 'Title',
+        width: 500,
+        padding: 10,
+        content: '<center><h2>Point anda <h1>'+nilai+'</h1></h2></center>',
+        draggable: true,
+        sysButtons: {
+            btnMin: true,
+            btnMax: true,
+            btnClose: true
+        },
+        sysBtnCloseClick: function(e){
+            //alert('Close button click');
+            window.location.href = "<?php echo $this->webroot?>";
+        },
+        sysBtnMinClick: function(e){
+            alert('Min button click');
+        },
+        sysBtnMaxClick: function(e){
+            alert('Max button click');
+        }
+    });
+}
+function display_soal(data, page){
+    var soalterjawab=0;
+    $("#page").switchClass( "soal_nonaktif", "soalactive");
+    $(".answercontainer").empty().append('<p><div class="input-control radio default-style margin10 timesnewroman" data-role="input-control"><label><input type="radio" name="'+page+'" data-opsi="1" value="1"><span class="check"></span><p id="opsiA" class="jawabanparagraph"></p></label></div></p>'
+        +'<p><div class="input-control radio default-style margin10 timesnewroman" data-role="input-control"><label><input type="radio" name="'+page+'" data-opsi="1" value="2"><span class="check"></span><p id="opsiB" class="jawabanparagraph"></p></label></div></p>'
+        +'<p><div class="input-control radio default-style margin10 timesnewroman" data-role="input-control"><label><input type="radio" name="'+page+'" data-opsi="1" value="3"><span class="check"></span><p id="opsiC" class="jawabanparagraph"></p></label></div></p>'
+        +'<p><div class="input-control radio default-style margin10 timesnewroman" data-role="input-control"><label><input type="radio" name="'+page+'" data-opsi="1" value="4"><span class="check"></span><p id="opsiD" class="jawabanparagraph"></p></label></div></p>'
+        +'<p><div class="input-control radio default-style margin10 timesnewroman" data-role="input-control"><label><input type="radio" name="'+page+'" data-opsi="1" value="5"><span class="check"></span><p id="opsiE" class="jawabanparagraph"></p></label></div></p>'
+    );
+
+    //console.log(page);
+    var dats=$('#jawaban_'+page).val();
+    if (dats!="") {
+            var a=$('#contain div label input[type="radio"][name="'+page+'"]:checked').val();
+        $('#contain div label input[type="radio"][name="'+page+'"][value="'+dats+'"]').attr('checked',true); 
+    } else{
+        $('#contain div label input[type="radio"]').attr('checked',false); 
+    };
+    $("#soal").text(data[page].Question.question);
+    $("#opsiA").text(data[page].Question.answer_a);
+    $("#opsiB").text(data[page].Question.answer_b);
+    $("#opsiC").text(data[page].Question.answer_c);
+    $("#opsiD").text(data[page].Question.answer_d);
+    $("#opsiE").text(data[page].Question.answer_e);
+
+
+
+    $('#contain div label input[type="radio"]').data('page',page);
+    $('#contain div label input[type="radio"]').attr('name',page);
+
+
+
+    $('#contain div label input[type="radio"][name="'+page+'"]').on('change',function(){
+        var val_jawab=$(this).val();
+        $('#jawaban_'+page).val(val_jawab);
+        //hitung yang telah terjawab
+        for (var i = 0; i < count; i++) {
+            if($("#jawaban_"+(i)).val()!="") {
+                soalterjawab+=1;
+            } else{
+                continue;
+            };
+        };
+
+
+        if (soalterjawab===count) {
+            $("#jawab").show();
+        };
+    });
+    
+
+    console.log(count);
+    console.log(soalterjawab);
+    console.log(data[page].Question.id);
+
+    return data[page].Question.id;
+}
+    $("#timersoal").countdown({
+            blink: false, 
+            onstop: function(){
+                alert("Time out");
+        }
+    });
+</script>
