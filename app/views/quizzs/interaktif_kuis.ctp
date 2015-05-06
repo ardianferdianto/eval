@@ -43,12 +43,13 @@
     		<div class="rowblockwhite kolomtengah countdownbox">
     			<h6 class="item-title-secondary"> WAKTU </h6>
                 <?php
-                    $minutes_to_add = 100;
+                    $minutes_to_add = 1;
                     $date = date('Y-m-d H:i:s');
                     $time = new DateTime($date);
                     $time->add(new DateInterval('PT' . $minutes_to_add . 'M'));
 
                     $stamp = $time->format('Y-m-d H:i');
+                    //var_dump($stamp);
                 ?>
     			<div class="countdown" id="timersoal" data-role="countdown"  data-stoptimer="<?php echo $stamp ?>" style="font-size: 15px">
     				<!-- <h3>60</h3> Menit

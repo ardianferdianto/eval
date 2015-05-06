@@ -102,7 +102,7 @@ $(document).ready(function() {
 		    		type:"GET",
 		    		dataType:"html",
 		    		cache:false,
-		    		url: "http://localhost/evaluasi_sd/quizzs/datatable/<?php echo $id_kuis?>",
+		    		url: "<?php echo $this->webroot;?>quizzs/datatable/<?php echo $id_kuis?>",
 		    		success:function(data){
 		    			showdialog(data);
 		    		}
