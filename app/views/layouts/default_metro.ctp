@@ -40,6 +40,7 @@ h1 small{
 
 <?php echo $javascript->link('metro/jquery/jquery.min.js'); ?>
 <?php echo $javascript->link('metro/jquery/jquery.widget.min.js'); ?>
+<?php echo $javascript->link('metro/jquery/jquery.cookie.js'); ?>
 <?php echo $javascript->link('metro/metro.min.js'); ?>
 <?php echo $javascript->link('metro/jquery/jquery.countdown.js'); ?>
 <?php echo $javascript->link('metro/jquery/jquery.dataTables.js'); ?>
@@ -53,6 +54,10 @@ h1 small{
 <?php echo $html->css('shapehovercss/normalize.css'); ?>
 <?php echo $html->css('shapehovercss/component.css'); ?>
 <?php echo $html->css('apps.css'); ?>
+
+<?php echo $javascript->link('jwplayer.js'); ?>
+<script type="text/javascript">jwplayer.key="J0+IRhB3+LyO0fw2I+2qT2Df8HVdPabwmJVeDWFFoplmVxFF5uw6ZlnPNXo=";</script>
+
 
 <?php echo $scripts_for_layout; ?>
 </head>

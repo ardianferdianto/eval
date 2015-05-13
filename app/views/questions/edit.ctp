@@ -49,19 +49,35 @@
 					
 					echo '<p>';
 					echo'<label>File Video Sebelumnya</label>';
-					if($question['Question']['video'] != null || !empty ($question['Question']['video'])){
-						echo '<br/>';
-						echo $video->loader(true); 
-						echo $video->player($this->webroot.$question['Question']['video'], 'video', false, 320, 300); 
-						echo '<div id="video"></div>'	;
-						echo '<p>Jika tampilan video bermasalah keluar tekan pause dan play lagi pada player</p>';?>
+					if($question['Question']['video'] != null || !empty ($question['Question']['video'])){?>
+						<br/>
+						<div id="containerPlayer_<?php echo $question['Question']['id']?>">Loading the player ...</div>
+						<script type="text/javascript">
+						jwplayer("containerPlayer_<?php echo $question['Question']['id']?>").setup({
+                            'id': "playerID_<?php echo $question['Question']['id']?>",
+                            'width': '280',
+                            'height': '180',
+                            'aboutlink': '#',
+                            'autostart':false,
+                            'primary': 'flash',
+                            //'skin': 'skins/five.xml',
+
+                            
+                            'file': "<?php echo $this->webroot.$question['Question']['video'];?>",
+                            events: {
+                                onPause: function(event) {
+                                    setCookie(event.position);
+                                }
+                            }
+                        });
+                    	</script>
 						<?php 
 						echo '</p>';
 						echo '<p>';
 						echo'<label>Rubah Video</label>';
 						echo $form->input('File2.image', array('label'=>false, 'type'=>'file'));
-						echo '</p>';
-					}else{
+						echo '</p>';?>
+					<?php }else{
 						
 						echo 'Tidak ada video';
 						
@@ -93,7 +109,14 @@
 					
 					
 				?>
-				
+				<div class="row aligncenter">
+					<?php
+					echo '<p>';	
+					$ans = array(1=>'Jawaban A',2=>'Jawaban B',3=>'Jawaban C',4=>'Jawaban D');
+					echo $form->input('answer_true', array('label'=>false,'class'=>'text-input small-input','options' => $ans, 'empty' => '(Pilih Kunci Jawaban)'));
+					echo '</p>';
+					?>
+				</div>
 				</fieldset>
 			<p>
 			<?php echo $form->end('Submit');?>

@@ -6,7 +6,11 @@
     		<p id="soal">
     			2. Why do farmers prefer considering the only available nutrients to the total quantities of nutrient found in the soil? Because …
     		</p>
-
+            <p id="my_image">
+            </p>
+            <p id="my_video">
+            </p>
+            
     	</div>
     </div>
 
@@ -28,11 +32,11 @@
     		<div class="kolomtengah">
     			<div class="row navigatebutton">
     				<div class="span6">
-    					<a id="prevsoal" class="navigatesoal" style="display:none;" href="#"></a>
+    					<a id="prevsoal" class="navigatesoal" style="display:none;" data-pages="" href="#"></a>
     					
     				</div>
     				<div class="span6">
-    					<a id="nextsoal" class="navigatesoal" style="display:none;" href="#"></a>
+    					<a id="nextsoal" class="navigatesoal" style="display:none;" data-pages="" href="#"></a>
     				</div>
     			</div>
     			
@@ -43,18 +47,16 @@
     		<div class="rowblockwhite kolomtengah countdownbox">
     			<h6 class="item-title-secondary"> WAKTU </h6>
                 <?php
-                    $minutes_to_add = 100;
+                    $minutes_to_add = 1;
                     $date = date('Y-m-d H:i:s');
                     $time = new DateTime($date);
                     $time->add(new DateInterval('PT' . $minutes_to_add . 'M'));
 
                     $stamp = $time->format('Y-m-d H:i');
                 ?>
-    			<div class="countdown" id="timersoal" data-role="countdown"  data-stoptimer="<?php echo $stamp ?>" style="font-size: 15px">
-    				<!-- <h3>60</h3> Menit
-    				<br/>
-    				<br/>
-    				<h3>20</h3> Detik -->
+    			<div class="countdown" id="timersoal">
+    				<h3 id="men">60</h3><p>Menit</p>
+    				<h3 id="det">20</h3><p>Detik</p>
     				
     			</div>
     			
@@ -73,16 +75,23 @@
 </div>
 </div>
 <div id="form_ans">
-<?php //var_dump($soal) ?></div>
+<?php var_dump($read_soal['Quizz']['time']) ?></div>
 <script>
+
+/* before the window is reloaded or closed, store the current timeout in a cookie. 
+   For cookie options visit jquery-cookie */
+<?php $waktu=$read_soal['Quizz']['time']*60 ?>
 
 window.jawaban=[];
 $(document).ready(function() { 
+
+
    	var data = $.parseJSON('<?php echo json_encode($soal) ?>');
    	window.count=0;
    	var page=0;
     var hal=0;
     var id_soal=[];
+
     //create maping
     for (var i = 0; i < data.length; i++) {
     	if(data[i].Question.tipe==1){
@@ -98,26 +107,31 @@ $(document).ready(function() {
     		continue;
     	}
     };
-
-
-    var curr=id_soal.length;
+  
 
     $("#page a.soal_nonaktif").click(function(){
         hal=$(this).data('page');
         id_soal[hal]=display_soal(data, hal);
     });
-    $("#nextsoal").click(function(){ 
-        id_soal[curr]=display_soal(data, curr);
-        curr=curr+1;
-        console.log(curr);
+    $("#nextsoal").click(function(){
+        var hals=$("#nextsoal").attr('data-pages');
+        hals=parseInt(hals);
+        hals+=1;
+        id_soal[hals]=display_soal(data, hals);
     });
     $("#prevsoal").click(function(){
-        id_soal[curr-1]=display_soal(data, curr-1);
-        curr=curr-1;
-        console.log(curr);
+        var hals=$("#nextsoal").attr('data-pages');
+        hals=parseInt(hals);
+        hals-=1;
+        id_soal[hals]=display_soal(data, hals);
+    });
+    $("#jawab").click(function(){
+        showdialog(hitung_nilai(data,id_soal));
     });
 
-    $("#jawab").click(function(){
+
+});
+function hitung_nilai(data,id_soal){
         var nilai=0;
         var hitung=0;
         for (var i = 0; i < data.length; i++) {
@@ -134,12 +148,12 @@ $(document).ready(function() {
            };
            
         };
+/*        $.removeCookie("mytimeout");
+        $.removeCookie("timepassed");*/
         hitung=(nilai/(id_soal.length*1.0))*10.0;
-        showdialog(hitung);
-        //console.log(hitung);
-    });
-});
-
+        hitung=Math.round(hitung);
+        return hitung;
+}
 function showdialog(nilai){
     $.Dialog({
         shadow: true,
@@ -150,9 +164,8 @@ function showdialog(nilai){
         padding: 10,
         content: '<center><h2>Point anda <h1>'+nilai+'</h1></h2></center>',
         draggable: true,
+        overlayClickClose:false,
         sysButtons: {
-            btnMin: true,
-            btnMax: true,
             btnClose: true
         },
         sysBtnCloseClick: function(e){
@@ -177,8 +190,6 @@ function display_soal(data, page){
     }else if(page==count-1){
         $("#nextsoal").hide();
     };
-
-
     //indicator soal aktif
     for (var i = 0; i < count; i++) {
         if(i==page){
@@ -188,6 +199,9 @@ function display_soal(data, page){
             $("#"+(i)).removeClass("soalactive");
         }
     };
+
+    $("#nextsoal").attr("data-pages",page);
+    $("#prevsoal").attr("data-pages",page);
     
     //displaying items
     $(".answercontainer").empty().append('<p><div class="input-control radio default-style margin10 timesnewroman" data-role="input-control"><label><input type="radio" name="'+page+'" data-opsi="1" value="1"><span class="check"></span><p id="opsiA" class="jawabanparagraph"></p></label></div></p>'
@@ -205,6 +219,24 @@ function display_soal(data, page){
     } else{
         $('#contain div label input[type="radio"]').attr('checked',false); 
     };
+    if (data[page].Question.images!=null) {
+        var image='<?php echo $this->webroot?>'+data[page].Question.images;
+        //$("#my_image").attr("src",image); 
+        $("#my_image").empty().append('<img id="my_image" src="'+image+'"/>');
+    }else{
+        $("#my_image").empty().append('<img id="my_image"/>');
+    }
+    if (data[page].Question.video!=null) {
+        var video='<?php echo $this->webroot?>'+data[page].Question.video;
+        //$("#my_image").attr("src",image); 
+        //$("#containerPlayer").empty().append('<img id="my_image" src="'+image+'"/>');
+        $("#my_video").empty().append('<div id="containerPlayer"></div>');
+        player_generator(page,video);
+    }else{
+        $("#my_video").empty().append('');
+    }
+
+
     $("#soal").text(data[page].Question.question);
     $("#opsiA").text(data[page].Question.answer_a);
     $("#opsiB").text(data[page].Question.answer_b);
@@ -236,19 +268,27 @@ function display_soal(data, page){
             $("#jawab").show();
         };
     });
-    
-
     console.log(count);
     console.log(soalterjawab);
     console.log(data[page].Question.id);
 
     return data[page].Question.id;
 }
-
-$("#timersoal").countdown({
-        blink: false, 
-        onstop: function(){
-            alert("Time out");
-    }
-});
+function player_generator(page,data){
+    jwplayer("containerPlayer").setup({
+        'id': "playerID_"+page,
+        'width': '360',
+        'height': '240',
+        'aboutlink': '#',
+        'autostart':false,
+        'primary': 'flash',
+        
+        'file': data,
+        events: {
+            onPause: function(event) {
+                setCookie(event.position);
+            }
+        }
+    });
+}
 </script>

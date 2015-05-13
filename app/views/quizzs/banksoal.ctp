@@ -3,7 +3,8 @@
     $str= Router::url(null, false);
     $strafter= trim($str,"/evaluasi_sd/quizzs/banksoal");
 ?>
-<a href="<?php echo $this->webroot?>questions/add_newsoal/<?php echo $strafter?>"><button class="button large info">Input New</button></a>
+<a href="<?php echo $this->webroot?>questions/add_newsoal/<?php echo $strafter?>"><button class="button large info">Input New</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<button id="tombol" class="button large info">Input New From Excel</button>
 <?php if(empty($data_soal)):?>
     <center>Tidak ada quizz</center>
 <?php else:?>
@@ -113,6 +114,7 @@
                 </tr>
             </tfoot>
        </table>
+
     <script>
     $(document).ready(function() {
         $('#dataTables-1').dataTable({
@@ -123,3 +125,39 @@
     </script>
 <?php endif;?> 
 </div><!-- End content box -->
+<script>
+$("#tombol").on('click', function(){
+    $.Dialog({
+        shadow: true,
+        overlay: false,
+        icon: '',
+        title: 'Upload Excel File',
+        width: 500,
+        padding: 10,
+        content: '',
+        draggable: true,
+        overlayClickClose:false,
+        onShow: function(_dialog){
+            
+            var content='<form enctype="multipart/form-data" method="post" action="<?php echo $this->webroot?>questions/import_question/<?php echo $kelasID?>/<?php echo $mapelID?>">'+
+                '<h2>Form Upload Pertanyaan</h2>'+
+                '<div class="input file"><label>File Excel(.xls):</label><input type="file" name="data[Question][csv]"></div>'+
+                '<div class="input file"><label>Image on zip(.zip):</label><input type="file" name="data[Question][image]"></div>'+
+                '<input type="submit" value="Submit"></form>';
+            $.Dialog.content(content);
+            $.Metro.initInputs();
+        },
+        sysBtnCloseClick: function(e){
+            //alert('Close button click');
+            window.location.href = "<?php echo $this->webroot?>";
+        },
+        sysBtnMinClick: function(e){
+            alert('Min button click');
+        },
+        sysBtnMaxClick: function(e){
+            alert('Max button click');
+        }
+    });
+});
+
+</script>

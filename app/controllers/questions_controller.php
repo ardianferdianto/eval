@@ -21,20 +21,18 @@ class QuestionsController extends AppController {
 
 
 
-	function proses($kelas=null,$mapel=null,$level=null,$tipe=null,$status =null){
+	function proses($kelas=null,$mapel=null){
 
-
-		
-		$conditions = array('Question.kelas'=>$kelas,'Question.mapel'=>$mapel,'Question.level'=>$level,'Question.tipe'=>$tipe);
+		$conditions = array('Question.kelas'=>$kelas,'Question.pelajaran_id'=>$mapel);
 		$questions = $this->Question->find('all',array('conditions'=>$conditions,'order' => array('Question.created' => 'DESC')));
 		
 
 		$banyakSoal = count($questions);
-		$quizz = $this->Question->Quizz->find('list',array('fields'=>'Quizz.kode'));
+		//$quizz = $this->Question->Quizz->find('list',array('fields'=>'Quizz.kode'));
 		$this->set('questions',$questions);
-		$this->set(compact('kelas','mapel','level','tipe','banyakSoal','quizz',$status));
+		$this->set(compact('kelas','mapel','banyakSoal'));
 
-		$this->layout = 'default_blank';
+		$this->layout = 'default_metro';
 
 
 	}
@@ -952,12 +950,10 @@ class QuestionsController extends AppController {
 		$this->render();
     }
 
-    function import_question($kelas=null,$mapel=null,$level=null,$tipe=null){
+    function import_question($kelas,$mapel){
 
-    	$kelas = $this->data['Question']['kelas'];
-    	$mapel = $this->data['Question']['mapel'];
-    	$level = $this->data['Question']['level'];
-    	$tipe = $this->data['Question']['tipe'];
+    	//$kelas = $this->data['Question']['kelas'];
+    	//$mapel = $this->data['Question']['mapel'];
 
     	$data = new Spreadsheet_Excel_Reader();
 		// Set output Encoding.
@@ -968,6 +964,50 @@ class QuestionsController extends AppController {
 		$headings = array();
 		$xls_data = array();
 
+//upload data zip image
+		$now = new DateTime();
+		$tanggal= $now->format('Y-m-d H:i:s'); 
+
+		if ($this->data['Question']['image']) {
+
+			$file = new File($this->data['Question']['image']['tmp_name']);
+			$folderpath  = WWW_ROOT.'files/quizz/'.$tanggal;
+			if (!file_exists($folderpath)) {
+	    		mkdir($folderpath, 0777, true);
+			}
+			$foldertounzip  = $folderpath;
+			$foldertoupload  = WWW_ROOT.'/files/quizz/quizz.zip';
+
+
+			$dataImages = $file->read();
+			$file->close();
+
+			$file = new File($foldertoupload,true);
+			$file->write($dataImages);
+			$file->close();
+			// do unzip file
+
+			//delete folder first
+			//$file = new Folder($foldertounzip);
+			//$file->delete();
+
+			$zip = new ZipArchive;
+		     $res = $zip->open($foldertoupload);
+		     if ($res === TRUE) {
+		         $zip->extractTo($foldertounzip);
+		         $zip->close();
+
+		        //$this->Session->setFlash('Berhasil Mengupload data','flash_success');
+				//$this->redirect(array('action'=>'kelas/'.$kelas));
+		     } else {
+		        //$this->Session->setFlash('Tidak Berhasil Mengupload data','flash_erorr');
+				//$this->redirect(array('action'=>'home'));
+		     }
+		 }		
+
+
+
+
 		for ($i = 1; $i <= $data->sheets[0]['numRows']; $i++) {
 		    $row_data = array();
 		    for ($j = 1; $j <= $data->sheets[0]['numCols']; $j++) {
@@ -975,7 +1015,7 @@ class QuestionsController extends AppController {
 		            //this is the headings row, each column (j) is a header
 		            //$headings[$j] = $data->sheets[0]['cells'][$i][$j];
 		        	$headings[1] = 'question';
-		        	$headings[2] = 'target';
+		        	$headings[2] = 'level';
 		        	$headings[3] = 'answer_a';
 		        	$headings[4] = 'answer_b';
 		        	$headings[5] = 'answer_c';
@@ -984,16 +1024,24 @@ class QuestionsController extends AppController {
 		        	$headings[8] = 'answer_2';
 		        	$headings[9] = 'images';
 		        	$headings[10] = 'video';
-		        	$headings[11] = 'tipe';
-		        	$headings[12] = 'kelas';
-		        	$headings[13] = 'mapel';
-		        	$headings[14] = 'level';
+		        	$headings[11] = 'kelas';
+		        	$headings[12] = 'pelajaran_id';
+		        	$headings[13] = 'tipe';
 		        } else {
 		            //column of data
-		            $row_data[$headings[11]] = $tipe;
-		            $row_data[$headings[12]] = $kelas;
-		            $row_data[$headings[13]] = $mapel;
-		            $row_data[$headings[14]] = $level;
+		            if (isset($data->sheets[0]['cells'][$i][8])) {
+			            $row_data[$headings[13]]= 2;
+		            } else {
+		            	$row_data[$headings[13]]= 1;
+		            }
+		            if (isset($data->sheets[0]['cells'][$i][9])) {
+		            	$tmpdir="files/quizz/".$tanggal."/";
+			            $temp=$tmpdir.$data->sheets[0]['cells'][$i][9];
+			            $row_data[$headings[9]]= $temp;
+
+		            } 
+		            $row_data[$headings[11]] = $kelas;
+		            $row_data[$headings[12]] = $mapel;
 		            $row_data[$headings[$j]] = isset($data->sheets[0]['cells'][$i][$j]) ? $data->sheets[0]['cells'][$i][$j] : '';
 		        }
 		    }
@@ -1003,7 +1051,7 @@ class QuestionsController extends AppController {
 		    }
 		}
 
-		if ($this->data['Question']['image']) {
+/*		if ($this->data['Question']['image']) {
 
 			$file = new File($this->data['Question']['image']['tmp_name']);
 
@@ -1035,20 +1083,20 @@ class QuestionsController extends AppController {
 		        //$this->Session->setFlash('Tidak Berhasil Mengupload data','flash_erorr');
 				//$this->redirect(array('action'=>'home'));
 		     }
-		 }
+		 }*/
 
 
 		if($this->Question->saveAll($xls_data, array('validate'=>false))) {
 
 			$status = 'Berhasil mengimpor '. count($xls_data) .' data.';
-		    $this->redirect(array('controller'=>'questions','action'=>'proses/'.$kelas.'/'.$mapel.'/'.$level.'/'.$tipe.'/'.$status));
+		    $this->redirect(array('controller'=>'questions','action'=>'proses/'.$kelas.'/'.$mapel));
 		    //$this->redirect(array('action'=>'index'));
 		
 		} else {
 
 			$status = 'tidak berhasil mengimpor data, silahkan ulangi!';
 
-		    $this->redirect(array('controller'=>'questions','action'=>'proses/'.$kelas.'/'.$mapel.'/'.$level.'/'.$tipe.'/'.$status));
+		    $this->redirect(array('controller'=>'questions','action'=>'proses/'.$kelas.'/'.$mapel));
 		}
 
     }
