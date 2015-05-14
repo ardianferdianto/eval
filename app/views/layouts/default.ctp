@@ -70,9 +70,11 @@
 </head>
 
 
-<body>
+<body <?php if(isset($landing)&&($landing == true)):?> class="bodyhome"<?php endif;?> >
 <div class="evaluasititle" >
-    <h1 align="center"><span class="style3"><span class="style5">E</span>valuasi   <span class="style5">P</span>embelajaran   <span class="style5">I</span>nteraktif</span><span class="style9"><small>sekolah dasar</small></span></h1>
+    <h1 align="center" style="padding-top:15px;">Evaluasi Pembelajaran Interaktif </h1>
+        <p style="padding-top:20px;color:#fff;font-size:2em;text-transform:uppercase;text-align:center;text-shadow:0px 2px 6px #333;letter-spacing:15px;">sekolah dasar</p>
+        <p style="margin:0 auto;text-align:center;padding-top:15px;"><img src="<?php echo $this->webroot;?>art/line-heading.png"/></p>
 </div>
 <div id="wrapper">
     
@@ -84,7 +86,8 @@
   </div>
 </div>
 <div id="footer">
-    <img id="ribbon" src="<?php echo $this->webroot;?>images/ribbon.png">
+    <img id="logoedusoft" src="<?php echo $this->webroot;?>art/logoedusoft.png"/>
+    
 </div>
 </body>
 </html>

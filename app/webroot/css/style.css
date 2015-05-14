@@ -10,12 +10,15 @@ body {
 	line-height: 21px;
 
 }
+body.bodyhome{
+	background-image: url(../art/bg-landing.png);
+}
 h1 {
 	text-align: center;
 	color: #eee;
 	text-shadow: 0px 2px 6px #333;
 	font-family: Helvetica, Arial, Sans-serif;
-	font-size: 55px;
+	font-size: 3em;
 	line-height: 60px;
 	font-weight: bold;
 }
@@ -41,7 +44,7 @@ h2 a:hover { color: #90bcd0; }
 	width: 100%;
 	margin: 0 auto;
 	text-align: center;
-	margin-top: 100px;
+	margin-top: 50px;
 }
 #content .info { padding:10px; }
 
@@ -53,7 +56,7 @@ h2 a:hover { color: #90bcd0; }
 .movieposters li:hover { -webkit-perspective: 5000; }
 	
 .movieposters li img { border:10px solid #fcfafa; -webkit-transform: rotateY(30deg);
-	-moz-box-shadow:0 3px 10px #888; -webkit-box-shadow:0 3px 10px #888;
+	-moz-box-shadow:0 3px 10px rgba(10,10,10,0.5); -webkit-box-shadow:0 3px 10px rgba(10,10,10,0.5);
 	-webkit-transition-property: transform; -webkit-transition-duration: 0.5s; }
 .movieposters li:hover img { -webkit-transform: rotateY(0deg); }
 
@@ -65,8 +68,8 @@ h2 a:hover { color: #90bcd0; }
 	height:25px;
 	background-color:#deddcd;
 	position:absolute;
-	-moz-box-shadow:0 20px 40px #888;
-	-webkit-box-shadow:0 20px 40px #888;
+	-moz-box-shadow:0 20px 40px rgba(10,10,10,0.5);
+	-webkit-box-shadow:0 20px 40px rgba(10,10,10,0.5);
 	-webkit-transform: translateZ(30px) rotateY(30deg);
 	-webkit-transition-property: transform, box-shadow, margin;
 	-webkit-transition-duration: 0.5s;
@@ -81,7 +84,7 @@ h2 a:hover { color: #90bcd0; }
 	font-size: 1em;
 }
 	
-.movieposters li:hover .movieinfo { -webkit-transform: rotateY(0deg); -webkit-box-shadow:0 5px 10px #888; margin:-175px 0 0 50px; }
+.movieposters li:hover .movieinfo { -webkit-transform: rotateY(0deg); -webkit-box-shadow:0 5px 10px rgba(10,10,10,0.7); margin:-175px 0 0 50px; }
 	
 .movieinfo h3 {
 	color:#990000;
@@ -93,7 +96,7 @@ h2 a:hover { color: #90bcd0; }
 }
 .movieinfo p { padding-bottom:15px; }
 .movieinfo a {
-	background-color:#990000;
+	background-color:#837565;
 	color:#eee;
 	text-decoration:none;
 	display:block;
@@ -119,23 +122,76 @@ h2 a:hover { color: #90bcd0; }
 	margin-bottom: 0;
 }
 #footer{
-	background: transparent url('../images/footer.png') repeat-x;
-	height: 50px;
+	background: transparent url('../art/stitch-footer-EVAL.png') repeat-x;
+	height: 125px;
 	width: 100%;
 	position: absolute;
 	left: 0;
 	bottom: 0;
+	text-align: center;
 }
 
 #ribbon{
 	position: absolute;
-	bottom: 8px;
-	left: 100px;
+	bottom: 20px;
+	right: 150px;
 }
 
 
 .wizardtryout{
 	width: 80%;
 	
+}
+
+.popupwithstitch{
+
+	background: transparent url('../art/stich.png') repeat-x; 
+  	height: 400px;
+  	
+}
+.fancybox-inner{
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	border-radius: 20px; /* future proofing */
+	-khtml-border-radius: 20px; /* for old Konqueror browsers */
+}
+.popupwithstitch h2{
+	color: #2f2202;
+	text-shadow: 0px 2px 6px #f8e099;
+	margin: 0 auto;
+	text-align: center;
+	padding-top: 60px;
+	margin-bottom: 20px;
+	text-transform: uppercase;
+}
+#select_quizz_type a{
+	text-decoration: none;
+	float: left;
+	width: 25%;
+	margin: 0 auto;
+	margin-bottom: 15px;
+	padding:35px 0 10px 0;
+color: #1b0900;
+-webkit-box-shadow: inset 3px 3px 3px 0px rgba(99,69,27,0.8);
+-moz-box-shadow: inset 3px 3px 3px 0px rgba(99,69,27,0.8);
+box-shadow: inset 3px 3px 3px 0px rgba(99,69,27,0.8);
+height: 100%;
+}
+#select_quizz_type a center{
+	
+	
+}
+#select_quizz_type a:hover{
+	background-color:#c49752;
+}
+.fancybox-skin{
+	background: transparent !important;
+}
+.fancybox-inner{
+background: transparent url('../art/bg-stich.png') repeat; 
+}
+#logoedusoft{
+	margin: 0 auto;
+	margin-top: -50px;
 }
 

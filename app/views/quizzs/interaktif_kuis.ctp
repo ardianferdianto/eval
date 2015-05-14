@@ -1,47 +1,59 @@
 <div class="grid fluid">
 <div class="row">
-    <div class="rowblockwhite kolompertanyaan span5">
-    	<h6 class="subheader-secondary"> PERTANYAAN :</h6>
-    	<div class="containersoal timesnewroman">
-    		<p id="soal">
-    			2. Why do farmers prefer considering the only available nutrients to the total quantities of nutrient found in the soil? Because …
-    		</p>
+    <div class="bg-notebook-interaktif">
 
-    	</div>
+        <div class="kolompertanyaan span5">
+        	<h6 class="subheader-secondary"> PERTANYAAN :</h6>
+        	<div class="containersoal timesnewroman">
+        		<p id="soal">
+        			2. Why do farmers prefer considering the only available nutrients to the total quantities of nutrient found in the soil? Because …
+        		</p>
+
+        	</div>
+        </div>
+
+        <div class="kolomjawaban span5">
+        	<h6 class="subheader-secondary"> JAWABAN :</h6>
+        	<div id="contain" class="answercontainer">
+                
+    		</div>
+            <div></br></br><p id="jawab" class="text-right" style="display:none;"><button class="primary large">SUBMIT</button></p></div>
+        </div>
+
     </div>
 
-    <div class="span2">
-		<div class="row kolomtengahset">
-			<div class="rowblockwhite kolomtengah mapingsoal">
-    			<h6 class="item-title-secondary"> MAP SOAL</h6>
-    			<div class="rowmapsoalset">
-	    			<div class="row rowmapsoal" id="mapping">
-<!-- 	    				<div class="rowblockblack mapsoalnumber span2">
-	    					<a class="soalactive" href="#">
-	    					1
-	    					</a>
-	    				</div> -->
-	    			</div>
-    			</div>
-    		</div>
+    <div class="containermapsoal">
+        <div class="row kolomtengahset">
+            <div class=" kolomtengah mapingsoal">
+                <h6 class="item-title-secondary mapsoaltitle"> MAP SOAL</h6>
+                <div class="rowmapsoalset">
+                    <div class="row rowmapsoal" id="mapping">
+<!--                        <div class="rowblockblack mapsoalnumber span2">
+                            <a class="soalactive" href="#">
+                            1
+                            </a>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
 
-    		<div class="kolomtengah">
-    			<div class="row navigatebutton">
-    				<div class="span6">
-    					<a id="prevsoal" class="navigatesoal" style="display:none;" href="#"></a>
-    					
-    				</div>
-    				<div class="span6">
-    					<a id="nextsoal" class="navigatesoal" style="display:none;" href="#"></a>
-    				</div>
-    			</div>
-    			
-    		</div>
+            <div class="kolomtengah">
+                <div class="row navigatebutton">
+                    <div class="span6">
+                        <a id="prevsoal" class="navigatesoal" style="display:none;" href="#"></a>
+                        
+                    </div>
+                    <div class="span6">
+                        <a id="nextsoal" class="navigatesoal" style="display:none;" href="#"></a>
+                    </div>
+                </div>
+                
+            </div>
 
 
 
-    		<div class="rowblockwhite kolomtengah countdownbox">
-    			<h6 class="item-title-secondary"> WAKTU </h6>
+            <div class="kolomtengah countdownbox">
+                <h6 class="item-title-secondary"> WAKTU </h6>
                 <?php
                     $minutes_to_add = 1;
                     $date = date('Y-m-d H:i:s');
@@ -51,26 +63,20 @@
                     $stamp = $time->format('Y-m-d H:i');
                     //var_dump($stamp);
                 ?>
-    			<div class="countdown" id="timersoal" data-role="countdown"  data-stoptimer="<?php echo $stamp ?>" style="font-size: 15px">
-    				<!-- <h3>60</h3> Menit
-    				<br/>
-    				<br/>
-    				<h3>20</h3> Detik -->
-    				
-    			</div>
-    			
-    		</div>
+                <div class="countdown" id="timersoal" data-role="countdown"  data-stoptimer="<?php echo $stamp ?>" style="font-size: 15px">
+                    <!-- <h3>60</h3> Menit
+                    <br/>
+                    <br/>
+                    <h3>20</h3> Detik -->
+                    
+                </div>
+                
+            </div>
 
-		</div>    	
+        </div>      
     </div>
 
-    <div class="rowblockwhite kolomjawaban span5">
-    	<h6 class="subheader-secondary"> JAWABAN :</h6>
-    	<div id="contain" class="answercontainer">
-            
-		</div>
-        <div></br></br><p id="jawab" class="text-right" style="display:none;"><button class="primary large">SUBMIT</button></p></div>
-    </div>
+
 </div>
 </div>
 <div id="form_ans">
@@ -207,11 +213,11 @@ function display_soal(data, page){
         $('#contain div label input[type="radio"]').attr('checked',false); 
     };
     $("#soal").text(data[page].Question.question);
-    $("#opsiA").text(data[page].Question.answer_a);
-    $("#opsiB").text(data[page].Question.answer_b);
-    $("#opsiC").text(data[page].Question.answer_c);
-    $("#opsiD").text(data[page].Question.answer_d);
-    $("#opsiE").text(data[page].Question.answer_e);
+    $("#opsiA").text('A. '+data[page].Question.answer_a);
+    $("#opsiB").text('B. '+data[page].Question.answer_b);
+    $("#opsiC").text('C. '+data[page].Question.answer_c);
+    $("#opsiD").text('D. '+data[page].Question.answer_d);
+    $("#opsiE").text('E. '+data[page].Question.answer_e);
 
 
 
@@ -246,10 +252,10 @@ function display_soal(data, page){
     return data[page].Question.id;
 }
 
-$("#timersoal").countdown({
+/*$("#timersoal").countdown({
         blink: false, 
         onstop: function(){
             alert("Time out");
     }
-});
+});*/
 </script>

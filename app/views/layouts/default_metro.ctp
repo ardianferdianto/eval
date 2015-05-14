@@ -59,17 +59,30 @@ h1 small{
 
 
 <body class="metro">
-<div class="evaluasititle" >
-    <h1 align="center"><span class="style3"><span class="style5">E</span>valuasi   <span class="style5">P</span>embelajaran   <span class="style5">I</span>nteraktif</span><span class="style9"><small>sekolah dasar</small></span></h1>
-</div>
+
+<?php if(isset($homeicon) && $homeicon == true){ ?>
+
+<?php }else{ ?>
+
+<a class="sticth_home_icon" href="<?php echo $this->webroot;?>"></a>
+
+<?php }?>
+
+
+<!--<div class="evaluasititle" >
+    <h1 align="center" style="padding-top:15px;">Evaluasi Pembelajaran Interaktif </h1>
+        <p style="padding-top:20px;color:#fff;font-size:2em;text-transform:uppercase;text-align:center;text-shadow:0px 2px 6px #333;letter-spacing:15px;">sekolah dasar</p>
+        <p style="margin:0 auto;text-align:center;padding-top:10px;"><img src="<?php echo $this->webroot;?>art/line-heading.png"/></p>
+</div>-->
 <div id="wrapper">
     <div id="content">  
         <?php $session->flash(); ?>
         <?php echo $content_for_layout; ?>
   </div>
 </div>
-<!--<div id="footer">
-    <img id="ribbon" src="<?php #echo $this->webroot;?>images/ribbon.png">
-</div>-->
+<div id="footer">
+    <img id="logoedusoft" src="<?php echo $this->webroot;?>art/logoedusoft.png"/>
+    
+</div>
 </body>
 </html>
