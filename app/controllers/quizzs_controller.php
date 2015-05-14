@@ -462,6 +462,9 @@ class QuizzsController extends AppController {
 				
 			)
 		);
+		$read_soal=$this->Quizz->read(null, $idquizz);
+		$this->set('read_soal',$read_soal);
+		$this->set('id_kuis',$idquizz);
 		$this->set('soal',$selected_soal);
 		$this->set('homeicon',$homeicon);
     	$this->layout='default_metro';

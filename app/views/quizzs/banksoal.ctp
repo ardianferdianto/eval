@@ -1,3 +1,7 @@
+<?php 
+    $str= Router::url(null, false);
+    $strafter= trim($str,"/evaluasi_sd/quizzs/banksoal");
+?>
 <div class="wrapper">
     <img class="sticth_title_icon" src="<?php echo $this->webroot;?>art/stitch-icon2-banksoal.png"/>
     <div class="container">
@@ -5,12 +9,12 @@
         <section id="grid" class="grid clearfix container_bank_soal">
             
             <a href="<?php echo $this->webroot?>questions/add_newsoal/<?php echo $strafter?>" class="addnew_btn">&nbsp;</a>
+            <button id="tombol" class="button large info">Input New From Excel</button>
+
+
 
             <div id="content_table" class="container_bank_soal_content">
-            <?php 
-                $str= Router::url(null, false);
-                $strafter= trim($str,"/evaluasi_sd/quizzs/banksoal");
-            ?>
+            
             
             <?php if(empty($data_soal)):?>
                 <center>Tidak ada Soal</center>
@@ -25,11 +29,7 @@
                                 <th class="text-left">Level kesulitan</th>
                                 <th class="text-left">Kelas</th>
                                 <th class="text-left">Pertanyaan</th>
-                                <th class="text-left">Jawaban A</th>
-                                <th class="text-left">Jawaban B</th>
-                                <th class="text-left">Jawaban C</th>
-                                <th class="text-left">Jawaban D</th>
-                                <th class="text-left">Kunci Jawaban</th>
+                                
                                 <th class="text-left">Actions</th>
                             </tr>
                         </thead>
@@ -46,6 +46,7 @@
                             }else{
                                 $tipesoal_string = 'Undefined';
                             }
+
 
                             $levelsoal_string = $row['Question']['level'];
                             if($levelsoal_string == 1){
@@ -65,32 +66,7 @@
                                 <td class="text-left"><?php echo $levelsoal_string ?></td>
                                 <td class="text-left"><?php echo $row['Question']['kelas'] ?></td>
                                 <td class="text-left"><?php echo $row['Question']['question'];?></td>
-                                <td class="text-left"><?php echo $row['Question']['answer_a'] ?></td>
-                                <td class="text-left"><?php echo $row['Question']['answer_b'] ?></td>
-                                <td class="text-left"><?php echo $row['Question']['answer_c'] ?></td>
-                                <td class="text-left"><?php echo $row['Question']['answer_d'] ?></td>
-                                <td class="text-left">
-                                    <?php 
-                                        if ($row['Question']['tipe']==1) {
-                                            switch ($row['Question']['answer_true']) {
-                                                case '1':
-                                                    echo 'A';
-                                                    break;
-                                                case '2':
-                                                    echo 'B';
-                                                    break;
-                                                case '3':
-                                                    echo 'C';
-                                                    break;
-                                                case '4':
-                                                    echo 'D';
-                                                    break;
-                                            }
-                                        } else {
-                                            echo $row['Question']['answer2'];
-                                        }
-                                    ?>
-                                </td>
+                                
                                 <td class="text-left actionrow">
                                     <a href="<?php echo $this->webroot;?>questions/edit/<?php echo $row['Question']['id'] ?>">Edit
                                     </a><br/>
@@ -107,7 +83,7 @@
                 <script>
                 $(document).ready(function() {
                     $('#dataTables-1').dataTable({
-                        "info":false
+                        info:false
                     });
                 } );
 
@@ -118,3 +94,43 @@
     </div><!-- /container -->
     
 </div>
+
+
+</div><!-- End content box -->
+<script>
+$("#tombol").on('click', function(){
+    $.Dialog({
+        shadow: true,
+        overlay: false,
+        icon: '',
+        title: 'Upload Excel File',
+        width: 500,
+        padding: 10,
+        content: '',
+        draggable: true,
+        overlayClickClose:false,
+        onShow: function(_dialog){
+            
+            var content='<form enctype="multipart/form-data" method="post" action="<?php echo $this->webroot?>questions/import_question/<?php echo $kelasID?>/<?php echo $mapelID?>">'+
+                '<h2>Form Upload Pertanyaan</h2>'+
+                '<div class="input file"><label>File Excel(.xls):</label><input type="file" name="data[Question][csv]"></div>'+
+                '<div class="input file"><label>Image on zip(.zip):</label><input type="file" name="data[Question][image]"></div>'+
+                '<input type="submit" value="Submit"></form>';
+            $.Dialog.content(content);
+            $.Metro.initInputs();
+        },
+        sysBtnCloseClick: function(e){
+            //alert('Close button click');
+            window.location.href = "<?php echo $this->webroot?>";
+        },
+        sysBtnMinClick: function(e){
+            alert('Min button click');
+        },
+        sysBtnMaxClick: function(e){
+            alert('Max button click');
+        }
+    });
+});
+
+</script>
+

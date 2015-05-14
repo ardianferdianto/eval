@@ -61,9 +61,9 @@ $(document).ready(function(){
 	?>
 <div id="question_id_<?php echo $n['Question']['id'];?>" class="clearfix questionentry"style="display:block;">
 <div style="float:left;width:70px;">
-	<?php echo $html->link($html->image("pen_12x12.png"), array('action' => 'edit_single', $n['Question']['id'],$kelas,$mapel,$level,$tipe), array('escape' => false,'class'=>'hasTooltip editquestion_button','data-tooltip'=>'Edit Soal','data-idquestion'=>$n['Question']['id'])); ?>
+	<?php echo $html->link($html->image("pen_12x12.png"), array('action' => 'edit', $n['Question']['id'],$kelas,$mapel,$level,$tipe), array('escape' => false,'class'=>'hasTooltip editquestion_button','data-tooltip'=>'Edit Soal','data-idquestion'=>$n['Question']['id'])); ?>
 		&nbsp;&nbsp;&nbsp;
-	<a class="hasTooltip deletesoal" data-tooltip="Hapus Soal" href="<?php echo $this->webroot?>/questions/delete/<?php echo $n['Question']['id'];?>"><img src="<?php echo $this->webroot?>img/trash_fill_12x12-2.png"/></a>
+	<a class="hasTooltip deletesoal" data-tooltip="Hapus Soal" href="<?php echo $this->webroot?>/questions/delete/<?php echo $n['Question']['id'];?>">Delete</a>
 	
 	<?php if($n['Question']['target'] == 1):?>
 		<div class="questiontype icon-quizz"></div>
@@ -82,6 +82,42 @@ $(document).ready(function(){
 			if ($n['Question']['tipe'] == 1){
 				
 				?>
+				<div class="soal-image" style="width:150px">
+					<?php
+					if($n['Question']['images'] != null){ ?>
+						<a class="imagesoal" href="<?php echo $this->webroot.$n['Question']['images']; ?>"><img class="option_image_item" style="margin:0 auto;text-align:center;" align="center" src="<?php echo $this->webroot.$n['Question']['images']; ?>" width="140" /> </a>
+					
+					<?php }?>
+
+				</div>
+
+				<div class="soal-video" style="width:195px;">
+				
+					<?php if($n['Question']['video'] != null):?>
+						
+						<div id="question_videoid_<?php echo $n['Question']['id'];?>" class="myPlayer" style="width:180px;height:150px;float:right;" href="<?php echo $this->webroot.$n['Question']['video'];?>">
+						    
+						</div>
+
+						<script type="text/javascript">
+
+							jwplayer("question_videoid_<?php echo $n['Question']['id'];?>").setup({
+					            'id': 'question_videoid_<?php echo $n['Question']['id'];?>',
+					            'width': '195',
+					            'height': '160',
+					            'aboutlink': 'http://basedidea.com',
+					            'autostart':false,
+					            //'skin': 'skins/five.xml',
+					            'image':'<?php echo $this->webroot;?>images/vid.png',
+					            'file': '<?php echo $this->webroot.$n['Question']['video'];?>',
+					        
+					        });
+						</script>
+					<?php endif;
+					?>
+
+					
+				</div>
 				<?php 
 				echo '<div class="option_a_item">';
 				
@@ -115,42 +151,7 @@ $(document).ready(function(){
 			}?>
 			</div><!--end soaltext-->
 
-			<div class="soal-image" style="width:150px">
-				<?php
-				if($n['Question']['images'] != null){ ?>
-					<a class="imagesoal" href="<?php echo $this->webroot.$n['Question']['images']; ?>"><img class="option_image_item" style="margin:0 auto;text-align:center;" align="center" src="<?php echo $this->webroot.$n['Question']['images']; ?>" width="140" /> </a>
-				
-				<?php }?>
-
-			</div>
-
-			<div class="soal-video" style="width:195px;">
 			
-				<?php if($n['Question']['video'] != null):?>
-					
-					<div id="question_videoid_<?php echo $n['Question']['id'];?>" class="myPlayer" style="width:180px;height:150px;float:right;" href="<?php echo $this->webroot.$n['Question']['video'];?>">
-					    
-					</div>
-
-					<script type="text/javascript">
-
-						jwplayer("question_videoid_<?php echo $n['Question']['id'];?>").setup({
-				            'id': 'question_videoid_<?php echo $n['Question']['id'];?>',
-				            'width': '195',
-				            'height': '160',
-				            'aboutlink': 'http://basedidea.com',
-				            'autostart':false,
-				            //'skin': 'skins/five.xml',
-				            'image':'<?php echo $this->webroot;?>images/vid.png',
-				            'file': '<?php echo $this->webroot.$n['Question']['video'];?>',
-				        
-				        });
-					</script>
-				<?php endif;
-				?>
-
-				
-			</div>
 	</div><!--end soalentry-->
 	
 </div>
