@@ -118,11 +118,11 @@ $(document).ready(function() {
 
   $(".buttonmapel").fancybox({
     maxWidth  : 500,
-    maxHeight : 400,
+    maxHeight : '250px',
     fitToView : false,
     padding : 0,
     width   : '50%',
-    height    : '40%',
+    height    : '250px',
     autoSize  : false,
     closeClick  : false,
     openEffect  : 'none',
