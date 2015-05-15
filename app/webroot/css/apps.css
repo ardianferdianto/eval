@@ -609,7 +609,7 @@ border-radius: 1em; /* future proofing */
 	margin-bottom: 20px;
 	text-transform: uppercase;
 }
-#select_quizz_type a{
+#select_quizz_type a,#select_quizz_type button{
 	text-decoration: none;
 	float: left;
 	width: 25%;
@@ -624,8 +624,20 @@ box-shadow: inset 0 3px 0 0px rgba(99,69,27,0.8);
 .contentpopup_opsi{
 	width: 100%;
 	position: relative;
+	float: left;
+	padding-left:1em;
+	padding-right:1em;
 }
-#select_quizz_type .contentpopup_opsi a{
+.contentpopup_opsi a{
+	text-align: center;
+
+}
+.contentpopup_opsi a span{
+	font-size: 1em;
+	text-transform: uppercase;
+	margin-top: 7px;
+}
+#select_quizz_type .contentpopup_opsi a,#select_quizz_type .contentpopup_opsi button{
 width: 20%;
 }
 #select_quizz_type a center{

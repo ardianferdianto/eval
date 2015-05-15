@@ -68,11 +68,12 @@
             	console.log($idkuis);
             	$.fancybox({
 			    maxWidth  : 700,
-
+			    maxHeight:300,
 			    fitToView : true,
 			    padding : 0,
 			    
 			    content: $('#select_quizz_type'),
+			    scrolling: 'no',
 
 			    autoHeight:true,
 			    autoSize  : false,
@@ -90,34 +91,28 @@
 			function load_content_opsi(id_kuis,tipe_kuis){
 				$('.contentpopup_opsi').append('<a href="<?php echo $this->webroot?>quizzs/edit_new/'+tipe_kuis+'/<?php echo $kelasID."/".
 $mapelID?>/'+id_kuis+'">'+
-	                    '<button class="command-button large info fg-hover-cobalt buttonopsitryout">'+
-	                    '<i class=" icon-pencil on-left"></i>'+
-	                    'Edit Tryout<small>Use this option for edit tryout</small>'+
-						'</button>'+
+	                    '<img src="<?php echo $this->webroot;?>art/edit-icon.png"/><br/><span>'+
+	                    'Edit Tryout</span>'+
 					'</a>'+
 					'<a href="<?php echo $this->webroot?>quizzs/interaktif_kuis/'+id_kuis+'">'+
-                    '<button class="command-button large default fg-hover-cobalt buttonopsitryout">'+
-                    '<i class=" icon-accessibility on-left"></i>'+
-                    'Interaktif<small>Use this option for interactive question</small>'+
-					'</button>'+
+                    '<img src="<?php echo $this->webroot;?>art/interaktif-icon.png"/><br/><span>'+
+                    'Interaktif<span>'+
 					'</a>'+
 					'<a href="<?php echo $this->webroot?>quizzs/show_pdf/'+id_kuis+'">'+
-                    '<button class="command-button large primary fg-hover-cobalt buttonopsitryout">'+
-                    '<i class=" icon-glasses-2 on-left"></i>'+
-                    'Preview<small>Use this option for preview</small>'+
-					'</button>'+
+                    '<img src="<?php echo $this->webroot;?>art/preview-icon.png"/><br/><span>'+
+                    'Preview<span>'+
 					'</a>'+
 					'<a href="<?php echo $this->webroot?>quizzs/view_pdf/'+id_kuis+'">'+
-                    '<button class="command-button large info fg-hover-cobalt buttonopsitryout">'+
-                    '<i class=" icon-floppy on-left"></i>'+
-                    'Save<small>Use this option for save to PDF file</small>'+
-					'</button>'+
+                    '<img src="<?php echo $this->webroot;?>art/savepdf-icon.png"/><br/><span>'+
+                    'Simpan sebagai pdf<span>'+
 					'</a>'+
-                    '<button class="command-button large success fg-hover-cobalt buttonopsitryout">'+
-                    '<i class=" icon-printer on-left"></i>'+
-                    'Print<small>Use this option for printing out the question</small>'+
-					'</button>');
+                    '<a href="<?php echo $this->webroot?>quizzs/show_pdf/'+id_kuis+'">'+
+                    '<img src="<?php echo $this->webroot;?>art/print-icon.png"/><br/><span>'+
+                    'Print<span>'+
+					'</a>');
 			}
+
+			$('.fancybox-inner').css('overflow','hidden');
             
         });
     

@@ -559,6 +559,8 @@ class QuizzsController extends AppController {
 				
 			)
 		);
+		$selected_quizz = $this->Quizz->read(null, $idquizz);
+		$this->set('selected_quizz',$selected_quizz);
 		$this->set('id_kuis',$idquizz);
 		$this->set('soal_kuis',$selected_soal);
 		$this->set('kelasID',$kelas);	
