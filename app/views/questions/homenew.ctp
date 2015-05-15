@@ -121,8 +121,8 @@ $(document).ready(function() {
 
     fitToView : true,
     padding : 0,
-    
-
+    scrolling: 'no',
+    maxHeight:300,
     autoHeight:true,
     autoSize  : false,
     closeClick  : false,
