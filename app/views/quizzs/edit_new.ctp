@@ -12,12 +12,15 @@
 								<?php
 									switch ($tipesoalID) {
 									 	case '1':
+									 		$tipesoalID = 'TRYOUT';
 									 		echo 'TRYOUT';
 									 		break;
 									 	case '2':
+									 		$tipesoalID = 'KUIS';
 									 		echo 'KUIS';
 									 		break;
 									 	case '3':
+									 		$tipesoalID = 'UJIAN';
 									 		echo 'UJIAN';
 									 		break;
 									 	
@@ -54,6 +57,8 @@
 						        <?php if(empty($soalid)):?>
 			    					<center>Tidak ada quizz</center>
 								<?php else:?>
+								<h2 class="fg-white titletablesoal">Soal Dalam <?php echo $tipesoalID;?> Sebelumnya</h2>
+								<hr/>
 						        <table id="tblsoal_tryout" class="table dataTable center" cellspacing="0" width="100%">
 						           <thead>
 						                <tr class="bg-lightBlue">
@@ -132,7 +137,7 @@
 									</tbody>
 						       	</table>
 						   		</div>
-								<p><a href="<?php echo $this->webroot ?>quizzs/edit_table_soal/<?php echo $kelasID."/".$mapelID."/".$quizz['Quizz']['id']?>" ><button class="primary" id="edit">Edit table soal</button></a></p>
+								<p><a href="<?php echo $this->webroot ?>quizzs/edit_table_soal/<?php echo $quizz['Quizz']['type'].'/'.$kelasID."/".$mapelID."/".$quizz['Quizz']['id']?>" ><button class="primary" id="edit">Edit table soal</button></a></p>
 
 
 								<p class="text-right"><button class="danger" id="submit">Submit Change</button></p>

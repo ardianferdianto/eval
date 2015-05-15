@@ -27,7 +27,7 @@
 								<div class="entrykuisview">
 									<h5><?php echo $quizz['Quizz']['kode']; ?></h5>
 									<div class="button_entrykuisview">
-										<a class="btn_yellow createWindow" href="#" data-kuisid = "<?php echo $quizz['Quizz']['id']?>">PILIH</a>
+										<a class="btn_yellow createWindow" href="#select_quizz_type" data-tipekuis='<?php echo $quizz['Quizz']['type']?>' data-kuisid = "<?php echo $quizz['Quizz']['id']?>">PILIH</a>
 									</div>
 								</div>
 							
@@ -39,6 +39,15 @@
 			</div><!-- /container -->
 	
 	</div>
+
+
+
+	<div id="select_quizz_type" class="popupwithstitch" style="display:none;">
+	  <h2>Pilih Opsi</h2>
+	  
+	    <div class="contentpopup_opsi"></div>
+	  
+	</div>
 	<script type="text/javascript">
 		$(document).ready(function() {
 		  $( "#container_image").click(function() {
@@ -47,39 +56,58 @@
 		    });
 		  });
 
-				var idkuis=0;
+		
         $(function(){
-            $(".createWindow").on('click', function(event){
+        	$idkuis=0;
+        	$tipekuis=0;
+        	$(".createWindow").on('click', function(event){
             	event.preventDefault();
-            	var idkuis=$(this).data('kuisid');
-            	console.log(idkuis);
-                $.Dialog({
-                    flat: false,
-                    shadow: true,
-                    width: 500,
-                    title: 'PILIH OPSI',
-                    padding:0,
-                    content:
-                    '<a href="<?php echo $this->webroot?>quizzs/edit_new/<?php echo $quizz['Quizz']['type'];?>/<?php echo $kelasID."/".
-$mapelID?>/'+idkuis+'">'+
+            	$idkuis=$(this).data('kuisid');
+            	$tipekuis=$(this).data('tipekuis');
+            	
+            	console.log($idkuis);
+            	$.fancybox({
+			    maxWidth  : 700,
+
+			    fitToView : true,
+			    padding : 0,
+			    
+			    content: $('#select_quizz_type'),
+
+			    autoHeight:true,
+			    autoSize  : false,
+			    closeClick  : false,
+			    openEffect  : 'none',
+			    closeEffect : 'none',
+			    helpers : {
+			            title : null            
+			    },
+			    beforeShow: load_content_opsi($idkuis,$tipekuis)
+				});
+            });
+        	
+
+			function load_content_opsi(id_kuis,tipe_kuis){
+				$('.contentpopup_opsi').append('<a href="<?php echo $this->webroot?>quizzs/edit_new/'+tipe_kuis+'/<?php echo $kelasID."/".
+$mapelID?>/'+id_kuis+'">'+
 	                    '<button class="command-button large info fg-hover-cobalt buttonopsitryout">'+
 	                    '<i class=" icon-pencil on-left"></i>'+
 	                    'Edit Tryout<small>Use this option for edit tryout</small>'+
 						'</button>'+
 					'</a>'+
-					'<a href="<?php echo $this->webroot?>quizzs/interaktif_kuis/'+idkuis+'">'+
+					'<a href="<?php echo $this->webroot?>quizzs/interaktif_kuis/'+id_kuis+'">'+
                     '<button class="command-button large default fg-hover-cobalt buttonopsitryout">'+
                     '<i class=" icon-accessibility on-left"></i>'+
                     'Interaktif<small>Use this option for interactive question</small>'+
 					'</button>'+
 					'</a>'+
-					'<a href="<?php echo $this->webroot?>quizzs/show_pdf/'+idkuis+'">'+
+					'<a href="<?php echo $this->webroot?>quizzs/show_pdf/'+id_kuis+'">'+
                     '<button class="command-button large primary fg-hover-cobalt buttonopsitryout">'+
                     '<i class=" icon-glasses-2 on-left"></i>'+
                     'Preview<small>Use this option for preview</small>'+
 					'</button>'+
 					'</a>'+
-					'<a href="<?php echo $this->webroot?>quizzs/view_pdf/'+idkuis+'">'+
+					'<a href="<?php echo $this->webroot?>quizzs/view_pdf/'+id_kuis+'">'+
                     '<button class="command-button large info fg-hover-cobalt buttonopsitryout">'+
                     '<i class=" icon-floppy on-left"></i>'+
                     'Save<small>Use this option for save to PDF file</small>'+
@@ -88,9 +116,9 @@ $mapelID?>/'+idkuis+'">'+
                     '<button class="command-button large success fg-hover-cobalt buttonopsitryout">'+
                     '<i class=" icon-printer on-left"></i>'+
                     'Print<small>Use this option for printing out the question</small>'+
-					'</button>',
-                });
-            });
+					'</button>');
+			}
+            
         });
     
 	</script>

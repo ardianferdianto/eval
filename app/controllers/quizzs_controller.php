@@ -551,7 +551,7 @@ class QuizzsController extends AppController {
 		$this->set('data_soal',$bank_soal);	
     	$this->layout='default_blank';
     }
-    function edit_table_soal($kelas,$mapel,$idquizz){
+    function edit_table_soal($tipesoal,$kelas,$mapel,$idquizz){
 		$conditions_selectedsoal = array('QuizzsQuestion.quizz_id'=>$idquizz);
 		$selected_soal = $this->Quizz->QuizzsQuestion->find('all',
 			array(
@@ -563,6 +563,7 @@ class QuizzsController extends AppController {
 		$this->set('soal_kuis',$selected_soal);
 		$this->set('kelasID',$kelas);	
 		$this->set('mapelID',$mapel);
+		$this->set('tipesoal',$tipesoal);
     	$this->layout='default_metro';
     }
     function tambah_single_soal(){

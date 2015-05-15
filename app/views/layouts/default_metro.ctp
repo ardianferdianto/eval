@@ -49,6 +49,31 @@ h1 small{
 <?php echo $javascript->link('metro/metro/metro-countdown.js'); ?>
 <?php echo $javascript->link('jquery.form.js'); ?>
 
+
+
+<?php echo $html->css('jquery.fancybox.css?v=2.1.5'); ?>
+
+
+<?php echo $javascript->link('jquery.fancybox.pack.js?v=2.1.5'); ?>
+
+
+<?php echo $javascript->link('jquery.fancybox.pack.js?v=2.1.5'); ?>
+
+
+<?php echo $html->css('helpers/jquery.fancybox-buttons.css?v=1.0.5'); ?>
+
+
+<?php echo $javascript->link('../css/helpers/jquery.fancybox-buttons.js?v=1.0.5'); ?>
+
+
+<?php echo $javascript->link('../css/helpers/jquery.fancybox-media.js?v=1.0.6'); ?>
+
+
+<?php echo $html->css('helpers/jquery.fancybox-thumbs.css?v=1.0.7'); ?>
+
+
+<?php echo $javascript->link('../css/helpers/jquery.fancybox-thumbs.js?v=1.0.7'); ?>
+
 <?php echo $html->css('metrocss/metro-bootstrap.css'); ?>
 <?php echo $html->css('metrocss/iconFont.css'); ?>
 <?php echo $html->css('shapehovercss/normalize.css'); ?>
