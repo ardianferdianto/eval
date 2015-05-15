@@ -96,6 +96,8 @@ class QuestionsController extends AppController {
 	}
 
 	function homenew(){
+		$landing = true;
+		$this->set('landing',$landing);
 		$subject_list = $this->Question->Pelajaran->find('all');
 		$this->set('kumpulanmatapelajaran',$subject_list);
 	}

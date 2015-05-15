@@ -1,41 +1,68 @@
 
 html,body{
-	background: url(../images/back-1.png) no-repeat center center fixed; 
+	background: url(../art/bg-landing.png) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
 .wizardtryout{
-	width: 80%;
+	width: 100%;
 	margin: 0 auto;
 	padding-bottom: 100px;
 }
 .metro h1.tryouttitle{
 	font-size: 2.5em;
-	color: #aaa;
+	
 	margin-left: 20px;
 }
 .titletryoutcontainer{
 	width:100%;
 	position: relative;
+	z-index: 3;
+
 }
 .titlefirst {
-	width: 40%;
+	width: 384px;
+	height: 101px;
 	position: relative;
+	margin: 30px 0 0 20px;
 	float: left;
+	background: url(../art/bayangan-banner.png) no-repeat;
+	padding: 10px;
+}
+
+.titlefirst.createtryout{
+	background: url(../art/bayangan-banner-buatsoal.png) no-repeat;
+}
+.titlefirst img{
+	float: left;
+}
+.titlefirst h1{
+	text-align: center;
+	color: #eee;
+	text-shadow: 0px 2px 6px #333;
+	font-family: Helvetica, Arial, Sans-serif;
+	font-size: 3em;
+	line-height: 60px;
+	font-weight: bold;
 }
 .titlesecond{
-	border-left: 1px dotted #fff;
+	
 	padding-left: 20px;
-	width: 60%;
 	position: relative;
 	float: left;
 	color: #aaa;
+	padding: 40px 0 0 30px;
+	width: 375px;
 }
 .titlesecond h3{
+	color: #eee;
+	text-shadow: 0px 2px 6px #333;
+	font-family: Helvetica, Arial, Sans-serif;
 	font-size: 1.2em;
-	color: #aaa;
+	font-weight: bold;
+	text-transform: uppercase;
 }
 
 .metro .command-button.default.buttonnewtryout{
@@ -61,12 +88,19 @@ html,body{
 .titletryoutcontainer{
 	width: 100%;
 	display: block;
-	float: left;
-	background-color: #fff;
-	padding: 10px;
+	margin: 0 auto;
+	
 	-webkit-box-shadow: 0px 3px 5px -2px rgba(0,0,0,0.50);
 -moz-box-shadow: 0px 3px 5px -2px rgba(0,0,0,0.50);
 box-shadow: 0px 3px 5px -2px rgba(0,0,0,0.50);
+background: transparent url('../art/banner-header.png') no-repeat; 
+	width: 912px;
+	height: 164px;
+}
+
+.titletryoutcontainer.containeredittryout1{
+	background: transparent url('../art/banner-header2.png') no-repeat; 
+
 }
 .containeredittryout{
 	width:80%;
@@ -132,7 +166,7 @@ box-shadow: 0px 3px 5px -2px rgba(0,0,0,0.50);
 	max-width: 1100px;
 }
 .kolomtengah h6{
-	background: #e6e6e6;
+	
 	padding: 10px;
 }
 .mapsoalnumber{
@@ -171,15 +205,16 @@ box-shadow: 0px 3px 5px -2px rgba(0,0,0,0.50);
 	width: 0;
 height: 0;
 border-style: solid;
-border-width: 30px 0 30px 50px;
+border-width: 20px 0 20px 30px;
 border-color: transparent transparent transparent #007bff;
 }
 #prevsoal{
 	width: 0;
 height: 0;
 border-style: solid;
-border-width: 30px 50px 30px 0;
+border-width: 20px 30px 20px 0;
 border-color: transparent #007bff transparent transparent;
+margin-left: 40px;
 }
 #prevsoal:hover{
 	border-color: transparent #cd4242 transparent transparent;	
@@ -263,4 +298,235 @@ p.jawabanparagraph{
 }
 .aligncenter{
 	text-align: center;
+}
+
+
+.evaluasititle h1 {
+	text-align: center;
+	color: #eee;
+	text-shadow: 0px 2px 6px #333;
+	font-family: Helvetica, Arial, Sans-serif;
+	font-size: 3em;
+	line-height: 60px;
+	font-weight: bold;
+}
+.container_select_soal{
+	  width: 912px;
+	  position: relative;
+	  margin: 0 auto;
+	  padding: 0;
+}
+.content_tryout_container{
+	width: 895px;
+  	height: 520px;
+  	background: url(../art/banner-kertas.png) no-repeat;
+  	margin-top: -55px;
+  	overflow: scroll;
+  	padding-top: 45px;
+  	padding-left: 40px;
+  	padding-right: 50px;
+
+}
+.entrykuisview{
+	display: block;
+	width: 100%;
+	position: relative;
+	float: left;
+	border-bottom: 1px dashed #8b8b8b;
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+.entrykuisview h5{
+	float: left;
+	width: 80%;
+	padding-left: 10px;
+}
+
+
+.btn_yellow {
+  background: #f0b35b;
+  background-image: -webkit-linear-gradient(top, #f0b35b, #bc8c47);
+  background-image: -moz-linear-gradient(top, #f0b35b, #bc8c47);
+  background-image: -ms-linear-gradient(top, #f0b35b, #bc8c47);
+  background-image: -o-linear-gradient(top, #f0b35b, #bc8c47);
+  background-image: linear-gradient(to bottom, #f0b35b, #bc8c47);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  text-shadow: 1px 1px 2px #666666;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 15px;
+  padding: 15px 30px 15px 30px;
+  text-decoration: none;
+  margin: 0;
+}
+
+.btn_yellow:hover {
+  background: #df5557;
+  background-image: -webkit-linear-gradient(top, #df5557, #aa4142);
+  background-image: -moz-linear-gradient(top, #df5557, #aa4142);
+  background-image: -ms-linear-gradient(top, #df5557, #aa4142);
+  background-image: -o-linear-gradient(top, #df5557, #aa4142);
+  background-image: linear-gradient(to bottom, #df5557, #aa4142);
+  text-decoration: none;
+}
+.grid a.btn_yellow{
+	margin: 0;
+	width: auto;
+	color: #fff;
+}
+.button_entrykuisview{
+
+}
+
+.sticth_title_icon{
+	position: absolute;
+	top: 50px;
+	right: 100px;
+}
+
+.sticth_home_icon{
+background: url('../art/home_icon.png') no-repeat top left; 	
+width: 100px;
+height: 100px;
+top: 50px;
+	left: 100px;
+	position: absolute;
+}
+.sticth_home_icon:hover{
+	background: url('../art/home_icon.png') no-repeat bottom left; 	
+}
+.grid .addnew_btn{
+position: absolute;
+right: 50px;
+top:5px;
+width: auto;
+background: url('../art/stitch-tambah.png') no-repeat top left; 	
+width: 100px;
+height: 100px;
+}
+.grid .addnew_btn:hover{
+	background: url('../art/stitch-tambah.png') no-repeat bottom left; 	
+}
+
+.metro .stepper > ul li{
+	-moz-border-radius: 1em;
+-webkit-border-radius: 1em;
+border-radius: 1em; /* future proofing */
+-khtml-border-radius: 1em; /* for old Konqueror browsers */
+}
+.content_tryout_container{
+	height: 495px;
+}
+
+.metro #tblsoal_tryout tr.bg-lightBlue{
+	background-color: #39767b !important;
+	color: #fff;
+}
+
+#footer{
+	background: transparent url('../art/stitch-footer-EVAL.png') repeat-x;
+	height: 125px;
+	width: 100%;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	text-align: center;
+}
+
+#ribbon{
+	position: absolute;
+	bottom: 20px;
+	right: 150px;
+}
+#logoedusoft{
+	margin: 0 auto;
+	margin-top: -50px;
+}
+#wrapper{
+	padding-bottom: 100px;
+}
+
+.container_bank_soal{
+	  width: 1050px;
+	  height: 581px;
+	  position: relative;
+	  margin: 0 auto;
+	  padding: 0;
+	  background: transparent url('../art/kontainer-bank-soal.png') no-repeat;
+	  padding-top: 70px;
+
+}
+.container_bank_soal_content{
+	padding: 0 45px 19px 30px;
+	width: 100%;
+	height: 450px;
+	overflow-y:scroll;
+	overflow-x:hidden;
+}
+.container_bank_soal_content .dataTables_wrapper{
+
+}
+#content_table{
+	margin: 0;
+}
+.grid .actionrow a{
+	margin: 0;
+}
+.metro .fg-white.titletablesoal.titlebanksoal{
+	font-size: 2.3em;
+	float: left;
+	margin-right: 40px;
+	margin-bottom: 30px;
+}
+.container_bank_soal_content thead tr{
+	background: #2d6368;
+	color: #fff;
+}
+.container_bank_soal_content .dataTables_wrapper{
+	padding-top: 10px;
+}
+.container_bank_soal .addnew_btn{
+	 right: 0px;
+  	top: -65px;
+}
+.bg-notebook-interaktif{
+	background: transparent url('../art/banner-notebook-interaktif.png') no-repeat;
+	width: 782px;
+	height: 530px;
+	float: left;
+}
+.metro .kolompertanyaan{
+	padding: 50px 0 0 70px;
+}
+.metro .kolomjawaban{
+	padding: 50px 0 0 100px;	
+}
+.containermapsoal{
+	background: transparent url('../art/banner-kanan-full-interaktif.png') no-repeat;
+	width: 226px;
+	height: 519px;
+	float: left;
+	margin-top: 10px;
+	
+}
+.mapingsoal .mapsoaltitle{
+	padding-top: 25px;
+	padding-bottom: 0;
+}
+.rowmapsoalset{
+	padding-left: 32px;
+  padding-right: 36px;
+  height: 157px;
+  padding-top: 1px;
+  padding-bottom: 0;
+}
+.mapingsoal{
+	padding: 0;
+	padding-bottom: 0;
+	margin-bottom: 0 !important;
+}
+.navigatebutton{
+	margin-top: 18px!important;
 }

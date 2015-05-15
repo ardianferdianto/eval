@@ -453,6 +453,7 @@ class QuizzsController extends AppController {
     	$this->layout='default_metro';
     }
     function interaktif_kuis($idquizz){
+    	$homeicon = true;
 		$conditions_selectedsoal = array('QuizzsQuestion.quizz_id'=>$idquizz);
 		$selected_soal = $this->Quizz->QuizzsQuestion->find('all',
 			array(
@@ -465,6 +466,7 @@ class QuizzsController extends AppController {
 		$this->set('read_soal',$read_soal);
 		$this->set('id_kuis',$idquizz);
 		$this->set('soal',$selected_soal);
+		$this->set('homeicon',$homeicon);
     	$this->layout='default_metro';
     	//print_r();
     }

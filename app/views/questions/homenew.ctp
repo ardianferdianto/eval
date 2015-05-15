@@ -62,7 +62,7 @@
 <ul id="" class="movieposters listmapel_container" style="display:none;opacity:0;">
   <?php foreach ($kumpulanmatapelajaran as $pelajaran) :?>
   <li>
-        <div align="center"><img src="<?php echo $this->webroot?>images/kelas_1.jpg" alt="Kelas  2" />
+        <div align="center"><img src="<?php echo $this->webroot?>art/<?php echo $pelajaran['Pelajaran']['image']?>" alt="Kelas  2" />
       </div>
         <div class="movieinfo">
           <h2 align="center" class="style10"><?php echo $pelajaran['Pelajaran']['nama']?></h2>
@@ -75,13 +75,13 @@
 
 </ul>
 
-<div id="select_quizz_type" style="display:none;">
+<div id="select_quizz_type" class="popupwithstitch" style="display:none;">
   <h2>Pilih Tipe Soal</h2>
   
-    <a class="tile triple bg-darkPink" id="button_tryout_first" href="<?php echo $this->webroot?>quizzs/viewnew/1/1/2"><center> TRYOUT</center> </a>
-    <a class="tile triple bg-lightBlue" id="button_quizz_first" href="<?php echo $this->webroot?>quizzs/viewnew/1/1/2"><center> QUIZZ </center></a>
-    <a class="tile triple bg-teal" id="button_ujian_first" href="<?php echo $this->webroot?>quizzs/viewnew/1/1/2"><center> UJIAN </center></a>
-    <a class="tile triple bg-darkCyan" id="button_soal_first" href="<?php echo $this->webroot?>quizzs/viewnew/1/1/2"><center> BANK SOAL </center></a>
+    <a class="tile triple bg-darkPink" id="button_tryout_first" href="<?php echo $this->webroot?>quizzs/viewnew/1/1/2"><center> <img src="<?php echo $this->webroot;?>art/stitch-icon1-tryout-small.png"><br/>TRYOUT</center> </a>
+    <a class="tile triple bg-lightBlue" id="button_quizz_first" href="<?php echo $this->webroot?>quizzs/viewnew/1/1/2"><center> <img src="<?php echo $this->webroot;?>art/stitch-icon3-quizz-small.png"><br/> QUIZZ </center></a>
+    <a class="tile triple bg-teal" id="button_ujian_first" href="<?php echo $this->webroot?>quizzs/viewnew/1/1/2"><center><img src="<?php echo $this->webroot;?>art/stitch-icon4-ujian-small.png"><br/>UJIAN</center></a>
+    <a class="tile triple bg-darkCyan" id="button_soal_first" href="<?php echo $this->webroot?>quizzs/viewnew/1/1/2"><center> <img src="<?php echo $this->webroot;?>art/stitch-icon2-banksoal-small.png"><br/> BANK SOAL </center></a>
   
 </div>
 <script type="text/javascript">
@@ -117,15 +117,19 @@ $(document).ready(function() {
   });
 
   $(".buttonmapel").fancybox({
-    maxWidth  : 800,
-    maxHeight : 600,
+    maxWidth  : 500,
+    maxHeight : 400,
     fitToView : false,
-    width   : '70%',
-    height    : '70%',
+    padding : 0,
+    width   : '50%',
+    height    : '40%',
     autoSize  : false,
     closeClick  : false,
     openEffect  : 'none',
-    closeEffect : 'none'
+    closeEffect : 'none',
+    helpers : {
+            title : null            
+    }       
   });
 
 
