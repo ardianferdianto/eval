@@ -196,7 +196,7 @@
 		</div>
 	</div>
 	<div class="row">
-		<a href="<?php echo $this->webroot;?>questions/home" class="button large default"><i class=" icon-arrow-left-3 on-left"></i>Kembali</a>
+		<a href="<?php echo $this->webroot;?>quizzs/banksoal/<?php echo $kelasID?>/<?php echo $mapelID?>" class="button large default"><i class=" icon-arrow-left-3 on-left"></i>Kembali</a>
 	</div>
 </div>
 	

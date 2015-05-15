@@ -89,7 +89,7 @@
        			</tr>
             </tfoot>
 </table>
-<a href="<?php echo $this->webroot?>quizzs/edit_new/<?php echo $id_kuis?>"><button class="primary" id="back">< Back to Edit kuis</button></a>
+<a href="<?php echo $this->webroot?>quizzs/edit_new/<?php echo $kelasID."/".$mapelID."/".$id_kuis?>"><button class="primary" id="back">< Back to Edit kuis</button></a>
 <script>
 $(document).ready(function() {
 	var table = $('#tblsoal').DataTable({
@@ -102,7 +102,7 @@ $(document).ready(function() {
 		    		type:"GET",
 		    		dataType:"html",
 		    		cache:false,
-		    		url: "http://localhost/evaluasi_sd/quizzs/datatable/<?php echo $id_kuis?>",
+		    		url: "<?php echo $this->webroot ?>quizzs/datatable/<?php echo $kelasID.'/'.$mapelID.'/'.$id_kuis?>",
 		    		success:function(data){
 		    			showdialog(data);
 		    		}

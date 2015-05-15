@@ -213,3 +213,5 @@
 2015-04-08 17:38:22 Warning: Warning (2): Missing argument 3 for QuizzsController::add_new(), called in /Applications/MAMP/htdocs/eval/cake/libs/object.php on line 116 and defined in [APP/controllers/quizzs_controller.php, line 448]
 2015-04-16 10:07:50 Warning: Warning (2): Missing argument 3 for QuizzsController::viewnew(), called in /var/www/html/evaluasi_sd/cake/libs/object.php on line 120 and defined in [APP/controllers/quizzs_controller.php, line 435]
 2015-04-16 10:07:51 Warning: Warning (2): Missing argument 3 for QuizzsController::viewnew(), called in /var/www/html/evaluasi_sd/cake/libs/object.php on line 120 and defined in [APP/controllers/quizzs_controller.php, line 435]
+2015-05-14 17:43:57 Warning: Warning (2): Missing argument 3 for QuizzsController::edit_new(), called in /var/www/html/evaluasi_sd/cake/libs/object.php on line 120 and defined in [APP/controllers/quizzs_controller.php, line 506]
+2015-05-14 17:43:57 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /var/www/html/evaluasi_sd/cake/libs/configure.php:327) in [CORE/cake/libs/controller/controller.php, line 644]

@@ -61,7 +61,8 @@
                     title: 'PILIH OPSI',
                     padding:0,
                     content:
-                    '<a href="<?php echo $this->webroot?>quizzs/edit_new/'+idkuis+'">'+
+                    '<a href="<?php echo $this->webroot?>quizzs/edit_new/<?php echo $kelasID."/".
+$mapelID?>/'+idkuis+'">'+
 	                    '<button class="command-button large info fg-hover-cobalt buttonopsitryout">'+
 	                    '<i class=" icon-pencil on-left"></i>'+
 	                    'Edit Tryout<small>Use this option for edit tryout</small>'+

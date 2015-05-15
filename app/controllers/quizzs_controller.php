@@ -503,7 +503,7 @@ class QuizzsController extends AppController {
     	$this->set('pelajaranID',$pelajaran);
     	$this->layout='default_metro';
     }
-    function edit_new($idquizz){
+    function edit_new($kelas=null,$mapel=null,$idquizz){
     	$this->Quizz->recursive = 1;
     	$kuisidtable=$idquizz;
 
@@ -532,20 +532,23 @@ class QuizzsController extends AppController {
 	    	$this->set('soalid',$selected_soal);
 	    	$this->set('kode_quizz',$idquizz);
 			$this->set('data_soal',$bank_soal);
+			$this->set('kelasID',$kelas);
+			$this->set('mapelID',$mapel);
+
 			$this->set('quizz',$listquiz);	
 		//}
     	$this->layout='default_metro';
     }
-    function datatable($idquizz=null){
-    	$conditions_banksoal = array('Question.quizz_id <='=>$idquizz);
-		$bank_soal= $this->Quizz->Question->find('all',$conditions_banksoal);
+    function datatable($kelas,$mapel,$idquizz=null){
+    	$conditions_banksoal = array('Question.kelas'=>$kelas,'Question.pelajaran_id'=>$mapel);
+		$bank_soal= $this->Quizz->Question->find('all',array('conditions'=>$conditions_banksoal));
 		$listquiz=$this->Quizz->read(null, $idquizz);
 
 		$this->set('quizz',$listquiz);	
 		$this->set('data_soal',$bank_soal);	
     	$this->layout='default_blank';
     }
-    function edit_table_soal($idquizz){
+    function edit_table_soal($kelas,$mapel,$idquizz){
 		$conditions_selectedsoal = array('QuizzsQuestion.quizz_id'=>$idquizz);
 		$selected_soal = $this->Quizz->QuizzsQuestion->find('all',
 			array(
@@ -554,7 +557,9 @@ class QuizzsController extends AppController {
 			)
 		);
 		$this->set('id_kuis',$idquizz);
-		$this->set('soal_kuis',$selected_soal);	
+		$this->set('soal_kuis',$selected_soal);
+		$this->set('kelasID',$kelas);	
+		$this->set('mapelID',$mapel);
     	$this->layout='default_metro';
     }
     function tambah_single_soal(){

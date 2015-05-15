@@ -149,7 +149,6 @@ $("#tombol").on('click', function(){
         },
         sysBtnCloseClick: function(e){
             //alert('Close button click');
-            window.location.href = "<?php echo $this->webroot?>";
         },
         sysBtnMinClick: function(e){
             alert('Min button click');

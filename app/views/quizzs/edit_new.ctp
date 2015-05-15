@@ -133,7 +133,7 @@
 				            <?php endforeach;?>
 				            </tbody>
 			       </table>
-			    	<p><a href="<?php echo $this->webroot ?>quizzs/edit_table_soal/<?php echo $quizz['Quizz']['id']?>" ><button class="primary" id="edit">Edit table soal</button></a></p>
+			    	<p><a href="<?php echo $this->webroot ?>quizzs/edit_table_soal/<?php echo $kelasID."/".$mapelID."/".$quizz['Quizz']['id']?>" ><button class="primary" id="edit">Edit table soal</button></a></p>
 		    <script>
 		    $.fn.dataTable.ext.order['dom-text-numeric'] = function  ( settings, col )
 			{
@@ -147,7 +147,7 @@
 		    		type:"GET",
 		    		dataType:"html",
 		    		cache:false,
-		    		url: "http://localhost/evaluasi_sd/quizzs/datatable/<?php echo $kode_quizz ?>",
+		    		url: "<?php echo $this->webroot ?>quizzs/datatable/<?php echo $kode_quizz ?>",
 		    		success:function(data){
 		    			showdialog(data);
 		    		}
