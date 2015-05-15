@@ -692,3 +692,47 @@
 2015-05-15 20:35:50 Debug: Here: /eval/quizzs/edit_new/1/1/favicon.ico, coming from: /quizzs/edit_new/1/1/1/29
 2015-05-15 20:35:50 Debug: Redirecting to: /eval/Questions, initiated in /Applications/MAMP/htdocs/eval/cake/libs/object.php on line 122
 2015-05-15 20:35:51 Debug: Here: /eval/Questions, coming from: /quizzs/edit_new/1/1/1/29
+2015-05-15 20:36:54 Debug: Here: /eval/quizzs/edit_new/1/1/1/29, coming from: /quizzs/edit_table_soal/1/1/1/29
+2015-05-15 20:36:56 Debug: Here: /eval/quizzs/edit_new/1/1/favicon.ico, coming from: /quizzs/edit_new/1/1/1/29
+2015-05-15 20:36:56 Debug: Redirecting to: /eval/Questions, initiated in /Applications/MAMP/htdocs/eval/cake/libs/object.php on line 122
+2015-05-15 20:36:56 Debug: Here: /eval/Questions, coming from: /quizzs/edit_new/1/1/1/29
+2015-05-15 20:36:58 Debug: Here: /eval/, coming from: /quizzs/edit_new/1/1/1/29
+2015-05-15 20:37:07 Debug: Here: /eval/quizzs/viewnew/1/1/1, coming from: /
+2015-05-15 20:37:08 Debug: Here: /eval/quizzs/viewnew/1/favicon.ico, coming from: /quizzs/viewnew/1/1/1
+2015-05-15 20:40:19 Debug: Here: /eval/quizzs/banksoal/1/1, coming from: /
+2015-05-15 20:40:20 Debug: Here: /eval/quizzs/banksoal/favicon.ico, coming from: /quizzs/banksoal/1/1
+2015-05-15 20:40:43 Debug: Here: /eval/, coming from: /quizzs/banksoal/1/1
+2015-05-15 20:40:47 Debug: Here: /eval/, coming from: /quizzs/banksoal/1/1
+2015-05-15 20:40:53 Debug: Here: /eval/, coming from: /quizzs/banksoal/1/1
+2015-05-15 20:41:14 Debug: Here: /eval/, coming from: /quizzs/banksoal/1/1
+2015-05-15 20:41:40 Debug: Here: /eval/, coming from: /quizzs/banksoal/1/1
+2015-05-15 20:42:46 Debug: Here: /eval/, coming from: /quizzs/banksoal/1/1
+2015-05-15 20:42:47 Debug: Here: /eval/, coming from: /quizzs/banksoal/1/1
+2015-05-15 20:43:17 Debug: Here: /eval/questions/add_newsoal/1/1, coming from: /quizzs/banksoal/1/1
+2015-05-15 20:43:19 Debug: Here: /eval/questions/add_newsoal/favicon.ico, coming from: /questions/add_newsoal/1/1
+2015-05-15 20:43:30 Debug: Here: /eval/, coming from: /questions/add_newsoal/1/1
+2015-05-15 20:43:37 Debug: Here: /eval/quizzs/banksoal/1/1, coming from: /
+2015-05-15 20:43:38 Debug: Here: /eval/quizzs/banksoal/favicon.ico, coming from: /quizzs/banksoal/1/1
+2015-05-15 20:43:43 Debug: Here: /eval/, coming from: /quizzs/banksoal/1/1
+2015-05-15 20:44:40 Debug: Here: /eval/quizzs/viewnew/1/1/1, coming from: /
+2015-05-15 20:44:41 Debug: Here: /eval/quizzs/viewnew/1/favicon.ico, coming from: /quizzs/viewnew/1/1/1
+2015-05-15 20:44:45 Debug: Here: /eval/quizzs/edit_new/1/1/1/29, coming from: /quizzs/viewnew/1/1/1
+2015-05-15 20:44:46 Debug: Here: /eval/quizzs/edit_new/1/1/favicon.ico, coming from: /quizzs/edit_new/1/1/1/29
+2015-05-15 20:44:46 Debug: Redirecting to: /eval/Questions, initiated in /Applications/MAMP/htdocs/eval/cake/libs/object.php on line 122
+2015-05-15 20:44:46 Debug: Here: /eval/Questions, coming from: /quizzs/edit_new/1/1/1/29
+2015-05-15 20:44:49 Debug: Here: /eval/quizzs/viewnew/1/favicon.ico, coming from: /quizzs/viewnew/1/1/1
+2015-05-15 20:45:05 Debug: Here: /eval/quizzs/banksoal/1/1, coming from: /
+2015-05-15 20:45:06 Debug: Here: /eval/quizzs/banksoal/favicon.ico, coming from: /quizzs/banksoal/1/1
+2015-05-15 20:45:38 Debug: Here: /eval/, coming from: /quizzs/banksoal/1/1
+2015-05-15 20:49:27 Debug: Here: /eval/quizzs/banksoal/1/1, coming from: /
+2015-05-15 20:49:28 Debug: Here: /eval/quizzs/banksoal/favicon.ico, coming from: /quizzs/banksoal/1/1
+2015-05-15 20:50:00 Debug: Here: /eval/quizzs/banksoal/1/1, coming from: /quizzs/banksoal/1/1
+2015-05-15 20:57:25 Debug: Here: /eval/questions/delete/1/1/258, coming from: /quizzs/banksoal/1/1
+2015-05-15 20:57:26 Debug: Redirecting to: /eval/quizzs/banksoal/1/1, initiated in /Applications/MAMP/htdocs/eval/cake/libs/object.php on line 122
+2015-05-15 20:57:26 Debug: Here: /eval/quizzs/banksoal/1/1, coming from: /quizzs/banksoal/1/1
+2015-05-15 20:57:27 Debug: Here: /eval/quizzs/banksoal/favicon.ico, coming from: /quizzs/banksoal/1/1
+2015-05-15 20:58:13 Debug: Here: /eval/quizzs/banksoal/1/1, coming from: /
+2015-05-15 20:58:15 Debug: Here: /eval/quizzs/banksoal/favicon.ico, coming from: /quizzs/banksoal/1/1
+2015-05-15 20:58:21 Debug: Here: /eval/, coming from: /quizzs/banksoal/1/1
+2015-05-15 20:58:27 Debug: Here: /eval/quizzs/banksoal/1/1, coming from: /
+2015-05-15 20:58:28 Debug: Here: /eval/quizzs/banksoal/favicon.ico, coming from: /quizzs/banksoal/1/1
