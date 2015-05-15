@@ -7,7 +7,7 @@
                 <th>Kelas</th>
                 <th>Tipe</th>
                 <th>Pertanyaan</th>
-                <th>Jawaban PG </th>
+                <th>Jawaban Benar</th>
                 <th>Aksi</th>
             </tr>
         </thead>
@@ -15,11 +15,56 @@
             <?php foreach ($data_soal as $row):?>
                 <tr>
                     <td><?php echo $row['Question']['id'] ?></td>
-                    <td><?php echo $row['Question']['level'] ?></td>
+                    <td>
+                        <?php 
+                            switch ($row['Question']['level']) {
+                                case '1':
+                                    echo 'Mudah';
+                                    break;
+                                case '2':
+                                    echo 'Sedang';
+                                    break;
+                                case '3':
+                                    echo 'Sulit';
+                                    break;
+                                default:
+                                    echo 'Undefined';
+                                    break;
+                            }
+                        ?>
+                    </td>
                     <td><?php echo $row['Question']['kelas'] ?></td>
-                    <td><?php echo $row['Question']['tipe'] ?></td>
+                    <td>
+                        <?php 
+                            if ($row['Question']['tipe'] ==1) {
+                                echo "PG";
+                            } else {
+                                echo "Essay";
+                            }
+                        ?>
+                    </td>
                     <td><?php echo $row['Question']['question'] ?></td>
-                    <td><?php echo $row['Question']['answer_true'] ?> </td>
+                    <td>
+                        <?php
+                            switch ($row['Question']['answer_true']) {
+                                case '1':
+                                    echo 'A';
+                                    break;
+                                case '2':
+                                    echo 'B';
+                                    break;
+                                case '3':
+                                    echo 'C';
+                                    break;
+                                case '4':
+                                    echo 'D';
+                                    break;
+                                default:
+                                    echo $row['Question']['answer2'];
+                                    break;
+                            }
+                        ?>
+                    </td>
                     <td></td>
                 </tr>
             <?php endforeach; ?>

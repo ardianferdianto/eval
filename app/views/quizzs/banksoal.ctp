@@ -27,6 +27,7 @@
                    <table class="table striped hovered dataTable" id="dataTables-1">
                         <thead>
                             <tr>
+                                <th class="text-left">Details </th>
                                 <th class="text-left">No. </th>
                                 <th class="text-left">Kode Soal </th>
                                 <th class="text-left">Tipe Soal</th>
@@ -64,6 +65,7 @@
                             }
                            ?>
                             <tr>
+                                <th class="text-center"><button class="details" data-answer2="<?php echo $row['Question']['answer2']?>" data-answertrue="<?php echo $row['Question']['answer_true']?>" data-opsia="<?php echo $row['Question']['answer_a']?>" data-opsib="<?php echo $row['Question']['answer_b']?>" data-opsic="<?php echo $row['Question']['answer_c']?>" data-opsid="<?php echo $row['Question']['answer_d']?>" data-opsie="<?php echo $row['Question']['answer_e']?>" data-image="<?php echo $row['Question']['images']?>" data-video="<?php echo $row['Question']['video']?>"> + </button></th>
                                 <td class="text-left"><?php echo $i++;?></td>
                                 <td class="text-left"><?php echo $row['Question']['id'] ?></td>
                                 <td class="text-left"><?php echo $tipesoal_string ?></td>
@@ -81,16 +83,129 @@
                             </tr>
                         <?php endforeach;?>
                         </tbody>
-
-                        
                    </table>
+
                 <script>
+                /* Formatting function for row details - modify as you need */
+                function format ( d ) {
+                    // `d` is the original data object for the row
+                    var jawab="";
+                    switch(d.jawaban_benar){
+                        
+                            case 0:
+                                jawab=d.jawaban_essay;
+                                break;
+                            case 1:
+                                jawab="A";
+                                break;
+                            case 2:
+                                jawab="B";
+                                break;
+                            case 3:
+                                jawab="C";
+                                break;
+                            case 4:
+                                jawab="D";
+                                break;
+                            case 5:
+                                jawab="E";
+                                break;
+                            default:jawab="Undefined";
+
+                    }
+
+                    //player_generator(d.video);
+                    return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
+                        
+                        '<tr>'+
+                            '<td>Pilihan A</td>'+
+                            '<td>'+d.opsi_a+'</td>'+
+                        '</tr>'+
+
+                        '<tr>'+
+                            '<td>Pilihan B</td>'+
+                            '<td>'+d.opsi_b+'</td>'+
+                        '</tr>'+
+
+                        '<tr>'+
+                            '<td>Pilihan C</td>'+
+                            '<td>'+d.opsi_c+'</td>'+
+                        '</tr>'+
+
+                        '<tr>'+
+                            '<td>Pilihan D</td>'+
+                            '<td>'+d.opsi_d+'</td>'+
+                        '</tr>'+
+
+                        '<tr>'+
+                            '<td>Jawaban Benar</td>'+
+                            '<td>'+jawab
+                            +'</td>'+
+                        '</tr>'+
+                        '<tr>'+
+                            '<td>Image</td>'+
+                            '<td>'+'<img id="my_image" height="360px" width="240px" src="<?php echo $this->webroot; ?>'+d.image+'"/>'+'</td>'+
+                        '</tr>'+
+                        '<tr>'+
+                            '<td>Video</td>'+
+                            '<td id="video_repot"></td>'+
+                        '</tr>'+
+                    '</table>';
+                }
                 $(document).ready(function() {
-                    $('#dataTables-1').dataTable({
+                   var table = $('#dataTables-1').DataTable({
                         info:false
                     });
-                } );
 
+                    $('button.details').on('click', function () {
+                        var tr = $(this).closest('tr');
+                        var row = table.row( tr );
+                        
+                        var data={
+                                    opsi_a:$(this).data('opsia'),
+                                    opsi_b:$(this).data('opsib'),
+                                    opsi_c:$(this).data('opsic'),
+                                    opsi_d:$(this).data('opsid'),
+                                    jawaban_benar:$(this).data('answertrue'),
+                                    jawaban_essay:$(this).data('answer2'),
+                                    image:$(this).data('image'),
+                                    video:$(this).data('video') 
+
+                        };
+
+                        
+                        console.log(data);
+                        if ( row.child.isShown() ) {
+                            // This row is already open - close it
+                            row.child.hide();
+                            tr.removeClass('shown');
+                        }
+                        else {
+                            // Open this row
+                            row.child( format(data)).show();
+                            $("#video_repot").empty().append('<div id="containerPlayer"></div>')
+                            player_generator(data.video);
+                            tr.addClass('shown');
+                        }
+                    } );
+                } );
+                function player_generator(data){
+                    jwplayer("containerPlayer").setup({
+                        'id': "playerID",
+                        'width': '360',
+                        'height': '240',
+                        'aboutlink': '#',
+                        'autostart':false,
+                        'primary': 'flash',
+                        
+                        'file': "<?php echo $this->webroot;?>"+data,
+                        events: {
+                            onPause: function(event) {
+                                setCookie(event.position);
+                            }
+                        }
+                    });
+                }
                 </script>
             <?php endif;?> 
             </div><!-- End content box -->
