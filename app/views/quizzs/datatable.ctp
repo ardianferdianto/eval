@@ -110,7 +110,7 @@ $(document).ready(function() {
     function showResponse_submitformtryout(responseText, statusText, xhr, $form)  { 
       setTimeout(function() {
         alert('success');
-        window.location.href = "<?php echo $this->webroot?>quizzs/edit_table_soal/<?php echo $quizz['Quizz']['id']?>";
+        window.location.href = "<?php echo $this->webroot?>quizzs/edit_table_soal/<?php echo $tipesoalID.'/'.$kelasID.'/'.$mapelID.'/'.$quizz['Quizz']['id']?>";
       }, 1000);
     }
 </script>

@@ -96,7 +96,7 @@
                                                     		}
                                                     	?>
                                                     </td>
-                                                    <td><a style="margin:0;" href="<?php echo $this->webroot?>quizzs/hapus_single_soal/<?php echo $row['Quizz']['id']?>/<?php echo $row['QuizzsQuestion']['id']?>"><button>Hapus</button></a></td>
+                                                    <td><a style="margin:0;" href="<?php echo $this->webroot?>quizzs/hapus_single_soal/<?php echo $tipesoalID.'/'.$kelasID.'/'.$mapelID.'/'.$row['Quizz']['id']?>/<?php echo $row['QuizzsQuestion']['id']?>"><button>Hapus</button></a></td>
                                                 </tr>
                                             <?php endforeach;?>
                                             </tbody>
@@ -136,7 +136,7 @@ $(document).ready(function() {
 		    		type:"GET",
 		    		dataType:"html",
 		    		cache:false,
-		    		url: "<?php echo $this->webroot ?>quizzs/datatable/<?php echo $kelasID.'/'.$mapelID.'/'.$id_kuis?>",
+		    		url: "<?php echo $this->webroot ?>quizzs/datatable/<?php echo  $tipesoalID.'/'.$kelasID.'/'.$mapelID.'/'.$id_kuis?>",
 		    		success:function(data){
 		    			showdialog(data);
 		    		}
