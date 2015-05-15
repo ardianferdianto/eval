@@ -9,7 +9,9 @@
         <section id="grid" class="grid clearfix container_bank_soal">
             
             <a href="<?php echo $this->webroot?>questions/add_newsoal/<?php echo $strafter?>" class="addnew_btn">&nbsp;</a>
-            <button id="tombol" class="button large info">Input New From Excel</button>
+
+            <a href="#" id="importfromexcel" class="import_btn">&nbsp;</a>
+            
 
 
 
