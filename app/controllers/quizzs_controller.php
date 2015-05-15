@@ -542,11 +542,13 @@ class QuizzsController extends AppController {
 		//}
     	$this->layout='default_metro';
     }
-    function datatable($kelas,$mapel,$idquizz=null){
+    function datatable($tipesoal,$kelas,$mapel,$idquizz=null){
     	$conditions_banksoal = array('Question.kelas'=>$kelas,'Question.pelajaran_id'=>$mapel);
 		$bank_soal= $this->Quizz->Question->find('all',array('conditions'=>$conditions_banksoal));
 		$listquiz=$this->Quizz->read(null, $idquizz);
-
+		$this->set('kelasID',$kelas);
+		$this->set('mapelID',$mapel);
+		$this->set('tipesoalID',$tipesoal);
 		$this->set('quizz',$listquiz);	
 		$this->set('data_soal',$bank_soal);	
     	$this->layout='default_blank';
@@ -563,14 +565,14 @@ class QuizzsController extends AppController {
 		$this->set('soal_kuis',$selected_soal);
 		$this->set('kelasID',$kelas);	
 		$this->set('mapelID',$mapel);
-		$this->set('tipesoal',$tipesoal);
+		$this->set('tipesoalID',$tipesoal);
     	$this->layout='default_metro';
     }
     function tambah_single_soal(){
     	$this->Quizz->QuizzsQuestion->create();
     	$this->Quizz->QuizzsQuestion->save($this->data);
     }
-    function hapus_single_soal($quizzid=null,$id=null){
+    function hapus_single_soal($tipesoal,$kelas,$mapel,$quizzid=null,$id=null){
     	//$this->Quizz->QuizzsQuestion->del($id);
 		if (!$id) {
 			$this->Session->setFlash('Invalid id for Task');
@@ -578,7 +580,7 @@ class QuizzsController extends AppController {
 		}
 		if ($this->Quizz->QuizzsQuestion->del($id)) {
 			$this->Session->setFlash('Task #'.$id.' deleted');
-			$this->redirect(array('controller'=>'quizzs','action'=>'edit_table_soal/'.$quizzid));
+			$this->redirect(array('controller'=>'quizzs','action'=>'edit_table_soal/'.$tipesoal.'/'.$kelas.'/'.$mapel.'/'.$quizzid));
 		}
     }
 	function show_pdf($id = null)
