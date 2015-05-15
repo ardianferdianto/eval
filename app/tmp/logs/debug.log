@@ -522,3 +522,14 @@
 2015-05-15 18:01:32 Debug: Here: /eval/quizzs/edit_table_soal/1/1/1/29, coming from: /quizzs/edit_new/1/1/1/29
 2015-05-15 18:01:32 Debug: Here: /eval/quizzs/edit_table_soal/1/1/favicon.ico, coming from: /quizzs/edit_table_soal/1/1/1/29
 2015-05-15 18:01:37 Debug: Here: /eval/quizzs/datatable/1/1/29, coming from: /quizzs/edit_table_soal/1/1/1/29
+2015-05-15 18:02:56 Debug: Here: /eval/quizzs/edit_new/1/1/1/29, coming from: /quizzs/edit_table_soal/1/1/1/29
+2015-05-15 18:02:57 Debug: Here: /eval/quizzs/edit_new/1/1/favicon.ico, coming from: /quizzs/edit_new/1/1/1/29
+2015-05-15 18:02:57 Debug: Redirecting to: /eval/Questions, initiated in /Applications/MAMP/htdocs/eval/cake/libs/object.php on line 122
+2015-05-15 18:02:57 Debug: Here: /eval/Questions, coming from: /quizzs/edit_new/1/1/1/29
+2015-05-15 18:03:07 Debug: Here: /eval/, coming from: /quizzs/edit_new/1/1/1/29
+2015-05-15 18:03:12 Debug: Here: /eval/quizzs/viewnew/1/1/1, coming from: /
+2015-05-15 18:03:12 Debug: Here: /eval/quizzs/viewnew/1/favicon.ico, coming from: /quizzs/viewnew/1/1/1
+2015-05-15 18:04:04 Debug: Here: /eval/quizzs/viewnew/1/1/1, coming from: /
+2015-05-15 18:04:05 Debug: Here: /eval/quizzs/viewnew/1/favicon.ico, coming from: /quizzs/viewnew/1/1/1
+2015-05-15 18:04:36 Debug: Here: /eval/quizzs/viewnew/1/1/1, coming from: /
+2015-05-15 18:04:37 Debug: Here: /eval/quizzs/viewnew/1/favicon.ico, coming from: /quizzs/viewnew/1/1/1

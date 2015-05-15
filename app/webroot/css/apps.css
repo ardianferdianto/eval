@@ -621,6 +621,13 @@ color: #1b0900;
 -moz-box-shadow: inset 0 3px 0 0px rgba(99,69,27,0.8);
 box-shadow: inset 0 3px 0 0px rgba(99,69,27,0.8);
 }
+.contentpopup_opsi{
+	width: 100%;
+	position: relative;
+}
+#select_quizz_type .contentpopup_opsi a{
+width: 20%;
+}
 #select_quizz_type a center{
 	
 	
