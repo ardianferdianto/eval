@@ -108,14 +108,14 @@ foreach ($quizz['Question'] as $n){
 	}
 
 	if($n['tipe'] == 1){
-		$html .= '<td>'.$no.'.&nbsp;&nbsp;&nbsp;&nbsp;'.$question.'<br/><br/>'.$img.'
+		$html .= '<td>'.$no.'.&nbsp;&nbsp;&nbsp;&nbsp;'.$question.''.$img.'
 		a. &nbsp;'.$jawabanA.'<br/><br/>
 		b. &nbsp;'.$jawabanB.'<br/><br/>
 		c. &nbsp;'.$jawabanC.'<br/><br/>
 		d. &nbsp;'.$jawabanD.'<br/><br/></td>';
 
 	}else{
-		$html .= '<td>'.$no.'.&nbsp;&nbsp;&nbsp;&nbsp;'.$question.'<br/><br/>'.$img.' 
+		$html .= '<td>'.$no.'.&nbsp;&nbsp;&nbsp;&nbsp;'.$question.''.$img.' 
 		___________________________________________________<br/><br/></td>';	
 	}
 
