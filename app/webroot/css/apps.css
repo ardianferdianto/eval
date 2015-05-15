@@ -316,9 +316,9 @@ h5.subheader-secondary{
 	  position: relative;
 	  margin: 0 auto;
 	  padding: 0;
-	  background: url(../art/banner-kertas-bottom.png) no-repeat bottom center;
+	  
 	  padding-bottom: 30px;
-	  float: left;
+	  
 }
 .content_tryout_container{
 	width: 895px;
@@ -328,8 +328,17 @@ h5.subheader-secondary{
   	padding-top: 70px;
   	padding-left: 40px;
   	padding-right: 50px;
-  	padding-bottom: 50px;
+  	padding-bottom: 80px;
+  	position: relative;
 
+}
+.content_tryout_container_bottom{
+	background: url(../art/banner-kertas-bottom.png) no-repeat bottom center;
+	width: 895px;
+	height: 100px;
+	position: absolute;
+	bottom: -30px;
+	left: 0;
 }
 .entrykuisview{
 	display: block;

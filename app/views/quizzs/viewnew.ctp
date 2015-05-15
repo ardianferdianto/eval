@@ -18,6 +18,7 @@
 
 						
 						<div class="content_tryout_container">
+							<div class="content_tryout_container_bottom">&nbsp;</div>
 							<?php if(empty($quizz_detail)):?>
 								<center><h2>Tidak ada quizz</h2></center>
 							<?php endif;?>
