@@ -46,9 +46,11 @@
 									<style type="text/css">
 									    .desc { display: none; }
 									</style>
+
+									<div class="row aligncenter">
 									<p>
 
-									<label>Pilih jenis Soal :</label>
+									<label>Pilih jenis soal terlebih dahulu :</label>
 									<?php
 									$jenisSoal=array('1'=>'Pilihan Ganda','2'=>'Uraian');
 									$attributes=array('legend'=>false,'label'=>false,'class'=>'jenis-asset');
@@ -62,6 +64,7 @@
 									
 									?>
 									</p>
+									</div>
 									<div class="clear"></div>
 									
 									<div id="opt1" class="desc">

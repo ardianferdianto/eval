@@ -505,7 +505,7 @@ class QuizzsController extends AppController {
     	$this->set('pelajaranID',$pelajaran);
     	$this->layout='default_metro';
     }
-    function edit_new($kelas=null,$mapel=null,$idquizz){
+    function edit_new($tipesoal,$kelas=null,$mapel=null,$idquizz){
     	$this->Quizz->recursive = 1;
     	$kuisidtable=$idquizz;
 
@@ -536,6 +536,7 @@ class QuizzsController extends AppController {
 			$this->set('data_soal',$bank_soal);
 			$this->set('kelasID',$kelas);
 			$this->set('mapelID',$mapel);
+			$this->set('tipesoalID',$tipesoal);
 
 			$this->set('quizz',$listquiz);	
 		//}

@@ -22,6 +22,7 @@
 							<?php if(empty($quizz_detail)):?>
 								<center><h2>Tidak ada quizz</h2></center>
 							<?php endif;?>
+							<div class="row" style="padding-top:50px;">
 							<?php foreach ($quizz_detail as $quizz) :?>
 								<div class="entrykuisview">
 									<h5><?php echo $quizz['Quizz']['kode']; ?></h5>
@@ -31,6 +32,7 @@
 								</div>
 							
 							<?php endforeach; ?>
+							</div>
 						</div>
 					</div>
 				</section>
@@ -58,7 +60,7 @@
                     title: 'PILIH OPSI',
                     padding:0,
                     content:
-                    '<a href="<?php echo $this->webroot?>quizzs/edit_new/<?php echo $kelasID."/".
+                    '<a href="<?php echo $this->webroot?>quizzs/edit_new/<?php echo $quizz['Quizz']['type'];?>/<?php echo $kelasID."/".
 $mapelID?>/'+idkuis+'">'+
 	                    '<button class="command-button large info fg-hover-cobalt buttonopsitryout">'+
 	                    '<i class=" icon-pencil on-left"></i>'+

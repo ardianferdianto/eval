@@ -123,14 +123,13 @@ h2 a:hover { color: #90bcd0; }
 }
 #footer{
 	background: transparent url('../art/stitch-footer-EVAL.png') repeat-x;
-	height: 125px;
+	height: 101px;
 	width: 100%;
-	position: absolute;
+	position: fixed;
 	left: 0;
 	bottom: 0;
 	text-align: center;
 }
-
 #ribbon{
 	position: absolute;
 	bottom: 20px;

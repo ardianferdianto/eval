@@ -325,7 +325,7 @@ h5.subheader-secondary{
   	background: url(../art/banner-kertas.png) repeat-y;
   	margin-top: -55px;
   	float: left;
-  	padding-top: 70px;
+  	padding-top: 0;
   	padding-left: 40px;
   	padding-right: 50px;
   	padding-bottom: 80px;
@@ -396,15 +396,15 @@ h5.subheader-secondary{
 .sticth_title_icon{
 	position: absolute;
 	top: 50px;
-	right: 100px;
+	right: 50px;
 }
 
 .sticth_home_icon{
 background: url('../art/home_icon.png') no-repeat top left; 	
-width: 100px;
-height: 100px;
+width: 70px;
+height: 70px;
 top: 50px;
-	left: 100px;
+	left: 50px;
 	position: absolute;
 }
 .sticth_home_icon:hover{
@@ -453,7 +453,7 @@ border-radius: 1em; /* future proofing */
 
 #footer{
 	background: transparent url('../art/stitch-footer-EVAL.png') repeat-x;
-	height: 125px;
+	height: 101px;
 	width: 100%;
 	position: fixed;
 	left: 0;
@@ -468,7 +468,7 @@ border-radius: 1em; /* future proofing */
 }
 #logoedusoft{
 	margin: 0 auto;
-	margin-top: -50px;
+	margin-top: -40px;
 }
 #wrapper{
 	padding-bottom: 100px;
@@ -529,7 +529,7 @@ border-radius: 1em; /* future proofing */
 }
 .container_bank_soal .addnew_btn{
 	 right: 0px;
-  	top: -65px;
+  	top: -60px;
 }
 .bg-notebook-interaktif{
 	background: transparent url('../art/banner-notebook-interaktif.png') no-repeat;
