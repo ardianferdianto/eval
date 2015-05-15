@@ -7,6 +7,8 @@
     <div class="container">
         <!-- Top Navigation -->
         <section id="grid" class="grid clearfix container_bank_soal">
+            <div class="containerbanksoal_top">&nbsp;</div>
+            <div class="containerbanksoal_bottom">&nbsp;</div>
             
             <a href="<?php echo $this->webroot?>questions/add_newsoal/<?php echo $strafter?>" class="addnew_btn">&nbsp;</a>
 

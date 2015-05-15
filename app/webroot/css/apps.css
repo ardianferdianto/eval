@@ -312,22 +312,33 @@ h5.subheader-secondary{
 	font-weight: bold;
 }
 .container_select_soal{
-	  width: 912px;
+	  width: 895px;
 	  position: relative;
 	  margin: 0 auto;
 	  padding: 0;
+	  
+	  padding-bottom: 30px;
+	  
 }
 .content_tryout_container{
 	width: 895px;
-  	height: 520px;
-  	background: url(../art/banner-kertas.png) no-repeat;
+  	background: url(../art/banner-kertas.png) repeat-y;
   	margin-top: -55px;
-  	overflow: scroll;
-  	padding-top: 45px;
+  	float: left;
+  	padding-top: 70px;
   	padding-left: 40px;
   	padding-right: 50px;
-  	padding-bottom: 50px;
+  	padding-bottom: 80px;
+  	position: relative;
 
+}
+.content_tryout_container_bottom{
+	background: url(../art/banner-kertas-bottom.png) no-repeat bottom center;
+	width: 895px;
+	height: 100px;
+	position: absolute;
+	bottom: -30px;
+	left: 0;
 }
 .entrykuisview{
 	display: block;
@@ -433,7 +444,6 @@ border-radius: 1em; /* future proofing */
 -khtml-border-radius: 1em; /* for old Konqueror browsers */
 }
 .content_tryout_container{
-	height: 495px;
 }
 
 .metro #tblsoal_tryout tr.bg-lightBlue{
@@ -466,20 +476,34 @@ border-radius: 1em; /* future proofing */
 
 .container_bank_soal{
 	  width: 1050px;
-	  height: 581px;
 	  position: relative;
 	  margin: 0 auto;
 	  padding: 0;
-	  background: transparent url('../art/kontainer-bank-soal.png') no-repeat;
-	  padding-top: 70px;
-
+	  background: transparent url('../art/kontainer-bank-soal.png') repeat-y;
+	  padding-top: 50px;
 }
 .container_bank_soal_content{
 	padding: 0 45px 19px 30px;
 	width: 100%;
-	height: 450px;
-	overflow-y:scroll;
-	overflow-x:hidden;
+	
+	
+}
+.containerbanksoal_top{
+	background: transparent url('../art/kontainer-bank-soal-top.png') no-repeat;
+	position: absolute;
+	top:-20px;
+	left: 0;
+	width: 1051px;
+	height: 81px;
+}
+
+.containerbanksoal_bottom{
+	background: transparent url('../art/kontainer-bank-soal-bottom.png') no-repeat;
+	position: absolute;
+	bottom:-30px;
+	left: 0;
+	width: 1051px;
+	height: 84px;
 }
 .container_bank_soal_content .dataTables_wrapper{
 

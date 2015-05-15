@@ -117,12 +117,13 @@ $(document).ready(function() {
   });
 
   $(".buttonmapel").fancybox({
-    maxWidth  : 500,
-    maxHeight : 400,
-    fitToView : false,
+    maxWidth  : 700,
+
+    fitToView : true,
     padding : 0,
-    width   : '50%',
-    height    : '40%',
+    
+
+    autoHeight:true,
     autoSize  : false,
     closeClick  : false,
     openEffect  : 'none',

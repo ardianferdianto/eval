@@ -39,6 +39,7 @@
 						</div>
 
 						<div class="content_tryout_container">
+							<div class="content_tryout_container_bottom">&nbsp;</div>							
 							<div class="wizard wizardtryout" id="wizard">
 							    <div class="steps bg-white">
 							        <div class="step">
