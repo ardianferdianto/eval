@@ -42,17 +42,18 @@ h1 small{
 <?php echo $javascript->link('metro/jquery/jquery.widget.min.js'); ?>
 <?php echo $javascript->link('metro/jquery/jquery.cookie.js'); ?>
 <?php echo $javascript->link('metro/metro.min.js'); ?>
-<?php echo $javascript->link('metro/jquery/jquery.countdown.js'); ?>
 <?php echo $javascript->link('metro/jquery/jquery.dataTables.js'); ?>
 <?php echo $javascript->link('metro/prettify/prettify.js');?>
 <?php echo $javascript->link('shapehoverjs/snap.svg-min.js');?>
-<?php echo $javascript->link('metro/metro/metro-countdown.js'); ?>
 <?php echo $javascript->link('jquery.form.js'); ?>
+
+<?php echo $javascript->link('jquery.plugin.min.js'); ?>
+<?php echo $javascript->link('jquery.countdown.min.js'); ?>
 
 
 
 <?php echo $html->css('jquery.fancybox.css?v=2.1.5'); ?>
-
+<?php echo $html->css('jquery.countdown.css'); ?>
 
 <?php echo $javascript->link('jquery.fancybox.pack.js?v=2.1.5'); ?>
 

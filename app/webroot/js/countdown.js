@@ -1293,8 +1293,8 @@ function(module) {
 	var resetLabels = countdown.resetLabels = function() {
 		LABELS_SINGLUAR = ' millisecond| second| minute| hour| day| week| month| year| decade| century| millennium'.split('|');
 		LABELS_PLURAL = ' milliseconds| seconds| minutes| hours| days| weeks| months| years| decades| centuries| millennia'.split('|');
-		LABEL_LAST = ' and ';
-		LABEL_DELIM = ', ';
+		LABEL_LAST = '</br>';
+		LABEL_DELIM = '</br> ';
 		LABEL_NOW = '';
 		formatNumber = function(value) { return value; };
 	};
