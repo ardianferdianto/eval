@@ -217,7 +217,7 @@
 
 </div><!-- End content box -->
 <script>
-$("#tombol").on('click', function(){
+$("#importfromexcel").on('click', function(){
     $.Dialog({
         shadow: true,
         overlay: false,

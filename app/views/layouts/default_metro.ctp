@@ -81,6 +81,7 @@ h1 small{
 <?php echo $html->css('apps.css'); ?>
 
 <?php echo $javascript->link('jwplayer.js'); ?>
+<?php echo $javascript->link('countdown.js'); ?>
 <script type="text/javascript">jwplayer.key="J0+IRhB3+LyO0fw2I+2qT2Df8HVdPabwmJVeDWFFoplmVxFF5uw6ZlnPNXo=";</script>
 
 

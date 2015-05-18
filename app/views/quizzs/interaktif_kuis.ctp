@@ -74,9 +74,7 @@
                 ?>
 
     			<div class="countdown" id="timersoal">
-    				<h3 id="men">60</h3><p>Menit</p>
-    				<h3 id="det">20</h3><p>Detik</p>
-    				
+    				<h3 id="countdown-holder"></h1>
     			</div>
     			
     		</div>
@@ -306,5 +304,11 @@ function player_generator(page,data){
         }
     });
 }
+
+    var clock = document.getElementById("countdown-holder"), targetDate = new Date(2050, 00, 01); // Jan , 2050;
+    clock.innerHTML = countdown(targetDate).toString();
+    setInterval(function(){
+        clock.innerHTML = countdown(targetDate).toString();
+    }, 1000);
 
 </script>
