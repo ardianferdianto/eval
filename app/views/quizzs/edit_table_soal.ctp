@@ -114,7 +114,7 @@
                                             </tfoot>
                                 </table>
 
-                                <a  href="<?php echo $this->webroot?>quizzs/edit_new/<?php echo $tipesoal.'/'.$kelasID."/".$mapelID."/".$id_kuis?>"><button class="primary" id="back">< Back to Edit kuis</button></a>
+                                <a  href="<?php echo $this->webroot?>quizzs/edit_new/<?php echo $tipesoalID.'/'.$kelasID."/".$mapelID."/".$id_kuis?>"><button class="primary" id="back">< Back to Edit kuis</button></a>
                                 </div>      
                             </div>
                         </div>
