@@ -454,7 +454,7 @@ class QuizzsController extends AppController {
     }
     function interaktif_kuis($idquizz){
     	$homeicon = true;
-		$conditions_selectedsoal = array('QuizzsQuestion.quizz_id'=>$idquizz);
+		$conditions_selectedsoal = array('QuizzsQuestion.quizz_id'=>$idquizz,'Question.tipe'=>1);
 		$selected_soal = $this->Quizz->QuizzsQuestion->find('all',
 			array(
 				'conditions'=>$conditions_selectedsoal,

@@ -109,10 +109,18 @@ $(document).ready(function() {
     var hal=0;
     var id_soal=[];
 
-
+    console.log(data);
+/*    $.each(data, function(i, val) {
+        //console.log(data[i]);
+        if(data[i].Question.tipe == 2) // delete index
+        {
+            delete data[i];
+        }
+    });
+    console.log(data);*/
     //create maping
     for (var i = 0; i < data.length; i++) {
-    	if(data[i].Question.tipe==1){
+    	//if(data[i].Question.tipe==1){
     		count+=1;	
     		$('#mapping ').append('<div id="page" class="rowblockblack mapsoalnumber span2"><a data-page="'+(count-1)+'" class="soal_nonaktif" id="'+(count-1)+'" href="#">'+count+'</a></div>');
             $('#form_ans').append('<input id="jawaban_'+(count-1)+'" type="hidden" value=""/>');
@@ -121,9 +129,9 @@ $(document).ready(function() {
             } else{
                 continue;
             };
-    	}else{
-    		continue;
-    	}
+    	//}else{
+    	//	continue;
+    	//}
     };
   
 
