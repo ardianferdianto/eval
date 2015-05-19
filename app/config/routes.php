@@ -36,13 +36,13 @@
  * ...and connect the rest of 'Pages' controller's urls.
  */
 	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
-	Router::connect('/', array('controller' => 'questions', 'action' => 'homenew'));
+	//Router::connect('/', array('controller' => 'questions', 'action' => 'homenew'));
 
 	
 	
-	/*if (!file_exists(APP.'config'.DS.'install.ini')) {
-        Router::connect('/', array('plugin' => 'install' ,'controller' => 'install'));
-    }else{
-		Router::connect('/', array('controller' => 'ebooks', 'action' => 'index'));
-	}*/
+	//if (!file_exists(APP.'config'.DS.'install.ini')) {
+    //    Router::connect('/', array('plugin' => 'install' ,'controller' => 'install'));
+    //}else{
+		Router::connect('/', array('controller' => 'questions', 'action' => 'homenew'));
+	//}
 ?>
