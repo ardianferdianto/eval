@@ -158,9 +158,10 @@
                     });
 
                     $('button.details').on('click', function () {
+
                         var tr = $(this).closest('tr');
                         var row = table.row( tr );
-                        
+                        $buttonplus = $(this);
                         var data={
                                     opsi_a:$(this).data('opsia'),
                                     opsi_b:$(this).data('opsib'),
@@ -179,6 +180,8 @@
                             // This row is already open - close it
                             row.child.hide();
                             tr.removeClass('shown');
+                            $buttonplus.html('+');
+
                         }
                         else {
                             // Open this row
@@ -186,6 +189,7 @@
                             $("#video_repot").empty().append('<div id="containerPlayer"></div>')
                             player_generator(data.video);
                             tr.addClass('shown');
+                            $buttonplus.html('-');
                         }
                     } );
                 } );
