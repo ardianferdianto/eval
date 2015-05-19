@@ -356,7 +356,7 @@ class QuizzsController extends AppController {
 		$this->set(compact('listMataPelajaran'));
 	}
 
-	function delete($id = null) {
+	function delete($id = null,$type=null,$kelas=null,$pelajaran=null) {
 		if (!$id) {
 			$this->Session->setFlash('Quiz tidak ditemukan','flash_erorr');
 			$this->redirect(array('action'=>'index'));
@@ -364,7 +364,7 @@ class QuizzsController extends AppController {
 		if ($this->Quizz->delete($id,$cascade = true)) {
 			$this->Session->setFlash('Quiz berhasil dihapus ','flash_success');
 			
-			$this->redirect(array('action'=>'index'));
+			$this->redirect(array('action'=>'viewnew',$type,$kelas,$pelajaran));
 		}
 	}
 	

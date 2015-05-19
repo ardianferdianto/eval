@@ -39,7 +39,14 @@
 						</div>
 
 						<div class="content_tryout_container">
-							<div class="content_tryout_container_bottom">&nbsp;</div>							
+							<div class="content_tryout_container_bottom">&nbsp;</div>	
+
+							<div id="loadingcontainer_onpage">
+								<img src="<?php echo $this->webroot;?>art/clock.gif"/><br/>
+								<h2>Loading </h2>
+								<p>Memproses data</p>
+							</div>
+
 							<div class="wizard wizardtryout" id="wizard">
 							    <div class="steps bg-white">
 							        <div class="step">
@@ -609,14 +616,17 @@ $(document).ready(function() {
     	 
     	insert_fieldformsetsoal();
     	//setTimeout(function(){
-    		$('#form_penambahan_tryout').ajaxSubmit(options_submitformtryout);	
+    		$('#form_penambahan_tryout').ajaxSubmit(options_submitformtryout);
+    		$('.wizardtryout').fadeOut(500,function(){
+    			$('#loadingcontainer_onpage').fadeIn(500);	
+    		})
     	//}, 5000);
     });
 }); 
 
 function showResponse_submitformtryout(responseText, statusText, xhr, $form)  { 
   setTimeout(function() {
-    alert('success');
+    alert('Berhasil menambah data');
 	window.location.href = "<?php echo $this->webroot?>quizzs/viewnew/<?php echo $tipesoalID?>/<?php echo $kelasID?>/<?php echo $mapelID?>";
   }, 2000);
 }

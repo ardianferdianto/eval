@@ -28,6 +28,9 @@
 									<h5><?php echo $quizz['Quizz']['kode']; ?></h5>
 									<div class="button_entrykuisview">
 										<a class="btn_yellow createWindow" href="#select_quizz_type" data-tipekuis='<?php echo $quizz['Quizz']['type']?>' data-kuisid = "<?php echo $quizz['Quizz']['id']?>">PILIH</a>
+
+										<a class="btn_red" href="<?php echo $this->webroot;?>quizzs/delete/<?php echo $quizz['Quizz']['id']?>/<?php echo $quizz['Quizz']['type']?>/<?php echo $kelasID?>/<?php echo $quizz['Pelajaran']['id']?>" onclick="return confirm('Anda yakin ingin menghapus item ini?')">HAPUS</a>
+
 									</div>
 								</div>
 							

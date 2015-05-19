@@ -351,7 +351,7 @@ h5.subheader-secondary{
 }
 .entrykuisview h5{
 	float: left;
-	width: 80%;
+	width: 70%;
 	padding-left: 10px;
 }
 
@@ -383,6 +383,41 @@ h5.subheader-secondary{
   background-image: -o-linear-gradient(top, #df5557, #aa4142);
   background-image: linear-gradient(to bottom, #df5557, #aa4142);
   text-decoration: none;
+  float: left;
+}
+
+
+.metro .btn_red {
+  background: #ef5a5d;
+  background-image: -webkit-linear-gradient(top, #ef5a5d, #bb4749);
+  background-image: -moz-linear-gradient(top, #ef5a5d, #bb4749);
+  background-image: -ms-linear-gradient(top, #ef5a5d, #bb4749);
+  background-image: -o-linear-gradient(top, #ef5a5d, #bb4749);
+  background-image: linear-gradient(to bottom, #ef5a5d, #bb4749);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  text-shadow: 1px 1px 2px #666666;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 15px;
+  padding: 15px 30px 15px 30px;
+  text-decoration: none;
+  margin: 0;
+  float: left;
+  width: auto;
+  margin-left: 15px;
+}
+
+.metro .btn_red:hover {
+  background: #df5557;
+  background-image: -webkit-linear-gradient(top, #df5557, #aa4142);
+  background-image: -moz-linear-gradient(top, #df5557, #aa4142);
+  background-image: -ms-linear-gradient(top, #df5557, #aa4142);
+  background-image: -o-linear-gradient(top, #df5557, #aa4142);
+  background-image: linear-gradient(to bottom, #df5557, #aa4142);
+  text-decoration: none;
+  color: #ffffff;
 }
 .grid a.btn_yellow{
 	margin: 0;
@@ -656,4 +691,16 @@ background: transparent url('../art/bg-stich.png') repeat;
 #logoedusoft{
 	margin: 0 auto;
 	margin-top: -50px;
+}
+#loadingcontainer_onpage{
+	
+	width: 50%;
+	margin:0 auto;
+	text-align: center;
+	padding: 20px 0;
+	display: none;
+	margin-top: 100px;
+}
+#loadingcontainer_onpage h2{
+	font-size: 2.5em;
 }

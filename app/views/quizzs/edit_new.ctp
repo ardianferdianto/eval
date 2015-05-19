@@ -43,7 +43,13 @@
 
 						<div class="content_tryout_container">
 							<div class="content_tryout_container_bottom">&nbsp;</div>
-							<div class="row">
+							<div id="loadingcontainer_onpage">
+								<img src="<?php echo $this->webroot;?>art/clock.gif"/><br/>
+								<h2>Loading </h2>
+								<p>Memproses data</p>
+							</div>
+							<div class="row contenttohide" style="">
+								
 						        <div class="row">
 						        	<label>Kode</label>
 						 			<div class="input-control text">
@@ -139,8 +145,8 @@
 						   		</div>
 								<p><a href="<?php echo $this->webroot ?>quizzs/edit_table_soal/<?php echo $quizz['Quizz']['type'].'/'.$kelasID."/".$mapelID."/".$quizz['Quizz']['id']?>" ><button class="primary" id="edit">Edit table soal</button></a></p>
 
-
-								<p class="text-right"><button class="danger" id="submit">Submit Change</button></p>
+								<br/>
+								<p class="text-right"><button class="danger" id="submit">Simpan Perubahan</button></p>
 
 
 
@@ -304,13 +310,18 @@ $(document).ready(function() {
     	//insert_fieldformsetsoal();
     	//setTimeout(function(){
     		$('#form_edit_tryout').ajaxSubmit(options_submitformtryout);	
+    		$('.contenttohide').fadeOut(500,function(){
+    			$('#loadingcontainer_onpage').fadeIn(500);	
+    		})
+    		
     	//}, 5000);
     });
 }); 
 
 function showResponse_submitformtryout(responseText, statusText, xhr, $form)  { 
   setTimeout(function() {
-    alert('success');
+  	//$('#loadingcontainer_onpage').hide();
+    alert('Berhasil merubah data');
 	window.location.href = "<?php echo $this->webroot?>quizzs/viewnew/<?php echo $quizz['Quizz']['type']?>/<?php echo $quizz['Quizz']['kelas']?>/<?php echo $quizz['Quizz']['pelajaran_id']?>";
   }, 2000);
 }
