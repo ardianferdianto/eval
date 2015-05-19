@@ -704,3 +704,21 @@ background: transparent url('../art/bg-stich.png') repeat;
 #loadingcontainer_onpage h2{
 	font-size: 2.5em;
 }
+
+.is-countdown{
+	background: transparent;
+	border: none;
+}
+.countdown-section{
+	display: block;
+	width: 100% !important;
+
+}
+.metro .countdown{
+	margin-top: -58px;
+}
+.countdown-period{
+	letter-spacing: 1px;
+	margin-top: -11px;
+	font-size: 0.95em;
+}
