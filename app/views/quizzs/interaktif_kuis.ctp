@@ -74,9 +74,7 @@
                 ?>
 
     			<div class="countdown" id="timersoal">
-    				<h3 id="men">60</h3><p>Menit</p>
-    				<h3 id="det">20</h3><p>Detik</p>
-    				
+    				<h3 id="countd"></h3>
     			</div>
     			
     		</div>
@@ -97,14 +95,20 @@
 <?php $waktu=$read_soal['Quizz']['time']*60 ?>
 
 window.jawaban=[];
+function delete_cookie(name,value){
+     $.cookie(name,value, { expires: -1 });
+}
+
 $(document).ready(function() { 
 
+   
 
    	var data = $.parseJSON('<?php echo json_encode($soal) ?>');
    	window.count=0;
    	var page=0;
     var hal=0;
     var id_soal=[];
+
 
     //create maping
     for (var i = 0; i < data.length; i++) {
@@ -143,6 +147,19 @@ $(document).ready(function() {
         showdialog(hitung_nilai(data,id_soal));
     });
 
+    console.log(data[0].Quizz.time);
+    var times=data[0].Quizz.time;
+    if (!$.cookie('zzz')){
+        var now = new Date(); 
+        var timer = new Date(now.getTime() + (times * 60 * 1000));
+        $.cookie('zzz', timer);
+    }
+    var cookie = $.cookie('zzz');
+    console.log(cookie);
+    //$('#countd').countdown({until: new Date(cookie), onExpiry:delete_cookie('zzz',cookie), format: 'HMS'});
+
+    $('#countd').countdown({until: new Date(cookie),onExpiry: function(){showdialog(hitung_nilai(data,id_soal));delete_cookie('zzz',cookie);}, format: 'HMS'});
+    //delete_cookie('zzz',cookie);
 
 });
 function hitung_nilai(data,id_soal){
@@ -162,6 +179,7 @@ function hitung_nilai(data,id_soal){
            };
            
         };
+       
 /*        $.removeCookie("mytimeout");
         $.removeCookie("timepassed");*/
         hitung=(nilai/(id_soal.length*1.0))*10.0;
@@ -306,5 +324,11 @@ function player_generator(page,data){
         }
     });
 }
+/*
+    var clock = document.getElementById("countdown-holder"), targetDate = new Date(2015, 04, 18); // Jan , 2050;
+    clock.innerHTML = countdown(targetDate).toString();
+    setInterval(function(){
+        clock.innerHTML = countdown(targetDate).toString();
+    }, 1000);*/
 
 </script>
