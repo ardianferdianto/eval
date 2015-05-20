@@ -23,6 +23,38 @@
             <?php if(empty($data_soal)):?>
                 <center>Tidak ada Soal</center>
             <?php else:?>
+                <div class="infoseparated" style="padding:0 20px;">
+                    <span>FILTER SOAL</span><br/>
+                    <strong>Kelas : </strong>
+                    <div id="placeforkelasfilter" class="input-control select">
+                        <select>
+                            <option></option>
+                        </select>
+                    </div>
+                </div>
+                <div class="infoseparated" style="padding:0 20px;">
+                    <strong>&nbsp;<br/>
+                    <strong>Tipe : </strong>
+                    <div id="placefortipefilter" class="input-control select">
+                        <select>
+                            <option>Semua</option>
+                            <option>Pilihan Ganda</option>
+                            <option>Essay</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="infoseparated" style="padding:0 20px;">
+                    <strong>&nbsp;<br/>
+                    <strong>Level : </strong>
+                    <div id="placeforlevelfilter" class="input-control select">
+                        <select>
+                            <option>Semua</option>
+                            <option>Mudah</option>
+                            <option>Sedang</option>
+                            <option>Sulit</option>
+                        </select>
+                    </div>
+                </div>
                 <h2 class="fg-white titletablesoal titlebanksoal">BANK SOAL </h2>
                    <table class="table striped hovered dataTable" id="dataTables-1">
                         <thead>
@@ -152,13 +184,77 @@
                         '</tr>'+
                     '</table>';
                 }
+
                 $(document).ready(function() {
                    var table = $('#dataTables-1').DataTable({
                         info:false
                     });
+                    $("#placeforkelasfilter").each( function ( i ) {
 
+                            if(i == 0){ //Create just one SelectBox
+                                var select = $('<select class='+i+'><option value="">Semua</option></select>')
+                                    .appendTo( $(this).empty() )
+                                    .on( 'change', function () {
+
+                                        var val = $(this).val();
+
+                                        table.column( 5 ) //Only the first column
+                                            .search( val ? '^'+$(this).val()+'$' : val, true, false )
+                                            .draw();
+                                    } );
+
+                                table.column( 5 ).data().unique().sort().each( function ( d, j ) {
+                                    select.append( '<option value="'+d+'">'+d+'</option>' );
+                                } );
+
+                            } 
+                        });
+
+
+                        $("#placefortipefilter").each( function ( i ) {
+
+                            if(i == 0){ //Create just one SelectBox
+                                var select = $('<select class='+i+'><option value="">Semua</option></select>')
+                                    .appendTo( $(this).empty() )
+                                    .on( 'change', function () {
+
+                                        var val = $(this).val();
+
+                                        table.column( 3 ) //Only the first column
+                                            .search( val ? '^'+$(this).val()+'$' : val, true, false )
+                                            .draw();
+                                    } );
+
+                                table.column( 3 ).data().unique().sort().each( function ( d, j ) {
+                                    select.append( '<option value="'+d+'">'+d+'</option>' );
+                                } );
+
+                            } 
+                        });
+
+
+                        $("#placeforlevelfilter").each( function ( i ) {
+
+                            if(i == 0){ //Create just one SelectBox
+                                var select = $('<select class='+i+'><option value="">Semua</option></select>')
+                                    .appendTo( $(this).empty() )
+                                    .on( 'change', function () {
+
+                                        var val = $(this).val();
+
+                                        table.column( 4 ) //Only the first column
+                                            .search( val ? '^'+$(this).val()+'$' : val, true, false )
+                                            .draw();
+                                    } );
+
+                                table.column( 4 ).data().unique().sort().each( function ( d, j ) {
+                                    select.append( '<option value="'+d+'">'+d+'</option>' );
+                                } );
+
+                            } 
+                        });
                     $('button.details').on('click', function () {
-
+                        console.log('gggg');
                         var tr = $(this).closest('tr');
                         var row = table.row( tr );
                         $buttonplus = $(this);
@@ -191,6 +287,44 @@
                             tr.addClass('shown');
                             $buttonplus.html('-');
                         }
+                    } );
+                    $('#dataTables-1').on( 'draw.dt', function () {
+                        console.log('gggg');
+                         $('button.details').on('click', function () {
+                        
+                        var tr = $(this).closest('tr');
+                        var row = table.row( tr );
+                        $buttonplus = $(this);
+                        var data={
+                                    opsi_a:$(this).data('opsia'),
+                                    opsi_b:$(this).data('opsib'),
+                                    opsi_c:$(this).data('opsic'),
+                                    opsi_d:$(this).data('opsid'),
+                                    jawaban_benar:$(this).data('answertrue'),
+                                    jawaban_essay:$(this).data('answer2'),
+                                    image:$(this).data('image'),
+                                    video:$(this).data('video') 
+
+                        };
+
+                        
+                        console.log(data);
+                        if ( row.child.isShown() ) {
+                            // This row is already open - close it
+                            row.child.hide();
+                            tr.removeClass('shown');
+                            $buttonplus.html('+');
+
+                        }
+                        else {
+                            // Open this row
+                            row.child( format(data)).show();
+                            $("#video_repot").empty().append('<div id="containerPlayer"></div>')
+                            player_generator(data.video);
+                            tr.addClass('shown');
+                            $buttonplus.html('-');
+                        }
+                    } );
                     } );
                 } );
                 function player_generator(data){
