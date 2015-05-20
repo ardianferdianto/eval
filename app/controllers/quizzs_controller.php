@@ -446,7 +446,7 @@ class QuizzsController extends AppController {
 
     function banksoal($kelas,$mapel){
     	$conditions_lihatsoal = array('Question.kelas'=>$kelas,'Question.pelajaran_id'=>$mapel);
-    	$bank_soal = $this->Quizz->Question->find('all',array('conditions'=>$conditions_lihatsoal));
+    	$bank_soal = $this->Quizz->Question->find('all',array('conditions'=>$conditions_lihatsoal,'order' => array('Question.id' => 'desc')));
     	$this->set('data_soal',$bank_soal);
     	$this->set('kelasID',$kelas);
     	$this->set('mapelID',$mapel);
@@ -510,7 +510,7 @@ class QuizzsController extends AppController {
     	$kuisidtable=$idquizz;
 
 		if (!$idquizz && empty($this->data)) {
-			$this->Session->setFlash(__('Invalid Quizz', true));
+			//$this->Session->setFlash(__('Invalid Quizz', true));
 			//caranya blik ke root
 			$this->redirect(array('controller'=>'Questions','action'=>'index'));
 		}

@@ -1,4 +1,36 @@
 <div id="customerDialog">
+        <div class="infoseparated" style="padding:0 20px;">
+            <span>FILTER SOAL</span><br/>
+            <strong>Kelas : </strong>
+            <div id="placeforkelasfilter2" class="input-control select">
+                <select>
+                    <option>Semua</option>
+                </select>
+            </div>
+        </div>
+        <div class="infoseparated" style="padding:0 20px;">
+            <strong>&nbsp;<br/>
+            <strong>Tipe : </strong>
+            <div id="placefortipefilter2" class="input-control select">
+                <select>
+                    <option>Semua</option>
+                    <option>Pilihan Ganda</option>
+                    <option>Essay</option>
+                </select>
+            </div>
+        </div>
+        <div class="infoseparated" style="padding:0 20px;">
+            <strong>&nbsp;<br/>
+            <strong>Level : </strong>
+            <div id="placeforlevelfilter2" class="input-control select">
+                <select>
+                    <option>Semua</option>
+                    <option>Mudah</option>
+                    <option>Sedang</option>
+                    <option>Sulit</option>
+                </select>
+            </div>
+        </div>
    <table id="tblsoal_banksoal" class="display" cellspacing="0" width="100%">
         <thead width="100%">
             <tr>
@@ -87,7 +119,6 @@ $(document).ready(function() {
     var tes=<?php echo $quizz['Quizz']['id'] ?>;
     console.log(tes);
 	 var table2=$('#tblsoal_banksoal').DataTable({
-    					"searching": false,
     					"info":     false,
     					"scrollY": "300px",
 				        "scrollCollapse": true,
@@ -97,7 +128,70 @@ $(document).ready(function() {
 								            "defaultContent": "<button>Pilih</button>"
 								        } ]
 			    }); 
-                        
+    $("#placeforkelasfilter2").each( function ( i ) {
+
+        if(i == 0){ //Create just one SelectBox
+            var select = $('<select class='+i+'><option value="">Semua</option></select>')
+                .appendTo( $(this).empty() )
+                .on( 'change', function () {
+
+                    var val = $(this).val();
+
+                    table2.column( 2 ) //Only the first column
+                        .search( val ? '^'+$(this).val()+'$' : val, true, false )
+                        .draw();
+                } );
+
+            table2.column( 2 ).data().unique().sort().each( function ( d, j ) {
+                select.append( '<option value="'+d+'">'+d+'</option>' );
+            } );
+
+        } 
+    });
+
+
+    $("#placefortipefilter2").each( function ( i ) {
+
+        if(i == 0){ //Create just one SelectBox
+            var select = $('<select class='+i+'><option value="">Semua</option></select>')
+                .appendTo( $(this).empty() )
+                .on( 'change', function () {
+
+                    var val = $(this).val();
+
+                    table2.column( 3 ) //Only the first column
+                        .search( val ? '^'+$(this).val()+'$' : val, true, false )
+                        .draw();
+                } );
+
+            table2.column( 3 ).data().unique().sort().each( function ( d, j ) {
+                select.append( '<option value="'+d+'">'+d+'</option>' );
+            } );
+
+        } 
+    });
+
+
+    $("#placeforlevelfilter2").each( function ( i ) {
+
+        if(i == 0){ //Create just one SelectBox
+            var select = $('<select class='+i+'><option value="">Semua</option></select>')
+                .appendTo( $(this).empty() )
+                .on( 'change', function () {
+
+                    var val = $(this).val();
+                    console.log(val);
+                    table2.column( 1 ) //Only the first column
+                        .search( val ? '^'+$(this).val()+'$' : val, true, false )
+                        .draw();
+                } );
+
+            table2.column( 1 ).data().unique().sort().each( function ( d, j ) {
+                select.append( '<option value="'+d+'">'+d+'</option>' );
+            } );
+
+        } 
+    });                  
     $('#tblsoal_banksoal tbody').on( 'click', 'button', function () {
         var data = table2.row( $(this).parents('tr') ).data();
         $('#form_tambah').append('<input type="hidden" name="data[QuizzsQuestion][question_id]" value="'+data[0]+'" >');

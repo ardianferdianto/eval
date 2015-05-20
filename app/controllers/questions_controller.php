@@ -1023,7 +1023,7 @@ class QuestionsController extends AppController {
 		        	$headings[5] = 'answer_c';
 		        	$headings[6] = 'answer_d';
 		        	$headings[7] = 'answer_true';
-		        	$headings[8] = 'answer_2';
+		        	$headings[8] = 'answer2';
 		        	$headings[9] = 'images';
 		        	$headings[10] = 'video';
 		        	$headings[11] = 'kelas';
@@ -1088,17 +1088,17 @@ class QuestionsController extends AppController {
 		 }*/
 
 
-		if($this->Question->saveAll($xls_data, array('validate'=>false))) {
-
+		if($this->Question->saveAll($xls_data)) {
+			$this->Session->setFlash('Pertanyaan berhasil diupdate','flash_success');
 			$status = 'Berhasil mengimpor '. count($xls_data) .' data.';
-		    $this->redirect(array('controller'=>'questions','action'=>'proses/'.$kelas.'/'.$mapel));
+		    $this->redirect(array('controller'=>'quizzs','action'=>'banksoal/'.$kelas.'/'.$mapel));
 		    //$this->redirect(array('action'=>'index'));
 		
 		} else {
-
+			$this->Session->setFlash('Pertanyaan berhasil diupdate','flash_success');
 			$status = 'tidak berhasil mengimpor data, silahkan ulangi!';
 
-		    $this->redirect(array('controller'=>'questions','action'=>'proses/'.$kelas.'/'.$mapel));
+		    $this->redirect(array('controller'=>'quizzs','action'=>'banksoal/'.$kelas.'/'.$mapel));
 		}
 
     }

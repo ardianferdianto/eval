@@ -93,9 +93,7 @@
 														<strong>Kelas : </strong>
 														<div id="placeforkelasfilter" class="input-control select">
 														    <select>
-														        <option>Kelas 1</option>
-														        <option>Kelas 2</option>
-														        <option>Kelas 3</option>
+														        <option></option>
 														    </select>
 														</div>
 													</div>

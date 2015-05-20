@@ -63,7 +63,7 @@ $(document).ready(function(){
 <div style="float:left;width:70px;">
 	<?php echo $html->link($html->image("pen_12x12.png"), array('action' => 'edit', $n['Question']['id'],$kelas,$mapel,$level,$tipe), array('escape' => false,'class'=>'hasTooltip editquestion_button','data-tooltip'=>'Edit Soal','data-idquestion'=>$n['Question']['id'])); ?>
 		&nbsp;&nbsp;&nbsp;
-	<a class="hasTooltip deletesoal" data-tooltip="Hapus Soal" href="<?php echo $this->webroot?>/questions/delete/<?php echo $n['Question']['id'];?>">Delete</a>
+	<a class="hasTooltip deletesoal" data-tooltip="Hapus Soal" href="<?php echo $this->webroot?>questions/delete/<?php echo $n['Question']['id'];?>">Delete</a>
 	
 	<?php if($n['Question']['target'] == 1):?>
 		<div class="questiontype icon-quizz"></div>
