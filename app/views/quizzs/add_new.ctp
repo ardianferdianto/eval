@@ -524,35 +524,27 @@
 <script>
 $(function(){
     $('.wizardtryout').wizard({
+    	
+
         buttons: {
-            cancel: {
-                show: false,
-                title: "Cancel wizard",
-                cls: "warning",
-                group: "right"
-            },
-            help: {
-                show: false,
-                title: "Help Me!",
-                cls: "button primary",
-                group: "right"
-            },
+            cancel: false,
+            help: false,
             prior: {
                 show: true,
                 title: "Langkah Sebelumnya",
-                group: "left",
+                group: "right",
                 cls: "info"
             },
             next: {
                 show: true,
                 title: "Langkah Selanjutnya",
-                group: "left",
+                group: "right",
                 cls: "info"
             },
             finish: {
                 show: false,
                 title: "Selesai dan buat!",
-                group: "left",
+                group: "right",
                 cls: "danger"
             }
 

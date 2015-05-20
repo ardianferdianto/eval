@@ -4,28 +4,28 @@
     <div class="bg-notebook-interaktif">
 
     <div class="kolompertanyaan span5">
-    	<h6 class="subheader-secondary"> PERTANYAAN :</h6>
-    	<div class="containersoal timesnewroman">
-    		<p id="soal">
-    			2. Why do farmers prefer considering the only available nutrients to the total quantities of nutrient found in the soil? Because …
-    		</p>
+        <h6 class="subheader-secondary"> PERTANYAAN :</h6>
+        <div class="containersoal timesnewroman">
+            <p id="soal">
+                2. Why do farmers prefer considering the only available nutrients to the total quantities of nutrient found in the soil? Because …
+            </p>
             <p id="my_image">
             </p>
             <p id="my_video">
             </p>
             
-    	</div>
+        </div>
     </div>
 
 
 
 
         <div class="kolomjawaban span5">
-        	<h6 class="subheader-secondary"> JAWABAN :</h6>
-        	<div id="contain" class="answercontainer">
+            <h6 class="subheader-secondary"> JAWABAN :</h6>
+            <div id="contain" class="answercontainer">
                 
 
-    		</div>
+            </div>
             <div></br></br><p id="jawab" class="text-right" style="display:none;"><button class="primary large">SUBMIT</button></p></div>
         </div>
 
@@ -64,20 +64,14 @@
             <div class="kolomtengah countdownbox">
                 <h6 class="item-title-secondary"> WAKTU </h6>
                 <?php
-                    $minutes_to_add = 1;
-                    $date = date('Y-m-d H:i:s');
-                    $time = new DateTime($date);
-                    $time->add(new DateInterval('PT' . $minutes_to_add . 'M'));
-
-                    $stamp = $time->format('Y-m-d H:i');
-                    //var_dump($stamp);
+                    
                 ?>
 
-    			<div class="countdown" id="timersoal">
-    				<h3 id="countd"></h3>
-    			</div>
-    			
-    		</div>
+                <div class="countdown" id="timersoal">
+                    <div id="countd"></div>
+                </div>
+                
+            </div>
 
 
         </div>      
@@ -89,26 +83,25 @@
 <div id="form_ans">
 <?php var_dump($read_soal['Quizz']['time']) ?></div>
 <script>
-
 /* before the window is reloaded or closed, store the current timeout in a cookie. 
    For cookie options visit jquery-cookie */
 <?php $waktu=$read_soal['Quizz']['time']*60 ?>
-
 window.jawaban=[];
+
+
+
 function delete_cookie(name,value){
      $.cookie(name,value, { expires: -1 });
 }
-
 $(document).ready(function() { 
 
+    
    
-
-   	var data = $.parseJSON('<?php echo json_encode($soal) ?>');
-   	window.count=0;
-   	var page=0;
+    var data = $.parseJSON('<?php echo json_encode($soal) ?>');
+    window.count=0;
+    var page=0;
     var hal=0;
     var id_soal=[];
-
     console.log(data);
 /*    $.each(data, function(i, val) {
         //console.log(data[i]);
@@ -120,21 +113,20 @@ $(document).ready(function() {
     console.log(data);*/
     //create maping
     for (var i = 0; i < data.length; i++) {
-    	//if(data[i].Question.tipe==1){
-    		count+=1;	
-    		$('#mapping ').append('<div id="page" class="rowblockblack mapsoalnumber span2"><a data-page="'+(count-1)+'" class="soal_nonaktif" id="'+(count-1)+'" href="#">'+count+'</a></div>');
+        //if(data[i].Question.tipe==1){
+            count+=1;   
+            $('#mapping ').append('<div id="page" class="rowblockblack mapsoalnumber span2"><a data-page="'+(count-1)+'" class="soal_nonaktif" id="'+(count-1)+'" href="#">'+count+'</a></div>');
             $('#form_ans').append('<input id="jawaban_'+(count-1)+'" type="hidden" value=""/>');
             if (count==1) {
                 id_soal[i]=display_soal(data, i);
             } else{
                 continue;
             };
-    	//}else{
-    	//	continue;
-    	//}
+        //}else{
+        //  continue;
+        //}
     };
   
-
     $("#page a.soal_nonaktif").click(function(){
         hal=$(this).data('page');
         id_soal[hal]=display_soal(data, hal);
@@ -154,21 +146,29 @@ $(document).ready(function() {
     $("#jawab").click(function(){
         showdialog(hitung_nilai(data,id_soal));
     });
-
     console.log(data[0].Quizz.time);
     var times=data[0].Quizz.time;
     if (!$.cookie('zzz')){
         var now = new Date(); 
         var timer = new Date(now.getTime() + (times * 60 * 1000));
         $.cookie('zzz', timer);
+        
     }
     var cookie = $.cookie('zzz');
     console.log(cookie);
     //$('#countd').countdown({until: new Date(cookie), onExpiry:delete_cookie('zzz',cookie), format: 'HMS'});
-
-    $('#countd').countdown({until: new Date(cookie),onExpiry: function(){showdialog(hitung_nilai(data,id_soal));delete_cookie('zzz',cookie);}, format: 'HMS'});
+    $('#countd').countdown({
+        labels: ['Tahun', 'Bulan', 'Minggu', 'Hari', 'Jam', 'Menit', 'Detik'], 
+        // The expanded texts for the counters 
+        until: new Date(cookie),onExpiry: function(){showdialog(hitung_nilai(data,id_soal));delete_cookie('zzz',cookie);}, format: 'HMS'
+    });
     //delete_cookie('zzz',cookie);
-
+    var timestamp_now = new Date().getTime();
+    var cookie_timestamp=new Date($.cookie('zzz')).getTime();
+    
+    if(cookie_timestamp < timestamp_now){
+        delete_cookie('zzz',cookie_timestamp);   
+    }
 });
 function hitung_nilai(data,id_soal){
         var nilai=0;
@@ -224,7 +224,6 @@ function display_soal(data, page){
     var soalterjawab=0;
     $("#nextsoal").show();
     $("#prevsoal").show();
-
     if (page==0) {
         $("#prevsoal").hide();
     }else if(page==count-1){
@@ -239,7 +238,6 @@ function display_soal(data, page){
             $("#"+(i)).removeClass("soalactive");
         }
     };
-
     $("#nextsoal").attr("data-pages",page);
     $("#prevsoal").attr("data-pages",page);
     
@@ -248,9 +246,8 @@ function display_soal(data, page){
         +'<p><div class="input-control radio default-style margin10 timesnewroman" data-role="input-control"><label><input type="radio" name="'+page+'" data-opsi="1" value="2"><span class="check"></span><p id="opsiB" class="jawabanparagraph"></p></label></div></p>'
         +'<p><div class="input-control radio default-style margin10 timesnewroman" data-role="input-control"><label><input type="radio" name="'+page+'" data-opsi="1" value="3"><span class="check"></span><p id="opsiC" class="jawabanparagraph"></p></label></div></p>'
         +'<p><div class="input-control radio default-style margin10 timesnewroman" data-role="input-control"><label><input type="radio" name="'+page+'" data-opsi="1" value="4"><span class="check"></span><p id="opsiD" class="jawabanparagraph"></p></label></div></p>'
-        +'<p><div class="input-control radio default-style margin10 timesnewroman" data-role="input-control"><label><input type="radio" name="'+page+'" data-opsi="1" value="5"><span class="check"></span><p id="opsiE" class="jawabanparagraph"></p></label></div></p>'
+        +'<p><div class="input-control radio default-style margin10 timesnewroman" data-role="input-control" id="container_opsi_e"><label><input type="radio" name="'+page+'" data-opsi="1" value="5"><span class="check"></span><p id="opsiE" class="jawabanparagraph"></p></label></div></p>'
     );
-
     //console.log(page);
     var dats=$('#jawaban_'+page).val();
     if (dats!="") {
@@ -275,22 +272,20 @@ function display_soal(data, page){
     }else{
         $("#my_video").empty().append('');
     }
-
-
     $("#soal").text(data[page].Question.question);
     $("#opsiA").text('A. '+data[page].Question.answer_a);
     $("#opsiB").text('B. '+data[page].Question.answer_b);
     $("#opsiC").text('C. '+data[page].Question.answer_c);
     $("#opsiD").text('D. '+data[page].Question.answer_d);
-    $("#opsiE").text('E. '+data[page].Question.answer_e);
+    if(data[page].Question.answer_e != ''){
+        $("#opsiE").text('E. '+data[page].Question.answer_e);
+    }else{
 
-
-
+        $("#container_opsi_e").hide();
+    }
+    
     $('#contain div label input[type="radio"]').data('page',page);
     $('#contain div label input[type="radio"]').attr('name',page);
-
-
-
     $('#contain div label input[type="radio"][name="'+page+'"]').on('change',function(){
         var val_jawab=$(this).val();
         $('#jawaban_'+page).val(val_jawab);
@@ -303,7 +298,6 @@ function display_soal(data, page){
             };
         };
         $("#"+(page)).addClass("soal_terjawab");
-
         if (soalterjawab===count) {
             $("#jawab").show();
         };
@@ -311,10 +305,8 @@ function display_soal(data, page){
     console.log(count);
     console.log(soalterjawab);
     console.log(data[page].Question.id);
-
     return data[page].Question.id;
 }
-
 function player_generator(page,data){
     jwplayer("containerPlayer").setup({
         'id': "playerID_"+page,
@@ -338,5 +330,6 @@ function player_generator(page,data){
     setInterval(function(){
         clock.innerHTML = countdown(targetDate).toString();
     }, 1000);*/
+
 
 </script>

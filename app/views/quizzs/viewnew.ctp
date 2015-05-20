@@ -7,10 +7,26 @@
 						<div class="titletryoutcontainer">
 							<div class="titlefirst">
 								<img src="<?php echo $this->webroot;?>art/icon-list-tryout.png">
-								<h1 class="tryouttitle">PILIH TRYOUT</h1>
+								<h1 class="tryouttitle">PILIH <?php
+									switch ($tipeID) {
+									 	case '1':
+									 		echo 'TRYOUT';
+									 		break;
+									 	case '2':
+									 		echo 'KUIS';
+									 		break;
+									 	case '3':
+									 		echo 'UJIAN';
+									 		break;
+									 	
+									 	default:
+									 		echo 'UNDIFINED';
+									 		break;
+									 } 
+								?></h1>
 							</div>
 							<div class="titlesecond">
-								<h3 class="tryouttitle3">KELAS : 6</h3>
+								<h3 class="tryouttitle3">KELAS : <?php echo $kelasID;?></h3>
 								<h3 class="tryouttitle3">MATA PELAJARAN : <?php echo $pelajaranID['Pelajaran']['nama'];?></h3>
 							</div>
 							<a href="<?php echo $this->webroot?>quizzs/add_new/<?php echo $tipeID."/".$kelasID."/".$mapelID?>" class="addnew_btn">&nbsp;</a>
