@@ -252,7 +252,23 @@
 								  });
 									
 								});
-
+								function player_generator(data){
+				                    jwplayer("containerPlayer").setup({
+				                        'id': "playerID",
+				                        'width': '360',
+				                        'height': '240',
+				                        'aboutlink': '#',
+				                        'autostart':false,
+				                        'primary': 'flash',
+				                        
+				                        'file': "<?php echo $this->webroot;?>"+data,
+				                        events: {
+				                            onPause: function(event) {
+				                                setCookie(event.position);
+				                            }
+				                        }
+				                    });
+				                }
 								</script>
 						   		<?php endif;?>
 

@@ -20,6 +20,38 @@
                         </div>
 
                         <div class="content_tryout_container">
+                            <div class="infoseparated" style="padding:0 20px;">
+                                <span>FILTER SOAL</span><br/>
+                                <strong>Kelas : </strong>
+                                <div id="placeforkelasfilter" class="input-control select">
+                                    <select>
+                                        <option></option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="infoseparated" style="padding:0 20px;">
+                                <strong>&nbsp;<br/>
+                                <strong>Tipe : </strong>
+                                <div id="placefortipefilter" class="input-control select">
+                                    <select>
+                                        <option>Semua</option>
+                                        <option>Pilihan Ganda</option>
+                                        <option>Essay</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="infoseparated" style="padding:0 20px;">
+                                <strong>&nbsp;<br/>
+                                <strong>Level : </strong>
+                                <div id="placeforlevelfilter" class="input-control select">
+                                    <select>
+                                        <option>Semua</option>
+                                        <option>Mudah</option>
+                                        <option>Sedang</option>
+                                        <option>Sulit</option>
+                                    </select>
+                                </div>
+                            </div>
                             <div class="content_tryout_container_bottom">&nbsp;</div>
                             <div class="row" style="padding-top:40px;">
                                 <table id="tblsoal_tryout" class="table dataTable center" cellspacing="0" width="100%">
@@ -126,11 +158,74 @@
 
 <script>
 $(document).ready(function() {
-	var table = $('#tblsoal').DataTable({
+	var table = $('#tblsoal_tryout').DataTable({
 				        "paging":   false,
-    					"searching": false,
     					"info":     false
 	});
+    $("#placeforkelasfilter").each( function ( i ) {
+
+        if(i == 0){ //Create just one SelectBox
+            var select = $('<select class='+i+'><option value="">Semua</option></select>')
+                .appendTo( $(this).empty() )
+                .on( 'change', function () {
+
+                    var val = $(this).val();
+
+                    table.column( 4 ) //Only the first column
+                        .search( val ? '^'+$(this).val()+'$' : val, true, false )
+                        .draw();
+                } );
+
+            table.column( 4 ).data().unique().sort().each( function ( d, j ) {
+                select.append( '<option value="'+d+'">'+d+'</option>' );
+            } );
+
+        } 
+    });
+
+
+    $("#placefortipefilter").each( function ( i ) {
+
+        if(i == 0){ //Create just one SelectBox
+            var select = $('<select class='+i+'><option value="">Semua</option></select>')
+                .appendTo( $(this).empty() )
+                .on( 'change', function () {
+
+                    var val = $(this).val();
+
+                    table.column( 2 ) //Only the first column
+                        .search( val ? '^'+$(this).val()+'$' : val, true, false )
+                        .draw();
+                } );
+
+            table.column( 2 ).data().unique().sort().each( function ( d, j ) {
+                select.append( '<option value="'+d+'">'+d+'</option>' );
+            } );
+
+        } 
+    });
+
+
+    $("#placeforlevelfilter").each( function ( i ) {
+
+        if(i == 0){ //Create just one SelectBox
+            var select = $('<select class='+i+'><option value="">Semua</option></select>')
+                .appendTo( $(this).empty() )
+                .on( 'change', function () {
+
+                    var val = $(this).val();
+
+                    table.column( 3 ) //Only the first column
+                        .search( val ? '^'+$(this).val()+'$' : val, true, false )
+                        .draw();
+                } );
+
+            table.column( 3 ).data().unique().sort().each( function ( d, j ) {
+                select.append( '<option value="'+d+'">'+d+'</option>' );
+            } );
+
+        } 
+    });
 	$("#tambah").on('click', function(){
 		    	$.ajax({
 		    		type:"GET",

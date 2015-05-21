@@ -143,9 +143,6 @@ $(document).ready(function() {
         hals-=1;
         id_soal[hals]=display_soal(data, hals);
     });
-    $("#jawab").click(function(){
-        showdialog(hitung_nilai(data,id_soal));
-    });
     console.log(data[0].Quizz.time);
     var times=data[0].Quizz.time;
     if (!$.cookie('zzz')){
@@ -169,6 +166,11 @@ $(document).ready(function() {
     if(cookie_timestamp < timestamp_now){
         delete_cookie('zzz',cookie_timestamp);   
     }
+
+    $("#jawab").click(function(){
+        showdialog(hitung_nilai(data,id_soal));
+        delete_cookie('zzz',cookie);
+    });
 });
 function hitung_nilai(data,id_soal){
         var nilai=0;
