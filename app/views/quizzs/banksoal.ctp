@@ -257,19 +257,11 @@
                         
                         var kd=$('button.details').data('kode');
                                     //kd.data('kode');
-                                    $("#video_repot"+kd).empty();
-                                    det('button.details');
-                                    console.log('draw1');
-
-                        $('#dataTables-1').on( 'draw.dt', function () {
-                                    var buttondetails = $('#dataTables-1').find('button.details');
-                                    //if(buttondetails.length!=0){
-                                    var kd=$('button.details').data('kode');
-                                    $("#video_repot"+kd).empty();
-                                    det('button.details');
-                                    console.log('draw1');
-                                    //}
+                        $("#video_repot"+kd).empty();
+                        $('#dataTables-1').on('click', 'button.details', function () {
+                            det(this);
                         });
+                        
 /*                        $('#dataTables-1').on( 'search.dt', function () {
                                 //$('#dataTables-1').on( 'draw.dt', function () {
                                     var kd=$('button.details').data('kode');
@@ -322,41 +314,39 @@
                     
                 }
                 function det(element){
-                     $(element).on('click', function () {
-                        var tr = $(this).closest('tr');
-                        var row = table.row( tr );
-                        $buttonplus = $(this);
-                        var data={
-                                    dat_id:$(this).data('kode'),
-                                    opsi_a:$(this).data('opsia'),
-                                    opsi_b:$(this).data('opsib'),
-                                    opsi_c:$(this).data('opsic'),
-                                    opsi_d:$(this).data('opsid'),
-                                    jawaban_benar:$(this).data('answertrue'),
-                                    jawaban_essay:$(this).data('answer2'),
-                                    image:$(this).data('image'),
-                                    video:$(this).data('video') 
+                    var tr = $(element).closest('tr');
+                    var row = table.row( tr );
+                    $buttonplus = $(element);
+                    var data={
+                                dat_id:$(element).data('kode'),
+                                opsi_a:$(element).data('opsia'),
+                                opsi_b:$(element).data('opsib'),
+                                opsi_c:$(element).data('opsic'),
+                                opsi_d:$(element).data('opsid'),
+                                jawaban_benar:$(element).data('answertrue'),
+                                jawaban_essay:$(element).data('answer2'),
+                                image:$(element).data('image'),
+                                video:$(element).data('video') 
 
-                        };
+                    };
 
-                        $("#video_repot").empty();
-                        console.log(data);
-                        if ( row.child.isShown() ) {
-                            // This row is already open - close it
-                            row.child.hide();
-                            tr.removeClass('shown');
-                            $buttonplus.html('+');
+                    $("#video_repot").empty();
+                    console.log(data);
+                    if ( row.child.isShown() ) {
+                        // This row is already open - close it
+                        row.child.hide();
+                        tr.removeClass('shown');
+                        $buttonplus.html('+');
 
-                        }
-                        else {
-                            // Open this row
-                            row.child( format(data)).show();
-                            $("#video_repot"+data.dat_id).empty().append('<div id="containerPlayer_'+data.dat_id+'"></div>')
-                            player_generator(data.video,data.dat_id);
-                            tr.addClass('shown');
-                            $buttonplus.html('-');
-                        }
-                    } );
+                    }
+                    else {
+                        // Open this row
+                        row.child( format(data)).show();
+                        $("#video_repot"+data.dat_id).empty().append('<div id="containerPlayer_'+data.dat_id+'"></div>')
+                        player_generator(data.video,data.dat_id);
+                        tr.addClass('shown');
+                        $buttonplus.html('-');
+                    }
                 }
                 </script>
             <?php endif;?> 
