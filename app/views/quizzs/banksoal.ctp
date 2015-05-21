@@ -186,8 +186,19 @@
                 }
 
                 $(document).ready(function() {
-                   window.table = $('#dataTables-1').DataTable({
-                            info:false
+                   window.table = $('#dataTables-1').on( 'init.dt', function () {
+                            var buttondetails = $('#dataTables-1').find('button.details');
+                                    if(buttondetails.length!=0){
+                                    var kd=$('button.details').data('kode');
+                                    $("#video_repot"+kd).empty();
+                                    det('button.details');
+                                    console.log('draw1');
+                                    }
+                        }).DataTable({
+                            info:false,
+                            "drawCallback": function( settings ) {
+                                console.log( 'DataTables has redrawn the table' );
+                            }
                         }
                     );
                     $("#placeforkelasfilter").each( function ( i ) {
@@ -255,28 +266,36 @@
                             } 
                         });
                         
-                        var kd=$('button.details').data('kode');
+                        /*var kd=$('button.details').data('kode');
                                     //kd.data('kode');
                                     $("#video_repot"+kd).empty();
                                     det('button.details');
+                                    console.log('draw1');*/
+                        /*$('#dataTables-1').on( 'init.dt', function () {
+                            var buttondetails = $('#dataTables-1').find('button.details');
+                                    if(buttondetails.length!=0){
+                                    var kd=$('button.details').data('kode');
+                                    $("#video_repot"+kd).empty();
+                                    det('button.details');
                                     console.log('draw1');
-
+                                    }
+                        });*/
                         $('#dataTables-1').on( 'draw.dt', function () {
                                     var buttondetails = $('#dataTables-1').find('button.details');
-                                    //if(buttondetails.length!=0){
+                                    if(buttondetails.length!=0){
                                     var kd=$('button.details').data('kode');
                                     $("#video_repot"+kd).empty();
                                     det('button.details');
                                     console.log('draw1');
-                                    //}
+                                    }
                         });
-/*                        $('#dataTables-1').on( 'search.dt', function () {
-                                //$('#dataTables-1').on( 'draw.dt', function () {
+                        /*$('#dataTables-1').on( 'search.dt', function () {
+                                $('#dataTables-1').on( 'draw.dt', function () {
                                     var kd=$('button.details').data('kode');
                                     $("#video_repot"+kd).empty();
                                     det('button.details');
                                     console.log('draw1');
-                                //});
+                                });
                                 console.log('search');
 
                         } );*/
@@ -339,7 +358,7 @@
 
                         };
 
-                        $("#video_repot").empty();
+                        //$("#video_repot").empty();
                         console.log(data);
                         if ( row.child.isShown() ) {
                             // This row is already open - close it
