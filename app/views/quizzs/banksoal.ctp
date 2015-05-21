@@ -97,7 +97,7 @@
                             }
                            ?>
                             <tr>
-                                <th class="text-center"><button class="details" data-answer2="<?php echo $row['Question']['answer2']?>" data-answertrue="<?php echo $row['Question']['answer_true']?>" data-opsia="<?php echo $row['Question']['answer_a']?>" data-opsib="<?php echo $row['Question']['answer_b']?>" data-opsic="<?php echo $row['Question']['answer_c']?>" data-opsid="<?php echo $row['Question']['answer_d']?>" data-opsie="<?php echo $row['Question']['answer_e']?>" data-image="<?php echo $row['Question']['images']?>" data-video="<?php echo $row['Question']['video']?>"> + </button></th>
+                                <th class="text-center"><button class="details" data-kode="<?php echo $row['Question']['id']?>" data-answer2="<?php echo $row['Question']['answer2']?>" data-answertrue="<?php echo $row['Question']['answer_true']?>" data-opsia="<?php echo $row['Question']['answer_a']?>" data-opsib="<?php echo $row['Question']['answer_b']?>" data-opsic="<?php echo $row['Question']['answer_c']?>" data-opsid="<?php echo $row['Question']['answer_d']?>" data-opsie="<?php echo $row['Question']['answer_e']?>" data-image="<?php echo $row['Question']['images']?>" data-video="<?php echo $row['Question']['video']?>"> + </button></th>
                                 <td class="text-left"><?php echo $i++;?></td>
                                 <td class="text-left"><?php echo $row['Question']['id'] ?></td>
                                 <td class="text-left"><?php echo $tipesoal_string ?></td>
@@ -180,13 +180,13 @@
                         '</tr>'+
                         '<tr>'+
                             '<td>Video</td>'+
-                            '<td id="video_repot"></td>'+
+                            '<td id="video_repot'+d.dat_id+'"></td>'+
                         '</tr>'+
                     '</table>';
                 }
 
                 $(document).ready(function() {
-                   var table = $('#dataTables-1').DataTable({
+                   window.table = $('#dataTables-1').DataTable({
                         info:false
                     });
                     $("#placeforkelasfilter").each( function ( i ) {
@@ -253,83 +253,33 @@
 
                             } 
                         });
-                    $('button.details').on('click', function () {
-                        console.log('gggg');
-                        var tr = $(this).closest('tr');
-                        var row = table.row( tr );
-                        $buttonplus = $(this);
-                        var data={
-                                    opsi_a:$(this).data('opsia'),
-                                    opsi_b:$(this).data('opsib'),
-                                    opsi_c:$(this).data('opsic'),
-                                    opsi_d:$(this).data('opsid'),
-                                    jawaban_benar:$(this).data('answertrue'),
-                                    jawaban_essay:$(this).data('answer2'),
-                                    image:$(this).data('image'),
-                                    video:$(this).data('video') 
-
-                        };
-
-                        
-                        console.log(data);
-                        if ( row.child.isShown() ) {
-                            // This row is already open - close it
-                            row.child.hide();
-                            tr.removeClass('shown');
-                            $buttonplus.html('+');
-
-                        }
-                        else {
-                            // Open this row
-                            row.child( format(data)).show();
-                            $("#video_repot").empty().append('<div id="containerPlayer"></div>')
-                            player_generator(data.video);
-                            tr.addClass('shown');
-                            $buttonplus.html('-');
-                        }
-                    } );
-                    $('#dataTables-1').on( 'draw.dt', function () {
-                        console.log('gggg');
-                         $('button.details').on('click', function () {
-                        
-                        var tr = $(this).closest('tr');
-                        var row = table.row( tr );
-                        $buttonplus = $(this);
-                        var data={
-                                    opsi_a:$(this).data('opsia'),
-                                    opsi_b:$(this).data('opsib'),
-                                    opsi_c:$(this).data('opsic'),
-                                    opsi_d:$(this).data('opsid'),
-                                    jawaban_benar:$(this).data('answertrue'),
-                                    jawaban_essay:$(this).data('answer2'),
-                                    image:$(this).data('image'),
-                                    video:$(this).data('video') 
-
-                        };
-
-                        
-                        console.log(data);
-                        if ( row.child.isShown() ) {
-                            // This row is already open - close it
-                            row.child.hide();
-                            tr.removeClass('shown');
-                            $buttonplus.html('+');
-
-                        }
-                        else {
-                            // Open this row
-                            row.child( format(data)).show();
-                            $("#video_repot").empty().append('<div id="containerPlayer"></div>')
-                            player_generator(data.video);
-                            tr.addClass('shown');
-                            $buttonplus.html('-');
-                        }
-                    } );
-                    } );
+                        det('button.details');
+                        console.log('ready');
+                        $('#dataTables-1').on( 'search.dt', function () {
+                            var kd=$('button.details').data('kode');
+                            $("#video_repot"+kd).empty();
+                            det('button.details');
+                            console.log('search');
+                        } );
+                        $('#dataTables-1').on( 'draw.dt', function () {
+                            var kd=$('button.details').data('kode');
+                            $("#video_repot"+kd).empty();
+                            det('button.details');
+                            console.log('draw');
+                        });
+                        $('#dataTables-1').on( 'page.dt', function () {
+                            var kd=$('button.details').data('kode');
+                            $("#video_repot"+kd).empty();
+                            det('button.details');
+                            console.log('page');
+                        });
                 } );
-                function player_generator(data){
-                    jwplayer("containerPlayer").setup({
-                        'id': "playerID",
+                function player_generator(data,id){
+                    if (data=='') {
+                        $("#containerPlayer_"+id).text("no video found");
+                    } else{
+                        jwplayer("containerPlayer_"+id).setup({
+                        'id': "playerID_"+id,
                         'width': '360',
                         'height': '240',
                         'aboutlink': '#',
@@ -343,6 +293,45 @@
                             }
                         }
                     });
+                    };
+                    
+                }
+                function det(element){
+                     $(element).on('click', function () {
+                        var tr = $(this).closest('tr');
+                        var row = table.row( tr );
+                        $buttonplus = $(this);
+                        var data={
+                                    dat_id:$(this).data('kode'),
+                                    opsi_a:$(this).data('opsia'),
+                                    opsi_b:$(this).data('opsib'),
+                                    opsi_c:$(this).data('opsic'),
+                                    opsi_d:$(this).data('opsid'),
+                                    jawaban_benar:$(this).data('answertrue'),
+                                    jawaban_essay:$(this).data('answer2'),
+                                    image:$(this).data('image'),
+                                    video:$(this).data('video') 
+
+                        };
+
+                        $("#video_repot").empty();
+                        console.log(data);
+                        if ( row.child.isShown() ) {
+                            // This row is already open - close it
+                            row.child.hide();
+                            tr.removeClass('shown');
+                            $buttonplus.html('+');
+
+                        }
+                        else {
+                            // Open this row
+                            row.child( format(data)).show();
+                            $("#video_repot"+data.dat_id).empty().append('<div id="containerPlayer_'+data.dat_id+'"></div>')
+                            player_generator(data.video,data.dat_id);
+                            tr.addClass('shown');
+                            $buttonplus.html('-');
+                        }
+                    } );
                 }
                 </script>
             <?php endif;?> 
