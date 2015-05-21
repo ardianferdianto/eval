@@ -577,11 +577,12 @@ class QuizzsController extends AppController {
     function hapus_single_soal($tipesoal,$kelas,$mapel,$quizzid=null,$id=null){
     	//$this->Quizz->QuizzsQuestion->del($id);
 		if (!$id) {
-			$this->Session->setFlash('Invalid id for Task');
+			$this->Session->setFlash('Invalid id for Task','flash_error');
+			//$this->Session->setFlash('Invalid id for Task');
 			$this->redirect(array('action'=>'index'), null, true);
 		}
 		if ($this->Quizz->QuizzsQuestion->del($id)) {
-			$this->Session->setFlash('Task #'.$id.' deleted');
+			$this->Session->setFlash('pertanyaan dengan kode #'.$id.' terhapus','flash_success');
 			$this->redirect(array('controller'=>'quizzs','action'=>'edit_table_soal/'.$tipesoal.'/'.$kelas.'/'.$mapel.'/'.$quizzid));
 		}
     }

@@ -187,8 +187,9 @@
 
                 $(document).ready(function() {
                    window.table = $('#dataTables-1').DataTable({
-                        info:false
-                    });
+                            info:false
+                        }
+                    );
                     $("#placeforkelasfilter").each( function ( i ) {
 
                             if(i == 0){ //Create just one SelectBox
@@ -253,26 +254,50 @@
 
                             } 
                         });
-                        det('button.details');
-                        console.log('ready');
-                        $('#dataTables-1').on( 'search.dt', function () {
-                            var kd=$('button.details').data('kode');
-                            $("#video_repot"+kd).empty();
-                            det('button.details');
-                            console.log('search');
-                        } );
+                        
+                        var kd=$('button.details').data('kode');
+                                    //kd.data('kode');
+                                    $("#video_repot"+kd).empty();
+                                    det('button.details');
+                                    console.log('draw1');
+
                         $('#dataTables-1').on( 'draw.dt', function () {
-                            var kd=$('button.details').data('kode');
-                            $("#video_repot"+kd).empty();
-                            det('button.details');
-                            console.log('draw');
+                                    var buttondetails = $('#dataTables-1').find('button.details');
+                                    //if(buttondetails.length!=0){
+                                    var kd=$('button.details').data('kode');
+                                    $("#video_repot"+kd).empty();
+                                    det('button.details');
+                                    console.log('draw1');
+                                    //}
+                        });
+/*                        $('#dataTables-1').on( 'search.dt', function () {
+                                //$('#dataTables-1').on( 'draw.dt', function () {
+                                    var kd=$('button.details').data('kode');
+                                    $("#video_repot"+kd).empty();
+                                    det('button.details');
+                                    console.log('draw1');
+                                //});
+                                console.log('search');
+
+                        } );*/
+                        /*$('#dataTables-1').on( 'length.dt', function () {
+                                $('#dataTables-1').on( 'draw.dt', function () {
+                                    var kd=$('button.details').data('kode');
+                                    $("#video_repot"+kd).empty();
+                                    det('button.details');
+                                    console.log('draw2');
+                                });
+                                console.log('length');
                         });
                         $('#dataTables-1').on( 'page.dt', function () {
-                            var kd=$('button.details').data('kode');
-                            $("#video_repot"+kd).empty();
-                            det('button.details');
+                            $('#dataTables-1').on( 'draw.dt', function () {
+                                var kd=$('button.details').data('kode');
+                                $("#video_repot"+kd).empty();
+                                det('button.details');
+                                console.log('draw3');
+                            });
                             console.log('page');
-                        });
+                        });*/
                 } );
                 function player_generator(data,id){
                     if (data=='') {
