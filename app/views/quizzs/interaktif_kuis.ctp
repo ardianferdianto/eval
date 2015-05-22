@@ -26,7 +26,7 @@
                 
 
             </div>
-            <div></br></br><p id="jawab" class="text-right" style="display:none;"><button class="primary large">SUBMIT</button></p></div>
+            <div></br></br><p class="text-right" ><button id="jawab" class="primary large" style="display:none;">SUBMIT</button><button id="exit" class="danger large" style="display:none;">exit</button></p></div>
         </div>
 
     </div>
@@ -70,10 +70,9 @@
                 <div class="countdown" id="timersoal">
                     <div id="countd"></div>
                 </div>
-                
             </div>
 
-
+            <input id="recheck" type="hidden" value=""/>
         </div>      
     </div>
 
@@ -81,7 +80,7 @@
 </div>
 </div>
 <div id="form_ans">
-<?php var_dump($read_soal['Quizz']['time']) ?></div>
+<?php //var_dump($read_soal['Quizz']['time']) ?></div>
 <script>
 /* before the window is reloaded or closed, store the current timeout in a cookie. 
    For cookie options visit jquery-cookie */
@@ -91,11 +90,9 @@ window.jawaban=[];
 
 
 function delete_cookie(name,value){
-     $.cookie(name,value, { expires: -1 });
+     $.cookie(name,value, { expires: -1});
 }
 $(document).ready(function() { 
-
-    
    
     var data = $.parseJSON('<?php echo json_encode($soal) ?>');
     window.count=0;
@@ -103,14 +100,7 @@ $(document).ready(function() {
     var hal=0;
     var id_soal=[];
     console.log(data);
-/*    $.each(data, function(i, val) {
-        //console.log(data[i]);
-        if(data[i].Question.tipe == 2) // delete index
-        {
-            delete data[i];
-        }
-    });
-    console.log(data);*/
+
     //create maping
     for (var i = 0; i < data.length; i++) {
         //if(data[i].Question.tipe==1){
@@ -142,61 +132,66 @@ $(document).ready(function() {
         hals=parseInt(hals);
         hals-=1;
         id_soal[hals]=display_soal(data, hals);
+        console.log($('#recheck').val());
     });
     console.log(data[0].Quizz.time);
     var times=data[0].Quizz.time;
-    if (!$.cookie('zzz')){
+    if (!$.cookie('zzz_<?php echo $id_kuis?>')){
         var now = new Date(); 
         var timer = new Date(now.getTime() + (times * 60 * 1000));
-        $.cookie('zzz', timer);
+        $.cookie('zzz_<?php echo $id_kuis?>', timer);
         
     }
-    var cookie = $.cookie('zzz');
+    var cookie = $.cookie('zzz_<?php echo $id_kuis?>');
     console.log(cookie);
+    console.log('<?php echo $id_kuis?>')
     //$('#countd').countdown({until: new Date(cookie), onExpiry:delete_cookie('zzz',cookie), format: 'HMS'});
     $('#countd').countdown({
         labels: ['Tahun', 'Bulan', 'Minggu', 'Hari', 'Jam', 'Menit', 'Detik'], 
         // The expanded texts for the counters 
-        until: new Date(cookie),onExpiry: function(){showdialog(hitung_nilai(data,id_soal));delete_cookie('zzz',cookie);}, format: 'HMS'
+        until: new Date(cookie),onExpiry: function(){showdialog(hitung_nilai(data,id_soal),data);}, format: 'HMS'
     });
     //delete_cookie('zzz',cookie);
     var timestamp_now = new Date().getTime();
-    var cookie_timestamp=new Date($.cookie('zzz')).getTime();
+    var cookie_timestamp=new Date($.cookie('zzz_<?php echo $id_kuis?>')).getTime();
     
     if(cookie_timestamp < timestamp_now){
-        delete_cookie('zzz',cookie_timestamp);   
+        delete_cookie('zzz_<?php echo $id_kuis?>',cookie_timestamp);   
     }
 
     $("#jawab").click(function(){
-        showdialog(hitung_nilai(data,id_soal));
-        delete_cookie('zzz',cookie);
+        showdialog(hitung_nilai(data,id_soal),data);
+        delete_cookie('zzz_<?php echo $id_kuis?>',cookie);
+    });
+    $("#exit").click(function(){
+        window.location.href = "<?php echo $this->webroot?>quizzs/viewnew/"+data[0].Quizz.type+"/"+data[0].Quizz.kelas+"/"+data[0].Quizz.pelajaran_id;
     });
 });
 function hitung_nilai(data,id_soal){
         var nilai=0;
         var hitung=0;
-        for (var i = 0; i < data.length; i++) {
-           for (var j = 0; j < data.length; j++) {
-               if (id_soal[i]===data[j].Question.id) {
-                    if($("#jawaban_"+(i)).val()==data[j].Question.answer_true){
+        for (var i = 0; i < id_soal.length; i++) {
+                if (id_soal[i]==data[i].Question.id) {       
+                    if($("#jawaban_"+(i)).val()==data[i].Question.answer_true){
                         nilai+=10;
-                    }else{
-                        continue;
+                        console.log("jawaban"+i);
                     }
-               }else{
-                continue
                }
-           };
-           
         };
-       
+        $('#recheck').val("1");
 /*        $.removeCookie("mytimeout");
         $.removeCookie("timepassed");*/
-        hitung=(nilai/(id_soal.length*1.0))*10.0;
+        console.log(nilai);
+        console.log(id_soal.length);
+         console.log(data.length);
+        
+        var cookie = $.cookie('zzz_<?php echo $id_kuis?>');
+        delete_cookie('zzz_<?php echo $id_kuis?>',cookie);
+        hitung=(nilai/id_soal.length)*10.0;
         hitung=Math.round(hitung);
         return hitung;
 }
-function showdialog(nilai){
+function showdialog(nilai,param){
     $.Dialog({
         shadow: true,
         overlay: false,
@@ -212,7 +207,10 @@ function showdialog(nilai){
         },
         sysBtnCloseClick: function(e){
             //alert('Close button click');
-            window.location.href = "<?php echo $this->webroot?>";
+            //window.location.href = "<?php echo $this->webroot?>";
+            display_soal(param, '0');
+            $("#jawab").hide();
+            $("#exit").show();
         },
         sysBtnMinClick: function(e){
             alert('Min button click');
@@ -221,6 +219,9 @@ function showdialog(nilai){
             alert('Max button click');
         }
     });
+}
+function display_review(){
+
 }
 function display_soal(data, page){
     var soalterjawab=0;
@@ -304,6 +305,34 @@ function display_soal(data, page){
             $("#jawab").show();
         };
     });
+
+    //yang ngasih garis ijo waktu review
+    if($('#recheck').val()=="1"){
+        var highlight=data[page].Question.answer_true;
+        switch(highlight){
+            case "1":
+                var benar="opsiA";
+                break;
+            case "2":
+                var benar="opsiB";
+                break;
+            case "3":
+                var benar="opsiC";
+                break;
+            case "4":
+                var benar="opsiD";
+                break;
+            case "5":
+                var benar="opsiE";
+                break;
+            default:
+                break;   
+
+        }
+        $("#"+(benar)).addClass("soal_terjawab");
+    }
+    console.log("this is "+page);
+    console.log(benar);
     console.log(count);
     console.log(soalterjawab);
     console.log(data[page].Question.id);
