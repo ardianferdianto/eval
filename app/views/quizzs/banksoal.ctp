@@ -23,15 +23,7 @@
             <?php if(empty($data_soal)):?>
                 <center>Tidak ada Soal</center>
             <?php else:?>
-                <div class="infoseparated" style="padding:0 20px;">
-                    <span>FILTER SOAL</span><br/>
-                    <strong>Kelas : </strong>
-                    <div id="placeforkelasfilter" class="input-control select">
-                        <select>
-                            <option></option>
-                        </select>
-                    </div>
-                </div>
+                
                 <div class="infoseparated" style="padding:0 20px;">
                     <strong>&nbsp;<br/>
                     <strong>Tipe : </strong>
@@ -190,7 +182,7 @@
                             info:false
                         }
                     );
-                    $("#placeforkelasfilter").each( function ( i ) {
+                    /*$("#placeforkelasfilter").each( function ( i ) {
 
                             if(i == 0){ //Create just one SelectBox
                                 var select = $('<select class='+i+'><option value="">Semua</option></select>')
@@ -209,7 +201,7 @@
                                 } );
 
                             } 
-                        });
+                        });*/
 
 
                         $("#placefortipefilter").each( function ( i ) {
