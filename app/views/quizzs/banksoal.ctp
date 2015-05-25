@@ -75,8 +75,6 @@
                             }else{
                                 $tipesoal_string = 'Undefined';
                             }
-
-
                             $levelsoal_string = $row['Question']['level'];
                             if($levelsoal_string == 1){
                                 $levelsoal_string = 'Mudah';
@@ -135,9 +133,7 @@
                                 jawab="E";
                                 break;
                             default:jawab="Undefined";
-
                     }
-
                     //player_generator(d.video);
                     return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
                         
@@ -145,22 +141,18 @@
                             '<td>Pilihan A</td>'+
                             '<td>'+d.opsi_a+'</td>'+
                         '</tr>'+
-
                         '<tr>'+
                             '<td>Pilihan B</td>'+
                             '<td>'+d.opsi_b+'</td>'+
                         '</tr>'+
-
                         '<tr>'+
                             '<td>Pilihan C</td>'+
                             '<td>'+d.opsi_c+'</td>'+
                         '</tr>'+
-
                         '<tr>'+
                             '<td>Pilihan D</td>'+
                             '<td>'+d.opsi_d+'</td>'+
                         '</tr>'+
-
                         '<tr>'+
                             '<td>Jawaban Benar</td>'+
                             '<td>'+jawab
@@ -176,74 +168,58 @@
                         '</tr>'+
                     '</table>';
                 }
-
                 $(document).ready(function() {
                    window.table = $('#dataTables-1').DataTable({
                             info:false
                         }
                     );
-                    /*$("#placeforkelasfilter").each( function ( i ) {
+
+                    $("#placeforkelasfilter").each( function ( i ) {
 
                             if(i == 0){ //Create just one SelectBox
                                 var select = $('<select class='+i+'><option value="">Semua</option></select>')
                                     .appendTo( $(this).empty() )
                                     .on( 'change', function () {
-
                                         var val = $(this).val();
-
                                         table.column( 5 ) //Only the first column
                                             .search( val ? '^'+$(this).val()+'$' : val, true, false )
                                             .draw();
                                     } );
-
                                 table.column( 5 ).data().unique().sort().each( function ( d, j ) {
                                     select.append( '<option value="'+d+'">'+d+'</option>' );
                                 } );
-
                             } 
-                        });*/
 
+                        });
 
                         $("#placefortipefilter").each( function ( i ) {
-
                             if(i == 0){ //Create just one SelectBox
                                 var select = $('<select class='+i+'><option value="">Semua</option></select>')
                                     .appendTo( $(this).empty() )
                                     .on( 'change', function () {
-
                                         var val = $(this).val();
-
                                         table.column( 3 ) //Only the first column
                                             .search( val ? '^'+$(this).val()+'$' : val, true, false )
                                             .draw();
                                     } );
-
                                 table.column( 3 ).data().unique().sort().each( function ( d, j ) {
                                     select.append( '<option value="'+d+'">'+d+'</option>' );
                                 } );
-
                             } 
                         });
-
-
                         $("#placeforlevelfilter").each( function ( i ) {
-
                             if(i == 0){ //Create just one SelectBox
                                 var select = $('<select class='+i+'><option value="">Semua</option></select>')
                                     .appendTo( $(this).empty() )
                                     .on( 'change', function () {
-
                                         var val = $(this).val();
-
                                         table.column( 4 ) //Only the first column
                                             .search( val ? '^'+$(this).val()+'$' : val, true, false )
                                             .draw();
                                     } );
-
                                 table.column( 4 ).data().unique().sort().each( function ( d, j ) {
                                     select.append( '<option value="'+d+'">'+d+'</option>' );
                                 } );
-
                             } 
                         });
                         
@@ -262,7 +238,6 @@
                                     console.log('draw1');
                                 //});
                                 console.log('search');
-
                         } );*/
                         /*$('#dataTables-1').on( 'length.dt', function () {
                                 $('#dataTables-1').on( 'draw.dt', function () {
@@ -319,9 +294,7 @@
                                 jawaban_essay:$(element).data('answer2'),
                                 image:$(element).data('image'),
                                 video:$(element).data('video') 
-
                     };
-
                     $("#video_repot").empty();
                     console.log(data);
                     if ( row.child.isShown() ) {
@@ -329,7 +302,6 @@
                         row.child.hide();
                         tr.removeClass('shown');
                         $buttonplus.html('+');
-
                     }
                     else {
                         // Open this row
@@ -383,6 +355,4 @@ $("#importfromexcel").on('click', function(){
         }
     });
 });
-
 </script>
-
