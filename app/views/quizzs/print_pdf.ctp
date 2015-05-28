@@ -190,10 +190,14 @@ $tcpdf->AddPage();
 $tcpdf->SetTextColor(0, 0, 0);
 $tcpdf->SetFont($textfont,'',9);
 $tcpdf->writeHTML($html, true, false, true, false, '');
+
+// force print dialog
+$js .= 'print(true);';
+
+// set javascript
+$tcpdf->IncludeJS($js);
+
 $tcpdf->Output($tipekuis.'-'.$kodeKuis.'.pdf', 'I');
 
 
 ?>
-
-
-

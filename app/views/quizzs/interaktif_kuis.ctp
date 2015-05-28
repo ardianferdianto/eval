@@ -69,6 +69,7 @@
 
                 <div class="countdown" id="timersoal">
                     <div id="countd"></div>
+                    <p id="nilai"></p>
                 </div>
             </div>
 
@@ -120,6 +121,33 @@ $(document).ready(function() {
     $("#page a.soal_nonaktif").click(function(){
         hal=$(this).data('page');
         id_soal[hal]=display_soal(data, hal);
+    });
+    $('html').keydown(function(e){
+       if (e.which==39) {
+            if ($("#nextsoal").is(":visible")==false) {
+                var hals=$("#nextsoal").attr('data-pages');
+                hals=parseInt(hals);
+                hals=hals;
+                id_soal[hals]=display_soal(data, hals);
+            } else{
+                var hals=$("#nextsoal").attr('data-pages');
+                hals=parseInt(hals);
+                hals+=1;
+                id_soal[hals]=display_soal(data, hals);
+            };
+       } else if(e.which==37){
+            if ($("#prevsoal").is(":visible")==false) {
+                var hals=$("#nextsoal").attr('data-pages');
+                hals=parseInt(hals);
+                hals=hals;
+                id_soal[hals]=display_soal(data, hals);
+            } else{
+                var hals=$("#nextsoal").attr('data-pages');
+                hals=parseInt(hals);
+                hals-=1;
+                id_soal[hals]=display_soal(data, hals);
+            };          
+       };
     });
     $("#nextsoal").click(function(){
         var hals=$("#nextsoal").attr('data-pages');
@@ -185,10 +213,13 @@ function hitung_nilai(data,id_soal){
         console.log(id_soal.length);
          console.log(data.length);
         
+
         var cookie = $.cookie('zzz_<?php echo $id_kuis?>');
+        $('#countd').countdown('destroy',{ until: new Date(cookie)});
         delete_cookie('zzz_<?php echo $id_kuis?>',cookie);
         hitung=(nilai/id_soal.length)*10.0;
         hitung=Math.round(hitung);
+        $('#nilai').text(hitung);
         return hitung;
 }
 function showdialog(nilai,param){

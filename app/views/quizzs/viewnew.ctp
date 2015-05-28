@@ -56,7 +56,7 @@
 					</div>
 				</section>
 			</div><!-- /container -->
-	
+	<!-- <embed width="100%" height="100%" name="plugin" src="http://localhost/evaluasi/quizzs/show_pdf/46" type="application/pdf"> -->
 	</div>
 
 
@@ -65,6 +65,12 @@
 	  <h2>Pilih Opsi</h2>
 	  
 	    <div class="contentpopup_opsi"></div>
+	  
+	</div>
+	<div id="preview_kuis" style="display:none;">
+	  <h2><center>PREVIEW</center></h2>
+	  
+	    <div class="contentpopup_preview"></div>
 	  
 	</div>
 	<script type="text/javascript">
@@ -108,7 +114,7 @@
         	
 
 			function load_content_opsi(id_kuis,tipe_kuis){
-				$('.contentpopup_opsi').append('<a href="<?php echo $this->webroot?>quizzs/edit_new/'+tipe_kuis+'/<?php echo $kelasID."/".
+				$('.contentpopup_opsi').empty().append('<a href="<?php echo $this->webroot?>quizzs/edit_new/'+tipe_kuis+'/<?php echo $kelasID."/".
 $mapelID?>/'+id_kuis+'">'+
 	                    '<img src="<?php echo $this->webroot;?>art/edit-icon.png"/><br/><span>'+
 	                    'Edit Tryout</span>'+
@@ -117,7 +123,7 @@ $mapelID?>/'+id_kuis+'">'+
                     '<img src="<?php echo $this->webroot;?>art/interaktif-icon.png"/><br/><span>'+
                     'Interaktif<span>'+
 					'</a>'+
-					'<a href="<?php echo $this->webroot?>quizzs/show_pdf/'+id_kuis+'">'+
+					'<a id="show_pdf" data-quiz='+id_kuis+'>'+
                     '<img src="<?php echo $this->webroot;?>art/preview-icon.png"/><br/><span>'+
                     'Preview<span>'+
 					'</a>'+
@@ -125,14 +131,58 @@ $mapelID?>/'+id_kuis+'">'+
                     '<img src="<?php echo $this->webroot;?>art/savepdf-icon.png"/><br/><span>'+
                     'Simpan sebagai pdf<span>'+
 					'</a>'+
-                    '<a href="<?php echo $this->webroot?>quizzs/show_pdf/'+id_kuis+'">'+
+                    '<a href="<?php echo $this->webroot?>quizzs/print_pdf/'+id_kuis+'" target="_blank">'+
                     '<img src="<?php echo $this->webroot;?>art/print-icon.png"/><br/><span>'+
                     'Print<span>'+
 					'</a>');
+
+	            $("#show_pdf").on('click',function(){
+	            	$hehe=$(this).data('quiz');
+	            	console.log($hehe);
+					/*$('.contentpopup_opsi').empty().append('<embed width="100%" height="100%" name="plugin" src="http://localhost/evaluasi/quizzs/show_pdf/'+$hehe+'" type="application/pdf">');*/
+					$.fancybox.close();$.fancybox({
+				    'width'  : '864px',
+				    maxHeight: 800,
+				    fitToView : true,
+				    padding : 0,
+				    
+				    content: $('#preview_kuis'),
+				    scrolling: 'no',
+
+				    //autoHeight:true,
+				    autoSize  : false,
+				    closeClick  : false,
+				    openEffect  : 'none',
+				    closeEffect : 'none',
+				    helpers : {
+				            title : null            
+				    },
+				    beforeShow: awe($hehe)
+					});
+				});
 			}
 
 			$('.fancybox-inner').css('overflow','hidden');
-            
+			//on('click', 'button.details'
+			function awe(huehe){
+				$('.contentpopup_preview').empty().append('<embed width="100%" height="100%" name="plugin" src="http://localhost/evaluasi/quizzs/show_pdf/'+huehe+'" type="application/pdf">')
+			}
+//			$("#tambah").on('click', function(){
+			function showdialog(datashow){
+			    $.Dialog({
+			        overlay: true,
+			        shadow: true,
+			        flat: true,
+			        icon: '<span class="icon-rocket"></span>',
+			        width: 700,
+			        title: 'TABLE SOAL',
+			        content: '',
+			        onShow: function(_dialog){
+		    			var content=datashow;
+		    			$.Dialog.content(content);
+			        }
+			    });
+			}
         });
     
 	</script>

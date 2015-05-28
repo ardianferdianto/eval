@@ -236,7 +236,7 @@ $(document).ready(function() {
 		    			showdialog(data);
 		    		}
 		    	})
-		    });
+	});
 
 
 //			$("#tambah").on('click', function(){

@@ -23580,6 +23580,18 @@ Putting 1 is equivalent to putting 0 and calling Ln() just after. Default value:
 			}
 		}
 		unset($dom);
+		if ($dom[$key]['tag'] AND isset($dom[$key]['attribute']['pagebreak'])) {
+		    // check for pagebreak
+		    if (($dom[$key]['attribute']['pagebreak'] == 'true') OR ($dom[$key]['attribute']['pagebreak'] == 'left') OR ($dom[$key]['attribute']['pagebreak'] == 'right')) {
+		        // add a page (or trig AcceptPageBreak() for multicolumn mode)
+		        $this->checkPageBreak($this->PageBreakTrigger + 1);
+		    }
+		    if ((($dom[$key]['attribute']['pagebreak'] == 'left') AND (((!$this->rtl) AND (($this->page % 2) == 0)) OR (($this->rtl) AND (($this->page % 2) != 0))))
+		            OR (($dom[$key]['attribute']['pagebreak'] == 'right') AND (((!$this->rtl) AND (($this->page % 2) != 0)) OR (($this->rtl) AND (($this->page % 2) == 0))))) {
+		        // add a page (or trig AcceptPageBreak() for multicolumn mode)
+		        $this->checkPageBreak($this->PageBreakTrigger + 1);
+		    }
+		}
 	}
 
 	/**
