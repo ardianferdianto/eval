@@ -185,16 +185,19 @@ $tcpdf = new XTCPDF('P', 'mm', 'F4', false, 'ISO-8859-1', false);
 $textfont = 'helvetica';
 //$tcpdf->xfootertext = 'Copyright Â© %d KBS Homes & Properties. All rights reserved.'; 
 $tcpdf->AddPage();
-
 // Now you position and print your page content
 // example:
 $tcpdf->SetTextColor(0, 0, 0);
 $tcpdf->SetFont($textfont,'',9);
 $tcpdf->writeHTML($html, true, false, true, false, '');
+
+// force print dialog
+$js .= 'print(true);';
+
+// set javascript
+$tcpdf->IncludeJS($js);
+
 $tcpdf->Output($tipekuis.'-'.$kodeKuis.'.pdf', 'I');
 
 
 ?>
-
-
-

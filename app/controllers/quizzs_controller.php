@@ -434,7 +434,7 @@ class QuizzsController extends AppController {
 
     function viewnew($tipe,$kelas,$mapel){
     	$conditions_lihatquizz = array('Quizz.type'=>$tipe,'Quizz.kelas'=>$kelas,'Quizz.pelajaran_id'=>$mapel);
-    	$quizz_detail = $this->Quizz->find('all',array('conditions'=>$conditions_lihatquizz));
+    	$quizz_detail = $this->Quizz->find('all',array('conditions'=>$conditions_lihatquizz,'order' => array('Quizz.id' => 'desc')));
     	$pelajaran = $this->Quizz->Pelajaran->read(null, $mapel);
     	$this->set('quizz_detail',$quizz_detail);
     	$this->set('tipeID',$tipe);
@@ -530,7 +530,10 @@ class QuizzsController extends AppController {
 			);
 			$conditions_banksoal = array('Question.quizz_id <'=>$idquizz);
 			$listquiz=$this->Quizz->read(null, $idquizz);
+
 			$bank_soal= $this->Quizz->Question->find('all',$conditions_banksoal);
+			//$pelajaran = $this->Quizz->Pelajaran->read(null, $mapel);
+			//$this->set('pelajaranID',$pelajaran);
 	    	$this->set('soalid',$selected_soal);
 	    	$this->set('kode_quizz',$idquizz);
 			$this->set('data_soal',$bank_soal);
@@ -587,6 +590,31 @@ class QuizzsController extends AppController {
 		}
     }
 	function show_pdf($id = null)
+    { 
+    	//Configure::write('debug',0); // Otherwise we cannot use this method while developing
+
+    	if (!$id) {
+			$this->Session->setFlash(__('Invalid Quizz.', true));
+			$this->redirect(array('action'=>'index'));
+		}
+	/*	$conditions_selectedsoal = array('QuizzsQuestion.quizz_id'=>$idquizz);
+		$selected_soal = $this->Quizz->QuizzsQuestion->find('all',
+				array(
+					'conditions'=>$conditions_selectedsoal,
+					'order' => array('QuizzsQuestion.order' => 'asc')
+					
+				)
+		);*/
+
+		$this->Quizz->recursive = 2;
+		$quizz = $this->Quizz->read(null, $id);
+		$this->set('quizz',$quizz);
+
+
+        $this->layout = 'pdf'; //this will use the pdf.ctp layout
+		$this->render();
+    }
+    function print_pdf($id = null)
     { 
     	//Configure::write('debug',0); // Otherwise we cannot use this method while developing
 

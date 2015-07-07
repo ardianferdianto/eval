@@ -63,7 +63,7 @@
 
 													if($question['Question']['images'] != null || !empty ($question['Question']['images'])):?>
 													<br/>
-													<label>Rubah Gambar</label>
+													<label>Rubah Gambar </label>
 
 													<img src="<?php echo $this->webroot.$question['Question']['images']; ?>" width="300" />
 													<?php else: ?>

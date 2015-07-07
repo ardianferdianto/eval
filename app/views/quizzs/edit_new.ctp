@@ -35,7 +35,7 @@
 							<div class="titlesecond">
 								<h3 class="tryouttitle3">KELAS : <?php echo $kelasID; ?></h3>
 								<h3 class="tryouttitle3">MATA PELAJARAN : 
-												<?php echo $pelajaranID['Pelajaran']['nama'];?>
+												<?php echo $quizz['Pelajaran']['nama'];?>
 								</h3>
 							</div>
 							

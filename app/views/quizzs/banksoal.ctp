@@ -134,6 +134,13 @@
                                 break;
                             default:jawab="Undefined";
                     }
+                    var gambar="";
+                    if (d.image!=""){
+                        gambar="<?php echo $this->webroot; ?>"+d.image;
+                    }else{
+                        gambar="";
+                    }
+                    console.log(gambar);
                     //player_generator(d.video);
                     return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
                         
@@ -160,7 +167,7 @@
                         '</tr>'+
                         '<tr>'+
                             '<td>Image</td>'+
-                            '<td>'+'<img id="my_image" height="360px" width="240px" src="<?php echo $this->webroot; ?>'+d.image+'"/>'+'</td>'+
+                            '<td>'+'<img id="my_image" height="360px" width="240px" src="'+gambar+'"/>'+'</td>'+
                         '</tr>'+
                         '<tr>'+
                             '<td>Video</td>'+
