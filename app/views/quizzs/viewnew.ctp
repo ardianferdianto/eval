@@ -123,7 +123,7 @@ $mapelID?>/'+id_kuis+'">'+
                     '<img src="<?php echo $this->webroot;?>art/interaktif-icon.png"/><br/><span>'+
                     'Interaktif<span>'+
 					'</a>'+
-					'<a id="show_pdf" data-quiz='+id_kuis+'>'+
+					'<a href="#" id="show_pdf" data-quiz='+id_kuis+'>'+
                     '<img src="<?php echo $this->webroot;?>art/preview-icon.png"/><br/><span>'+
                     'Preview<span>'+
 					'</a>'+
@@ -165,7 +165,7 @@ $mapelID?>/'+id_kuis+'">'+
 			$('.fancybox-inner').css('overflow','hidden');
 			//on('click', 'button.details'
 			function awe(huehe){
-				$('.contentpopup_preview').empty().append('<embed width="100%" height="100%" name="plugin" src="http://localhost/evaluasi/quizzs/show_pdf/'+huehe+'" type="application/pdf">')
+				$('.contentpopup_preview').empty().append('<embed width="100%" height="100%" name="plugin" src="<?php echo $this->webroot?>quizzs/show_pdf/'+huehe+'" type="application/pdf">')
 			}
 //			$("#tambah").on('click', function(){
 			function showdialog(datashow){

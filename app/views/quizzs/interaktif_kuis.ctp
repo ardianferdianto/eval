@@ -94,8 +94,14 @@ function delete_cookie(name,value){
      $.cookie(name,value, { expires: -1});
 }
 $(document).ready(function() { 
-   
-    var data = $.parseJSON('<?php echo json_encode($soal) ?>');
+    <?php 
+        $soal = str_replace(array("&#13;","\n","\r","\t"), '', $soal);
+        //$soal = trim(str_replace('"', "'", $soal));
+        $tes=json_encode($soal);
+        $tes = str_replace("'", '&#39;', $tes);
+        //$soal = str_replace('"', '&#34;', $soal);
+    ?>
+    var data = $.parseJSON('<?php echo $tes ?>');
     window.count=0;
     var page=0;
     var hal=0;
@@ -290,14 +296,14 @@ function display_soal(data, page){
     } else{
         $('#contain div label input[type="radio"]').attr('checked',false); 
     };
-    if (data[page].Question.images!=null) {
+    if (data[page].Question.images!="") {
         var image='<?php echo $this->webroot?>'+data[page].Question.images;
         //$("#my_image").attr("src",image); 
         $("#my_image").empty().append('<img id="my_image" src="'+image+'"/>');
     }else{
         $("#my_image").empty().append('<img id="my_image"/>');
     }
-    if (data[page].Question.video!=null) {
+    if (data[page].Question.video!="") {
         var video='<?php echo $this->webroot?>'+data[page].Question.video;
         //$("#my_image").attr("src",image); 
         //$("#containerPlayer").empty().append('<img id="my_image" src="'+image+'"/>');

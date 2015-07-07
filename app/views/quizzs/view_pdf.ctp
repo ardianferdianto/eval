@@ -150,6 +150,7 @@ App::import('Vendor','xtcpdf');
 $tcpdf = new XTCPDF('P', 'mm', 'F4', false, 'ISO-8859-1', false);
 $textfont = 'helvetica';
 $tcpdf->AddPage();
+$tcpdf->setEqualColumns(2, 57);
 
 // Now you position and print your page content
 // example:
