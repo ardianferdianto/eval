@@ -198,14 +198,11 @@ CREATE TABLE IF NOT EXISTS `profiles` (
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
 -- Dumping data for table `profiles`
 --
-
-INSERT INTO `profiles` (`id`, `name`, `alamat`, `no_tlp`, `tgl_berdiri`, `status`, `email`, `license_key`, `val_sync`, `image`, `time_ganda_mudah`, `time_ganda_sedang`, `time_ganda_sulit`, `time_essay_mudah`, `time_essay_sedang`, `time_essay_sulit`, `created`, `modified`) VALUES
-(1, 'SDN 15 pagi', 'ASDFSDFDSAFASDF', '45556456456', 1987, 1, 'taufiq.ridha@gmail.com', '', '', 'img/2011-09-01-200407tut-wuri-handayani.png', 1, 2, 3, 1, 2, 3, '2012-06-25 08:34:46', '2014-03-26 00:31:13');
 
 -- --------------------------------------------------------
 

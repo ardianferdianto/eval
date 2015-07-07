@@ -43,7 +43,7 @@
 	
 	<script type="text/javascript">
 	//<![CDATA[
-	Event.observe('run_install', 'click', function(event) { new Ajax.Updater('status_sims','/sims/install/runDbSims/run:1', {asynchronous:true, evalScripts:true, requestHeaders:['X-Update', 'status_sims']}) }, false);
+	Event.observe('run_install', 'click', function(event) { new Ajax.Updater('status_sims','/eval_sd/install/runDbApp1/run:1', {asynchronous:true, evalScripts:true, requestHeaders:['X-Update', 'status_sims']}) }, false);
 	//]]>
 	</script>
 	<div id="status">
@@ -53,7 +53,7 @@
 					<div class="clearfix" id="status_sims">
 					<span class="logo-menu" id="sims">&nbsp;</span>
 					<p>
-					<?php echo $html->image('loading-install.gif');?><span>Harap tunggu sistem sedang menginstall SIMS</span>
+					<?php echo $html->image('loading-install.gif');?><span>Harap tunggu sistem sedang menginstall Aplikasi</span>
 					</p>
 					</div>
 				</li>

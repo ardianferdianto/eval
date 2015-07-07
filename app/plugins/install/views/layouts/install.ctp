@@ -5,7 +5,7 @@
     <title><?php echo $title_for_layout; ?> - <?php __('Installasi MIBS'); ?></title>
     <?php
         echo $html->css('install');
-		echo  $javascript->link('jquery-1.3.2.min');		
+		echo  $javascript->link('jquery-1.10.1.min');		
 		echo  $javascript->link(array('prototype','scriptaculous'));
 		echo  $javascript->link('highlight');
         echo $scripts_for_layout;
@@ -15,10 +15,11 @@
 <body>
 	<div id="wrap">
 		<?php $session->flash(); ?>
-		<?php echo $html->image('illustrator.jpg',array('id'=>'main'));?>
+		<img src="<?php echo $this->webroot;?>art/install/illustrator.jpg" id="main">
+		
 		<div id="content">
 			<div class="header">
-			<h1 class="welcome">Selamat Datang di eschool</h1>
+			<h2 class="">Selamat Datang di INSTALASI Applikasi <br/><?php echo $appLicationName;?></h2>
 			
 			</div>
 			<div class="menu" id="install">
@@ -28,10 +29,11 @@
 			</div>
 			<p class="footer <?php if ($footerSpecial == true){echo 'special';} ?>">
 				<small> 
-						&#169; Copyright 2011 | Powered by E-School SPECTRA MULTIMEDIA
+						&#169; Copyright 2015 | Powered by EDUCATION EDUSOFT
 						<br/>
-						Semua hak cipta dilindungi oleh undang - undang dan terdaftar atas PT.SPECTRIDO MULTIMEDIA NUSANTARA 
+						Semua hak cipta dilindungi oleh undang - undang dan terdaftar atas EDUSOFT 
 						</br/>
+						<img width="100px" src="<?php echo $this->webroot;?>art/logoedusoft.png">
 						
 				</small>
 			</p>

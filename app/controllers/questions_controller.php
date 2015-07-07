@@ -5,21 +5,91 @@ class QuestionsController extends AppController {
 	var $helpers = array('Html', 'Form','Video');
 	//var $vendor  = array();
 
+	var $licensestatus = 'undefined';
 
 	function beforeFilter() {
 	    parent::beforeFilter();
 		//$this->Auth->allow('*');
 	   // $this->set('menuTab', 'kelas');
 	    //$this->set('menuTabChild', 'kuis');
-
+	    //$licensestatus = 'undefined';
 	    /*if($this->Auth->user('group_id') == 3){
 	    	$this->Session->setFlash( 'Anda tidak berhak masuk ke halaman ini','flash_erorr');
 	    	$this->redirect(array('controller'=>'users','action'=>'home'));
 	    }*/
-
+	    
 	}
 
 
+	function __getlic(){
+		$this->Question->bindModel(
+	    	array('belongsTo' => 
+		    	array(
+				'Profile' => array(
+		             'className' => 'Profile',
+		             'foreignKey'=> ''
+		         )
+		        )
+		    )
+		);
+		
+		$profils = $this->Question->Profile->read(null, 1);
+		$lickey = $profils['Profile']['license_key'];
+		$licVal = $profils['Profile']['val_sync'];
+		
+		$license = array();
+		$license['lickey'] = $lickey;
+		$license['licVal'] = $licVal;
+		//array_push($license, $lickey, $licVal);
+		
+		return $license;
+		
+	}
+	
+	function __ceklicense($getLic,$getIon){
+		
+		//Check License first!!!
+		$zend_id = $this->getZendid();
+		$ion = $getIon;
+		$get_lic = $getLic;
+		//ion:1-6-1-1315771514-c4ca4238znd:M:NA22Q-RNVUA-6TP86-GD6ZNM:FC82D-K2SGF-5ASZ8-F2ED2
+		
+		
+		$get_local_lic = 'ion:'.$ion.'znd:'.$zend_id;
+		$lic_hashed = Security::hash($get_local_lic, null, true);
+		
+		if($getLic == 'Trial Version' &&  $getIon == 'Trial Version'){
+			$this->licensestatus = 'Trial';
+		}
+		else if($get_lic != $lic_hashed){
+			echo '<br>
+			<b style="color:red;">Fatal error:</b>  <br>License yang anda gunakan <b>tidak valid!</b> atau <b>tidak legal!!</b>. Silahkan hubungi costumer support untuk keterangan lebih lanjut<br>';
+			($this->webroot()) ? exit : NULL;
+		
+		}
+		//return $this->licensestatus;
+		
+	}
+
+	function getZendid(){
+
+		$idZend = zend_get_id();
+
+		$banyakIdZend = count($idZend);
+
+		if($banyakIdZend > 1){	
+			foreach ($idZend as $id => $n){
+				$idZendSelected = $idZend[0];
+			}
+		}else if($banyakIdZend == 1){
+			$idZendSelected = $idZend;
+		}else{
+			$idZendSelected = null;
+		}
+
+	return $idZendSelected;
+
+	}
 
 	function proses($kelas=null,$mapel=null){
 
@@ -96,10 +166,16 @@ class QuestionsController extends AppController {
 	}
 
 	function homenew(){
+
+		//check license
+		$licInfo = $this->__getlic();
+		$this->__ceklicense($licInfo['licVal'],$licInfo['lickey']);
+
 		$landing = true;
 		$this->set('landing',$landing);
 		$subject_list = $this->Question->Pelajaran->find('all');
 		$this->set('kumpulanmatapelajaran',$subject_list);
+		$this->set('trial',$this->licensestatus);
 	}
 
 	function current_add($questionId = null,$fromurl = null,$matpelId = null,$kelas = null) {

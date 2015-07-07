@@ -27,7 +27,7 @@ class InstallController extends InstallAppController {
  */
     var $uses = null;
 
-	var $appLicationName = 'SIMS Spectra';
+	var $appLicationName = 'EVALUASI SD';
 /**
  * No components required
  *
@@ -35,12 +35,13 @@ class InstallController extends InstallAppController {
  * @access public
  */
     var $components = null;
+    //var $components = array('Session');
 
 	//default licoff
 	var $licoffdefault ='1-4-3-1318566926-eccbc';
 	
 	//URL SITE
-	var $urlDefault ='http://localhost/sims/';
+	var $urlDefault ='http://localhost/eval_sd/';
 /**
  * beforeFilter
  *
@@ -52,9 +53,9 @@ class InstallController extends InstallAppController {
         $this->layout = 'install';
         App::import('Component', 'Session');
         $this->Session = new SessionComponent;
-		$appLicationName = 'Eteaching Spectra';
+		$appLicationName = 'EVALUASI SD';
 		$this->set('appLicationName',$appLicationName);
-		$urlSite = 'http://localhost/sims/';
+		$urlSite = 'http://localhost/eval_sd/';
 		$this->set('urlSite',$urlSite);
     }
 /**
@@ -77,7 +78,7 @@ class InstallController extends InstallAppController {
     }
 	
 	function precheck() {
-		$this->__checkInstallation();
+		//$this->__checkInstallation();
 		
         $this->pageTitle = __('Pre-Installation: Pengecekan System', true);
 		$results['php'] = $this->__validatephp();
@@ -123,7 +124,7 @@ class InstallController extends InstallAppController {
 	function __validateConection()
 	{
 		//Initiates a socket connection to www.itechroom.com at port 80
-		$conn = @fsockopen("www.taufiqridha.com", 80, $errno, $errstr, 5);
+		$conn = @fsockopen("www.eschool-indonesia.com", 80, $errno, $errstr, 5);
 		if (!$conn)
 		{
 			$results['message'] = 'Anda tidak terhubung dengan koneksi internet, Kami menyarankan anda terhubung dengan internet';
@@ -143,11 +144,11 @@ class InstallController extends InstallAppController {
 	function __validateBrowser(){
 		App::import('Vendor', 'Install.browser');
 		$browser = new Browser();
-		if( $browser->getBrowser() == Browser::BROWSER_FIREFOX && $browser->getVersion() >= 5 ) {
-			$results['message'] = $this->appLicationName.' dan instalasi '. $this->appLicationName.' berjalan sempurna di Firefox 5.0 atau lebih.';
+		if( $browser->getBrowser() == Browser::BROWSER_CHROME && $browser->getVersion() >= 5 ) {
+			$results['message'] = $this->appLicationName.' dan instalasi '. $this->appLicationName.' berjalan sempurna di chrome 5.0 atau lebih.';
 			$results['status'] = 1;
 		}else{	
-			$results['message'] = $this->appLicationName.' dan instalasi '. $this->appLicationName.' membutuhkan firefox versi 5 atau lebih, silahkan install terlebih dahulu';
+			$results['message'] = $this->appLicationName.' dan instalasi '. $this->appLicationName.' membutuhkan chrome versi 5 atau lebih, silahkan install terlebih dahulu';
 			$results['status'] = 0;
 		}
 		return $results;
@@ -158,11 +159,11 @@ class InstallController extends InstallAppController {
  * @return void
  */
     function database() {
-		$this->__checkInstallation();
+		//$this->__checkInstallation();
 		
-		if (!$this->Session->check('Install.preCheck')) {
-			$this->redirect(array('action' => 'index'));
-		}
+		//if (!$this->Session->check('Install.preCheck')) {
+		//	$this->redirect(array('action' => 'index'));
+		//}
 		
         $this->pageTitle = __('Langkah 1: Persiapan Database', true);
 
@@ -171,9 +172,8 @@ class InstallController extends InstallAppController {
 			$link = mysql_connect($this->data['Install']['host'], $this->data['Install']['login'], $this->data['Install']['password']);
 			
 			$databases = array();
-			$databases['sims'] = "sims2";
-			//$databases['eschool'] = "eschools_elips";
-			//$databases['lms'] = "eschools_lms";
+			$databases['dbapp'] = "evaluasi_sd";
+
 			
 			if (!$link) {
 			    
@@ -217,9 +217,8 @@ class InstallController extends InstallAppController {
 			$link = mysql_connect($this->Session->read('Install.hostDb'), $this->Session->read('Install.loginDb'), $this->Session->read('Install.passwordDb'));
 			
 			$databases = array();
-			$databases['sims'] = "sims2";
-			//$databases['eschool'] = "eschools_elips";
-			//$databases['lms'] = "eschools_lms";
+			$databases['dbapp'] = "evaluasi_sd";
+
 			
 			if (!$link) {
 			    
@@ -241,12 +240,9 @@ class InstallController extends InstallAppController {
 				if ($db_count2 == 1) {
 					$this->Session->setFlash(__('<strong>Sukses:</strong> menghapus database, silahkan lanjutkan penginstalan.', true));
 					$this->redirect(array('action' => 'database'));
-					
-					
-	                
+
 				} else {
 					$this->Session->setFlash(__('<strong>Erorr:</strong> Tidak dapat menghapus database, silahkan hapus secara manual', true));
-				    
 				}
 			}
 		}
@@ -254,17 +250,17 @@ class InstallController extends InstallAppController {
 
 	function data_sekolah() {
 		$this->loadModel('Install.Data');
-		$this->__checkInstallation();
+		//$this->__checkInstallation();
 		
-		/*$zend_display = $this->getZendid();
+		$zend_display = $this->getZendidLocal();
 		
-		$this->set('zend_display',$zend_display);*/
+		$this->set('zend_display',$zend_display);
 		
 		//cek db Install
 		
-		if (!$this->Session->check('Install.databaseCreated')) {
-			$this->redirect(array('action' => 'index'));
-		}
+		//if (!$this->Session->check('Install.databaseCreated')) {
+		//	$this->redirect(array('action' => 'index'));
+		//}
 		
 		$this->pageTitle = __('Langkah 2: Profile Sekolah', true);
 		
@@ -273,265 +269,22 @@ class InstallController extends InstallAppController {
         if (!empty($this->data)) {
 			$this->Data->set($this->data);
 			if ($this->Data->validates()) {
-
+				
+				// write data to session  file
+				$this->Session->write('Install.profile_name', $this->data['Data']['profile_name']);
+				$this->Session->write('Install.profile_alamat', $this->data['Data']['profile_alamat']);
+				$this->Session->write('Install.profile_telp', $this->data['Data']['profile_telp']);
+				$this->Session->write('Install.profile_tahunBerdiri', $this->data['Data']['profile_tahunBerdiri']);
+				$this->Session->write('Install.profile_status', $this->data['Data']['profile_status']);
+				$this->Session->write('Install.profile_email', $this->data['Data']['profile_email']);
+				
+				$this->Session->write('Install.licenseKey', 'Trial Version');
 				$this->Session->write('Install.ionoCreated', true);
-			
-			
-				/*if(!empty($this->data['Data']['licenseKey'])){
-				
-				$lic_key = $this->data['Data']['licenseKey'];
-			
-				# $Date: 2006-06-10 11:45:08 +0100 (Sat, 10 Jun 2006) $
-				# iono Licensing Integration #2 (curl) - http://www.olate.co.uk
-
-				# **************************************************************************
-				# User details must be added in here. This would usually be done in another
-				# file. See documentation for help and examples.
-
-				$license_key = $lic_key; // License's key
-				# *************************************************************************
-
-				# You do not need to edit any of the following code
-
-				// Error texts
-				$error_text['disabled'] = '<p><strong>License Error:</strong> License anda telah di non-aktifkan. Silahkan hubungi costumer support anda.</p>';
-				$error_text['suspended'] = '<p><strong>License Error:</strong> License anda telah di non-aktifkan. Silahkan hubungi costumer support anda..</p>';
-				$error_text['expired'] = '<p><strong>License Error:</strong> License anda telah expired. Silahkan hubungi costumer support anda..</p>';
-				$error_text['exceeded'] = '<p><strong>License Error:</strong> License anda melebihi batas install. Silahkan hubungi costumer support anda.</p>';
-				$error_text['invalid_user'] = '<p><strong>License Error:</strong> License yang dimasukkan salah. Silahkan hubungi costumer support anda.</p>';
-				$error_text['invalid_code'] = '<p><strong>License Error:</strong> License yang dimasukkan salah. Silahkan hubungi costumer support anda.</p>';
-				$error_text['invalid_hash'] = '<p><strong>License Error:</strong> License Erorr. Silahkan hubungi costumer support anda.</p>.</p>';
-				$error_text['wrong_product'] = '<p><strong>License Error:</strong> License yang anda masukkan bukan untuk produk ini. Silahkan hubungi costumer support anda.</p>';
-				$error_text['koneksi'] = '<p><strong>Koneksi Erorr:</strong> Anda tidak terhubung dengan internet, installasi membutuhkan koneksi internet.</p>';
-			
-				// Home call details
-				$home_url_site = 'http://eschool-indonesia.com';
-				$home_url_port = 80;
-				$home_url_iono = '/license/remote.php';
-				$user_defined_string = 'ca952ce95a93';
-				
-				
-
-				// Execution options
-				$comm_terminate = true;
-				$license_terminate = true;
-				$product_license_id = 2;
-
-				// Check that the $license_key provided is for this product
-				if (!empty($product_license_id))
-				{
-					$key_parts = explode('-', $license_key);
-					$product_id = array(substr(md5($product_license_id), 0, 8));
-
-					if (!in_array($key_parts[4], $product_id))
-					{
-						$this->Session->setFlash(__($error_text['wrong_product'], true));
-						$this->Session->delete('Install.ionoCreated');
-						unset($home_url_site, $home_url_iono, $user_defined_string, $request, $header, $return, $fpointer, $content, $status, $hash);
-						//echo $error_text['wrong_product'];
-						//($license_terminate) ? exit : NULL;
-					}
-				}
-
-				// Build request
-				$request = 'remote=licenses&type=2&license_key='.urlencode(base64_encode($license_key));
-				$request .= '&host_ip='.urlencode(base64_encode($_SERVER['SERVER_ADDR'])).'&host_name='.urlencode(base64_encode($_SERVER['SERVER_NAME']));
-				$request .= '&hash='.urlencode(base64_encode(md5($request)));
-
-				$request = $home_url_site.$home_url_iono.'?'.$request;
-
-				// New cURL resource
-				$ch = curl_init();
-
-				// Set options
-				curl_setopt($ch, CURLOPT_URL, $request);
-				curl_setopt($ch, CURLOPT_PORT, $home_url_port);
-				curl_setopt($ch, CURLOPT_HEADER, false);
-				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-				curl_setopt($ch, CURLOPT_USERAGENT, 'iono (www.olate.co.uk/iono)');
-
-				// Execute
-				$content = curl_exec($ch);
-
-				// Close
-				curl_close($ch);
-
-				if (!$content)
-				{
-					$this->Session->setFlash(__($error_text['koneksi'], true));
-					$this->Session->delete('Install.ionoCreated');
-					unset($home_url_site, $home_url_iono, $user_defined_string, $request, $header, $return, $fpointer, $content, $status, $hash);
-					
-					//($comm_terminate) ? exit : NULL;
-				}
-
-				// Split up the content
-				$content = explode('-', $content);
-				$status = $content[0];
-				$hash = $content[1];
-
-				if ($hash == md5($user_defined_string.$_SERVER['SERVER_NAME']))
-				{
-					switch ($status)
-					{
-						case 0: // Disabled
-							//echo $error_text['disabled'];
-							$this->Session->setFlash(__($error_text['disabled'], true));
-							unset($home_url_site, $home_url_iono, $user_defined_string, $request, $header, $return, $fpointer, $content, $status, $hash);
-							$this->Session->delete('Install.ionoCreated');
-							//($license_terminate) ? exit : NULL;
-							break;
-						case 1: // Ok
-							// write data to session  file
-							$this->Session->write('Install.profile_name', $this->data['Data']['profile_name']);
-							$this->Session->write('Install.profile_alamat', $this->data['Data']['profile_alamat']);
-							$this->Session->write('Install.profile_telp', $this->data['Data']['profile_telp']);
-							$this->Session->write('Install.profile_tahunBerdiri', $this->data['Data']['profile_tahunBerdiri']);
-							$this->Session->write('Install.profile_status', $this->data['Data']['profile_status']);
-							$this->Session->write('Install.profile_email', $this->data['Data']['profile_email']);
-							$this->Session->write('Install.licenseKey', $this->data['Data']['licenseKey']);
-							$this->Session->write('Install.ionoCreated', true);
-							
-							//create licVal (for sync security to instalation)
-							
-							//call zend
-							$zend_id = $this->getZendid();
-							//Create!!
-							$licValGet = 'ion:'.$this->Session->read('Install.licenseKey').'znd:'.$zend_id;
-							
-							//hash before save
-							$licValHashed = Security::hash($licValGet, null, true);
-							
-							//STOREE!
-							$this->Session->write('Install.licVal', $licValHashed);
-							
-							//End create licVal
-							
-							break;
-							
-						case 2: // Suspended
-							//echo $error_text['suspended'];
-							$this->Session->setFlash(__($error_text['suspended'], true));
-							$this->Session->delete('Install.ionoCreated');
-							unset($home_url_site, $home_url_iono, $user_defined_string, $request, $header, $return, $fpointer, $content, $status, $hash);
-							//($license_terminate) ? exit : NULL;
-							break;
-						case 3: // Expired
-							//echo $error_text['expired'];
-							$this->Session->setFlash(__($error_text['expired'], true));
-							$this->Session->delete('Install.ionoCreated');
-							unset($home_url_site, $home_url_iono, $user_defined_string, $request, $header, $return, $fpointer, $content, $status, $hash);
-							//($license_terminate) ? exit : NULL;
-							break;
-						case 4: // Exceeded allowed installs
-							//echo $error_text['exceeded'];
-							$this->Session->setFlash(__($error_text['exceeded'], true));
-							$this->Session->delete('Install.ionoCreated');
-							//$this->redirect(array('action' => 'index'));
-							unset($home_url_site, $home_url_iono, $user_defined_string, $request, $header, $return, $fpointer, $content, $status, $hash);
-							//($license_terminate) ? exit : NULL;
-							break;
-						case 10: // Invalid user ID or license key
-							//echo $error_text['invalid_user'];
-							$this->Session->setFlash(__($error_text['invalid_user'], true));
-							$this->Session->delete('Install.ionoCreated');
-							unset($home_url_site, $home_url_iono, $user_defined_string, $request, $header, $return, $fpointer, $content, $status, $hash);
-							//($license_terminate) ? exit : NULL;
-							break;
-						default: // Invalid status code
-							//echo $error_text['invalid_code'];
-							$this->Session->setFlash(__($error_text['invalid_code'], true));
-							$this->Session->delete('Install.ionoCreated');
-							unset($home_url_site, $home_url_iono, $user_defined_string, $request, $header, $return, $fpointer, $content, $status, $hash);
-							//($license_terminate) ? exit : NULL;
-							break;
-					}
-				}
-				else
-				{
-					//echo $error_text['invalid_hash'];
-					$this->Session->setFlash(__($error_text['invalid_hash'], true));
-					$this->Session->delete('Install.ionoCreated');
-					unset($home_url_site, $home_url_iono, $user_defined_string, $request, $header, $return, $fpointer, $content, $status, $hash);
-					//($license_terminate) ? exit : NULL;
-				}
-
-				// Clean up variables for security
-				unset($home_url_site, $home_url_iono, $user_defined_string, $request, $header, $return, $fpointer, $content, $status, $hash);
-			
-				}
-				
-				elseif (!empty($this->data['Key']['keyfeedback'])) {
-				
-					//Cek if data valid
-					$keyfeedback =$this->data['Key']['keyfeedback'];
-					$licoff =$this->licoffdefault;
-					$zend_id = $this->getZendid();
-
-					$licValGet = 'ion:'.$licoff.'znd:'.$zend_id;
-
-					$licValHashed = Security::hash($licValGet, null, true);
-					$result = 'dontknow';
-					
-					$this->set('result',$result);
-					if( $this->data['Key']['keyfeedback'] == $licValHashed){
-						
-						// write data to session  file
-						$this->Session->write('Install.profile_name', $this->data['Data']['profile_name']);
-						$this->Session->write('Install.profile_alamat', $this->data['Data']['profile_alamat']);
-						$this->Session->write('Install.profile_telp', $this->data['Data']['profile_telp']);
-						$this->Session->write('Install.profile_tahunBerdiri', $this->data['Data']['profile_tahunBerdiri']);
-						$this->Session->write('Install.profile_status', $this->data['Data']['profile_status']);
-						$this->Session->write('Install.profile_email', $this->data['Data']['profile_email']);
-						$this->Session->write('Install.licenseKey', $licoff);
-						$this->Session->write('Install.ionoCreated', true);
-
-						//create licVal (for sync security to instalation)
-
-						$keyfeedback =$this->data['Key']['keyfeedback'];
-
-						//hash before save
-						$licValHashed = $keyfeedback;
-
-						//STOREE!
-						$this->Session->write('Install.licVal', $licValHashed);
-
-						//End create licVal
-						
-		        		
-						//$this->set('licValHasheds',$licValHasheds);
-
-						//$this->set('keyfeedback',$this->data['Data']['keyfeedback']);
-					}else
-					
-					
-					{
-						$this->Session->delete('Install.ionoCreated');
-						$this->Session->setFlash(__('License erorr offline, Instalasi tidak dapat dilanjutkan, silahkan ulangi', true));
-						unset($keyfeedback, $licoff, $zend_ids, $licValGets, $licValHasheds, $return, $fpointer, $content, $status, $hash);
-						
-						
-
-					}
-					
-					
-				
-				
-				}
-				else{
-					$this->Session->delete('Install.ionoCreated');
-					//unset($keyfeedback, $licoff, $zend_ids, $licValGets, $licValHasheds, $return, $fpointer, $content, $status, $hash);
-					$this->Session->setFlash(__('License erorr, Instalasi tidak dapat dilanjutkan, silahkan ulangi', true));
-				}*/
-					
-			
-	            if($this->Session->check('Install.ionoCreated')) {
-					$this->Session->write('Install.profileCreated', true);
-	                $this->redirect(array('action' => 'data'));
-	            }
+				$this->Session->write('Install.licVal', 'Trial Version');
+                $this->redirect(array('action' => 'data'));
 	        
 	        //IF LOCAL ACTIVATE
-				
+			
 			}else{
 				$this->Session->setFlash(__('Data erorr, tidak dapat melanjutkan proses, silahkan ulangi <br/> Perhatikan kolom merah untuk data yang erorr dibawah', true));
 			}
@@ -546,22 +299,26 @@ class InstallController extends InstallAppController {
  */
     function data() {
 		
-		$this->__checkInstallation();
+		//$this->__checkInstallation();
 		
-		if (!$this->Session->check('Install.profileCreated')) {
-			$this->redirect(array('action' => 'index'));
-		}
+		//if (!$this->Session->check('Install.profileCreated')) {
+		//	$this->redirect(array('action' => 'index'));
+		//}
 		$this->set('footerSpecial',true);
         $this->pageTitle = __('Step 3: Proses Instalasi', true);
 		$this->Session->write('Install.completeInstall', 0);
 		$this->Session->write('Install.startInstall', true);
+
+		$showdatasubmitted = $this->Session->read('Install');
+		
+		$this->set('showdatasubmitted',$showdatasubmitted);
         
 		
 
         
     }
 	
-	function runDbSims(){
+	function runDbApp1(){
 		if (isset($this->params['named']['run'])) {
 			
             App::import('Core', 'File');
@@ -571,7 +328,7 @@ class InstallController extends InstallAppController {
             if(!$db->isConnected()) {
                 $this->Session->setFlash(__('Could not connect to database.', true));
             } else {
-                $this->__executeSQLScript($db, CONFIGS.'sql'.DS.'sims2.sql');
+                $this->__executeSQLScript($db, CONFIGS.'sql'.DS.'eval_final.sql');
 				//$this->__saveInifile();
 				//Configure::write('debug', '0');
 				$currentInstall = $this->Session->read('Install.completeInstall');
@@ -579,61 +336,13 @@ class InstallController extends InstallAppController {
 				$this->Session->write('Install.completeInstall', $add);
 				$this->__cekCompleteInstall();
 				$this->set('checkInstall',$this->Session->read('Install.completeInstall'));
-				$this->render('/install/successInstallSims','ajax');
+				$this->render('/install/successInstallApp1','ajax');
                 //$this->redirect(array('action' => 'finish'));
             }
         }
 	}
 	
-	function runDbElips(){
-		if (isset($this->params['named']['run'])) {
-			
-            App::import('Core', 'File');
-            App::import('Model', 'ConnectionManager');
-            $db = ConnectionManager::getDataSource('test_elips');
-
-            if(!$db->isConnected()) {
-                $this->Session->setFlash(__('Could not connect to database.', true));
-            } else {
-                $this->__executeSQLScript($db, CONFIGS.'sql'.DS.'elips.sql');
-				//$this->__saveInifile();
-				//Configure::write('debug', '0');
-				$currentInstall = $this->Session->read('Install.completeInstall');
-				$add = ($currentInstall)+1;
-				$this->Session->write('Install.completeInstall', $add);
-				$this->__cekCompleteInstall();
-				$this->set('checkInstall',$this->Session->read('Install.completeInstall'));
-				$this->render('/install/successInstallElips','ajax');
-                //$this->redirect(array('action' => 'finish'));
-            }
-        }
-	}
 	
-	function runDbLms(){
-		if (isset($this->params['named']['run'])) {
-			
-            App::import('Core', 'File');
-            App::import('Model', 'ConnectionManager');
-            $db = ConnectionManager::getDataSource('test_lms');
-
-            if(!$db->isConnected()) {
-                $this->Session->setFlash(__('Could not connect to database.', true));
-            } else {
-				
-                $this->__executeSQLScript($db, CONFIGS.'sql'.DS.'lms.sql');
-				//$this->__saveInifile();
-
-				//Configure::write('debug', '0');
-				$currentInstall = $this->Session->read('Install.completeInstall');
-				$add = ($currentInstall)+1;
-				$this->Session->write('Install.completeInstall', $add);
-				$this->__cekCompleteInstall();
-				$this->set('checkInstall',$this->Session->read('Install.completeInstall'));
-				$this->render('/install/successInstallLms','ajax');
-                //$this->redirect(array('action' => 'finish'));
-            }
-        }
-	}
 	
 	function __cekCompleteInstall(){
 		$totalInstalled = $this->Session->read('Install.completeInstall');
@@ -658,15 +367,15 @@ class InstallController extends InstallAppController {
     function finish() {
 		//$this->__checkInstallation();
         $this->pageTitle = __('Selamat, Instalasi berhasil dilakukan', true);
-		if (!$this->Session->check('Install.startInstall')) {
-			$this->redirect(array('action' => 'index'));
-		}else{
-			$this->Session->setFlash(__('Selamat SIMS sudah terinstall.', true));
+		//if (!$this->Session->check('Install.startInstall')) {
+		//	$this->redirect(array('action' => 'index'));
+		//}else{
+			$this->Session->setFlash(__('Selamat '.$appLicationName.' sudah terinstall.', true));
 			$this->__updateDatabaseProfile();
 			$this->Session->delete('Install');
 			
 			
-		}
+		//}
         
 		Configure::write('debug', '0');
     }
@@ -688,10 +397,13 @@ class InstallController extends InstallAppController {
 		if(!$db->isConnected()) {
 			
 		}else{
-			$statement = "INSERT INTO `profiles` VALUES(1, '".$this->Session->read('Install.profile_name')."', '".$this->Session->read('Install.profile_alamat')."', '".$this->Session->read('Install.profile_telp')."', 1987, 1, '".$this->Session->read('Install.profile_email')."', 1, 1, 'img/2011-09-01-200407tut-wuri-handayani.png', '".$today."', '".$today."');";
-			//$statement = "INSERT INTO `profiles` VALUES(1, '".$this->Session->read('Install.profile_name')."', 'Jl. Test', '4444-4444', 1987, 1, 'test@test.com', '4234234', '4234234','img/2011-09-01-200407tut-wuri-handayani.png', '2011-03-20 04:16:02', '2011-03-20 04:16:02');";
-			$db->query($statement);
+			
+			
+			$statement =  'INSERT INTO `profiles` VALUES (1, "'.$this->Session->read('Install.profile_name').'", "'.$this->Session->read('Install.profile_alamat').'", "'.$this->Session->read('Install.profile_telp').'", 1987, 1, "'.$this->Session->read('Install.profile_email').'", "'.$this->Session->read('Install.licenseKey').'", "'.$this->Session->read('Install.licVal').'", "img/2011-09-01-200407tut-wuri-handayani.png", 1, 2, 3, 1, 2, 3, "'.$today.'", "'.$today.'");';
+			
 			$this->__saveInifile();
+			$db->query($statement);
+			
 		}
 		
 	}
@@ -700,7 +412,7 @@ class InstallController extends InstallAppController {
 		//$content = str_replace('{default_database}', $this->data['Install']['database'], $content);
 		
 		$install = $this->Session->read('Install');
-		$install['date'] = date('Y-m-d H:i:s');
+		//$install['date'] = date('Y-m-d H:i:s');
         $settings = array();
 		foreach ($install as $field => $value) {
 			$settings[] = $field .' = "'. $value .'"';
@@ -719,7 +431,7 @@ class InstallController extends InstallAppController {
         //$content = str_replace('{default_password}', $this->data['Install']['password'], $content);
         //$content = str_replace('{default_database}', $this->data['Install']['database'], $content);
         if($this->File->write($contents) ) {
-			//$this->Session->delete('Install');
+			$this->Session->delete('Install');
         } else {
             $this->Session->setFlash(__('Could not write database.php file.', true));
         }
@@ -745,9 +457,7 @@ class InstallController extends InstallAppController {
 
 	function __dropdatabaseInstalled(){
 		$databases = array();
-		$databases['sims'] = "sims2";
-		$databases['eschool'] = "eschools_elips";
-		$databases['lms'] = "eschools_lms";
+		$databases['dbapp'] = "etsd";
 		foreach($databases as $database => $db_name){
 			$sql = "DROP DATABASE $db_name";
 			if (mysql_query($sql, $link)){
@@ -786,46 +496,34 @@ class InstallController extends InstallAppController {
 			}
 		}
 
-		
 	}
 	
 	function __ionLicense($lic_key) {
-		
-	
-	
-	
 	//return true;
 	// Clean up variables for security
 	//unset($home_url_site, $home_url_iono, $user_defined_string, $request, $header, $return, $fpointer, $content, $status, $hash);
 	
-	
-	
 	}
 	
 	
-	function __getZendid(){
-	
-	$idZend = zend_get_id();
-	
-	$banyakIdZend = count($idZend);
-	
-	if($banyakIdZend > 1){	
-		foreach ($idZend as $id => $n){
-			$idZendSelected = $idZend[0].$n;
+	function getZendidLocal(){
+
+		$idZend = zend_get_id();
+
+		$banyakIdZend = count($idZend);
+
+		if($banyakIdZend > 1){	
+			foreach ($idZend as $id => $n){
+				$idZendSelected = $idZend[0];
+			}
+		}else if($banyakIdZend == 1){
+			$idZendSelected = $idZend;
+		}else{
+			$idZendSelected = null;
 		}
-	}else if($banyakIdZend == 1){
-		$idZendSelected = $idZend;
-	}else{
-		$idZendSelected = null;
-	}
-	
+
 	return $idZendSelected;
-	
-	}
-	
-	
-	
-	
-	
+
+	}	
 }
 ?>

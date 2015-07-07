@@ -40,9 +40,9 @@
 
 	
 	
-	//if (!file_exists(APP.'config'.DS.'install.ini')) {
-    //    Router::connect('/', array('plugin' => 'install' ,'controller' => 'install'));
-    //}else{
+	if (!file_exists(APP.'config'.DS.'install.ini')) {
+        Router::connect('/', array('plugin' => 'install' ,'controller' => 'install'));
+    }else{
 		Router::connect('/', array('controller' => 'questions', 'action' => 'homenew'));
-	//}
+	}
 ?>

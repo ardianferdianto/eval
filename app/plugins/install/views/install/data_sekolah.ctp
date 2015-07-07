@@ -27,65 +27,20 @@
 		echo $form->year('tahunBerdiri', 1945, 2011, null, array('class'=>'year-set'), 'Pilih Tahun');	
 		echo '</div>';
 		echo $form->input('profile_telp', array('label' => 'Telpon','class'=>'input-normal'));
+
+		
 		echo $form->input('profile_email', array('label' => 'Email Admin: ','class'=>'input-normal'));
 		
 		?>
-		<!--<div class="input text">
-			<label style="width:100%;margin:15px 0 0">Anda akan melakukan aktivasi dengan cara :</label>
-			
-			<div style="margin:5px 0 0">
-				<div style="margin-left:100px">
-				<span style="background-color: #5a998b;
-			    border-radius: 4px 4px 4px 4px;
-			    display: inline-block;
-			    margin: 5px 4px 5px 0;
-			    padding: 8px 3px;">
-					<input type="radio" name="lic" value="licenseonline">
-					<label>Aktivasi Online</label>
-					
-				</span>
-				<span style="background-color: #5a998b;
-			    border-radius: 4px 4px 4px 4px;
-			    display: inline-block;
-			    margin: 5px 4px 5px 0;
-			    padding: 8px 3px;">
-					<input type="radio" name="lic" value="licenseoffline">
-					<label>Aktivasi Offline</label>
-					
-				</span>
-				</div>-->
-				<script>
-				jQuery(document).ready(function(){ 
-					jQuery("div.desc").hide();
-					jQuery(".licenseInput").val('');
-				    jQuery("input[name$='lic']").click(function() {
-				        var test = jQuery(this).val();
-				        jQuery("div.desc").hide();
-						jQuery(".licenseInput").val('');
-				        jQuery("#"+test).show();
-				    }); 
-				});
 		
-				</script>
-				<!--<?php
-				echo '<div id="licenseonline" class="desc">';
-				echo $form->input('licenseKey', array('label' => 'License Key','class'=>'input-normal licenseInput'));
-				echo '</div>';		
-				?>
-				<div id="licenseoffline" class="desc">
-					<br/>
-					<div class= 'blue_box'>
-					<p>Silahkan berikan keterangan detail berikut ini pada costumer support anda:<br/>
-					Serial Mesin = <strong><?php echo $zend_display;?></strong></p>
-					</div>
-					
-					<label style="width:100%;margin:7px 0 8px">Jika anda sudah mendapatkan kode aktivasi masukkan detail sbb:</label>
-					<?php echo $form->input('Key.keyfeedback', array('label' => 'Kode Aktivasi <br/><small>( Kode dari costumer support )</small>','class'=>'input-normal licenseInput'));?>
-			
-				</div>
-			</div>-->
-		</div>
         <br/>
+
+        <div class="input text">
+        	<div class= 'blue_box'>
+			<p>Anda akan menginstall <strong>Versi Trial</strong> aplikasi ini. <br/>
+			Versi trial mendapatkan semua fitur namun akan berakhir pada 15 hari</p>
+			</div>
+			
 		<div class="submit"><input type="submit" value="Lanjutkan  →" class="button lanjut"></div>
 		<?php echo $form->end();
     ?>
